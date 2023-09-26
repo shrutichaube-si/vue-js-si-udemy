@@ -28,6 +28,7 @@
     
     />
     </div>
+    
 </div>
 </template>
 
@@ -40,7 +41,13 @@ export default {
   }
   },
 
-  props:["selectedTags"],
+  props: {
+    selectedTags:{
+type: Array,
+default: () => []
+
+    }
+  },
 
 watch:{
 newtags(newVal) {
@@ -55,16 +62,19 @@ isTagExists(){
     return this.tags.includes(this.newtags)
 }
   },
+  emits:["change"],
   methods: {
 addNewtags() {
     if(this.newtags && !this.isTagExists ){
         this.tags.push(this.newtags)
         this.newtags=""
+        this.$emit('change',this.tags);
     }
 
 },
 removeTag (index) {
-this.tags.splice(index,1)
+this.tags.splice(index,1);
+this.$emit('change',this.tags);
   },
   removeLastTag() {
     if(this.newtags.length===0){

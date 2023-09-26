@@ -2,21 +2,31 @@
 import TagsInput from './components/TagsInput.vue';
 export default{
   data: () =>({
-    jsFrameworks: ["react.js","angular","python"]
+    jsFrameworks: ["react.js","angular","python"],
+    backendFrameworks :[]
   }),
+
   mounted () {
     setTimeout(() => {
 this.jsFrameworks.push("svelte.js")
     },3000)
+  },
+  methods:{
+    handleChange (tags){
+      this.jsFrameworks = [...tags]
+    }
   }
 }
 </script>
 
 <template>
   <div>
-    <h1> Hello world </h1>
+    <h1> Your Favourite Frameworks </h1>
+    <div>{{ jsFrameworks }}</div>
+<tags-input :selected-tags="jsFrameworks" @change="handleChange"/>
+<div>{{ backendFrameworks }}</div>
+<tags-input :selected-tags="backendFrameworks" @change="backendFrameworks = [...$event]"/>
 
-<tags-input :selected-tags="jsFrameworks"/>
 
 </div>
 
