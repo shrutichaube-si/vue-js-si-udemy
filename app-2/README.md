@@ -1,4 +1,4 @@
-# app-1
+# my-app-2-tags-input
 
 This template should help get you started developing with Vue 3 in Vite.
 
