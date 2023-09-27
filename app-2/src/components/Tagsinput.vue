@@ -1,5 +1,8 @@
 <template>
-
+<div>
+<div>
+    <!-- selected tags : {{ selectedTags }} -->
+</div>
 <div class="tags-input-wrapper">
 <!--<div>{{ tags }}</div>
 <div>{{ 2 + 2 }}</div>
@@ -39,7 +42,7 @@ type="text"
  :class="tags.includes(newtag) ? 'tag-exists' : '' "
  "</div>-->
 </div> 
-
+</div>
 </template>
 
 <script>
@@ -47,13 +50,36 @@ export default {
  
     //we can also write it in the form of arrow function:
 
-    data: () => ({
+    // data: () => ({
            
-         tags:  ["vue","react","angular"],
-
-         newtag: ""
-    }),
+    //      tags:  ["vue","react","angular"],
     
+    //      newtag: ""
+    // }),
+
+    data (){
+
+        return{
+            tags: this.selectedTags,
+            
+            newTag: "",
+ 
+        }
+    },
+    // props:["selectedTags"],
+
+    //props defined using objects:
+
+    props :{
+
+        selectedTags :{
+
+            type     : Array,
+     
+            default :() => []
+        }
+    },
+
     watch:{
 
         newtag(newval){
