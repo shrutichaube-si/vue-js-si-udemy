@@ -2,18 +2,18 @@
     <div>
         <nav>
             <label for="cars">Choose a team:</label>
-            <select name="cars" id="cars">
-                <option value="1">India</option>
-                <option value="2">England</option>
-                <option value="3">Pakistan</option>
-                <option value="4">Australia</option>
+            <select @click="dropPlayers" name="cars" id="cars" v-model="dropText">
+                <option selected value="ALL">All</option>
+                <option value="IND">India</option>
+                <option value="ENG">England</option>
+                <option value="PAK">Pakistan</option>
+                <option value="AUS">Australia</option>
             </select>
             <input type="text" @change="updatePlayers" placeholder="Search.." name="search" v-model="searchText">
             <button @click="updatePlayers"><i class="fa fa-search"> Search</i></button>
         </nav>
     </div>
 </template>
-
 <script>
 export default {
     data: () => ({
@@ -177,7 +177,9 @@ export default {
         ],
         uPlayer: [],
         searchText: '',
-    }),
+        dropText:'',
+
+    }), 
 
     computed: {
         updatePlayers() {
@@ -185,16 +187,21 @@ export default {
             this.uPlayer = this.players.filter(player => (player.name.toUpperCase().includes(this.searchText.toUpperCase()))||(player.team_name.toUpperCase().includes(this.searchText.toUpperCase())))
             this.passEvent()
         },
+        dropPlayers(){
+            console.log(this.dropText)
+            this.uPlayer=this.players.filter(player=>(player.team_name.includes(this.dropText)) || this.dropText=="ALL");
+            this.passEvent()
+        }
     },
+
+
     methods: {
         passEvent() { this.$emit('updatePlayer', this.uPlayer) },
     },
     mounted: function () {
-        this.$nextTick(function () {
             this.uPlayer = [].concat(this.players)
             this.passEvent()
-
-        })
+        
     }
 }
 </script>
