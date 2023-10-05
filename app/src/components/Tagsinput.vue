@@ -120,7 +120,7 @@ export default {
   padding: 0.25em 0.4em;
   font-size: 75%;
   line-height: 1;
-  text-align: center;
+  text-align: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
