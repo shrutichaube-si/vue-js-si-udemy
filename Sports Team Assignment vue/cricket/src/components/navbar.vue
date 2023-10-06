@@ -2,7 +2,7 @@
     <div>
         <nav>
             <label for="cars">Choose a team:</label>
-            <select @click="dropPlayers" name="cars" id="cars" v-model="dropText">
+            <select @click="dropPlayers" name="teams" id="teams" v-model="dropText">
                 <option selected value="ALL">All</option>
                 <option value="IND">India</option>
                 <option value="ENG">England</option>
