@@ -23,9 +23,8 @@
       <div class="container" style="margin-left: 0px;">
       <div v-for="(player,key) in players" :key="key">
         <div class="card" v-if="player.role===3">
-      <img :src=player.image alt="Avatar" style="width:100%">
-      
-          <h5 class="card-title">{{ player.name }} </h5>
+        <img :src=player.image alt="Avatar" style="width:100%">
+         <h5 class="card-title">{{ player.name }} </h5>
           <h6>Matches :{{ player.matches }}</h6>
           <h6>Runs:{{ player.runs }}</h6>
           <h6>50/100s:{{ player['50s'] }}{{ player['100s'] }}</h6>
