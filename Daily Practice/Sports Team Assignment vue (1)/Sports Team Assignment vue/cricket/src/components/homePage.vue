@@ -5,6 +5,7 @@
 
       </navbar>
       <h1>Batsman</h1>
+      <div class="flex-container">
       <div v-for="(player,key) in players" :key="key">
         <div class="card" v-if="player.role===1">
       <img :src=player.image alt="Avatar" style="width:100%">
@@ -19,9 +20,13 @@
       </div> 
       </div>
   </div>
+
+      </div>
+
       </div>
       <h1>Bowler</h1>
-      <div v-for="(player,key) in players" :key="key">
+      <div class="bowl-container">
+        <div v-for="(player,key) in players" :key="key">
         <div class="card" v-if="player.role===3">
       <img :src=player.image alt="Avatar" style="width:100%">
       <div class="container">
@@ -35,8 +40,11 @@
       </div>
       </div>
       </div>
+      </div>
+
       <h1>All rounder</h1>
-      <div v-for="(player,key) in players" :key="key">
+      <div class="All-container">
+        <div v-for="(player,key) in players" :key="key">
       <div class="card" v-if="player.role===2">
       <img :src=player.image alt="Avatar" style="width:100%">
       <div class="container">
@@ -50,6 +58,9 @@
       </div>
       </div>
       </div>
+
+      </div>
+      
     </div>
 </template>
 
@@ -85,7 +96,21 @@ import navbar from './navbar.vue';
 }
 
 /* Add some padding inside the card container */
-.container {
+.flex-container {
   padding: 2px 16px;
+  display: flex;
+  flex-direction: row;
+
+  
+}
+.bowl-container{
+  padding: 2px 16px;
+  display: flex;
+  flex-direction: row;
+}
+.All-container{
+  padding: 2px 16px;
+  display: flex;
+  flex-direction: row;
 }
 </style>
