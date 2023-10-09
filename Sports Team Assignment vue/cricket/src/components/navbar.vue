@@ -43,16 +43,29 @@ export default {
     methods: {
         passEvent() { this.$emit('updatePlayer', this.uPlayer) },
     },
+   
+//====================== Using Async await
     mounted:async function () {
             
-        const res = await axios.get('http://127.0.0.1:5500/JSON/players.json')
-        this.players = res.data.players;
-        this.uPlayer = this.players;
-        this.passEvent()
-            
-            
+            const res = await axios.get('http://127.0.0.1:5500/JSON/players.json')
+            this.players = res.data.players;
+            this.uPlayer = this.players;
+            this.passEvent()
+                
+                
+            }
         }
-    }
+    
+    //=========================== Using Promise
+//     mounted : function(){
+//         axios.get('http://127.0.0.1:5500/JSON/players.json').then((res)=>{
+//             this.players = res.data.players;
+//             this.uPlayer = this.players;
+//             this.passEvent();
+//         })
+//     }
+// }
+
 
 </script>
 

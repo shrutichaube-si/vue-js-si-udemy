@@ -1,7 +1,6 @@
 <template>
     <div>
-      <navbar @updatePlayer="ChangeT($event)">
-      </navbar>
+      <navbar @updatePlayer="ChangeT($event)"></navbar>
       <h2>Batsman</h2>
       <div class="container">
       <div v-for="(player,key) in players" :key="key">
@@ -17,7 +16,7 @@
           <h6>Team Name: {{ player.team_name }}</h6>
       </div> 
       </div>
-  </div>
+      </div>
       </div>
       <h2>Bowler</h2>
       <div class="container">
