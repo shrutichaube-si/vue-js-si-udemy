@@ -1,18 +1,10 @@
-
 <template>
  <div id="app">
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Sportz Interactive</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -26,19 +18,8 @@
             </select>
           </ul>
           <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              v-model="search"
-            />
-            <button
-              class="btn btn-outline-success"
-              type="button"
-              @click="searchPlayers"
-            >
-              Search
-            </button>
+            <input class="form-control me-2" type="search" placeholder="Search" v-model="search"/>
+            <button class="btn btn-outline-success" type="button" @click="searchPlayers">Search</button>
           </form>
         </div>
       </div>
@@ -66,7 +47,7 @@
 import axios from 'axios';
 import PlayerList from "./components/PlayerList.vue";
 export default {
-  data() {
+  data: ()=> {
     return {
       selectedTeam: "ALL",
       search: "",
@@ -75,19 +56,23 @@ export default {
       players: [],
     };
   },
-mounted()
+mounted: async function()
 {
-  axios.get('http://127.0.0.1:5500/players.json')
-  .then((resp)=>{
-    console.warn(resp.data.originalPlayers)
-    this.originalPlayers = resp.data.originalPlayers
-    this.dropPlayers()
-  })
+
+    try {
+      const resp = await axios.get('http://127.0.0.1:5500/players.json')
+      console.log(resp.data.originalPlayers);
+      this.originalPlayers = resp.data.originalPlayers;
+      this.dropPlayers();
+    } catch (error) {
+      console.error('Error Fetching Data:',error)
+    }
+  
+//fetchData();
   
 },
   components: {
     PlayerList,
-    
   },
   computed: {
     filteredPlayers() {
@@ -106,32 +91,25 @@ mounted()
     dropPlayers(){
       this.players = this.originalPlayers.filter(player=>(player.team_name.toLowerCase().includes(this.selectedTeam.toLowerCase()))||(this.selectedTeam=="ALL"))
     },
-
     searchPlayers() {
       this.players = this.originalPlayers.filter((player) => {
         const playerName = player.name.toLowerCase();
         const playerTeam = player.team_name.toLowerCase();
         const searchText = this.search.toLowerCase();
         return (
-          (playerName.includes(this.search.toLowerCase()) &&
+          (playerName.includes(searchText) &&
           (this.selectedTeam === 'ALL' ||
             playerTeam.includes(this.selectedTeam.toLowerCase()))
-        )||playerTeam.includes(this.search.toLowerCase()));
+        )||playerTeam.includes(searchText));
       });
     },
     filteredPlayersByRole(role) {
       return this.players.filter((player) => player.role === role);
     },
   },
-  created() {
-    
+  created() {  
     this.players = [...this.originalPlayers];
   }
-};
-  
+};  
 </script>
 
-
-<style scoped>
-
-</style>
