@@ -1,17 +1,9 @@
 <script >
 import Mainpage from './components/Mainpage.vue'
-
-
 export default {
-
-  
-  components: { Mainpage },
-
+  components: { Mainpage }
  
   }
-
-
-
 </script>
 
 <template>

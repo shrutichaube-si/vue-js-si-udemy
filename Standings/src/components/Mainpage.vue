@@ -1,5 +1,6 @@
 <template>
      <div>
+      <div><h1>STANDINGS</h1></div>
         <div class="table standings-table">
                                   <div class="table-head">
                                     <div class="table-row">
@@ -15,7 +16,6 @@
                                       <div class="table-data points"><p class="text">Points</p></div>
                                       <div class="table-data form-guide"><p class="text">Form</p></div>
                                       </div>
-
                                     </div>
 
     <div class="table-body" v-for = "(element,index) in playerstandings" :key ="index"  >
@@ -86,7 +86,7 @@
                                             </ul>
                                            
                                           </div>
-        </div>  
+     </div>  
      </div>
      </div>
      </div>
