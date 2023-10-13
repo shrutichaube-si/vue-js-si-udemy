@@ -1,39 +1,24 @@
 <template>
-  <h1>{{ message }}</h1>
-  <input type="text" v-model="message"/>
-  <h2>{{ item.Name }}:{{ item.Price}}</h2>
-  <button @click="ProductSwap"> click</button>
-  <h2>{{ quantity }}</h2>
-  <button @click="increment">+</button>
-  <button @click="decrement">-</button>
-  <student-data></student-data>
+  <h1>Hello world</h1>
+  <cartt-item v-for="item in items" :cartItem="item" :key="item.id"></cartt-item>
 </template>
 <script>
-import { reactive, ref } from 'vue';
-import StudentData from './components/StudentData.vue';
+import CarttItem from './components/CarttItem.vue';
+import { Ref } from 'vue';
 export default{
-  components: { StudentData},
-  setup(){
-    const message = ref("hello")
-    let quantity = ref(1)
-
-    const item=reactive({
-      Name:"Product 1",
-      Price:10
-    })
-    const increment =()=> quantity.value++
-    const decrement = ()=> quantity.value--
-
-    const ProductSwap =()=>{
-      item.Name="Product A",
-      item.Price=30
+components:{CarttItem},
+setup(){
+  const items=Ref([
+    {
+      id:1,
+      name:"Product 1",
+      price:20,
+      quantity:1
     }
-    return{
-      message,quantity,increment,decrement,item,ProductSwap
-    }
-  }
+  ])
+  return {items}
+}
 }
 </script>
 <style scoped>
-
 </style>

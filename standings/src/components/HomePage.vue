@@ -84,7 +84,6 @@
           <div div="" class="table-data form-guide">
             <ul class="form-guide-listing">
                <div  v-for="index in 5" :key="index">
-                
                 <div v-if="team.match_result.match[index-1] && team.match_result.match[index-1].result == 'W'"   >
                 <li class="form-guide-item win" >
                     <p class="text">W</p>
@@ -100,13 +99,13 @@
                     <p class="text">D</p>
                 </li>
               </div>
-              <div v-else   >
+              <div v-else >
                 <li class="form-guide-item draw" >
                     <p class="text">-</p>
                 </li>
               </div>
             </div>
-            
+
             </ul>
           </div>
         </div>
@@ -116,25 +115,18 @@
       </div>
       </div>
       </div>
-
-
 </template>
- 
 <script>
 import axios from 'axios'
 export default {
     data: () => ({
         players: {},
-
     }),
     mounted: async function(){
         const res = await axios.get('http://127.0.0.1:5500/data/standings.json');
         this.players = res.data.standings.groups[0].teams.team
-        
-
     }
 }
 </script>
 <style scoped>
-
 </style>

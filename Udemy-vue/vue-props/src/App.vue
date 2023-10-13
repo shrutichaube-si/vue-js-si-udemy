@@ -11,7 +11,6 @@ export default{
   data:()=>({
     components:{CardsDataVue},
      names:["shruti","aditya","dhruv","vivek"],
-     
   })
 }
 </script>
