@@ -1,5 +1,5 @@
 <script>
-import { ref, reactive, toRef, toRefs, computed, watch } from 'vue'
+import { ref, reactive, toRef, toRefs, computed, watch, onMounted, onUpdated, onUnmounted } from 'vue'
 
 export default{
 setup(){
@@ -30,7 +30,16 @@ const employee = ['emp1','emp2'];
  return employee.length > 0 ? 'Yes' : 'No';
   })
  
+onMounted(() =>{
+  console.log('Component Mounted.')
+})
 
+onUpdated(() =>{
+  console.log('Component Updated.')
+})
+onUnmounted(() =>{
+  console.log('Component Unmounted.')
+})
 
 /*
   const nameRef = toRef(item, 'name');

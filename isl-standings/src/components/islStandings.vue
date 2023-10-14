@@ -166,25 +166,18 @@
                                             <!---->
                                             <!---->
                                             <ul class="form-guide-listing">
-                                              <li class="form-guide-item win">
-                                                <p class="text">W</p>
-                                              </li>
-                                              <li class="form-guide-item win">
-                                                <p class="text">W</p>
-                                              </li>
-                                              <li class="form-guide-item draw">
-                                                <p class="text">-</p>
-                                                <!---->
-                                              </li>
-                                              <li class="form-guide-item draw">
-                                                <p class="text">-</p>
-                                                <!---->
-                                              </li>
-                                              <li class="form-guide-item draw">
-                                                <p class="text">-</p>
-                                                <!---->
-                                              </li>
-                                            </ul>
+  <li v-for="index in 5" :key="index" class="form-guide-item" :class="{
+      'win': team.match_result.match[index - 1]?.result === 'W',
+      'draw': team.match_result.match[index - 1]?.result === 'D',
+      'lost': team.match_result.match[index - 1]?.result === 'L'
+    }"
+  >
+    <p class="text">
+      {{ team.match_result.match[index - 1] && team.match_result.match[index - 1].result ? team.match_result.match[index - 1].result : '-' }}
+    </p>
+  </li>
+</ul>
+
                                             <!---->
                                             <!---->
                                           </div>
@@ -225,6 +218,12 @@ export default{
     data(){
     return{
         teams : {},
+        // match: [
+        //     { result: 'win' },
+        //     { result: 'draw' },
+        //     { result: 'lost' },
+        //     // Include the remaining matches here
+        //   ]
      }
    },
    mounted: async function()
@@ -232,8 +231,8 @@ export default{
           try {
             const resp = await axios.get('http://127.0.0.1:5500/data/standings.json')
             //console.log(resp.data.standings)
-            this.teams = resp.data.standings.groups[0].teams.team;
-            console.log(teams);
+            this.teams = resp.data.standings.groups[0].teams.team; 
+            console.log(this.teams);
           } catch (error) {
             console.error('Error Fetching Data:',error)
           }
