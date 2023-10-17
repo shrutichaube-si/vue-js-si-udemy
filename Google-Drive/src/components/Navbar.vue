@@ -10,11 +10,13 @@
   >
     <div class="container">
       <a class="navbar-brand" href="/"><strong>Vue</strong>Drive</a>
-      <SearchForm v-model="q" />
+      <!-- <SearchForm v-model="q" /> -->
+
+     <div id ="search-form"></div>
     </div>
   </nav>
 </template>
-<script>
+<!-- <script>
 import {ref,watchEffect} from "vue";
 import SearchForm from './SearchForm.vue';
 export  default {
@@ -28,4 +30,4 @@ export  default {
   watchEffect(()=>console.log('q',q.value));
   return {q};
 }}
-</script>
+</script> -->

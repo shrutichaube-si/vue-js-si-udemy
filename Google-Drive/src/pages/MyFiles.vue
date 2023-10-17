@@ -1,21 +1,31 @@
 <template>
   <div class="container py-3">
-    <ActionBar />
+    <ActionBar  :selectedCount="selectedItems.length" @remove="handleRemove" @rename ="showModal = true" />
 
     <div class="d-flex justify-content-between align-items-center py-2">
-      <h6 class="text-muted mb-0">Files</h6>
+      <h6 class="text-muted mb-0">Files {{ selectedItems }}</h6>
      <SortToggler @sort-change ="handleSortChange ($event)"/>
     </div>
-   <FilesList  :files="files"/>
+    <teleport to="#search-form">
+     <SearchForm v-model ="q" />
+    </teleport>
+   <FilesList  :files="files" @select-change="handleSelectChange($event)"/>
+   <app-toast :show ="toast.show" :message = "toast.message" type ="success" position ="bottom-left" @hide="toast.show = false"/>
+   <app-modal title ="Rename" :show ="showModal && selectedItems.length ===1" @hide ="showModal">
+    <FileRenameForm/>
+   </app-modal>
+ 
   </div>
 </template>
 
 <script>
+import SearchForm from "../components/SearchForm.vue";
 import  filesApi from"../api/files"
 import ActionBar from "../components/ActionBar.vue";
 import IconTypeCommon from '../components/icons/IconTypeCommon.vue';
 import FilesList from "../components/files/FilesList.vue";
-import{ ref,reactive ,watchEffect,watch }from 'vue';
+import{ ref,reactive ,watchEffect,watch, toRef }from 'vue';
+import FileRenameForm from "../components/files/FileRenameForm.vue";
 import SortToggler from "../components/SortToggler.vue";
 // import { watchEffect } from 'vue';
 // const files = ref([])
@@ -26,24 +36,74 @@ import SortToggler from "../components/SortToggler.vue";
     } catch(error){
        console.error(error);
     }
-  } 
+  } ;
+
+  const removeItem = async (item,files) =>
+  {
+    try {
+       const response = await filesApi.delete (item.id);
+       if(response.status === 200 || response.status ===204){
+       const index = files.value.findIndex(file => file.id === item.id);
+         
+       files.value.splice(index)
+       }
+    }catch(error){
+       console.log(error)
+    }
+  }
 export default {
-  components: { ActionBar, IconTypeCommon,FilesList,SortToggler },
+  components: { ActionBar, IconTypeCommon,FilesList,SortToggler ,SearchForm,FileRenameForm},
   
   setup()
 {
   const files = ref([]);
   const query = reactive(
     {
-      _sort: "name",
-      _order: "asc"
+      _sort : "name",
+      _order: "asc",
+       q     :""
     }
   );
 
+  const selectedItems = ref([]);
+
+  const toast  = reactive({
+    show:false,
+    message :"Test message"
+  })
+
+  const showModal = ref(false);
+  
+
+
+
+
+  const handleSelectChange = (items) => {
+    selectedItems.value =Array.from(items)
+  }
   const handleSortChange =(payload) => {
     query._sort =payload.column;
     query._order = payload.order
   }
+
+
+
+  const handleRemove = () =>
+  {
+     if(confirm ("Are you sure ?"))
+     {
+        selectedItems.value.forEach((item) => removeItem(item , files));
+        selectedItems.value.splice(0);
+        toast.show = true ;
+        toast.message = "Selected item(s) successfully removed"
+
+     }
+  }
+
+
+
+
+
   watchEffect(async()=>(files.value = await fetchFiles(query)))
   // watch(
   // ()=> query._order,
@@ -52,7 +112,7 @@ export default {
   // );
 
   return {
-    files,handleSortChange
+    files,handleSortChange,q:toRef(query,"q") , handleSelectChange,selectedItems,handleRemove,toast,showModal
   }
 },
 

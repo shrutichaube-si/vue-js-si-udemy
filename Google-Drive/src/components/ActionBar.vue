@@ -9,17 +9,31 @@
       pb-3
     "
   >
-    <button class="btn btn-outline-primary">
+    <button class="btn btn-outline-primary" @click ="selectFiles">
       <icon-upload /> Upload Files
     </button>
 
-    <div class="action-buttons">
+    <div class="action-buttons" v-show ="selectedCount ===1"
+    @click ="$emit('rename')">
       <button type="button" class="rounded-button" title="Rename">
         <icon-pencil />
       </button>
-      <button type="button" class="rounded-button" title="Remove selected">
+      <button type="button" class="rounded-button" title="Remove selected"  @click ="$emit('remove')"  >
         <icon-trash />
       </button>
     </div>
   </div>
 </template>
+<script>
+export default {
+
+  props : {
+    selectedCount :{
+
+      type: Number,
+      default :0
+    }
+  },
+  emits :['rename' ,'remove']
+}
+</script>
