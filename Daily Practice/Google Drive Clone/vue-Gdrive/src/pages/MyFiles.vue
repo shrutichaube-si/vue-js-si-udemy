@@ -1,6 +1,11 @@
 <template>
   <div class="container py-3">
-    <ActionBar :selectedCount="selectedItems.length" @remove="handleRemove" @rename="showModal=true"/>
+    <ActionBar 
+    :selectedCount="selectedItems.length"
+     @remove="handleRemove"
+      @rename="showModal=true"
+      @files-choosen="choosenFiles =$event"
+      />
 
     <div class="d-flex justify-content-between align-items-center py-2">
       <h6 class="text-muted mb-0">Files {{ selectedItems }}</h6>
@@ -9,12 +14,20 @@
   <teleport to="#search-form">
     <searchForm v-model="q"/>
   </teleport>
+  <DropZone @files-dropped="choosenFiles = $event" :show-message="!files.length">
     <filesList :files="files" @select-change="handleSelectChange($event)"/>
+  </DropZone>
    <app-toast :show="toast.show" :message="toast.message" type="success" position="bottom-left" @hide="toast.show = false"/>
 
-   <app-modal title="Rename" :show="showModal && selectedItems.length === 1" @hide="showModal = false">
-    <fileRenameForm/>
+   <app-modal title="Rename" 
+   :show="showModal && selectedItems.length === 1" 
+   @hide="showModal = false">
+    <fileRenameForm 
+    :file="selectedItems[0]" 
+    @close="showModal = false"
+     @file-updated="handleFileUpdated($event)" />
    </app-modal>
+   <div v-if="choosenFiles.length">Uploading...</div>
 
   </div>
 </template>
@@ -28,6 +41,7 @@ import fileRenameForm from '../components/Files/fileRenameForm.vue'
 import filesApi from "../api/files";
 import {onMounted, reactive, ref, toRef, watch, watchEffect } from 'vue'
 import SearchForm from '../components/SearchForm.vue';
+import DropZone from "../components/uploader/file-chooser/DropZone.vue"
 const fetchFiles = async (query) => {
       try {
         const { data } =await filesApi.index(query);      
@@ -54,7 +68,7 @@ const fetchFiles = async (query) => {
       }
      } 
 export default {
-  components: { ActionBar,filesList,sortToggler, SearchForm,fileRenameForm },
+  components: { ActionBar,filesList,sortToggler, SearchForm,fileRenameForm, DropZone },
   setup(){
      const files = ref([]);
      const query = reactive({
@@ -69,6 +83,7 @@ export default {
       message: ""
     });
     const showModal = ref(false);
+    const choosenFiles = ref([]);
 
     const handleSelectChange = (items) => {
       selectedItems.value = Array.from(items); // converting drom set to array
@@ -86,9 +101,20 @@ export default {
         selectedItems.value.splice(0);
         toast.show = true;
         toast.message = "Selected item(s) successfully removed";
+
+    
+
         //item represents the current iteration
       }
      }
+     const handleFileUpdated = (file) => {
+          const oldFile = selectedItems.value[0];
+          const index = file.value.findIndex(item => item.id === file.id);
+          file.value.splice(index, 1, file);
+          toast.show = true;
+          toast.message = `File '${oldFile.name}' renamed to '${file.name}'`;
+
+        }
     // const fetchFiles = async () => {
     //   try {
     //     const { data } =await axios.get("http://localhost:3030/files")
@@ -104,7 +130,17 @@ export default {
       // onMounted(async () => (files.value = await fetchFiles(query)));
       watchEffect(async () => (files.value = await fetchFiles(query)));
     
-     return { files,handleSortChange, q: toRef(query,'q'),handleSelectChange,selectedItems,handleRemove,toast,showModal };
+     return { files,
+      handleSortChange, 
+      q: toRef(query,'q'),
+      handleSelectChange,
+      selectedItems,
+      handleRemove,
+      toast,
+      showModal,
+      handleFileUpdated,
+      choosenFiles
+     };
   }}
   // mounted(){
   //   this.fetchFiles();

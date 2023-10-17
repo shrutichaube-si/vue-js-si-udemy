@@ -9,9 +9,8 @@
       pb-3
     "
   >
-    <button class="btn btn-outline-primary">
-      <icon-upload /> Upload Files
-    </button>
+  <FileChooser @files-choosen="$emit('files-choosen' ,$event)"/>
+    
 
     <div class="action-buttons" v-show="selectedCount">
       <button type="button" class="rounded-button" title="Rename" v-show="selectedCount === 1" @click="$emit('rename')">
@@ -24,6 +23,7 @@
   </div>
 </template>
 <script>
+import FileChooser from './uploader/file-chooser/FileChooser.vue';
 export default{
   props:{
     selectedCount:{
@@ -31,6 +31,7 @@ export default{
       default:0
     }
   },
+  components : {FileChooser},
   emits:['rename','remove']
 }
 </script>

@@ -8,13 +8,13 @@
     },
     {
       "id": 2,
-      "name": "File 2.png",
+      "name": "",
       "url": "https://picsum.photos/id/1039/350/200",
       "mimeType": "image/png"
     },
     {
       "id": 3,
-      "name": "File 3.doc",
+      "name": "File 3 mydoc.doc",
       "mimeType": "application/msword"
     },
     {

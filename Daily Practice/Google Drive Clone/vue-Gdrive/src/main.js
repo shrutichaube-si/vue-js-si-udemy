@@ -12,4 +12,9 @@ for (const [key, value] of Object.entries(icons)) {
 }
 app.component("app-toast",Toast);
 app.component("app-modal",Modal);
+app.directive('focus', {
+  mounted(el) {
+    el.focus();
+  }
+});
 app.mount("#app");
