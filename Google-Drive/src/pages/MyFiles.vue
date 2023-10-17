@@ -1,6 +1,11 @@
 <template>
   <div class="container py-3">
-    <ActionBar  :selectedCount="selectedItems.length" @remove="handleRemove" @rename ="showModal = true" />
+    <ActionBar  
+    :selectedCount="selectedItems.length"
+     @remove="handleRemove" 
+     @rename ="showModal = true"
+     @files-choosen = "choosenFiles = $event"
+     />
 
     <div class="d-flex justify-content-between align-items-center py-2">
       <h6 class="text-muted mb-0">Files {{ selectedItems }}</h6>
@@ -9,12 +14,18 @@
     <teleport to="#search-form">
      <SearchForm v-model ="q" />
     </teleport>
-   <FilesList  :files="files" @select-change="handleSelectChange($event)"/>
+    <DropZone 
+    @files-dropped ="choosenFiles =$event"
+      :show-message="!files.length"
+    >
+      <FilesList  :files="files" @select-change="handleSelectChange($event)"/>
+    </DropZone>
+  
    <app-toast :show ="toast.show" :message = "toast.message" type ="success" position ="bottom-left" @hide="toast.show = false"/>
    <app-modal title ="Rename" :show ="showModal && selectedItems.length ===1" @hide ="showModal">
     <FileRenameForm :file="selectedItems[0]" @close ="showModal = false"/>
    </app-modal>
- 
+  <div  v-if="choosenFiles.length">Uploading ...</div>
   </div>
 </template>
 
@@ -26,6 +37,7 @@ import IconTypeCommon from '../components/icons/IconTypeCommon.vue';
 import FilesList from "../components/files/FilesList.vue";
 import{ ref,reactive ,watchEffect,watch, toRef }from 'vue';
 import FileRenameForm from "../components/files/FileRenameForm.vue";
+import DropZone from "../components/uploader/file-chooser/DropZone.vue"
 import SortToggler from "../components/SortToggler.vue";
 // import { watchEffect } from 'vue';
 // const files = ref([])
@@ -52,7 +64,7 @@ import SortToggler from "../components/SortToggler.vue";
     }
   }
 export default {
-  components: { ActionBar, IconTypeCommon,FilesList,SortToggler ,SearchForm,FileRenameForm},
+  components: { ActionBar, IconTypeCommon,FilesList,SortToggler ,SearchForm,FileRenameForm,DropZone},
   
   setup()
 {
@@ -74,7 +86,7 @@ export default {
 
   const showModal = ref(false);
   
-
+ const  choosenFiles = ref([]);
 
 
 
@@ -112,7 +124,8 @@ export default {
   // );
 
   return {
-    files,handleSortChange,q:toRef(query,"q") , handleSelectChange,selectedItems,handleRemove,toast,showModal
+    files,handleSortChange,q:toRef(query,"q") , handleSelectChange,selectedItems,handleRemove,toast,showModal,
+     choosenFiles
   }
 },
 
