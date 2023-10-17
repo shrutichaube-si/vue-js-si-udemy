@@ -15,7 +15,7 @@
     <app-toast :show="toast.show" :message="toast.message" type ="success" position="bottom-left" @hide="toast.show = false"></app-toast>
     <app-modal title="Rename" :show="showModal && selectedItems.length===1" @hide ="showModal=false">
 
-      <FileRenameFormVue :file="selectedItems[0]" @close="showModal=false"></FileRenameFormVue>
+      <FileRenameFormVue :file="selectedItems[0]" @close="showModal=false" ></FileRenameFormVue>
     </app-modal>
     
   </div>
