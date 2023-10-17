@@ -28,7 +28,7 @@ export default {
         },
         handleEscapeKey(event)
         {
-            this.$emit('update:modelValue' ," ")
+            this.$emit('update:modelValue' ,"")
         }
     },
 
