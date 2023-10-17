@@ -1,10 +1,10 @@
 <template>
-    <div class="row">
+    <div class="row" @click="clearSelected">
       <file-item  v-for="file in files" 
       :file="file" 
       :key="`file-${file.id}`"
-       @click.exact="selectOne(file)"
-       @click.meta.exact="selectMultiple(file)" 
+       @click.exact.stop="selectOne(file)"
+       @click.meta.exact.stop="selectMultiple(file)" 
        :class="{'selected-file': isSelected(file)}"></file-item>
     </div>
 </template>
@@ -21,7 +21,7 @@ export default{
     }
   },
   setup(props,{emit}){
-    const selectedItems = reactive(new Set())
+    const selectedItems = reactive(new Set());
      
     const selectOne = (item)=>{
       selectedItems.clear();
@@ -31,7 +31,7 @@ export default{
 
     const selectMultiple=(item)=>{
       if(selectedItems.has(item)){
-        selectedItems.delete(item);
+        // selectedItems.delete(item);
       }else{
         selectedItems.add(item);
       }
@@ -39,8 +39,13 @@ export default{
     }
 
     const isSelected =(item)=>selectedItems.has(item);
+
+    const clearSelected =()=>{
+      selectedItems.clear();
+      emit('select-change',selectedItems);
+    }
      
-    return {selectOne,selectMultiple,isSelected}
+    return {selectOne,selectMultiple,isSelected,clearSelected}
     
   },
   emits :['select-change']
