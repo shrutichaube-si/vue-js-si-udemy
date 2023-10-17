@@ -1,6 +1,6 @@
 <template>
   <div class="container py-3">
-    <ActionBar :selectedCount="selectedItems.length" @remove="handleRemove" />
+    <ActionBar :selectedCount="selectedItems.length" @remove="handleRemove" @rename="showModal=true"/>
 
     <div class="d-flex justify-content-between align-items-center py-2">
       <h6 class="text-muted mb-0">Files {{ selectedItems }}</h6>
@@ -10,7 +10,12 @@
     <searchForm v-model="q"/>
   </teleport>
     <filesList :files="files" @select-change="handleSelectChange($event)"/>
-   <app-toast: show="toast.show" :message="toast.message" type="success" position="bottom-left" @hide="toast.show = false"/>
+   <app-toast :show="toast.show" :message="toast.message" type="success" position="bottom-left" @hide="toast.show = false"/>
+
+   <app-modal title="Rename" :show="showModal && selectedItems.length === 1" @hide="showModal = false">
+    <fileRenameForm :file="selectedItems[0]" @close="showModal = false" @file-updated="handleFileUpdated($event)"/>
+   </app-modal>
+
   </div>
 </template>
 
@@ -19,6 +24,7 @@
 import ActionBar from "../components/ActionBar.vue";
 import filesList from '../components/Files/filesList.vue';
 import sortToggler from '../components/sortToggler.vue';
+import fileRenameForm from '../components/Files/fileRenameForm.vue'
 import filesApi from "../api/files";
 import {onMounted, reactive, ref, toRef, watch, watchEffect } from 'vue'
 import SearchForm from '../components/SearchForm.vue';
@@ -39,14 +45,16 @@ const fetchFiles = async (query) => {
        if(response.status === 200 || response.status === 204){
 
        
-       const index = files.value.findIndex(file => file.id === item.id)
-      files.value.splice(index,1);
-      } }catch (error) {
+       const index = files.value.findIndex(file => file.id === item.id);
+      files.value.splice(index, 1);
+      } 
+    }
+    catch (error) {
         console.error(error);
       }
      } 
 export default {
-  components: { ActionBar,filesList,sortToggler, SearchForm },
+  components: { ActionBar,filesList,sortToggler, SearchForm,fileRenameForm },
   setup(){
      const files = ref([]);
      const query = reactive({
@@ -60,6 +68,7 @@ export default {
       show: false,
       message: ""
     });
+    const showModal = ref(false);
 
     const handleSelectChange = (items) => {
       selectedItems.value = Array.from(items); // converting drom set to array
@@ -93,9 +102,17 @@ export default {
 
       // onMounted(() => fetchFiles());
       // onMounted(async () => (files.value = await fetchFiles(query)));
+
+      const handleFileUpdated = (file) => {
+        const oldFile = selectedItems.vlue[0];
+        const index = files.value.findIndex(item => item.id === file.id);
+        files.value.splice(index,1,file);
+        toast.show = true;
+        toast.message = `File '${oldFile.name}' renamed to '${file.name}'`;
+      }
       watchEffect(async () => (files.value = await fetchFiles(query)));
     
-     return { files,handleSortChange, q: toRef(query,'q'),handleSelectChange,selectedItems,handleRemove,toast };
+     return { files,handleSortChange, q: toRef(query,'q'),handleSelectChange,selectedItems,handleRemove,toast,showModal,handleFileUpdated };
   }}
   // mounted(){
   //   this.fetchFiles();
@@ -118,4 +135,7 @@ export default {
   // }
 // console.log('Hello ji')
 // provide inject..second we use using teleport
+//app-modal - the component emit hide event whic triggers when we cllick on the close icon on the top right of the -
+//modal title
+//app-modal title="Rename" :show="showModal && selectedItems.length === 1  to make sure that we have only one item selected
 </script>
