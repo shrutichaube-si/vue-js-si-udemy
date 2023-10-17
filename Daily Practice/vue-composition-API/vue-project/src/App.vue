@@ -1,64 +1,86 @@
-<template>
-  <h1>{{ message }}</h1>
-  <h2>{{ quantity }}</h2>
-  <h2>{{ total }}</h2>
-  <h1>{{ item.name }}:  {{ item.price }}</h1>
-  <button @click="swapProduct">swapProduct</button>
-  <button @click="item.price++">Increment price</button>
-  <input type="text" v-model="message"/>
-  <button @click="increment">+</button>
-  <button @click="decrement">-</button>
-</template>
-
 <script>
-import {watch,computed, ref , reactive,watchEffect } from 'vue';
+//import { computed, ref, reactive, toRef, toRefs, watch, watchEffect } from 'vue'
+import { ref } from 'vue';
+import CartItem from './components/CartItem.vue';
+import useCart from './useCart';
 export default {
+  components: { CartItem },
   setup () {
-    const message =ref ("Darpan") 
-
-    const quantity = ref(1)
-    const item = reactive ({
-      name: "laptop 1",
-      price : 10
-    })
-
-    const increment = () => quantity.value++
-    const decrement= () => quantity.value--
-    const swapProduct = () => {
-      item.name = "Hp Du2077TU",
-      item.price = 54000
-    }
-
-    const total = computed (() => item.price * quantity.value)
-    //  watch(total, (newValue, oldValue) => {
-    //   console.log('newValue', newValue),
-    //   console.log('oldValue', oldValue)
+    const {items,addItem,removeItem }=useCart()
+    // const item = reactive({
+    //   name: "Product 1",
+    //   price: 10,
+    //   quantity: 1
     // })
+    // const increment = () => item.quantity++
+    
+    // const decrement = () => item.quantity--
+    // const swapProduct = () => {
+    //   item.name = "Product A"
+    //   item.price = 30
+    // }
+    // const total = computed(() => item.price * item.quantity)
+    // const { name, price, quantity } = toRefs(item)
+    // watch(() => item.quantity, () => {
+    //   if (item.quantity === 5) {
+    //     alert("you cannot add more item")
 
-
-    watch(() => quantity.value, () => {
-      if (quantity.value == 5) {
-        alert("You cannot add more no init")
-      }
-    }, { immediate: true })
-    watchEffect (()=> {
-      console.log('price changed:', item.price)
+    addItem ({
+      
+        id: 1,
+        name: "Product X",
+        price: 20,
+        quantity: 1
+      
     })
+    
 
-    return  {
-    message,
-    quantity,
-    increment,
-    decrement,
-    item,
-    swapProduct,
-    total
+    // const handleRemove = (data) => items.value.splice(0,1)// splice adds or remove array element
+    return { items ,removeItem}
+    // } { immediate: true })
+    // watchEffect(() => {
+    //   console.log('Price changed: ', item.price)
+    // })
+    
+    // return {
+    //   quantity,
+    //   increment,
+    //   decrement,
+    //   name,
+    //   price,
+    //   total,
+    //   swapProduct
+    // }
+   // return { items }
   }
-  }
-  
-  }
+}
 </script>
 
-<style>
+<template>
+  <div>
+  <!-- <h1>{{ name }} : {{ price }}</h1>
+  <button @click="swapProduct">Swap product</button>
+  <button @click="price++">Increment price</button>
 
+  <h2>{{ quantity }}</h2>
+  <button @click="increment">+</button>
+  <button @click="decrement">-</button>
+
+  <h3>Total: {{ total }}</h3> -->
+  <CartItem v-for="item in items" :cart-item="item" :key="item.id" @remove="removeItem" />
+</div>
+</template>
+
+<style scoped>
 </style>
+
+<!-- Lifecycyle hooks -->
+<!-- (in vue 3 as *, it is )
+Creation -
+*onMounted - it starts the Main DOM.
+*onupdated- it is call when the component re-renders due to changes in reactive dependancies.
+Destruction -
+*onunmounted- call when component is destroyed  and remove from the DOM
+--->
+
+<!--composable function:-a function that leverages Vue's Composition API to encapsulate and reuse stateful logic -->

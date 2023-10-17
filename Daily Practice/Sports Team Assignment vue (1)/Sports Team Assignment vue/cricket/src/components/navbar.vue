@@ -185,7 +185,7 @@ export default {
         dropText:'',
     }),
     mounted(){
-        axios.get('http://127.0.0.1:5500/player.json/player.json')
+        axios.get('http://127.0.0.1:5501/Sports%20Team%20Assignment%20vue/player.json/player.json')
         .then((resp)=>{
             console.log(resp.data)
             this.players = resp.data.players

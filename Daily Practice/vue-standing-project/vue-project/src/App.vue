@@ -13,5 +13,5 @@ export default {
 </script>
 
 <style >
-@import "./src/standing.css";
+@import './standing.css'
 </style>

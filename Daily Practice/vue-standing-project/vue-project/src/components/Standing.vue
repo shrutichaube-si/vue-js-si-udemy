@@ -41,7 +41,7 @@
            </div>
          </div>
          <div div="" class="table-data matches-play">
-         <p class="count">{{ team.Played }}</p>
+         <p class="count">{{ team.played }}</p>
          </div>
          <div div="" class="table-data matches-won">
            <p class="count">{{ team.wins }}</p>
