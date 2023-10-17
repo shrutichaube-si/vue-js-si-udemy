@@ -1,74 +1,121 @@
 <template>
   <div class="container py-3">
-    <ActionBar />
+    <ActionBar :selectedCount="selectedItems.length" @remove="handleRemove" />
 
     <div class="d-flex justify-content-between align-items-center py-2">
-      <h6 class="text-muted mb-0">Files</h6>
-      <button class="rounded-button">
-        <icon-arrow-up />
-      </button>
+      <h6 class="text-muted mb-0">Files {{ selectedItems }}</h6>
+      <sortToggler @sort-change="handleSortChange($event)"/>
     </div>
-    <div class="row">
-      <div class="col-md-3" v-for="item in 6">
-        <div class="card mb-4">
-          <div class="card-body text-center py-5">
-            <icon-type-common height="4em" width="4em" />
-          </div>
-          <div class="card-footer">
-            <div class="d-flex align-items-center">
-              <icon-type-common />
-              <span class="file-name">File {{ item }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card mb-4 selected-file">
-          <div class="card-body text-center py-5">
-            <icon-type-pdf height="4em" width="4em" />
-          </div>
-          <div class="card-footer">
-            <div class="d-flex align-items-center">
-              <icon-type-pdf />
-              <span class="file-name">File 7.pdf</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="card mb-4">
-          <img class="file-thumb" src="https://picsum.photos/id/1015/400/160" />
-          <div class="card-footer">
-            <div class="d-flex align-items-center">
-              <icon-type-image />
-              <span class="file-name">File 8.png</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <teleport to="#search-form">
+    <searchForm v-model="q"/>
+  </teleport>
+    <filesList :files="files" @select-change="handleSelectChange($event)"/>
+   <app-toast: show="toast.show" :message="toast.message" type="success" position="bottom-left" @hide="toast.show = false"/>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 import ActionBar from "../components/ActionBar.vue";
-
-export default {
-  components: { ActionBar },
-  mounted(){
-    this.fetchFiles();
-  },
-  data:() => ({
-    files:[]
-  }),
-  methods : {
-    fetchFiles() {
-      axios.get("http://127.0.0.1:5500/server/db.json")
-      .then(resp => console.log(resp))
-      .catch(error => console.error(error))
+import filesList from '../components/Files/filesList.vue';
+import sortToggler from '../components/sortToggler.vue';
+import filesApi from "../api/files";
+import {onMounted, reactive, ref, toRef, watch, watchEffect } from 'vue'
+import SearchForm from '../components/SearchForm.vue';
+const fetchFiles = async (query) => {
+      try {
+        const { data } =await filesApi.index(query);      
+        console.log("Fetched Files:", data); // Logging the fetched files
+      return data;
+      } catch (error) {
+        console.error(error)
       }
-    }
-  }
+      console.log()
+      };
 
+     const removeItem = async(item,files) => {
+      try {
+       const response = await filesApi.delete(item.id);
+       if(response.status === 200 || response.status === 204){
+
+       
+       const index = files.value.findIndex(file => file.id === item.id)
+      files.value.splice(index,1);
+      } }catch (error) {
+        console.error(error);
+      }
+     } 
+export default {
+  components: { ActionBar,filesList,sortToggler, SearchForm },
+  setup(){
+     const files = ref([]);
+     const query = reactive({
+      _sort: "name",
+      _order:"asc",
+      q: ""  //this is a json server way to perform full text search..we simply add q in query string & specify the search term.
+     });
+    const selectedItems = ref([]);
+
+    const toast = reactive({
+      show: false,
+      message: ""
+    });
+
+    const handleSelectChange = (items) => {
+      selectedItems.value = Array.from(items); // converting drom set to array
+    }
+
+     const handleSortChange = (payload) => {
+        query._sort = payload.column;
+        query._order = payload.order;
+     };
+ 
+
+     const handleRemove = () => {
+      if(confirm("Are you sure?")){
+        selectedItems.value.forEach((item) => removeItem(item,files));
+        selectedItems.value.splice(0);
+        toast.show = true;
+        toast.message = "Selected item(s) successfully removed";
+        //item represents the current iteration
+      }
+     }
+    // const fetchFiles = async () => {
+    //   try {
+    //     const { data } =await axios.get("http://localhost:3030/files")
+    //   files.value = data;
+    //   console.log("Fetched Files:", files.value); // Logging the fetched files
+    //   } catch (error) {
+    //     console.error(error)
+    //   }
+    //   console.log()
+    //   };
+
+      // onMounted(() => fetchFiles());
+      // onMounted(async () => (files.value = await fetchFiles(query)));
+      watchEffect(async () => (files.value = await fetchFiles(query)));
+    
+     return { files,handleSortChange, q: toRef(query,'q'),handleSelectChange,selectedItems,handleRemove,toast };
+  }}
+  // mounted(){
+  //   this.fetchFiles();
+  // }}
+  // data:() => ({
+  //   files:[]
+  // }),
+  // methods : {
+  //    async fetchFiles() {
+  //      try {
+  //        const { data } =await axios.get("http://localhost:3030/files")
+  //      this.files = data;
+  //      console.log("Fetched Files:", this.files); // Logging the fetched files
+  //      } catch (error) {
+  //        console.error(error)
+  //      }
+  //      console.log()
+  //      }
+  //   }
+  // }
+// console.log('Hello ji')
+// provide inject..second we use using teleport
 </script>
