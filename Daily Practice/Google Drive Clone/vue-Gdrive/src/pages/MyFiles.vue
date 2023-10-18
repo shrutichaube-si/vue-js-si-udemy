@@ -27,7 +27,7 @@
     @close="showModal = false"
      @file-updated="handleFileUpdated($event)" />
    </app-modal>
-   <div v-if="choosenFiles.length">Uploading...</div>
+   <UploaderPopup :files="choosenFiles"/>
 
   </div>
 </template>
@@ -42,6 +42,7 @@ import filesApi from "../api/files";
 import {onMounted, reactive, ref, toRef, watch, watchEffect } from 'vue'
 import SearchForm from '../components/SearchForm.vue';
 import DropZone from "../components/uploader/file-chooser/DropZone.vue"
+import UploaderPopup from "../components/uploader/popup/UploaderPopup.vue";
 const fetchFiles = async (query) => {
       try {
         const { data } =await filesApi.index(query);      
@@ -68,7 +69,7 @@ const fetchFiles = async (query) => {
       }
      } 
 export default {
-  components: { ActionBar,filesList,sortToggler, SearchForm,fileRenameForm, DropZone },
+  components: { ActionBar,filesList,sortToggler, SearchForm,fileRenameForm, DropZone, UploaderPopup },
   setup(){
      const files = ref([]);
      const query = reactive({
@@ -167,3 +168,13 @@ export default {
 //modal title
 //app-modal title="Rename" :show="showModal && selectedItems.length === 1  to make sure that we have only one item selected
 </script>
+
+<style scoped>
+  .uploader-popup {
+    width: 400px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+  }
+</style>

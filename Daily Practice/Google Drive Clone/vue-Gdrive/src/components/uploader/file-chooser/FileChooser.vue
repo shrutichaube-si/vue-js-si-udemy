@@ -3,7 +3,7 @@
     <button class="btn btn-outline-primary" @click="handleClick">
       <icon-upload /> Upload Files
     </button>
-    <input type="file" multiple style="display: none;" ref="file" @change="$emit ('file-choosen', $event.target.files)">
+    <input type="file" multiple style="display: none;" ref="file" @change="$emit ('files-choosen', $event.target.files)">
 </div>
 </template>
 
