@@ -25,7 +25,8 @@
    <app-modal title ="Rename" :show ="showModal && selectedItems.length ===1" @hide ="showModal">
     <FileRenameForm :file="selectedItems[0]" @close ="showModal = false"/>
    </app-modal>
-  <div  v-if="choosenFiles.length">Uploading ...</div>
+   <UploaderPopup :files="choosenFiles"/>
+  <!-- <div  v-if="choosenFiles.length">Uploading ...</div> -->
   </div>
 </template>
 
@@ -39,6 +40,7 @@ import{ ref,reactive ,watchEffect,watch, toRef }from 'vue';
 import FileRenameForm from "../components/files/FileRenameForm.vue";
 import DropZone from "../components/uploader/file-chooser/DropZone.vue"
 import SortToggler from "../components/SortToggler.vue";
+import UploaderPopup from "../components/uploader/popup/UploaderPopup.vue";
 // import { watchEffect } from 'vue';
 // const files = ref([])
   const  fetchFiles= async(query)=>{
@@ -64,7 +66,7 @@ import SortToggler from "../components/SortToggler.vue";
     }
   }
 export default {
-  components: { ActionBar, IconTypeCommon,FilesList,SortToggler ,SearchForm,FileRenameForm,DropZone},
+  components: { ActionBar, IconTypeCommon,FilesList,SortToggler ,SearchForm,FileRenameForm,DropZone,UploaderPopup},
   
   setup()
 {
