@@ -32,6 +32,6 @@ export default{
     }
   },
   components:{ fileChooser },
-  emits:['rename','remove']
+  emits:['rename','remove','files-choosen']
 }
 </script>

@@ -16,6 +16,22 @@
       "id": 3,
       "name": "File 6 .doc",
       "mimeType": "application/msword"
+    },
+    {
+      "name": "Screenshot 2023-08-20 172226.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-08-20-172226.png",
+      "path": "C:\\Users\\dhruv.solanki\\Desktop\\VueJS\\New folder\\vue-js-si-udemy\\vue-Gdrive\\server\\uploads\\screenshot-2023-08-20-172226.png",
+      "createdAt": 1697639736326,
+      "id": 7
+    },
+    {
+      "name": "Screenshot 2023-08-20 172226.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-08-20-172226.png",
+      "path": "C:\\Users\\dhruv.solanki\\Desktop\\VueJS\\New folder\\vue-js-si-udemy\\vue-Gdrive\\server\\uploads\\screenshot-2023-08-20-172226.png",
+      "createdAt": 1697640212805,
+      "id": 8
     }
   ]
 }
