@@ -1,33 +1,64 @@
 <template>
-    <div class="card shadow uploader-popup">
+    <div class="card shadow uploader-popup" v-if ="items.length">
         <div class="card-header bg-dark py-3">
             <div class="d-flex justify-content-between  align-items-center">
                <span class="text-light">
-                 Uploading
+              {{ uploadingStatus }}
                </span>
-               <div class ="popup-controls">  
-                <button class="rounded-buton me-2">
-                <icon-chevron-down/>
-               </button>
-               <button class="rounded-buton">
-                <icon-times/>
-               </button>  
-             </div>
+               <PopupControls   @toggle ="showPopupBody =!showPopupBody" @close ="handleClose"/>
             </div>
         </div>
-        <div  class = "uplaod-items">
+        <div  class = "upload-items"  v-show ="showPopupBody">
             <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex justify-content-between align-items-center "  v-for ="item in items" :key ="`item-${item.id}`">  
-            <p class ="upload-item">item.file.name</p>
-            <div class="upload-controls">x</div>
-            </li>
+            <UploadItem  v-for ="item in items" :key ="`item-${item.id}`" :item = "item"/>  
             </ul>
         </div>
     </div>
+   
 </template>
 <script>
-import{ref,watch} from "vue";
+import PopupControls from "./PopupControls.vue";
+import{ref,watch,computed} from "vue";
 import states from "../states"
+import UploadItem from "../Item/UploadItem.vue";
+
+
+const randomId =() =>
+        {
+            return Math.random().toString(36).substr(2,9);
+        } 
+         const getUploadItems =(files) =>{
+
+             return Array.from(files).map((file) => ({
+                id: randomId(),
+                file,
+                progress: 0,
+                state: states.WAITING,
+                response :null
+            }))
+         }
+
+
+
+
+
+
+const uploadingItemsCount = (items) =>{
+
+  return  computed(()=>
+         {
+            return items.value.filter
+            ((item)=> item.state ===states.WAITING || item.state === states.UPLOADING)
+            .length;
+         }).value;
+
+};
+
+
+
+
+
+
 export default {
 
 
@@ -38,33 +69,33 @@ export default {
         }
     },
 
+    components:{
+        PopupControls,
+        UploadItem
+    },
     setup(props,{emit})
     {
          const items = ref([]);
+
+         const showPopupBody = ref(true)
           
-        const randomId =() =>
-        {
-            return Math.random().toString(36).substr(2,9);
-        } 
-         const getUploadItems =(files) =>{
-
-             return Array.from(files).map(file => ({
-                id:randomId(),
-                file,
-                progress:0,
-                state :states.WAITING,
-                response :null
-            }))
+         const handleClose  =  () =>{
+            if(confirm("Cancel all upload ?"))
+            {
+                items.value.splice(0);
+            }
          }
+          const uploadingStatus = computed(() =>{
+            return `Uploading ${uploadingItemsCount(items)} items`;
+         })
 
-        
 
          watch(() => props.files,(newFiles) =>{
             items.value.unshift(...getUploadItems(newFiles))
          });
 
 
-         return{items};
+         return{items ,uploadingItemsCount,uploadingStatus,handleClose,showPopupBody};
     }
 
 

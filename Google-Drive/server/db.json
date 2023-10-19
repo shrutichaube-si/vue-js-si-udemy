@@ -15,6 +15,30 @@
       "id": 4,
       "name": "File 4.pdf",
       "mimeType": "application/pdf"
+    },
+    {
+      "name": "Pink and Purple Ganesh Chaturthi WhatsApp Status.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/pink-and-purple-ganesh-chaturthi-whatsapp-status.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\pink-and-purple-ganesh-chaturthi-whatsapp-status.png",
+      "createdAt": 1697639220686,
+      "id": 6
+    },
+    {
+      "name": "Screenshot 2023-07-24 152509.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-07-24-152509.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\screenshot-2023-07-24-152509.png",
+      "createdAt": 1697639553926,
+      "id": 7
+    },
+    {
+      "name": "Screenshot (1).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(1).png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\screenshot-(1).png",
+      "createdAt": 1697641372803,
+      "id": 8
     }
   ]
 }
