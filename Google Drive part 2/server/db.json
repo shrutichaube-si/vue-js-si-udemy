@@ -26,6 +26,54 @@
       "id": 5,
       "name": "File 5.xls",
       "mimeType": "application/vnd.ms-excel"
+    },
+    {
+      "name": "Screenshot (48).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(48).png",
+      "path": "C:\\Users\\shruti.chaube\\Desktop\\Vue project new\\vue-js-si-udemy\\Google Drive part 2\\server\\uploads\\screenshot-(48).png",
+      "createdAt": 1697634911583,
+      "id": 15
+    },
+    {
+      "name": "Screenshot (4).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(4).png",
+      "path": "C:\\Users\\shruti.chaube\\Desktop\\Vue project new\\vue-js-si-udemy\\Google Drive part 2\\server\\uploads\\screenshot-(4).png",
+      "createdAt": 1697640160512,
+      "id": 66
+    },
+    {
+      "name": "Screenshot (69).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(69).png",
+      "path": "C:\\Users\\shruti.chaube\\Desktop\\Vue project new\\vue-js-si-udemy\\Google Drive part 2\\server\\uploads\\screenshot-(69).png",
+      "createdAt": 1697695818517,
+      "id": 67
+    },
+    {
+      "name": "Screenshot (17).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(17).png",
+      "path": "C:\\Users\\shruti.chaube\\Desktop\\Vue project new\\vue-js-si-udemy\\Google Drive part 2\\server\\uploads\\screenshot-(17).png",
+      "createdAt": 1697695922552,
+      "id": 68
+    },
+    {
+      "name": "Screenshot (68).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(68).png",
+      "path": "C:\\Users\\shruti.chaube\\Desktop\\Vue project new\\vue-js-si-udemy\\Google Drive part 2\\server\\uploads\\screenshot-(68).png",
+      "createdAt": 1697696109143,
+      "id": 69
+    },
+    {
+      "name": "Screenshot (68).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(68).png",
+      "path": "C:\\Users\\shruti.chaube\\Desktop\\Vue project new\\vue-js-si-udemy\\Google Drive part 2\\server\\uploads\\screenshot-(68).png",
+      "createdAt": 1697696110683,
+      "id": 70
     }
   ]
 }
