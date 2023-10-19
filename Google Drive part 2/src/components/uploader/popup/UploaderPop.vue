@@ -10,17 +10,20 @@
             <ul class="list-group list-group-flush">
             <UploadItem  
             v-for="(item,index) in items" :key="index"
-            :item="item"/>
+            :item="item"
+            @change="handleItemChange"
+            />
         </ul>
         </div>
     </div>
 </template>
 
 <script>
-import PopUpControls from "./PopUpControls.vue";
+
 import UploadItem from "../item/UploadItem.vue";
 import { ref , watch,computed} from "vue";
 import states from "../states";
+import PopUpControls from './PopUpControls.vue';
 
 const randomId =()=>{
             return Math.random().toString(36).substr(2,9);
@@ -71,11 +74,21 @@ components:{PopUpControls,UploadItem},
             return `Uploading ${uploadingItemsCount(items)} items`;
         });
 
+        const handleItemChange=(item)=>{
+            if(item.state=== states.COMPLETE){
+                emit('upload-complete',item.response);
+                const index = items.value.findIndex(i=>i.id===item.id);
+                items.value.splice(index,1,item);
+
+            }
+        }
+
         watch(()=>props.files,(newFiles)=>{
              items.value.unshift(...getUploadItems(newFiles));
         });
-        return {items,uploadingItemsCount,uploadingStatus,showPopBody,handleClose};
-    }
+        return {items,uploadingItemsCount,uploadingStatus,showPopBody,handleClose,handleItemChange};
+    },
+    emits:['upload-complete']
 }
 </script>
 <style scoped>

@@ -1,20 +1,100 @@
 <template>
-    <div class="upload-controls">
-    {{ item.state }} - {{ item.progress }}
-     <button @click="$emit('cancel')">c</button>
-     <button @click="$emit('retry')">r</button>
-     <button @click="$emit('locate')">l</button>
+    <div class="upload-controls" @mouseenter="hovered=true" @mouseleave="false">
+    <progress-ring :progress="item.progress" v-if="!hovered"></progress-ring>
+    <div class="upload-action" v-else>
+     <div class="action-cancel" v-if="isUploading"><button @click="$emit('cancel')"><icon-times></icon-times></button></div>
+     <div class="action-canceled" v-if="isCanceled"><button @click="$emit('retry')"><icon-clockwise></icon-clockwise></button></div>
+    <div class="action-locate" v-if="isComplete"><button @click="$emit('locate')"><icon-folder></icon-folder></button></div>
+</div>
 </div>
 </template>
 
 <script>
+import IconFolder from '../../icons/IconFolder.vue'
+import IconTimes from '../../icons/IconTimes.vue'
+import ProgressRing from './ProgressRing.vue'
+import { ref } from 'vue'
+import useUploadStates from '../../../composable/upload-states'
+
 export default{
+  components: { ProgressRing, IconTimes, IconFolder },
     emits:['cancel','retry','locate'],
     props:{
         item:{
             type:Object,
             required:true
         }
+    },
+    setup(props){
+        const hovered = ref(false);
+        return {hovered, ...useUploadStates(props.item)};
     }
 }
 </script>
+<style scoped>
+.upload-controls,
+.upload-action,
+.action-cancel,
+.action-canceled,
+.action-complete,
+.action-locate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-controls {
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.upload-controls:hover {
+  background-color: #d9d9d9;
+  fill: white;
+}
+
+.upload-controls button {
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+.upload-action,
+.upload-controls button {
+  width: 32px;
+  height: 32px;
+}
+
+.action-cancel,
+.action-canceled,
+.action-complete,
+.action-locate {
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+}
+
+.action-cancel {
+  background-color: #333;
+}
+
+.action-canceled {
+  background-color: #dc3545;
+}
+
+.action-complete {
+  background-color: #28a745;
+}
+
+.action-locate {
+  position: relative;
+  background-color: #d9d9d9;
+}
+
+.upload-action svg {
+  width: 70%;
+  height: 70%;
+  color: #fff;
+}
+</style>

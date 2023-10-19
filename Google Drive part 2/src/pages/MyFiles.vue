@@ -16,7 +16,7 @@
     </teleport>
     <DropZone @files-dropped="choosenFiles=$event" 
      :showMessage="!files.length">
-      <FilesList :files="files" @select-change="handleSelectChange($event)" />
+      <FilesList :files="files" @select-change="handleSelectChange($event)" :selected="selectedItems" />
     </DropZone>
    
     <app-toast
@@ -37,7 +37,7 @@
         @file-updated="handleFileUpdated($event)"
       />
     </app-modal>
-    <UploaderPop :files="choosenFiles"></UploaderPop>
+    <UploaderPop :files="choosenFiles" @upload-complete="handleUploadComplete"></UploaderPop>
   </div>
 </template>
 
@@ -50,7 +50,7 @@ import FilesList from "../components/files/FilesList.vue";
 import FileRenameForm from "../components/files/FileRenameForm.vue";
 import DropZone from "../components/uploader/file-chooser/DropZone.vue";
 import UploaderPop from "../components/uploader/popup/UploaderPop.vue";
-import { ref, reactive, watchEffect, toRef } from "vue";
+import { ref, reactive, watchEffect, toRef ,provide} from "vue";
 
 const fetchFiles = async (query) => {
   try {
@@ -94,6 +94,8 @@ export default {
       selectedItems.value = Array.from(items);
     };
 
+    provide('setSelectedItem',handleSelectChange)
+
     const handleSortChange = (payload) => {
       query._sort = payload.column;
       query._order = payload.order;
@@ -116,6 +118,10 @@ export default {
       toast.message = `File '${oldFile.name}' renamed to '${file.name}'`;
     };
 
+const handleUploadComplete =(item)=>{
+  files.value.push(item);
+};
+
     watchEffect(async () => (files.value = await fetchFiles(query)));
 
     return {
@@ -128,7 +134,8 @@ export default {
       toast,
       showModal,
       handleFileUpdated,
-      choosenFiles 
+      choosenFiles ,
+      handleUploadComplete
     };
   },
 };

@@ -1,22 +1,25 @@
 <template>
 <li class="list-group-item d-flex justify-content-between align-items-center">
-<p class="upload-item">
+<p :class="uploadItemClasses">
       <component :is="iconFileType"/>
     <span>{{ item.file.name }}</span>
 </p>
-<upload-controls :item="item" @cancel="handleCancel" @retry="handleRetry"></upload-controls>
+<span class="failed-text" v-show="isCanceled"> Upload canceled</span>
+<upload-controls :item="item" @cancel="handleCancel" @retry="handleRetry" @locate="handleLocate"></upload-controls>
 </li>
 </template>
 
 <script>
 import UploadControls from './UploadControls.vue';
-import { reactive,onMounted } from 'vue';
+import { reactive ,onMounted,computed,watch,inject } from 'vue';
 import { useIconFileType } from '../../../composable/icon-file-type';
 import filesApi from '../../../api/files';
 import states from '../states';
 import axios from "axios";
+import useUploadStates from '../../../composable/upload-states';
 
 
+ 
 
 const createFormData = (file)=>{
     const formData = new FormData();
@@ -56,12 +59,29 @@ export default {
     },
 
     components:{UploadControls},
-    setup(props){
+    setup(props,{emit}){
         const uploadItem = reactive(props.item);
         let source = axios.CancelToken.source();
 
+       const {isCanceled} =  useUploadStates(uploadItem);
+
+        const uploadItemClasses = computed(()=>{
+          return {
+            "upload-item":true,
+            "failed":isCanceled.value
+          };
+        });
+
+        const setSelectedItem = inject('setSelectedItem');
+        const handleLocate = ()=>{
+          setSelectedItem([uploadItem.response]);
+        }
+
         onMounted(()=>startUpload(uploadItem,source));
 
+        watch(()=>[uploadItem.progress,uploadItem.state],()=>{
+          emit('change',uploadItem);
+        });
         const handleCancel=()=>{
             try{
                 console.log("hello")
@@ -79,9 +99,10 @@ export default {
 
         return {
             iconFileType:useIconFileType(props.item.file.type),
-            uploadItem,handleCancel,handleRetry
-        }
-    }
+            uploadItem,handleCancel,handleRetry,isCanceled,uploadItemClasses,handleLocate
+        };
+    },
+    emits:['change']
 }
 </script>
 <style scoped>
