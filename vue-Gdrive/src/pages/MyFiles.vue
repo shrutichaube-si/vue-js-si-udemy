@@ -10,7 +10,7 @@
     <searchForm v-model="q"/>
   </teleport>
   <DropZone @files-dropped="choosenFiles = $event">
-    <filesList :files="files" @select-change="handleSelectChange($event)"/>
+    <filesList :files="files" @select-change="handleSelectChange($event)" :selected="selectedItems"/>
   </DropZone>
    <app-toast :show="toast.show" :message="toast.message" type="success" position="bottom-left" @hide="toast.show = false"/>
 
@@ -18,7 +18,7 @@
     <fileRenameForm :file="selectedItems[0]" @close="showModal = false" @file-updated="handleFileUpdated($event)"/>
    </app-modal>
   <!-- <div v-if="choosenFiles.length">Uploading ...</div> -->
-  <UploaderPopup :files="choosenFiles"/>
+  <UploaderPopup :files="choosenFiles" @upload-complete="handleUploadComplete"/>
   </div>
   
 </template>
@@ -32,7 +32,7 @@ import fileRenameForm from '../components/Files/fileRenameForm.vue'
 import DropZone from "../components/uploader/file-chooser/DropZone.vue"
 import UploaderPopup from "../components/uploader/popup/UploaderPopup.vue";
 import filesApi from "../api/files";
-import {onMounted, reactive, ref, toRef, watch, watchEffect } from 'vue'
+import {onMounted, reactive, ref, toRef, watch, watchEffect,provide } from 'vue'
 import SearchForm from '../components/SearchForm.vue';
 const fetchFiles = async (query) => {
       try {
@@ -79,7 +79,9 @@ export default {
 
     const handleSelectChange = (items) => {
       selectedItems.value = Array.from(items); // converting drom set to array
-    }
+    };
+
+    provide('setSelectedItem',handleSelectChange);
 
      const handleSortChange = (payload) => {
         query._sort = payload.column;
@@ -116,10 +118,15 @@ export default {
         files.value.splice(index,1,file);
         toast.show = true;
         toast.message = `File '${oldFile.name}' renamed to '${file.name}'`;
+      };
+
+      const handleUploadComplete = (item) => {
+        files.value.push(item);
       }
+
       watchEffect(async () => (files.value = await fetchFiles(query)));
     
-     return { files,handleSortChange, q: toRef(query,'q'),handleSelectChange,selectedItems,handleRemove,toast,showModal,handleFileUpdated,choosenFiles};
+     return { files,handleSortChange, q: toRef(query,'q'),handleSelectChange,selectedItems,handleRemove,toast,showModal,handleFileUpdated,choosenFiles,handleUploadComplete};
   }}
   // mounted(){
   //   this.fetchFiles();

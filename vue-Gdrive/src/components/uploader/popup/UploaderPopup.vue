@@ -8,7 +8,7 @@
     </div>
     <div class="upload-items" v-show="showPopupBody">
         <ul class="list-group list-group-flush">
-<Uploaditem v-for="item in items" :key="item.id" :item="item"/>
+<Uploaditem v-for="item in items" :key="item.id" :item="item" @change="handleItemChange"/>
    
 </ul>
     </div>
@@ -65,13 +65,22 @@ export default{
         return `Uploading ${uploadingItemsCount(items)} items`;
        }) 
 
+       const handleItemChange = (item) => {
+        if(item.state === states.COMPLETE) {
+            emit('upload-complete', item.response);
+            const index = items.value.findIndex(i => i.id === item.id);
+            items.value.splice(index, 1, item);
+        }
+       }
+
          watch(() => props.files,(newFiles) =>{
             items.value.unshift(...getUploadItems(newFiles));
          } );    
-         return{items,uploadingStatus,showPopupBody,handleClose};
+         return{items,uploadingStatus,showPopupBody,handleClose,handleItemChange};
          //This watch function watches for changes in the props.files. When props.files change, it updates the items array with the new files using the getUploadItems function.
         // The items array is then returned to be accessible in the template.
-    }
+    },
+    emits: ['upload-complete']
 }
 // In the code snippet you provided, item.state refers to the state of each individual file item being uploaded. The items array likely contains multiple objects, each representing a file to be uploaded. Each of these objects has a state property which represents the current state of the file.
 // The computed property uploadingItemsCount calculates the number of items that are either in the "waiting" state or the "uploading" state. It filters the items array based on the state property of each item, and then it calculates the length of the filtered array. The result represents the count of items that are either waiting to be uploaded or currently being uploaded.
