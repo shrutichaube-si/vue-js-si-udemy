@@ -18,14 +18,14 @@
     @files-dropped ="choosenFiles =$event"
       :show-message="!files.length"
     >
-      <FilesList  :files="files" @select-change="handleSelectChange($event)"/>
+      <FilesList  :files="files" @select-change="handleSelectChange($event)" :selected = "selectedItems"/>
     </DropZone>
   
    <app-toast :show ="toast.show" :message = "toast.message" type ="success" position ="bottom-left" @hide="toast.show = false"/>
    <app-modal title ="Rename" :show ="showModal && selectedItems.length ===1" @hide ="showModal">
     <FileRenameForm :file="selectedItems[0]" @close ="showModal = false"/>
    </app-modal>
-   <UploaderPopup :files="choosenFiles"/>
+   <UploaderPopup :files="choosenFiles"  @upload-complete="handleUploadComplete"/>
   <!-- <div  v-if="choosenFiles.length">Uploading ...</div> -->
   </div>
 </template>
@@ -36,7 +36,7 @@ import  filesApi from"../api/files"
 import ActionBar from "../components/ActionBar.vue";
 import IconTypeCommon from '../components/icons/IconTypeCommon.vue';
 import FilesList from "../components/files/FilesList.vue";
-import{ ref,reactive ,watchEffect,watch, toRef }from 'vue';
+import{ ref,reactive ,watchEffect,watch, toRef ,provide}from 'vue';
 import FileRenameForm from "../components/files/FileRenameForm.vue";
 import DropZone from "../components/uploader/file-chooser/DropZone.vue"
 import SortToggler from "../components/SortToggler.vue";
@@ -68,6 +68,7 @@ import UploaderPopup from "../components/uploader/popup/UploaderPopup.vue";
 export default {
   components: { ActionBar, IconTypeCommon,FilesList,SortToggler ,SearchForm,FileRenameForm,DropZone,UploaderPopup},
   
+  
   setup()
 {
   const files = ref([]);
@@ -83,7 +84,7 @@ export default {
 
   const toast  = reactive({
     show:false,
-    message :"Test message"
+    message :"Text message"
   })
 
   const showModal = ref(false);
@@ -95,6 +96,13 @@ export default {
   const handleSelectChange = (items) => {
     selectedItems.value =Array.from(items)
   }
+
+
+  //to make the function available to all the child components
+provide('setSelectedItem' , handleSelectChange)
+
+
+
   const handleSortChange =(payload) => {
     query._sort =payload.column;
     query._order = payload.order
@@ -114,8 +122,23 @@ export default {
      }
   }
 
+const handleFileUpdated = (file) =>{
+
+  const oldFile = selectedItems.value[0];
+  const index = files.value.findIndex((item) => item.id === file.id ) ;
+  files.value.splice(index,1,file);
+  toast.show = true ;
+  toast.message = `File '${oldFile.name}'  renamed to '${file.name}'`
+
+}
 
 
+
+
+const handleUploadComplete = (item) =>{
+
+  files.value.push(item);
+}
 
 
   watchEffect(async()=>(files.value = await fetchFiles(query)))
@@ -126,8 +149,17 @@ export default {
   // );
 
   return {
-    files,handleSortChange,q:toRef(query,"q") , handleSelectChange,selectedItems,handleRemove,toast,showModal,
-     choosenFiles
+    files,
+    handleSortChange,
+    q:toRef(query,"q") ,
+     handleSelectChange,
+     selectedItems,
+     handleRemove,
+     toast,
+     showModal,
+     handleFileUpdated,
+     choosenFiles,
+     handleUploadComplete
   }
 },
 

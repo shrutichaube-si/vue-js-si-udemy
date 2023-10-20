@@ -10,7 +10,12 @@
         </div>
         <div  class = "upload-items"  v-show ="showPopupBody">
             <ul class="list-group list-group-flush">
-            <UploadItem  v-for ="item in items" :key ="`item-${item.id}`" :item = "item"/>  
+            <UploadItem 
+             v-for ="item in items" 
+             :key ="`item-${item.id}`" 
+             :item = "item"
+             @change ="handleItemChange"
+             />  
             </ul>
         </div>
     </div>
@@ -90,16 +95,25 @@ export default {
          })
 
 
+         const handleItemChange =(item) =>  {
+            if(item.state ===   states.COMPLETE)
+            {
+                emit('upload-complete',item.response)
+                const index = items.value.findIndex(i => i.id === item.id);
+                items.value.splice(index,1,item);
+            }
+         }
+
          watch(() => props.files,(newFiles) =>{
             items.value.unshift(...getUploadItems(newFiles))
          });
 
 
-         return{items ,uploadingItemsCount,uploadingStatus,handleClose,showPopupBody};
+         return{items ,uploadingItemsCount,uploadingStatus,handleClose,showPopupBody,handleItemChange};
     }
 
-
-
+,
+emits:['upload-complete']
 
 
 
