@@ -1,0 +1,79 @@
+{
+  "files": [
+    {
+      "id": 1,
+      "name": "File 1.jpg",
+      "url": "https://picsum.photos/id/1015/350/200",
+      "mimeType": "image/jpeg"
+    },
+    {
+      "id": 2,
+      "name": "File 2.png",
+      "url": "https://picsum.photos/id/1039/350/200",
+      "mimeType": "image/png"
+    },
+    {
+      "id": 3,
+      "name": "File 3.doc",
+      "mimeType": "application/msword"
+    },
+    {
+      "id": 4,
+      "name": "File 4.pdf",
+      "mimeType": "application/pdf"
+    },
+    {
+      "id": 5,
+      "name": "File 5.xls",
+      "mimeType": "application/vnd.ms-excel"
+    },
+    {
+      "name": "Screenshot (12).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(12).png",
+      "path": "C:\\Users\\shruti.chaube\\Desktop\\Vue project new\\vue-js-si-udemy\\Google Drive part 3\\server\\uploads\\screenshot-(12).png",
+      "createdAt": 1697987978783,
+      "id": 12
+    },
+    {
+      "name": "Screenshot (17).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(17).png",
+      "path": "C:\\Users\\shruti.chaube\\Desktop\\Vue project new\\vue-js-si-udemy\\Google Drive part 3\\server\\uploads\\screenshot-(17).png",
+      "createdAt": 1697988379142,
+      "id": 13
+    },
+    {
+      "name": "Screenshot (7).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(7).png",
+      "path": "C:\\Users\\shruti.chaube\\Desktop\\Vue project new\\vue-js-si-udemy\\Google Drive part 3\\server\\uploads\\screenshot-(7).png",
+      "createdAt": 1697988402889,
+      "id": 14
+    },
+    {
+      "name": "Screenshot (6).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(6).png",
+      "path": "C:\\Users\\shruti.chaube\\Desktop\\Vue project new\\vue-js-si-udemy\\Google Drive part 3\\server\\uploads\\screenshot-(6).png",
+      "createdAt": 1697988402899,
+      "id": 15
+    },
+    {
+      "name": "Screenshot (20).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(20).png",
+      "path": "C:\\Users\\shruti.chaube\\Desktop\\Vue project new\\vue-js-si-udemy\\Google Drive part 3\\server\\uploads\\screenshot-(20).png",
+      "createdAt": 1697988402900,
+      "id": 16
+    },
+    {
+      "name": "Screenshot (4).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(4).png",
+      "path": "C:\\Users\\shruti.chaube\\Desktop\\Vue project new\\vue-js-si-udemy\\Google Drive part 3\\server\\uploads\\screenshot-(4).png",
+      "createdAt": 1697988547564,
+      "id": 18
+    }
+  ]
+}
