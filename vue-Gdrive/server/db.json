@@ -18,28 +18,12 @@
       "mimeType": "application/msword"
     },
     {
-      "name": "Screenshot 2023-08-20 172226.png",
-      "mimeType": "image/png",
-      "url": "http://localhost:3030/uploads/screenshot-2023-08-20-172226.png",
-      "path": "C:\\Users\\dhruv.solanki\\Desktop\\VueJS\\New folder\\vue-js-si-udemy\\vue-Gdrive\\server\\uploads\\screenshot-2023-08-20-172226.png",
-      "createdAt": 1697698936775,
-      "id": 9
-    },
-    {
       "name": "393582065_665266932383626_4717165201388223343_n.mp4",
       "mimeType": "video/mp4",
       "url": "http://localhost:3030/uploads/393582065_665266932383626_4717165201388223343_n.mp4",
       "path": "C:\\Users\\dhruv.solanki\\Desktop\\VueJS\\New folder\\vue-js-si-udemy\\vue-Gdrive\\server\\uploads\\393582065_665266932383626_4717165201388223343_n.mp4",
       "createdAt": 1697701046662,
       "id": 36
-    },
-    {
-      "name": "Screenshot 2023-08-20 172226.png",
-      "mimeType": "image/png",
-      "url": "http://localhost:3030/uploads/screenshot-2023-08-20-172226.png",
-      "path": "C:\\Users\\dhruv.solanki\\Desktop\\VueJS\\New folder\\vue-js-si-udemy\\vue-Gdrive\\server\\uploads\\screenshot-2023-08-20-172226.png",
-      "createdAt": 1697716874594,
-      "id": 39
     },
     {
       "name": "Screenshot 2023-08-20 172226.png",
@@ -54,24 +38,40 @@
       "mimeType": "image/png",
       "url": "http://localhost:3030/uploads/screenshot-2023-08-20-172226.png",
       "path": "C:\\Users\\dhruv.solanki\\Desktop\\VueJS\\New folder\\vue-js-si-udemy\\vue-Gdrive\\server\\uploads\\screenshot-2023-08-20-172226.png",
-      "createdAt": 1697718695363,
-      "id": 41
-    },
-    {
-      "name": "Screenshot 2023-08-20 172226.png",
-      "mimeType": "image/png",
-      "url": "http://localhost:3030/uploads/screenshot-2023-08-20-172226.png",
-      "path": "C:\\Users\\dhruv.solanki\\Desktop\\VueJS\\New folder\\vue-js-si-udemy\\vue-Gdrive\\server\\uploads\\screenshot-2023-08-20-172226.png",
-      "createdAt": 1697719096173,
-      "id": 42
-    },
-    {
-      "name": "Screenshot 2023-08-20 172226.png",
-      "mimeType": "image/png",
-      "url": "http://localhost:3030/uploads/screenshot-2023-08-20-172226.png",
-      "path": "C:\\Users\\dhruv.solanki\\Desktop\\VueJS\\New folder\\vue-js-si-udemy\\vue-Gdrive\\server\\uploads\\screenshot-2023-08-20-172226.png",
       "createdAt": 1697719247955,
       "id": 43
+    },
+    {
+      "name": "Screenshot 2023-08-20 172226.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-08-20-172226.png",
+      "path": "C:\\Users\\dhruv.solanki\\Desktop\\VueJS\\New folder\\vue-js-si-udemy\\vue-Gdrive\\server\\uploads\\screenshot-2023-08-20-172226.png",
+      "createdAt": 1697795489275,
+      "id": 44
+    },
+    {
+      "name": "Screenshot 2023-08-20 172226.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-08-20-172226.png",
+      "path": "C:\\Users\\dhruv.solanki\\Desktop\\VueJS\\New folder\\vue-js-si-udemy\\vue-Gdrive\\server\\uploads\\screenshot-2023-08-20-172226.png",
+      "createdAt": 1697992709439,
+      "id": 48
+    },
+    {
+      "name": "393582065_665266932383626_4717165201388223343_n.mp4",
+      "mimeType": "video/mp4",
+      "url": "http://localhost:3030/uploads/393582065_665266932383626_4717165201388223343_n.mp4",
+      "path": "C:\\Users\\dhruv.solanki\\Desktop\\VueJS\\New folder\\vue-js-si-udemy\\vue-Gdrive\\server\\uploads\\393582065_665266932383626_4717165201388223343_n.mp4",
+      "createdAt": 1697992747513,
+      "id": 50
+    },
+    {
+      "name": "IMG_8186.HEIC",
+      "mimeType": "application/octet-stream",
+      "url": "http://localhost:3030/uploads/img_8186.heic",
+      "path": "C:\\Users\\dhruv.solanki\\Desktop\\VueJS\\New folder\\vue-js-si-udemy\\vue-Gdrive\\server\\uploads\\img_8186.heic",
+      "createdAt": 1697994516604,
+      "id": 55
     }
   ]
 }

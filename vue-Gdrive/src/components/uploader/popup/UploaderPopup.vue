@@ -7,6 +7,7 @@
         </div>
     </div>
     <div class="upload-items" v-show="showPopupBody">
+       
         <ul class="list-group list-group-flush">
 <Uploaditem v-for="item in items" :key="item.id" :item="item" @change="handleItemChange"/>
    
@@ -15,7 +16,7 @@
    </div> 
 </template>
 <script>
-import {watch,ref,computed} from 'vue'
+import {watch,ref,computed, registerRuntimeCompiler} from 'vue'
 import states from "../states"
 import PopupControls from './PopupControls.vue';
 import Uploaditem from '../item/Uploaditem.vue';
@@ -38,11 +39,9 @@ const randomId = () => {
 
 //The getUploadItems function takes in a list of files, converts them to an array, and maps each file to an object containing an ID, 
 //the file itself, upload progress, state, and response. The states.WAITING is one of the predefined states for the upload process.
-const uploadingItemsCount = (items) => {
-   return computed(() =>{
-        return items.value.filter((item) => item.state === states.WAITING || item.state === states.UPLOADING).length;
-       }).value;
-};
+
+
+
 
 export default{
     components:{ PopupControls, PopupControls,Uploaditem },
@@ -57,26 +56,63 @@ export default{
         const showPopupBody = ref(true);
 
         const handleClose = () => {
+
+           const { uploadingItemsCount } =  uploadStatistics(items);
+           if(uploadingItemsCount )
+           {
             if(confirm("Cancel all Uploads?")){
+                cancelUploadingItems();
                 items.value.splice(0);
             }
+           }
+           else{
+            items.value.splice(0);
+           }
         } 
-       const uploadingStatus = computed(() => {
-        return `Uploading ${uploadingItemsCount(items)} items`;
-       }) 
 
+       const uploadingStatus = computed(() => {
+       const {uploadingItemsCount,failedItemsCount,completeItemsCount} = uploadStatistics(items);
+       if(uploadingItemsCount > 0){
+        return `Uploading ${uploadingItemsCount(items)} items`;
+       }else if (completeItemsCount > 0){
+        return `${completeItemsCount} uploads complete`
+       } else if (failedItemsCount > 0) {
+        return `$(failedItemsCount) uploads failed`;
+       }
+        
+       }); 
+ 
+        const overallProgress = computed(() => {
+          const {processingItemsCount,processingItemsProgress} = uploadStatistics(items) ;
+          if(processingItemsCount < 1){
+            return 0;
+          }
+         return Math.round(processingItemsProgress / processingItemsCount)
+        });  
+ 
+    
        const handleItemChange = (item) => {
         if(item.state === states.COMPLETE) {
             emit('upload-complete', item.response);
             const index = items.value.findIndex(i => i.id === item.id);
             items.value.splice(index, 1, item);
         }
+       };
+
+       const cancelUploadingItems = () => {
+        items.value.map((item) => {
+            if(item.state === WAITING || item.state === states.UPLOADING){
+                item.state = states.CANCELED;
+                item.progress = 0;
+            }
+            return item;
+        });
        }
 
          watch(() => props.files,(newFiles) =>{
             items.value.unshift(...getUploadItems(newFiles));
          } );    
-         return{items,uploadingStatus,showPopupBody,handleClose,handleItemChange};
+         return{items,uploadingStatus,showPopupBody,handleClose,handleItemChange,overallProgress,cancelUploadingItems};
          //This watch function watches for changes in the props.files. When props.files change, it updates the items array with the new files using the getUploadItems function.
         // The items array is then returned to be accessible in the template.
     },

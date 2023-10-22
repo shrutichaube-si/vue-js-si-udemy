@@ -1,21 +1,40 @@
 <template>
     <div class="upload-controls" @mouseenter="hovered = true" @mouseleave="hovered = false">
-     <ProgressRing :progress="item.progess" v-if="!hovered"/>
-    <div class="upload-action" v-else>
-        <div class="action-cancel"><button @click="$emit('cancel')"><icon-times/></button></div>
+
+<template v-if="!hovered">
+  <ProgressRing :progress="item.progess" v-if="isUploading"/>
+  <div class="upload-action" v-else>
+     <div class="action-canceled" v-if="isCanceled">
+    <icon-exclamation/>
     </div>
-    <div class="upload-action">
-        <!-- <div class="action-canceled"><button @click="$emit('retry')"><icon-clockwise/></button></div>
+     <div class="action-complete" v-else-if="isComplete">
+    <icon-check/>
     </div>
-    <div class="upload-action">
-        <div class="action-locate"><button @click="$emit('locate')"><icon-folder-open/></button></div> -->
-    </div>
-</div>
+  </div>
+</template>
+     
+    
+    
+     <template v-else>
+       <div class="upload-action" >
+          <div class="action-cancel" v-if="isUploading">
+            <button @click="$emit('cancel')"><icon-times/></button>
+          </div>
+          <div class="action-canceled" v-else-if="isCanceled">
+            <button @click="$emit('retry')"><icon-clockwise/></button>
+          </div>
+          <div class="action-locate"  v-else-if="isComplete"><button @click="$emit('locate')"><icon-folder-open/></button>
+          </div>
+           </div>
+     </template>
+  </div>
+
 </template>
 <script>
 import IconFolderOpen from '../../icons/IconFolderOpen.vue';
 import ProgressRing from './ProgressRing.vue';
 import { ref } from 'vue'
+import useUploadStates from '../../../composable/upload-states';
 export default {
     components:{ ProgressRing, IconFolderOpen},
     emits:['cancel','retry','locate'],
@@ -25,10 +44,10 @@ export default {
           required:true  
         }
     },
-    setup(){
+    setup(props){
         const hovered = ref(false);
 
-        return{hovered}
+        return{hovered,...useUploadStates(props.item)};
     }
 }
 

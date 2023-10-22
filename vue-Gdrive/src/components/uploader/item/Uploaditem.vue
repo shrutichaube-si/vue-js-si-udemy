@@ -16,6 +16,7 @@ import IconTypeCommon from '../../icons/IconTypeCommon.vue'
 import filesApi from "../../../api/files"
 import states from '../states';
 import axios from "axios";
+import useUploadStates from '../../../composable/upload-states';
 
 
 
@@ -43,9 +44,8 @@ const startUpload = async(upload,source) => {
        upload.state = states.COMPLETE;
        upload.response = data;
     } catch (error) {
-       if(axios.isCancel(error)){
-         upload.state = states.CANCELED;
-       } else {
+       if(!axios.isCancel(error)){
+          
          upload.state = states.FAILED;
        }
         // console.log("hello")
@@ -65,8 +65,8 @@ export default {
     setup(props, { emit }){
       let source = axios.CancelToken.source();
       const uploadItem = reactive(props.item);
-      const isCanceled = computed(() => uploadItem.state === states.CANCELED);
-
+     
+      const {isCanceled} = useUploadStates(uploadItem);
       const uploadItemClasses = computed(() =>{
         return{
           "upload-item": true,
@@ -89,11 +89,16 @@ export default {
     });
 
 
-    watch(() => [uploadItem.progress, uploadItem.state],() => {
-      emit('change', uploadItem);
+    watch(
+      () => [uploadItem.progress, uploadItem.state],
+      () => { 
+        if(uploadItem.state == states.CANCELED){
+          source.cancel();
+        }
+        emit('change', uploadItem);
     });
      const handleCancel = () => {
-         source.cancel();
+         uploadItem.state = states.CANCELED;
      };
 
      const handleRetry = () => {
