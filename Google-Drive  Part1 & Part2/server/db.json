@@ -1,0 +1,300 @@
+{
+  "files": [
+    {
+      "id": 2,
+      "name": "File 2.png",
+      "url": "https://picsum.photos/id/1039/350/200",
+      "mimeType": "image/png"
+    },
+    {
+      "id": 3,
+      "name": "File 3.doc",
+      "mimeType": "application/msword"
+    },
+    {
+      "id": 4,
+      "name": "File 4.pdf",
+      "mimeType": "application/pdf"
+    },
+    {
+      "name": "Pink and Purple Ganesh Chaturthi WhatsApp Status.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/pink-and-purple-ganesh-chaturthi-whatsapp-status.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\pink-and-purple-ganesh-chaturthi-whatsapp-status.png",
+      "createdAt": 1697639220686,
+      "id": 6
+    },
+    {
+      "name": "Screenshot 2023-07-24 152509.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-07-24-152509.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\screenshot-2023-07-24-152509.png",
+      "createdAt": 1697639553926,
+      "id": 7
+    },
+    {
+      "name": "Screenshot (1).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(1).png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\screenshot-(1).png",
+      "createdAt": 1697641372803,
+      "id": 8
+    },
+    {
+      "name": "Sushma.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-10-12-135106.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\screenshot-2023-10-12-135106.png",
+      "createdAt": 1697698761824,
+      "id": 9
+    },
+    {
+      "name": "Screenshot (2).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(2).png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\screenshot-(2).png",
+      "createdAt": 1697699042551,
+      "id": 10
+    },
+    {
+      "name": "Screenshot 2023-07-24 152509.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-07-24-152509.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\screenshot-2023-07-24-152509.png",
+      "createdAt": 1697699830963,
+      "id": 12
+    },
+    {
+      "name": "Screenshot 2023-09-20 190156.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-09-20-190156.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\screenshot-2023-09-20-190156.png",
+      "createdAt": 1697699868032,
+      "id": 13
+    },
+    {
+      "name": "Screenshot 2023-07-24 152509.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-07-24-152509.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\screenshot-2023-07-24-152509.png",
+      "createdAt": 1697700139209,
+      "id": 14
+    },
+    {
+      "name": "Screenshot 2023-10-12 140747.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-10-12-140747.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\screenshot-2023-10-12-140747.png",
+      "createdAt": 1697700818611,
+      "id": 15
+    },
+    {
+      "name": "Screenshot 2023-10-12 140747.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-10-12-140747.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\screenshot-2023-10-12-140747.png",
+      "createdAt": 1697700903212,
+      "id": 16
+    },
+    {
+      "name": "Screenshot 2023-10-12 140747.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-10-12-140747.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\screenshot-2023-10-12-140747.png",
+      "createdAt": 1697700912968,
+      "id": 17
+    },
+    {
+      "name": "Screenshot 2023-10-12 140747.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-10-12-140747.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\screenshot-2023-10-12-140747.png",
+      "createdAt": 1697700922600,
+      "id": 18
+    },
+    {
+      "name": "Screenshot 2023-10-12 140747.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-10-12-140747.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\screenshot-2023-10-12-140747.png",
+      "createdAt": 1697700924659,
+      "id": 19
+    },
+    {
+      "name": "Screenshot 2023-08-20 204846.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-08-20-204846.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\screenshot-2023-08-20-204846.png",
+      "createdAt": 1697701321116,
+      "id": 24
+    },
+    {
+      "name": "Screenshot 2023-07-24 152509.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-07-24-152509.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\screenshot-2023-07-24-152509.png",
+      "createdAt": 1697701917726,
+      "id": 25
+    },
+    {
+      "name": "Screenshot (1).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(1).png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\screenshot-(1).png",
+      "createdAt": 1697702228606,
+      "id": 26
+    },
+    {
+      "name": "Wallpaper.jpg",
+      "mimeType": "image/jpeg",
+      "url": "http://localhost:3030/uploads/wallpaper.jpg",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\wallpaper.jpg",
+      "createdAt": 1697706931376,
+      "id": 27
+    },
+    {
+      "name": "Wallpaper.jpg",
+      "mimeType": "image/jpeg",
+      "url": "http://localhost:3030/uploads/wallpaper.jpg",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\wallpaper.jpg",
+      "createdAt": 1697706934619,
+      "id": 28
+    },
+    {
+      "name": "img1.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/img1.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\img1.png",
+      "createdAt": 1697712753642,
+      "id": 34
+    },
+    {
+      "name": "img3.jpg",
+      "mimeType": "image/jpeg",
+      "url": "http://localhost:3030/uploads/img3.jpg",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\img3.jpg",
+      "createdAt": 1697715767863,
+      "id": 35
+    },
+    {
+      "name": "img3.jpg",
+      "mimeType": "image/jpeg",
+      "url": "http://localhost:3030/uploads/img3.jpg",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\img3.jpg",
+      "createdAt": 1697715772022,
+      "id": 36
+    },
+    {
+      "name": "img1.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/img1.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\img1.png",
+      "createdAt": 1697717753532,
+      "id": 38
+    },
+    {
+      "name": "DC.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/dc.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\dc.png",
+      "createdAt": 1697719721220,
+      "id": 39
+    },
+    {
+      "name": "Cat.jpg",
+      "mimeType": "image/jpeg",
+      "url": "http://localhost:3030/uploads/cat.jpg",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\cat.jpg",
+      "createdAt": 1697784960886,
+      "id": 41
+    },
+    {
+      "name": "Cat.jpg",
+      "mimeType": "image/jpeg",
+      "url": "http://localhost:3030/uploads/cat.jpg",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\cat.jpg",
+      "createdAt": 1697784964528,
+      "id": 42
+    },
+    {
+      "name": "Cat.jpg",
+      "mimeType": "image/jpeg",
+      "url": "http://localhost:3030/uploads/cat.jpg",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\cat.jpg",
+      "createdAt": 1697784964749,
+      "id": 43
+    },
+    {
+      "name": "Cat.jpg",
+      "mimeType": "image/jpeg",
+      "url": "http://localhost:3030/uploads/cat.jpg",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\cat.jpg",
+      "createdAt": 1697784964969,
+      "id": 44
+    },
+    {
+      "name": "Cat.jpg",
+      "mimeType": "image/jpeg",
+      "url": "http://localhost:3030/uploads/cat.jpg",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\cat.jpg",
+      "createdAt": 1697784965132,
+      "id": 45
+    },
+    {
+      "name": "Cat.jpg",
+      "mimeType": "image/jpeg",
+      "url": "http://localhost:3030/uploads/cat.jpg",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\cat.jpg",
+      "createdAt": 1697784965344,
+      "id": 46
+    },
+    {
+      "name": "Cat.jpg",
+      "mimeType": "image/jpeg",
+      "url": "http://localhost:3030/uploads/cat.jpg",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\cat.jpg",
+      "createdAt": 1697784965651,
+      "id": 47
+    },
+    {
+      "name": "img1.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/img1.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\img1.png",
+      "createdAt": 1697786414770,
+      "id": 48
+    },
+    {
+      "name": "img1.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/img1.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\img1.png",
+      "createdAt": 1697786513049,
+      "id": 49
+    },
+    {
+      "name": "Cat.jpg",
+      "mimeType": "image/jpeg",
+      "url": "http://localhost:3030/uploads/cat.jpg",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\cat.jpg",
+      "createdAt": 1697966005038,
+      "id": 50
+    },
+    {
+      "name": "Pink and Purple Ganesh Chaturthi WhatsApp Status (2).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/pink-and-purple-ganesh-chaturthi-whatsapp-status-(2).png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\pink-and-purple-ganesh-chaturthi-whatsapp-status-(2).png",
+      "createdAt": 1697973573144,
+      "id": 51
+    },
+    {
+      "name": "mp4.mp4",
+      "mimeType": "video/mp4",
+      "url": "http://localhost:3030/uploads/mp4.mp4",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google-Drive\\server\\uploads\\mp4.mp4",
+      "createdAt": 1697973926898,
+      "id": 52
+    }
+  ]
+}
