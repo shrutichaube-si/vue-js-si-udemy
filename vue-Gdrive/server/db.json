@@ -72,6 +72,30 @@
       "path": "C:\\Users\\dhruv.solanki\\Desktop\\VueJS\\New folder\\vue-js-si-udemy\\vue-Gdrive\\server\\uploads\\img_8186.heic",
       "createdAt": 1697994516604,
       "id": 55
+    },
+    {
+      "name": "393582065_665266932383626_4717165201388223343_n.mp4",
+      "mimeType": "video/mp4",
+      "url": "http://localhost:3030/uploads/393582065_665266932383626_4717165201388223343_n.mp4",
+      "path": "C:\\Users\\dhruv.solanki\\Desktop\\VueJS\\New folder\\vue-js-si-udemy\\vue-Gdrive\\server\\uploads\\393582065_665266932383626_4717165201388223343_n.mp4",
+      "createdAt": 1697998272715,
+      "id": 56
+    },
+    {
+      "name": "Screenshot 2023-08-20 172226.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-08-20-172226.png",
+      "path": "C:\\Users\\dhruv.solanki\\Desktop\\VueJS\\New folder\\vue-js-si-udemy\\vue-Gdrive\\server\\uploads\\screenshot-2023-08-20-172226.png",
+      "createdAt": 1697998311547,
+      "id": 57
+    },
+    {
+      "name": "Screenshot 2023-08-20 172226.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-08-20-172226.png",
+      "path": "C:\\Users\\dhruv.solanki\\Desktop\\VueJS\\New folder\\vue-js-si-udemy\\vue-Gdrive\\server\\uploads\\screenshot-2023-08-20-172226.png",
+      "createdAt": 1697998382541,
+      "id": 58
     }
   ]
 }
