@@ -8,12 +8,13 @@
       @click.meta.exact.stop="selectMultiple(file)"
       :class="{ 'selected-file': isSelected(file) }"
     />
+    {{ console.log(files) }}
   </div>
 </template>
 
 <script>
 import FileItem from "./FileItem.vue";
-import { reactive } from "vue";
+import useItemsSelection from "../../composable/items-selection";
 
 export default {
   components: { FileItem },
@@ -25,36 +26,10 @@ export default {
     selected: {
       type: Array,
       default: () => [],
-    },
+    }, 
   },
   setup(props, { emit }) {
-    const selectedItems = reactive(new Set());
-
-    const selectOne = (item) => {
-      selectedItems.clear();
-      selectedItems.add(item);
-      emit("select-change", selectedItems);
-    };
-
-    const selectMultiple = (item) => {
-      if (selectedItems.has(item)) {
-        selectedItems.delete(item);
-      } else {
-        selectedItems.add(item);
-      }
-      emit("select-change", selectedItems);
-    };
-
-    const isSelected = (item) =>
-      selectedItems.has(item) ||
-      (props.selected.length && props.selected[0].id === item.id);
-
-    const clearSelected = () => {
-      selectedItems.clear();
-      emit("select-change", selectedItems);
-    };
-
-    return { selectOne, selectMultiple, isSelected, clearSelected };
+    return useItemsSelection(props.selected,emit)
   },
   emits: ["select-change"],
 };

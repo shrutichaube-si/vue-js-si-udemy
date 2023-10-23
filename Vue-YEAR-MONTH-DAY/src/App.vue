@@ -7,12 +7,12 @@
   
     <button @click="getyears">Click here</button>
 
-<select name="cars" id="cars">
+<select >
   <option  @click="getyears" v-for="year in years" :key="year">{{ year }}</option>
   
 </select>
 
-<select name="cars" id="cars">
+<select>
   <option  v-for="month in months" :key="month">{{ month }}</option>
 </select> 
   </div> 

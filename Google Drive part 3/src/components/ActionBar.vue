@@ -7,9 +7,16 @@
       border-bottom
       pt-2
       pb-3
-    "
+    " 
   >
+  <div>
+  <button 
+  @click="$emit('create-folder')" 
+  class="me-2 btn btn-outline-success">
+    <icon-folder-plus/> New Folder
+  </button>
     <FileChooser @files-choosen="$emit('files-choosen', $event)" />
+  </div>
 
     <div class="action-buttons" v-show="selectedCount">
       <button
@@ -44,6 +51,6 @@ export default {
     },
   },
   components: { FileChooser },
-  emits: ["rename", "remove", "files-choosen"],
+  emits: ["rename", "remove", "files-choosen","create-folder"],
 };
 </script>

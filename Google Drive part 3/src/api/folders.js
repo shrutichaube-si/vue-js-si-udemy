@@ -1,4 +1,4 @@
 import httpCrud from "./http-crud";
 
-export default httpCrud("files");
+export default httpCrud("folders");
 
