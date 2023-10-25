@@ -105,6 +105,14 @@
       "path": "C:\\Users\\shruti.chaube\\Desktop\\Vue project new\\vue-js-si-udemy\\Google Drive part 3\\server\\uploads\\screenshot-(4).png",
       "createdAt": 1698067915303,
       "id": 9
+    },
+    {
+      "name": "Screenshot (4).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(4).png",
+      "path": "C:\\Users\\shruti.chaube\\Desktop\\Vue project new\\vue-js-si-udemy\\Google Drive part 3\\server\\uploads\\screenshot-(4).png",
+      "createdAt": 1698132026002,
+      "id": 10
     }
   ]
 }
