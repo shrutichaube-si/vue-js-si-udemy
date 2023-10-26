@@ -22,7 +22,7 @@ export default {
         }
     },
     components: { DropZoneMessage},
-    setup () {
+    setup (props , {emit}) {
 
         const dragged = ref(false);
         const handleDrop = (event) => {
@@ -31,7 +31,7 @@ export default {
         }
         return {dragged, handleDrop};
     },
-    emits: ['file-dropped']
+    emits: ['files-dropped']
 }
 </script>
 

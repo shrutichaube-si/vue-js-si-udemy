@@ -15,7 +15,7 @@
     <searchForm v-model="q"/>
   </teleport>
   <DropZone @files-dropped="choosenFiles = $event" :show-message="!files.length">
-    <filesList :files="files" @select-change="handleSelectChange($event)"/>
+    <filesList :files="files" @select-change="handleSelectChange($event)" :selected="selectedItems" />
   </DropZone>
    <app-toast :show="toast.show" :message="toast.message" type="success" position="bottom-left" @hide="toast.show = false"/>
 
@@ -27,7 +27,7 @@
     @close="showModal = false"
      @file-updated="handleFileUpdated($event)" />
    </app-modal>
-   <UploaderPopup :files="choosenFiles"/>
+   <UploaderPopup :files="choosenFiles" @upload-complete="handleUploadComplete"/>
 
   </div>
 </template>
@@ -39,7 +39,7 @@ import filesList from '../components/Files/filesList.vue';
 import sortToggler from '../components/sortToggler.vue';
 import fileRenameForm from '../components/Files/fileRenameForm.vue'
 import filesApi from "../api/files";
-import {onMounted, reactive, ref, toRef, watch, watchEffect } from 'vue'
+import {onMounted, reactive, ref, toRef, watch, watchEffect, provide } from 'vue'
 import SearchForm from '../components/SearchForm.vue';
 import DropZone from "../components/uploader/file-chooser/DropZone.vue"
 import UploaderPopup from "../components/uploader/popup/UploaderPopup.vue";
@@ -88,7 +88,9 @@ export default {
 
     const handleSelectChange = (items) => {
       selectedItems.value = Array.from(items); // converting drom set to array
-    }
+    };
+
+    provide('setSelectedItem',handleSelectChange);
 
      const handleSortChange = (payload) => {
         query._sort = payload.column;
@@ -113,9 +115,12 @@ export default {
           const index = file.value.findIndex(item => item.id === file.id);
           file.value.splice(index, 1, file);
           toast.show = true;
-          toast.message = `File '${oldFile.name}' renamed to '${file.name}'`;
+          toast.message = `File '${oldFile.name}' renamed to '${file.name}'`
+      };
+      const handleUploadComplete = (item) => {
+        files.value.push(item);
+      }
 
-        }
     // const fetchFiles = async () => {
     //   try {
     //     const { data } =await axios.get("http://localhost:3030/files")
@@ -140,7 +145,8 @@ export default {
       toast,
       showModal,
       handleFileUpdated,
-      choosenFiles
+      choosenFiles,
+      handleUploadComplete
      };
   }}
   // mounted(){

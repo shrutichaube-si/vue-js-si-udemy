@@ -21,6 +21,22 @@
       "id": 5,
       "name": "File 5.xls",
       "mimeType": "application/vnd.ms-excel"
+    },
+    {
+      "name": "Screenshot 2023-09-21 104655.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-09-21-104655.png",
+      "path": "C:\\Users\\Darpan.chaudhari\\Desktop\\Vue Udemy\\vue-js-si-udemy\\Daily Practice\\Google Drive Clone\\vue-Gdrive\\server\\uploads\\screenshot-2023-09-21-104655.png",
+      "createdAt": 1698044705482,
+      "id": 6
+    },
+    {
+      "name": "Screenshot 2023-09-21 104655.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-09-21-104655.png",
+      "path": "C:\\Users\\Darpan.chaudhari\\Desktop\\Vue Udemy\\vue-js-si-udemy\\Daily Practice\\Google Drive Clone\\vue-Gdrive\\server\\uploads\\screenshot-2023-09-21-104655.png",
+      "createdAt": 1698044709350,
+      "id": 7
     }
   ]
 }
