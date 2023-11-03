@@ -15,7 +15,7 @@ io.on('connection', (socket) => {
     console.log(`user ${socket.id} is connected.`)
 
     socket.on('message', data => {
-        socket.broadcast.emit('message:received', data)
+        socket.local.emit('message:received', data)
     })
 
     socket.on('disconnect', () => {
