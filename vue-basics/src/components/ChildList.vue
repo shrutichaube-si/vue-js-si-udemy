@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <h1>Child Component</h1>
     <button @click="updateTitle">Click to update parent</button>
     <h2>{{ tags }}</h2>
@@ -15,4 +15,4 @@ export default{
     }
    }
 }
-</script>
+</script> -->

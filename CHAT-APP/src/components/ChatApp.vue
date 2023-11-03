@@ -37,10 +37,17 @@ export default{
             // console.log(this.currentUser)
             this.joined=true;
             this.socketInstance = io("http://localhost:3000");
+
+            this.socketInstance.on(
+                "received", (data)=>{
+                    console.log(data)
+                    this.messages=this.messages.concat(data)
+                }
+            )
         },
         sendMessage(){
             this.addMessage()
-            this.text=""
+            this.text="";
         },
         addMessage(){
             const message={
@@ -50,8 +57,11 @@ export default{
 
             };
             this.messages = this.messages.concat(message);
-        }
-    }
+
+            this.socketInstance.emit('message', message)
+        },
+    },
+    
 }
 </script>
 <style scoped>

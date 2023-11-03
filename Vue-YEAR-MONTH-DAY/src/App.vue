@@ -37,7 +37,6 @@ export default{
   }
    }else{
   for(let i =this.startYear;i<=this.endYear;i++){
-   
     this.years.push(i);
   }
 }

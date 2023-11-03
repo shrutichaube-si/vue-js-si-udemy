@@ -1,4 +1,6 @@
-<template>
+ <!-- // emit  -->
+ 
+ <!-- <template>
   <h1>{{ title }}</h1>
 
   <child-list v-on:changeTitle="updateTitle($event)"></child-list>
@@ -20,4 +22,18 @@ export default{
   components: { ChildList },
  
 }
+</script> -->
+
+
+
+<template>
+  
+</template>
+<script>
+export default {
+  data:()=>({
+    
+  })
+}
 </script>
+
