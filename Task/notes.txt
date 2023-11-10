@@ -1,0 +1,67 @@
+const path = require('path')
+ const multer = require('multer')
+const storage = multer.diskStorage({
+    destination: (req,file,cb) => {
+        cb(null,'Images')
+    },
+     filename:(req,file,cb) => {
+        console.log(file)
+        cb(null,Date.now() + path.extname(file.originalname))
+     }
+})
+const upload = multer({
+    storage: storage,
+    limits:{fileSize: 4 * 1024 * 1024}
+})
+app.post('/countries', upload.single('image') ,(req,res) )
+
+//
+const path = require('path'): This line imports the Node.js path module, which provides utilities for working with file and directory paths.
+//
+const multer = require('multer'): This line imports the multer middleware, which is used for handling multipart/form-data, primarily used for uploading files.
+//
+const storage = multer.diskStorage({ ... }): This code block initializes the storage engine to be used by multer. The diskStorage function specifies
+that files will be stored on disk and allows you to define the destination and filename. In this case:
+
+The destination function specifies the directory where uploaded files will be stored. Here, it's set to the 'Images' directory.
+The filename function is used to define the filename of the uploaded file. In this case, it concatenates the current date with the original filename extension using Date.now() and path.extname(file.originalname).
+//
+const upload = multer({ ... }): This line initializes the multer middleware with the provided storage options and file size limits. The upload variable will be used to handle file uploads.
+//
+app.post('/countries', upload.single('image'), (req, res) => { ... }): This code sets up a POST route for the '/countries' endpoint. The upload.single('image') middleware 
+is used to handle a single file upload with the field name 'image'. When a POST request is made to this endpoint, the upload.single middleware processes the uploaded file, and the resulting file information can be accessed in the req.file object within the route handler.
+//
+In summary, the provided code sets up multer for handling file uploads in your Express application. It specifies the storage location and file name for uploaded files and sets a file size limit of 4 MB. The upload.single middleware is used to handle a single file upload with the field name 'image' for the '/countries' endpoint.
+
+
+////////Multer for applying only a specific set of fietypes:
+fileFilter: (req,file,cb) => {
+        const fileTypes = /jpeg|jpg|png/;
+        const mimeType = fileTypes.test(file.mimetype);
+        const extname = fileTypes.test(path.extname(file.originalname).toLowerCase());
+        if(mimeType && extname){
+            return cb(null,true)
+        }else{
+            cb("Error: Image with particular Filetype only allowed!")
+        }
+    }
+
+//
+fileFilter: (req, file, cb) => { ... }: This code block is part of the multer configuration. It defines a custom file filter function that checks whether the uploaded file has an allowed file type.
+//
+const fileTypes = /jpeg|jpg|png/;: This line creates a regular expression (regex) pattern that matches the allowed file types. In this case, it allows the 'jpeg', 'jpg', and 'png' file extensions.
+//
+const mimeType = fileTypes.test(file.mimetype);: This line checks if the MIME type of the uploaded file matches the allowed file types. The test method of the regex pattern checks whether the file.mimetype matches the specified file types.
+//
+const extname = fileTypes.test(path.extname(file.originalname).toLowerCase());: This line checks if the file extension of the uploaded file matches the allowed file types. The path.extname method extracts the extension from the file.originalname, and the toLowerCase method is used to ensure that the file extension is in lowercase before comparison.
+//
+if (mimeType && extname) { return cb(null, true); } else { cb("Error: Image with particular Filetype only allowed!"); }: This conditional statement checks whether both the MIME type and the file extension of the uploaded file match the allowed file types. If the file type is allowed, the function calls cb(null, true) to accept the file. If the file type does not match, the function calls cb("Error: Image with particular Filetype only allowed!") to reject the file and return an error message.
+//
+By including this custom fileFilter function in the multer configuration, you ensure that only files with MIME types and file extensions matching 'jpeg', 'jpg', or 'png' will be accepted for upload. Other file types will be rejected, and an appropriate error message will be returned.
+
+
+
+
+
+
+

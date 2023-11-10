@@ -85,7 +85,7 @@ mounted: async function()
             playerTeam.includes(this.selectedTeam.toLowerCase()))
         );
       });
-    },
+    },  
   },
   methods: {
     dropPlayers(){
