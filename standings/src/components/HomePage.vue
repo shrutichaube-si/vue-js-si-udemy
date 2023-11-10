@@ -123,7 +123,7 @@ export default {
         players: {},
     }),
     mounted: async function(){
-        const res = await axios.get('http://127.0.0.1:5500/data/standings.json');
+        const res = await axios.get('http://127.0.0.1:5500/JSON/data/standings.json');
         this.players = res.data.standings.groups[0].teams.team
     }
 }
