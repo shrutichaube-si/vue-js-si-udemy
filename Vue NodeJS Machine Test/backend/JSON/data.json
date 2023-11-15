@@ -33,25 +33,6 @@
           "name": "Jamaica",
           "image": "jamaican_flag.png",
           "rank": 5
-        },
-        {},
-        {
-          "name": "shruti",
-          "id": 123,
-          "rank": 3,
-          "image": "japanese_flag.png"
-        },
-        {
-          "name": "shruti",
-          "id": 123,
-          "rank": 3,
-          "image": "japanese_flag.png"
-        },
-        {
-          "name": "China",
-          "id": 111111,
-          "rank": 1,
-          "image": "chinese_flag.png"
         }
       ]
     },
@@ -129,11 +110,6 @@
           "name": "Vietnam",
           "image": "vietnamese_flag.png",
           "rank": 5
-        },
-        {
-          "name": "JAideeep",
-          "id": "1234",
-          "rank": "23"
         }
       ]
     },
@@ -170,16 +146,6 @@
           "name": "Morocco",
           "image": "moroccan_flag.png",
           "rank": 5
-        },
-        {
-          "name": null,
-          "id": null,
-          "rank": null
-        },
-        {
-          "name": null,
-          "id": null,
-          "rank": null
         }
       ]
     },
@@ -266,24 +232,10 @@
           "rank": 1
         },
         {
-          "name": "New Zealand",
-          "id": "8",
-          "rank": "56"
-        },
-        {
-          "name": "sushma",
+          "name": "shruti",
           "id": "1",
-          "rank": "4"
-        },
-        {
-          "name": "wasi",
-          "id": "1",
-          "rank": "5"
-        },
-        {
-          "name": "hello",
-          "id": "1234",
-          "rank": "1"
+          "rank": "12",
+          "image": "aus.png"
         }
       ]
     }

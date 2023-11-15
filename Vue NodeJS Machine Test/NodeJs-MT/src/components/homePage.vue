@@ -17,6 +17,7 @@
   <div class="card-body">
     <h5 class="card-title">Country Name: {{ this.selectedCountryName.name }}</h5>
     <p>id: {{ this.selectedCountryName.id }}</p>
+    <p>image:{{ this.selectedCountryName.image}}</p>
     <p>Rank:{{ this.selectedCountryName.rank }}</p>
   </div>
 </div>
@@ -43,7 +44,6 @@
   <button type="button" @click="updateData" class="btn btn-primary">Add Data</button>
 </form>
 
-
 </template>
 
 <script>
@@ -66,28 +66,22 @@ export default {
   },
   computed:{
     updateData(){
-      console.log(this.image)
-      axios.post("http://localhost:8080/post",{id:this.id,name:this.name,rank:this.rank,selectedContinent:this.selectedContinent}).then((res)=>{
-        console.log(res)
-        // this.getCountryData()
-      }).catch((err)=>{console.log(err)})
-      axios.post("http://localhost:8080/upload",this.image ,{
-        headers: {
-          "Content-Type": "multipart/form-data"
-        },
-        headers: {
-    'Content-Type': 'multipart/form-data',
-},
 
-    transformRequest: (data) => {
-        return data
-    },}).then((res)=>{
-        console.log(res)
-      })
+       const formData = new FormData();
+       formData.append("image", this.image);
+       formData.append("id",this.id);
+       formData.append("name",this.name);
+       formData.append("rank",this.rank);
+       formData.append("selectedContinent",this.selectedContinent);
+       console.log(this.image)
+      axios.post("http://localhost:8080/post",formData,
+    ).then((res)=>{
+          console.log(res)
+      }).catch((err)=>{console.log(err)})
     },
 
-    getCountryByContinent(){
-      
+
+      getCountryByContinent(){
       if(!this.selectedContinent){
         this.newCountry = null
       }
@@ -95,21 +89,16 @@ export default {
       this.newCountry = this.continents.filter(element=>element.name === this.selectedContinent);
       this.newCountry = this.newCountry[0].countries;
       }
-      
-     
     },
     getCountryByCountryName(){
-      
       this.selectedCountryName =this.newCountry.filter(element=>element.name===this.selectedCountry);
       this.selectedCountryName = this.selectedCountryName[0];
     },
     
   },
   methods:{
-    uploadImage(e){
-      console.log(e)
-      this.image = e.target.files[0];
-
+    uploadImage(event){
+      this.image = event.target.files[0];
     } 
   },
  
