@@ -35,64 +35,34 @@
           "image": ""
         },
         {
-          "name": "nigeria",
-          "id": "23",
-          "rank": "23",
-          "image": {}
-        },
-        {
-          "name": "shruti",
-          "id": "1111",
-          "rank": "11111",
-          "image": {}
-        },
-        {
-          "name": "ireland",
-          "id": "13",
-          "rank": "13",
-          "image": {}
-        },
-        {
-          "name": "jkbh",
+          "name": "new Zealand",
           "id": "12",
           "rank": "12",
-          "image": {}
+          "image": {
+            "fieldname": "image",
+            "originalname": "new-zealand.jpg",
+            "encoding": "7bit",
+            "mimetype": "image/jpeg",
+            "destination": "./Images",
+            "filename": "1700066481101.jpg",
+            "path": "Images/1700066481101.jpg",
+            "size": 20200
+          }
         },
         {
-          "name": "njncd",
-          "id": "123",
-          "rank": "123",
-          "image": {}
-        },
-        {
-          "name": "jhugh",
-          "id": "123",
-          "rank": "123",
-          "image": {}
-        },
-        {
-          "name": "njnjn",
-          "id": "1234",
-          "rank": "123",
-          "image": {}
-        },
-        {
-          "name": "cdnbc",
-          "id": "123",
-          "rank": "1223",
-          "image": {}
-        },
-        {
-          "name": "hvg",
+          "name": "new Zealand",
           "id": "12",
-          "rank": "5",
-          "image": {}
-        },
-        {
-          "name": "jdch",
-          "id": "12",
-          "rank": "33",
-          "image": {}
+          "rank": "12",
+          "image": {
+            "fieldname": "image",
+            "originalname": "new-zealand.jpg",
+            "encoding": "7bit",
+            "mimetype": "image/jpeg",
+            "destination": "./Images",
+            "filename": "1700066619827.jpg",
+            "path": "Images/1700066619827.jpg",
+            "size": 20200
+          }
         }
       ]
     },
@@ -111,6 +81,21 @@
           "name": "India",
           "image": "./Images/flag-of-india.webp",
           "rank": 1
+        },
+        {
+          "name": "new Zealand",
+          "id": "12",
+          "rank": "12",
+          "image": {
+            "fieldname": "image",
+            "originalname": "new-zealand.jpg",
+            "encoding": "7bit",
+            "mimetype": "image/jpeg",
+            "destination": "./Images",
+            "filename": "1700067801290.jpg",
+            "path": "Images/1700067801290.jpg",
+            "size": 20200
+          }
         }
       ]
     },
