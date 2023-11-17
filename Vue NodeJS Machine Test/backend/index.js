@@ -26,7 +26,6 @@ const upload = multer({
 //     }catch(error){
 //         console.error("error",error);
 //     }
-    
 // })
 
 app.use(bodyParser.json()); 
@@ -41,7 +40,7 @@ app.get('/getData',(req,res) => {
     const result = data.continents;
     res.send(result);
 })
-app.get('/getCountry', (req, res) => {
+app.get('/getCountry', (req, res) => {4
     const result = data.continents.map(element => element.countries.map(ele => ele.name)).flat();
     res.send(result);
 });
@@ -75,14 +74,12 @@ app.get('/countries/:id', (req, res) => {
         console.error("An error occurred:", error);
     }
 });
-
 app.post('/post',upload.single('image'),(req,res)=>{
     try{
         const {
             name,
             id,
             rank,
-            
             selectedContinent
         } = req.body;
         const image = req.file.filename
@@ -93,7 +90,6 @@ app.post('/post',upload.single('image'),(req,res)=>{
                 res.send({message:'country added ', country:{name,id,rank}});
                 console.log("done")
             }
-
         })
     }catch(error){
         console.error("An error has occured while uploading: ",error);

@@ -12,21 +12,21 @@
     </option>
   </select>
   <br>
+  <!-- :src="getImagePath(selectedCountryName.image)" -->
   <div class="card" style="width: 18rem;" >
-  <img class="card-img-top" :src= this.selectedCountryName.image alt="Card image cap">
+  <img class="card-img-top" src="helo"  alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">Country Name: {{ this.selectedCountryName.name }}</h5>
     <p>id: {{ this.selectedCountryName.id }}</p>
-    <p>image:{{ this.selectedCountryName.image}}</p>
+    
     <p>Rank:{{ this.selectedCountryName.rank }}</p>
   </div>
 </div>
 <br>
-
 <form action="" method="post" enctype="multipart/form-data">
   <div class="row">
     <div class="col">
-      <input type="text" v-model="id" class="form-control" placeholder="Country id">
+      <input type="number" v-model="id" class="form-control" placeholder="Country id">
     </div>
     <br>
     <div class="col">
@@ -34,7 +34,7 @@
     </div>
     <br>
     <div class="col">
-      <input type="text" v-model="rank" class="form-control" placeholder="Country rank">
+      <input type="number" v-model="rank" class="form-control" placeholder="Country rank">
     </div>  
     <div>
       <br>
@@ -43,7 +43,6 @@
   </div>
   <button type="button" @click="updateData" class="btn btn-primary">Add Data</button>
 </form>
-
 </template>
 
 <script>
@@ -66,7 +65,6 @@ export default {
   },
   computed:{
     updateData(){
-
        const formData = new FormData();
        formData.append("image", this.image);
        formData.append("id",this.id);
@@ -79,7 +77,6 @@ export default {
           console.log(res)
       }).catch((err)=>{console.log(err)})
     },
-
 
       getCountryByContinent(){
       if(!this.selectedContinent){
@@ -94,12 +91,14 @@ export default {
       this.selectedCountryName =this.newCountry.filter(element=>element.name===this.selectedCountry);
       this.selectedCountryName = this.selectedCountryName[0];
     },
-    
   },
   methods:{
     uploadImage(event){
       this.image = event.target.files[0];
-    } 
+    } ,
+    // getImagePath(filename) {
+    //   return `http://localhost:8080/upload/images/${filename}`;
+    // },
   },
  
   mounted: async function () {
@@ -117,7 +116,6 @@ export default {
     }catch(error){
       console.error("Error occured",error);
     }
-   
   }
 };
 </script>
