@@ -39,19 +39,17 @@ export default {
   },
   methods: {
     login() {
-      // sessionStorage.setItem("email", this.email);
-      //sessionStorage.setItem("password",this.password);
-
       if (this.email == config.cred.username && this.password == config.cred.password) {
-        this.loginpage = true;
+        //this.loginpage = true;
+        sessionStorage.setItem("login","true")
         alert("login successful");
       } else {
         alert("invalid user");
       }
     },
-    logout() {
-      this.loginpage = false;
-    },
+    // logout() {
+    //   this.loginpage = false;
+    // },
   },
 };
 </script>
