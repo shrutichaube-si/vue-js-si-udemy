@@ -1,14 +1,20 @@
 <template>
   <div>
-    <h1>hello world</h1>
     <login-page></login-page>
   </div>
+  <div>
+    <home-page></home-page>
+  </div>
+    
+  
 </template>
 <script>
-
-import loginPage from './components/loginPage.vue';
+import HomePage from "./components/homePage.vue";
+import loginPage from "./components/loginPage.vue";
 export default {
-  components: { loginPage },
-  
-}
+  components: { loginPage, HomePage },
+  data:()=>({
+    
+  })
+};
 </script>

@@ -33,7 +33,6 @@
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
 }
-
 .login-wrap .site-logo{
   display: block;
   width: 160px;
@@ -122,3 +121,34 @@
   padding: 10px 0 0 0;
   color: rgba(255, 0, 0, 0.8);
 }
+.site-logo .logo a {
+  display: block;
+  width: 250px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-image: url(../images/sportz-logo.png);
+  text-decoration: none;
+  text-indent: -9999px;
+}
+
+.right-wrap{
+  display: flex;
+  justify-content:flex-end;
+  align-items:center;
+}
+.logout-btn{
+  background: url(../images/logout.png) center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-size: contain;
+  color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  outline: none;
+}
+
+
+
+
+
