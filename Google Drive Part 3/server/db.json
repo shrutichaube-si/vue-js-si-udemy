@@ -1,0 +1,91 @@
+{
+  "folders": [
+    {
+      "id": 1,
+      "name": "Images updated",
+      "folderId": 0
+    },
+    {
+      "id": 2,
+      "name": "Docs",
+      "folderId": 0
+    },
+    {
+      "id": 3,
+      "name": "My Images",
+      "folderId": 1
+    },
+    {
+      "id": 4,
+      "name": "My Docs",
+      "folderId": 2
+    },
+    {
+      "name": "Sushma's Folder",
+      "folderId": 0,
+      "id": 5
+    }
+  ],
+  "files": [
+    {
+      "id": 1,
+      "name": "Images ",
+      "folderId": 0
+    },
+    {
+      "id": 2,
+      "name": "Docs",
+      "folderId": 0
+    },
+    {
+      "id": 3,
+      "name": "File 3.doc",
+      "mimeType": "application/msword",
+      "folderId": 4
+    },
+    {
+      "id": 4,
+      "name": "File 4.pdf",
+      "mimeType": "application/pdf",
+      "folderId": 4
+    },
+    {
+      "id": 5,
+      "name": "File 5.xls",
+      "mimeType": "application/vnd.ms-excel",
+      "folderId": 2
+    },
+    {
+      "name": "Screenshot (17).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(17).png",
+      "path": "C:\\Users\\shruti.chaube\\Desktop\\Vue project new\\vue-js-si-udemy\\Google Drive part 3\\server\\uploads\\screenshot-(17).png",
+      "createdAt": 1698041476150,
+      "id": 6
+    },
+    {
+      "name": "Screenshot (17).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(17).png",
+      "path": "C:\\Users\\shruti.chaube\\Desktop\\Vue project new\\vue-js-si-udemy\\Google Drive part 3\\server\\uploads\\screenshot-(17).png",
+      "createdAt": 1698042271238,
+      "id": 7
+    },
+    {
+      "name": "Screenshot 2023-07-21 125936.png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-2023-07-21-125936.png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google Drive Part 3\\server\\uploads\\screenshot-2023-07-21-125936.png",
+      "createdAt": 1698056565628,
+      "id": 8
+    },
+    {
+      "name": "Screenshot (2).png",
+      "mimeType": "image/png",
+      "url": "http://localhost:3030/uploads/screenshot-(2).png",
+      "path": "C:\\Users\\sushma.devadiga\\Desktop\\Vue-Udemy\\Projects\\vue-js-si-udemy\\Google Drive Part 3\\server\\uploads\\screenshot-(2).png",
+      "createdAt": 1698059744321,
+      "id": 9
+    }
+  ]
+}

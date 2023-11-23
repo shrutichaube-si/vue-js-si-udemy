@@ -1,0 +1,218 @@
+{
+  "continents": [
+    {
+      "id": 1,
+      "name": "Africa",
+      "countries": [
+        {
+          "id": "1",
+          "name": "Nigeria",
+          "image": "nigeria.jpg",
+          "rank": 11
+        },
+        {
+          "id": "2",
+          "name": "South Africa",
+          "image": "south-africa.png",
+          "rank": 22
+        },
+        {
+          "id": "3",
+          "name": "Egypt",
+          "image": "egypt.jpg",
+          "rank": 33
+        },
+        {
+          "id": "4",
+          "name": "Kenya",
+          "image": "kenya.jpg",
+          "rank": 44
+        },
+        {
+          "id": "11",
+          "name": "Ireland",
+          "image": "nigeria.jpg",
+          "rank": 16
+        },
+        {
+          "id": "12",
+          "name": "Switzerland",
+          "image": "switzerland.jpg",
+          "rank": 161
+        },
+        {
+          "id": "100",
+          "name": "Pakistan",
+          "image": "image to path",
+          "rank": 100
+        },
+        {
+          "id": null,
+          "name": "Afghanistan",
+          "image": "afgha.jpg",
+          "rank": 111
+        },
+        {
+          "name": "dsd",
+          "id": "23",
+          "rank": "asda"
+        },
+        {
+          "name": "Turkey",
+          "id": "23",
+          "rank": "asda"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Asia",
+      "countries": [
+        {
+          "id": "5",
+          "name": "India",
+          "image": "https://cdn.britannica.com/97/1597-050-008F30FA/Flag-India.jpg",
+          "rank": 1
+        },
+        {
+          "id": "6",
+          "name": "China",
+          "image": "china.jpg",
+          "rank": 6
+        },
+        {
+          "id": "7",
+          "name": "Japan",
+          "image": "japan.png",
+          "rank": 77
+        },
+        {
+          "id": "8",
+          "name": "South Korea",
+          "image": "south-korea.png",
+          "rank": 88
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Europe",
+      "countries": [
+        {
+          "id": "9",
+          "name": "France",
+          "image": "france.jpg",
+          "rank": 9
+        },
+        {
+          "id": "10",
+          "name": "Germany",
+          "image": "germany.jpg",
+          "rank": 10
+        },
+        {
+          "id": "11",
+          "name": "United Kingdom",
+          "image": "uk.jpg",
+          "rank": 11
+        },
+        {
+          "id": "12",
+          "name": "Italy",
+          "image": "italy.jpg",
+          "rank": 12
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "North America",
+      "countries": [
+        {
+          "id": "13",
+          "name": "United States",
+          "image": "us.jpg",
+          "rank": 16
+        },
+        {
+          "id": "14",
+          "name": "Canada",
+          "image": "canada.jpg",
+          "rank": 15
+        },
+        {
+          "id": "15",
+          "name": "Mexico",
+          "image": "mexico.jpg",
+          "rank": 16
+        },
+        {
+          "id": "16",
+          "name": "Cuba",
+          "image": "cuba.jpg",
+          "rank": 15
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "South America",
+      "countries": [
+        {
+          "id": "17",
+          "name": "Brazil",
+          "image": "brazil.jpg",
+          "rank": 19
+        },
+        {
+          "id": "18",
+          "name": "Argentina",
+          "image": "argentina.jpg",
+          "rank": 17
+        },
+        {
+          "id": "19",
+          "name": "Colombia",
+          "image": "colombia.jpg",
+          "rank": 18
+        },
+        {
+          "id": "20",
+          "name": "Chile",
+          "image": "chile.jpg",
+          "rank": 19
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Australia",
+      "countries": [
+        {
+          "id": "21",
+          "name": "Australia",
+          "image": "australia.jpg",
+          "rank": 24
+        },
+        {
+          "id": "22",
+          "name": "New Zealand",
+          "image": "/static/new-zealand.jpg",
+          "rank": 23
+        },
+        {
+          "id": "23",
+          "name": "Fiji",
+          "image": "fiji.jpg",
+          "rank": 22
+        },
+        {
+          "id": "24",
+          "name": "Papua New Guinea",
+          "image": "papua-new-guinea.jpg",
+          "rank": 21
+        }
+      ]
+    }
+  ]
+}

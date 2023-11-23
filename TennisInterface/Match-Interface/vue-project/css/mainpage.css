@@ -1,0 +1,8011 @@
+/** client Reset **/
+
+html, body {
+  /* height: 100%; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+	
+.site-logo .logo a {
+  display: block;
+  width: 250px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-image: url(../images/sportz-logo.png);
+  text-decoration: none;
+  text-indent: -9999px;
+}
+
+.right-wrap{
+  display: flex;
+  justify-content:flex-end;
+  align-items:center;
+}
+.logout-btn{
+  background: url(../images/logout.png) center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-size: contain;
+  color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  outline: none;
+}
+
+
+
+.navbar {
+  margin-bottom: 0;
+}
+.simc-container .row {
+  margin: 0 -10px;
+}
+.simc-container .container {
+  padding: 0 10px;
+}
+.simc-container .col-lg-1, .simc-container .col-lg-10, .simc-container .col-lg-11, .simc-container .col-lg-12, .simc-container .col-lg-2, .simc-container .col-lg-3, .simc-container .col-lg-4, .simc-container .col-lg-5, .simc-container .col-lg-6, .simc-container .col-lg-7, .simc-container .col-lg-8, .simc-container .col-lg-9, .simc-container .col-md-1, .simc-container .col-md-10, .simc-container .col-md-11, .simc-container .col-md-12, .simc-container .col-md-2, .simc-container .col-md-3, .simc-container .col-md-4, .simc-container .col-md-5, .simc-container .col-md-6, .simc-container .col-md-7, .simc-container .col-md-8, .simc-container .col-md-9, .simc-container .col-sm-1, .simc-container .col-sm-10, .simc-container .col-sm-11, .simc-container .col-sm-12, .simc-container .col-sm-2, .simc-container .col-sm-3, .simc-container .col-sm-4, .simc-container .col-sm-5, .simc-container .col-sm-6, .simc-container .col-sm-7, .simc-container .col-sm-8, .simc-container .col-sm-9, .simc-container .col-xs-1, .simc-container .col-xs-10, .simc-container .col-xs-11, .simc-container .col-xs-12, .simc-container .col-xs-2, .simc-container .col-xs-3, .simc-container .col-xs-4, .simc-container .col-xs-5, .simc-container .col-xs-6, .simc-container .col-xs-7, .simc-container .col-xs-8, .simc-container .col-xs-9 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.liverecent {
+  cursor: pointer;
+}
+.simc-scorecard-content {
+  width: 100%!important;
+}
+.simc-container ul, .simc-container ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.simc-container h3, .simc-container h2, .simc-container h4, .simc-container h1, .simc-container h5, .simc-container h6 {
+  margin: 0;
+  padding: 0;
+}
+.simc-container img {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+/** Common / Helper class **/
+
+.simc-more span {
+  background-color: #fc7f14;
+  border-radius: 50%;
+  display: block;
+  height: 18px;
+  text-align: center;
+  width: 18px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 18px;
+  cursor: pointer;
+}
+.simc-content-box, .simc-content-wrap {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.simc-slider {
+  position: relative;
+}
+.simc-slider-wrap {
+  overflow: hidden;
+  position: relative;
+  margin: 0 35px;
+}
+.simc-slide-item {
+  float: left;
+}
+.simc-nav-left, .simc-nav-right {
+  background-position: center center;
+  display: block;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  width: 25px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.simc-nav-left {
+  background-image: url('../images/left-arrow.png');
+  left: 0;
+}
+.simc-nav-right {
+  background-image: url('../images/right-arrow.png');
+  right: 0;
+}
+.simc-web, .simc-controls-web {
+  display: block;
+}
+.simc-mobile, .simc-controls-wap {
+  display: none;
+}
+.disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.si-lft, .simc-lft {
+  float: left;
+}
+.si-rgt, .simc-rgt {
+  float: right;
+}
+.si-table {
+  display: table;
+  width: 100%;
+}
+.si-table-th, .si-table-td {
+  display: table-cell;
+  vertical-align: middle;
+}
+.si-table-tr {
+  display: table-row;
+}
+.simc-list-item {
+  position: relative;
+}
+.tab-col-1 li {
+  width: 100%;
+}
+.tab-col-2 li {
+  width: 50%;
+}
+.tab-col-3 li {
+  width: 33.33%;
+}
+.tab-col-4 li {
+  width: 25%;
+}
+.tab-col-5 li {
+  width: 20%;
+}
+.tab-col-6 li {
+  width: 16.66%;
+}
+.tab-col-7 li {
+  width: 14.28%;
+}
+.tab-col-8 li {
+  width: 12.5%;
+}
+.tab-col-9 li {
+  width: 11.11%;
+}
+.tab-col-10 li {
+  width: 10%;
+}
+.si-tab:before, .si-tab:after, .si-subtab:before, .si-subtab:after, .si-datatab:before, .si-datatab:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.si-tab li, .si-subtab li, .si-datatab li {
+  float: left;
+}
+.si-tab li.disabled, .si-subtab li.disabled, .si-datatab li.disabled {
+  background-color: #969696 !important;
+  color: #dbdbdb !important;
+  cursor: default !important;
+  border-color: #969696 !important
+}
+.si-subtab li {
+  display: table;
+  height: 40px;
+  padding: 10px 0px;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 18px;
+  color: #000;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s
+}
+.si-subtab li span {
+  border-right: 1px solid #adadad;
+  display: table-cell;
+  line-height: 20px;
+  padding: 0 20px;
+  vertical-align: middle;
+}
+.si-subtab li.active, .si-subtab li:hover {
+  color: #f4821f;
+}
+.si-subtab li:last-child span {
+  border-right: none;
+}
+.simc-block-section {
+  background-color: #fff;
+}
+.simc-block-section-hd {
+  border-bottom: 1px solid #e56a00;
+  padding-bottom: 10px;
+  position: relative;
+  margin-bottom: 20px;
+  padding-top: 15px;
+}
+.simc-block-section-hd h3 {
+  font-size: 24px;
+  font-family: pt_sansbold, sans-serif;
+  line-height: 28px;
+  color: #e56a00;
+  padding: 0 20px;
+}
+.simc-container strong, .simc-container b {
+  font-family: pt_sansbold, sans-serif;
+  font-weight: normal;
+}
+.simc-element-inline {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 3px;
+}
+.simc-element-inline:last-child {
+  margin-right: 0;
+}
+.simc-filter {
+  display: table;
+  width: 100%;
+  height: 47px;
+  position: relative;
+}
+.simc-filter li {
+  display: table;
+  height: 47px;
+  padding: 15px 0px;
+  font-family: pt_sanbold, sans-serif;
+  font-size: 15px;
+  color: #000;
+  float: left;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s
+}
+.simc-filter li.active, .simc-filter li:hover {
+  color: #f4821f;
+}
+.simc-filter li span {
+  border-right: 1px solid #adadad;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0px 20px;
+  line-height: normal;
+}
+.simc-filter li:last-child span {
+  border-right: none;
+}
+.simc-select-filter:before, .simc-select-filter:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.simc-select-filter li {
+  float: left;
+  height: 70px;
+  display: table;
+  background-color: #1d1c1c;
+  text-align: center;
+  border-left: 1px solid #333;
+  cursor: pointer;
+  position: relative;
+}
+.simc-select-filter li:hover {
+  background-color: #f4821f;
+}
+.simc-select-filter li:first-child {
+  border-left-color: transparent;
+}
+.simc-select-filter li .simc-listcontent {
+  display: table-cell;
+  vertical-align: middle;
+}
+.simc-select-filter li .simc-listcontent > span {
+  color: #fff;
+  display: inline-block;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 24px;
+  position: relative;
+}
+.simc-select-filter li .simc-select-drop {
+  display: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.simc-select-filter li:hover .simc-select-drop {
+  display: block;
+}
+.simc-select-filter li .simc-select-drop {
+  background-color: #f1f4f9;
+  padding: 12px;
+  position: absolute;
+  width: 100%;
+  top: 70px;
+  z-index: 10;
+}
+.simc-select-filter li .simc-select-drop ul {
+  margin: 0 -5px;
+}
+.simc-select-filter li .simc-select-drop li {
+  float: none;
+  padding: 0 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  height: 45px;
+  margin-bottom: 7px;
+  background-color: transparent;
+  width: 100%;
+}
+.simc-select-filter li .simc-select-drop ul li .simc-list-content {
+  width: 100%;
+  display: table;
+  height: 100%;
+  background-color: #fff;
+  border: 1px solid #efeded;
+  padding: 3px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s
+}
+.simc-select-filter li .simc-select-drop li .simc-list-content span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.simc-select-filter li .simc-select-drop .simc-content-wrap {
+  display: block;
+}
+.simc-select-filter li .simc-select-drop ul li:hover .simc-list-content, .simc-select-filter li .simc-select-drop ul li.active .simc-list-content {
+  color: #E56A00;
+}
+
+/*_ Megamenu _*/
+
+.simc-select-filter {
+  position: relative;
+}
+.simc-select-filter li.simc-megamenu {
+  position: static;
+}
+.simc-select-filter .simc-megamenu .simc-select-drop {
+  left: 0;
+  width: 100%;
+}
+.simc-select-filter .simc-megamenu .simc-select-drop ul li {
+  width: 33.33%;
+  float: left;
+}
+
+/*_ filter tags _*/
+
+.simc-filter-tags {
+  margin-top: 10px;
+  position: relative;
+}
+.simc-tags-list:before, .simc-tags-list:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.simc-tags-list {
+  position: relative;
+  margin: 0 -2px;
+}
+.simc-tags-list li {
+  float: left;
+  margin-bottom: 5px;
+  padding: 0 2px;
+}
+.simc-tags-list li span {
+  background-color: #fff;
+  border-radius: 4px;
+  color: #000;
+  display: block;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 12px;
+  padding: 2px 14px 2px 2px;
+  position: relative;
+}
+.simc-tags-list em {
+  color: #666;
+  cursor: pointer;
+  font-style: normal;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  text-transform: lowercase;
+  width: 10px;
+  top: 0px;
+  right: 0;
+  text-align: center;
+  background-color: #e5e5e5;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  cursor: pointer;
+  color: #333;
+}
+.simc-tags-list em:hover {
+  color: #000;
+}
+.simc-select-box {
+  background: #646464;
+  background-image: url("../images/match-detailarrow.png");
+  background-repeat: no-repeat;
+  background-position: 95% 10px;
+  height: 27px;
+  text-align: left;
+  position: relative;
+  width: 130px;
+}
+.simc-select-box .select-out {
+  height: 27px;
+  display: block;
+  line-height: 27px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-right: 23px;
+  padding-left: 10px;
+  font-size: 14px;
+  color: #fff;
+}
+.simc-select-box select {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  z-index: 2;
+  cursor: pointer;
+  font-size: 14px;
+}
+.simc-form-group {
+  font-size: 0;
+  position: relative;
+}
+.simc-checkbox-group {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  margin: 0 3px;
+}
+.simc-checkbox-group input[type="checkbox"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+.simc-checkbox-group span {
+  padding-left: 22px;
+  display: block;
+  font-size: 12px;
+  font-family: pt_sansregular, sans-serif;
+  display: block;
+  position: relative;
+}
+.simc-checkbox-group span:before {
+  width: 18px;
+  height: 18px;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  display: block;
+  background-color: #a1a1a1;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.simc-checkbox-group input[type="checkbox"]:checked + span:before {
+  background-image: url('../images/check.png');
+}
+.simc-table {
+  display: table;
+  width: 100%;
+}
+.simc-table-tr {
+  display: table-row;
+}
+.simc-table-th, .simc-table-td {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/** Social Share **/
+
+.simc-socialshare {
+  left: 10px;
+  margin-top: -15px;
+  position: absolute;
+  top: 50%;
+}
+.simc-socialshare ul {
+  font-size: 0;
+}
+.simc-socialshare li {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 3px;
+}
+.simc-socialshare li:first-child {
+  margin-left: 0;
+}
+.simc-socialshare li:last-child {
+  margin-right: 0;
+}
+.simc-socialshare li a {
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  display: block;
+  height: 30px;
+  width: 30px;
+  font-size: 14px;
+  background-color: #E9E9E9;
+  background-size: 30px auto;
+  cursor: pointer;
+  background-position: 0 0;
+}
+.simc-socialshare li:hover a {
+  background-position: 0 -30px;
+}
+.simc-socialshare li.simc-facebook a {
+  background-image: url('../images/fb-logo.png');
+}
+.simc-socialshare li.simc-twitter a {
+  background-image: url('../images/twitter-logo.png');
+}
+.simc-socialshare li.simc-facebook a {
+  background-image: url('../images/fb-social.png');
+}
+.simc-socialshare li.simc-twitter a {
+  background-image: url('../images/tweet-social.png');
+}
+@media screen and (max-width: 767px) {
+  .simc-socialshare {
+    left: 0;
+    margin-top: 0;
+    position: relative;
+    top: 3px;
+    padding-top: 5px;
+    text-align: center;
+    padding-left: 10px;
+    margin-bottom: 10px;
+  }
+  .simc-container .container {
+    padding: 0;
+  }
+}
+
+/*_ Loader _*/
+
+.si-loader {
+  text-align: center;
+  padding: 15px 0;
+  height: 100%;
+}
+.si-loader {
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+.si-loader .si-loaderimg {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/** Cricket Matchcenter **/
+
+.simc-container {
+  clear: both;
+  position: relative;
+  background-color: #eff3f8;
+  padding-top: 55px;
+}
+.simc-wrapper {
+  position: relative;
+  max-width: 1300px;
+  margin: auto;
+}
+.simc-container .simc-site-leftcol {
+  padding-left: 0;
+}
+.simc-container .simc-site-rightcol {
+  padding-right: 0;
+}
+
+/** Primary nav **/
+
+.simc-nav:before, .simc-nav:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.simc-nav {
+  background-color: #000;
+  height: auto;
+  position: relative;
+}
+.simc-nav li {
+  color: #fff;
+  display: table;
+  float: left;
+  font-family: "pt_sansregular", sans-serif;
+  font-size: 18px;
+  height: 35px;
+  width: 195px;
+  border-right: 1px solid #333333;
+  text-align: center;
+  cursor: pointer;
+}
+.simc-nav li.active {
+  color: #f4821f;
+}
+.simc-nav li > span, .simc-nav li > a {
+  display: table-cell;
+  vertical-align: middle;
+}
+.simc-nav li a, .simc-nav li span {
+  color: inherit;
+  text-decoration: none;
+}
+
+/** Breadcrumb **/
+
+.simc-breadcrumb {
+  padding: 10px;
+  font-size: 0;
+}
+.simc-breadcrumb li {
+  font-size: 14px;
+  font-family: pt_sansregular, sans-serif;
+  color: #545454;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 7px;
+}
+.simc-breadcrumb li:before {
+  content: ">";
+  display: inline-block;
+  vertical-align: middle;
+  color: #545454;
+  position: relative;
+  left: -5px;
+  top: -2px;
+}
+.simc-breadcrumb li:first-child {
+  margin-left: 0;
+}
+.simc-breadcrumb li:first-child:before {
+  content: "";
+}
+.simc-breadcrumb li:last-child {
+  color: #f58220;
+}
+.simc-breadcrumb li a, .simc-breadcrumb li span {
+  color: inherit;
+  text-decoration: none;
+}
+
+/** Highlighter **/
+
+.simc-highlights {
+  position: relative;
+  background-image: url('../images/background-image.jpg');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.simc-highlights-wrap {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+.simc-highlights-top {
+  border-bottom: 1px solid #fff;
+  display: table;
+  height: 72px;
+  width: 100%;
+  position: relative;
+}
+.simc-highlights-top h3 {
+  color: #fff;
+  font-family: "pt_sansbold", sans-serif;
+  font-size: 22px;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+.simc-highlights-top h5 {
+  color: #fff;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 14px;
+  margin-top: 5px;
+  text-transform: none;
+}
+.simc-highlights-top .simc-time {
+  color: #fff;
+  font-family: "pt_sansregular", sans-serif;
+  font-size: 14px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.simc-highlights-middle {
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  display: table;
+  overflow: hidden;
+}
+
+/*.simc-highlights-middle .simc-content-box{overflow: hidden;}*/
+
+
+/*_ Team box _*/
+
+.simc-match-status {
+  color: #f4821f;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 14px;
+  text-align: center;
+}
+.simc-highlights-middle .simc-matchbox, .simc-highlights-middle .simc-highlights-sidebar {
+  float: left;
+}
+.simc-highlights-middle .simc-matchbox {
+  width: 75%;
+  border-right: 1px solid rgba(175, 92, 24, 0.5);
+}
+.simc-highlights-middle .simc-highlights-sidebar {
+  width: 25%;
+}
+.simc-matchbox-wrap {
+  display: inline-block;
+  position: relative;
+  padding-top: 12px;
+}
+.simc-team-image img {
+  height: auto;
+  max-height: 28px;
+  max-width: 28px;
+  width: auto;
+}
+.simc-matchbox .simc-team {
+  border-bottom: 1px solid #90591b;
+  border-bottom: 1px solid rgba(255, 140, 33, 0.5);
+}
+.simc-matchbox .simc-team:last-child {
+  border-bottom: none;
+}
+.simc-team-name {
+  color: #fff;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.simc-team-score {
+  color: #fff;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+}
+.simc-innings-detail {
+  color: #fff;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 18px;
+}
+.simc-team-score em, .simc-innings-detail em {
+  font-style: normal;
+}
+.simc-innings-detail {
+  font-size: 0;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.simc-innings-detail span {
+  border-right: 1px solid #fff;
+  display: inline-block;
+  line-height: 18px;
+  padding: 0 10px;
+  font-size: 18px;
+  vertical-align: middle;
+}
+.simc-innings-detail span:first-child {
+  padding-left: 0;
+}
+.simc-innings-detail span:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+.simc-matchresult {
+  color: #ffb21d;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+}
+.simc-match-Status-info {
+  background: rgba(255, 255, 255, 0.6);
+}
+.simc-highlights-middle .simc-team.simc-team-b {
+  margin-top: 15px;
+}
+.simc-highlights-middle .simc-matchbox .simc-team-image, .simc-highlights-middle .simc-matchbox .simc-team-name, .simc-highlights-middle .simc-matchbox .simc-team-score {
+  display: inline-block;
+  float: none;
+  margin: 0 2px;
+  vertical-align: middle;
+}
+.simc-highlights-middle .simc-matchbox .simc-team-image img {
+  border: 1px solid #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.simc-highlights-middle .simc-content-wrap {
+  text-align: left;
+}
+.simc-highlights-middle .simc-innings-ball {
+  display: none;
+}
+.simc-highlights-middle .simc-matchbox .simc-match-status {
+  position: absolute;
+  text-align: center;
+  top: -10px;
+  width: 100%;
+  left: 0;
+}
+.simc-highlights-middle .simc-matchbox .simc-team {
+  display: block;
+  width: 100%;
+}
+.simc-team.simc-team-a {
+  padding-bottom: 6px;
+}
+.simc-highlights-middle .simc-matchbox .simc-team-score {
+  margin: 0 10px;
+}
+.simc-highlights-middle .simc-matchbox .simc-team-score em {
+  font-family: pt_sansregular, sans-serif;
+}
+
+/*_ Team highlights active _*/
+
+.simc-highlights-middle .simc-team.active .simc-content-wrap {
+  padding-left: 105px;
+  position: relative;
+}
+.simc-highlights-middle .simc-team.active .simc-team-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.simc-highlights-middle .simc-team.active .simc-team-image img {
+  max-height: 60px;
+  max-width: 90px;
+}
+.simc-highlights-middle .simc-team.active .simc-team-image, .simc-highlights-middle .simc-team.active .simc-team-name, .simc-highlights-middle .simc-team.active .simc-team-score {
+  display: block;
+  margin: 0;
+}
+.simc-highlights-middle .simc-team.active .simc-team-name {
+  font-family: pt_sansbold, sans-serif;
+  font-size: 18px;
+  line-height: 18px;
+  margin-bottom: 3px;
+}
+.simc-highlights-middle .simc-team.active .simc-team-score {
+  color: #b2b2b2;
+  font-size: 26px;
+}
+.simc-highlights-middle .simc-team.active .simc-team-score .simc-inn1 {
+  font-size: 40px;
+  line-height: 38px;
+  color: #fff;
+}
+.simc-highlights-middle .simc-team.active .simc-innings-detail {
+  margin-top: 10px;
+}
+.simc-highlights-middle .simc-team.active .simc-innings-ball {
+  display: block;
+}
+.simc-highlights-middle .simc-team.active .simc-innings-detail {
+  display: block;
+}
+.simc-highlights-middle .simc-innings-detail p {
+  margin-bottom: 5px;
+}
+.simc-highlights-middle .simc-innings-detail p:last-child {
+  margin-bottom: 0;
+}
+.simc-highlights-middle .simc-team.active .simc-team-score span em {
+  display: none;
+}
+.simc-highlights-middle .simc-team.active .simc-team-score span.simc-inn2 em {
+  display: inline;
+}
+
+/** Match Detail **/
+
+.simc-match-details-hd {
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  height: 40px;
+  left: -60px;
+  line-height: 26px;
+  margin-top: -20px;
+  position: absolute;
+  text-transform: uppercase;
+  top: 50%;
+  width: 165px;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  cursor: pointer;
+  background-image: url('../images/match-detailarrow.png');
+  background-position: center 95%;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+.active .simc-match-details-hd {
+  background-image: url('../images/match-detailarrow-out.png');
+}
+.simc-match-details {
+  left: 0;
+  position: absolute;
+  width: 70%;
+  width: calc(75% - 1px);
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+}
+.simc-matchdetail-container {
+  background-color: rgba(0, 0, 0, 0.95);
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateX(-200%);
+  -moz-transform: translateX(-200%);
+  -ms-transform: translateX(-200%);
+  -o-transform: translateX(-200%);
+  transform: translateX(-200%);
+  -webkit-transition: transform 0.3s;
+  -moz-transition: transform 0.3s;
+  -ms-transition: transform 0.3s;
+  -o-transition: transform 0.3s;
+  transition: transform 0.3s
+}
+.simc-match-details.active .simc-matchdetail-container {
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  -o-transform: translateX(0%);
+  transform: translateX(0%);
+}
+.simc-matchdetail-wrap {
+  display: table;
+  height: 100%;
+  padding-left: 60px;
+  position: relative;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 20px;
+}
+.simc-matchdetail-wrap .simc-content-box {
+  text-align: left;
+}
+
+/*_ top head _*/
+
+.simc-content-head {
+  border-bottom: 1px solid #ff8c21;
+  border-bottom: 1px solid rgba(255, 140, 33, 0.5);
+  display: inline-block;
+  min-width: 350px;
+  padding-bottom: 6px;
+  text-align: left;
+  margin-bottom: 5px;
+}
+.simc-content-head div {
+  display: inline-block;
+  vertical-align: middle;
+}
+.simc-highlights-middle .simc-content-head .simc-team.simc-team-b {
+  margin-top: 0;
+}
+.simc-content-head .simc-team {
+  margin: 0 5px;
+}
+.simc-content-head .simc-team .simc-team-image {
+  margin-right: 3px;
+}
+.simc-content-head .simc-team:first-child {
+  margin-left: 0;
+}
+.simc-content-head .simc-team:last-child {
+  margin-right: 0;
+}
+.simc-match-details .simc-team.simc-team-a {
+  padding-bottom: 0;
+}
+
+/*_ content body _*/
+
+.simc-content-body p {
+  color: #fff;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 5px;
+}
+.simc-match-umpire, .simc-match-crew {
+  margin-top: 30px;
+}
+.simc-match-crew span {
+  display: block;
+  margin-bottom: 5px;
+}
+.simc-match-crew em {
+  font-style: normal;
+}
+.simc-content-body .simc-match-status {
+  color: #ffb21d;
+  text-align: left;
+}
+.simc-content-body .simc-match-status span {
+  display: block;
+  margin-bottom: 5px;
+}
+.simc-content-body .simc-match-status span em {
+  font-style: normal;
+}
+.simc-content-body .simc-match-status {
+  display: inline-block;
+  padding-top: 5px;
+}
+.simc-matchdetail-wrap .simc-match-umpire {
+  border-bottom: 1px solid rgba(255, 140, 33, 0.5);
+  display: inline-block;
+  padding-bottom: 5px;
+  margin-top: 5px;
+}
+.simc-match-umpire span {
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0 10px;
+}
+.simc-match-umpire span:first-child {
+  padding-left: 0;
+  border-left: none;
+}
+.simc-matchdetail-wrap .simc-match-status {
+  display: block;
+}
+
+/*_ countdown _*/
+
+.simc-highlights-middle .simc-countdown-box {
+  border-right: 1px solid rgba(175, 92, 24, 0.5);
+  width: 75%;
+  float: left;
+}
+.simc-countdown-box .simc-content-box {
+  display: block;
+}
+.simc-countdown-team {
+  margin-top: 15px;
+  position: relative;
+  text-align: center;
+}
+.simc-countdown-team .simc-team, .simc-countdown-team .simc-team-vs {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+}
+.simc-highlights-middle .simc-countdown-team .simc-team.simc-team-b {
+  margin-top: 0px;
+}
+.simc-countdown-team .simc-team .simc-team-image, .simc-countdown-team .simc-team .simc-team-name {
+  display: inline-block;
+  vertical-align: middle;
+}
+.simc-countdown-team .simc-team .simc-team-name {
+  padding: 0 20px;
+  font-size: 18px;
+}
+.simc-countdown-team .simc-team-vs span {
+  color: #fff;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 18px;
+}
+.simc-countdown-timer .simc-content-wrap {
+  border-top: 1px solid #8e571a;
+  display: inline-block;
+  margin-top: 10px;
+  text-align: center;
+  padding-top: 20px;
+}
+.simc-countbox {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 20px;
+  position: relative;
+}
+.simc-countdown-timer .simc-count-num {
+  font-size: 70px;
+  font-family: pt_sansregular, sans-serif;
+  color: #fff;
+  line-height: 60px;
+}
+.simc-countdown-timer .simc-count-txt {
+  font-size: 16px;
+  color: #f4821f;
+  font-family: pt_sansregular, sans-serif;
+  line-height: 16px;
+  text-align: center;
+  margin-top: 4px;
+}
+.simc-countbox:before {
+  content: "";
+  height: 100%;
+  width: 1px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -32%;
+}
+.simc-countbox:before {
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzg0NGQxNSIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjI2JSIgc3RvcC1jb2xvcj0iIzg0NGQxNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzg0NGQxNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg0JSIgc3RvcC1jb2xvcj0iIzg0NGQxNSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4NDRkMTUiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top, rgba(132, 77, 21, 0) 0%, rgba(132, 77, 21, 1) 26%, rgba(132, 77, 21, 1) 50%, rgba(132, 77, 21, 1) 84%, rgba(132, 77, 21, 0) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(132, 77, 21, 0) 0%, rgba(132, 77, 21, 1) 26%, rgba(132, 77, 21, 1) 50%, rgba(132, 77, 21, 1) 84%, rgba(132, 77, 21, 0) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(132, 77, 21, 0) 0%, rgba(132, 77, 21, 1) 26%, rgba(132, 77, 21, 1) 50%, rgba(132, 77, 21, 1) 84%, rgba(132, 77, 21, 0) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00844d15', endColorstr='#00844d15', GradientType=0);
+  /* IE6-8 */
+}
+.simc-countbox:first-child:before {
+  display: none;
+}
+.simc-countdown-byline {
+  color: #feb319;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+/*_ Highlighter Sidebar _*/
+
+.simc-highlights-sidebar .simc-content-box {
+  display: block;
+  padding: 0 20px;
+  position: relative;
+}
+
+/*_ Sidebar slider _*/
+
+.simc-highlights-sidebar .simc-slider-nav .simc-slide-item {
+  color: #fff;
+  display: table;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+.simc-highlights-sidebar .simc-slider-container {
+  clear: both;
+  margin-top: 15px;
+  position: relative;
+  height: 200px;
+}
+.simc-highlights-sidebar .simc-slider-content {
+  float: left;
+  position: relative;
+  width: 100%;
+}
+.simc-highlights-sidebar .simc-slider-container:before, .simc-highlights-sidebar .simc-slider-container:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/*_ Other Match content _*/
+
+.simc-othermatch-content .simc-list-item {
+  margin-bottom: 20px;
+  padding: 0 40px 0 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 10px;
+}
+.simc-othermatch-content .simc-list-item:last-child {
+  margin-bottom: 0;
+}
+.simc-othermatch-content .simc-teambox {
+  position: relative;
+}
+.simc-othermatch-content .simc-teambox:before, .simc-othermatch-content .simc-teambox:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.simc-othermatch-content .simc-team, .simc-othermatch-content .simc-team-vs {
+  position: relative;
+  display: table;
+  float: left;
+}
+.simc-othermatch-content .simc-team {
+  width: 40%;
+}
+.simc-othermatch-content .simc-team-vs {
+  width: 20%;
+  text-align: center;
+}
+.simc-othermatch-content .simc-team-image img {
+  height: auto;
+  max-height: 30px;
+  max-width: 30px;
+  width: auto;
+}
+.simc-othermatch-content .simc-team-name {
+  font-size: 20px;
+}
+.simc-othermatch-content .simc-team .simc-team-image {
+  position: absolute;
+  top: 0;
+}
+.simc-othermatch-content .simc-team-a {
+  text-align: left;
+}
+.simc-othermatch-content .simc-team-b {
+  text-align: right;
+}
+.simc-othermatch-content .simc-team-a .simc-team-image {
+  left: 0;
+}
+.simc-othermatch-content .simc-team-b .simc-team-image {
+  right: 0;
+}
+.simc-othermatch-content .simc-team-a .simc-content-wrap {
+  padding-left: 40px;
+}
+.simc-othermatch-content .simc-team-vs .simc-content-wrap {
+  text-align: center;
+}
+.simc-highlights-middle .simc-othermatch-content .simc-team-b .simc-content-wrap {
+  padding-right: 40px;
+  text-align: right;
+}
+.simc-highlights-middle .simc-othermatch-content .simc-team.simc-team-b {
+  margin-top: 0;
+}
+.vstxt {
+  color: #fff;
+  font-size: 14px;
+  font-family: pt_sansregular, sans-serif;
+}
+.simc-othermatch-content .simc-team-score {
+  color: #ff8c21;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+}
+.simc-othermatch-content .simc-innings-update {
+  color: #ff8c21;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+}
+.simc-othermatch-content .simc-matchresult {
+  color: #ff8c21;
+  font-size: 14px;
+  line-height: 20px;
+  /*text-transform: uppercase;*/
+}
+.simc-othermatch-content .simc-match-status {
+  background-color: #333;
+  color: #fff;
+  font-size: 12px;
+  height: 16px;
+  line-height: 16px;
+  position: absolute;
+  right: 15px;
+  top: 3px;
+  width: 16px;
+  display: none;
+}
+.simc-othermatch-content .simc-match-status.live {
+  background-color: #ff0000;
+  display: block;
+}
+.simc-othermatch-content .simc-match-status.result {
+  display: block;
+  background-color: #0BAC4E;
+}
+.simc-othermatch-content .simc-match-status.upcoming {
+  display: block;
+  background-color: #0076d6;
+}
+.simc-matchschedule {
+  color: #fff;
+}
+.simc-highlights-middle .simc-matchresult {
+  margin-top: 5px;
+  position: relative;
+  top: 8px;
+}
+
+/*_ Sqaud Changes _*/
+
+.simc-sqaudchanges-block .simc-team-name {
+  font-family: pt_sansbold, sans-serif;
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+.simc-sqaudchanges-table .si-table-th {
+  color: #fff;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 18px;
+  height: 30px;
+}
+.simc-sqaudchanges-table .si-table-th span {
+  position: relative;
+  background-repeat: no-repeat;
+}
+.simc-sqaudchanges-table .si-table-th.si-in span:before, .simc-sqaudchanges-table .si-table-th.si-out span:before {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  content: "";
+  display: block;
+  right: -20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 3px;
+}
+.simc-sqaudchanges-table .si-table-th.si-in span:before {
+  background-image: url('../images/sqaud-in.png');
+}
+.simc-sqaudchanges-table .si-table-th.si-out span:before {
+  background-image: url('../images/sqaud-out.png');
+}
+.simc-sqaudchanges-table .si-table-td {
+  color: #fff;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 18px;
+  line-height: 18px;
+  height: 30px;
+}
+
+/*_ Match fact _*/
+
+.simc-matchfact-block p {
+  color: #fff;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 14px;
+}
+.simc-matchfact-block p {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 8px;
+  padding-bottom: 5px;
+  text-align: left;
+}
+.simc-date {
+  color: #fff;
+  font-size: 16px;
+  font-family: pt_sansregular, sans-serif;
+}
+.simc-date:before {
+  content: "-";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 3px;
+}
+.simc-highlights-sidebar .simc-team.simc-team-a {
+  padding-bottom: 0;
+}
+.simc-highlights-sidebar .simc-matchresult {
+  margin-top: 5px;
+  position: relative;
+  top: 0;
+}
+.simc-player-status .si-plyr-name > em {
+  font-size: 12px;
+}
+
+/** Main content **/
+
+.simc-main-content {
+  margin-top: 15px;
+  position: relative;
+  clear: both;
+}
+
+/**_Scorecard Page _**/
+
+
+/*_ section nav _*/
+
+.simc-section-nav {
+  background-color: #000000;
+  border-bottom: 2px solid #fcb150;
+  position: relative;
+}
+.simc-section-nav .si-tab li {
+  color: #fff;
+  display: table;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 18px;
+  height: 35px;
+  text-transform: none;
+  text-align: center;
+  border-right: 1px solid #4d4c4c;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s
+}
+.simc-section-nav .si-tab li:hover, .simc-section-nav .si-tab li.active {
+  background-color: #f4821f;
+  color: #fff;
+}
+.simc-section-nav .si-tab li:last-child {
+  border-right: none;
+}
+.simc-section-nav .si-tab li span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.simc-section-nav .simc-nav-left, .simc-section-nav .simc-nav-right {
+  display: none;
+}
+
+/*_ Section container _*/
+
+.simc-section-container {
+  clear: both;
+  position: relative;
+}
+
+/*_ Sub tab _*/
+
+.simc-scorecard-section .si-subtab li {
+  display: table;
+  height: 40px;
+  padding: 10px 0px;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 18px;
+  color: #000;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s
+}
+.simc-scorecard-section .si-subtab li span {
+  border-right: 1px solid #adadad;
+  display: table-cell;
+  line-height: 20px;
+  padding: 0 20px;
+  vertical-align: middle;
+}
+.simc-scorecard-section .si-subtab li.active, .simc-scorecard-section .si-subtab li:hover {
+  color: #f4821f;
+}
+.simc-scorecard-section .si-subtab li:last-child span {
+  border-right: none;
+}
+.simc-select-innings {
+  margin: 15px 0;
+}
+.simc-select-innings .simc-select-box {
+  background-color: transparent;
+  border: 1px solid #afafaf;
+  position: relative;
+  right: 0;
+  top: 0;
+  width: auto;
+  height: 30px;
+}
+.simc-select-innings .simc-select-out {
+  font-size: 14px;
+  color: #000;
+  height: 28px;
+  display: block;
+  padding-right: 20px;
+  padding-left: 5px;
+  line-height: 28px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.simc-select-innings .simc-select-box:before {
+  content: "\e259";
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  margin-top: -7px;
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  color: #b6b6b6;
+}
+
+/*_ Strip block _*/
+
+.simc-block-strip {
+  background-color: #FC7F14;
+  display: table;
+  height: 48px;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+.simc-block-strip .simc-content-box {
+  text-align: left;
+  padding: 0 20px;
+}
+.simc-block-strip .simc-team-image, .simc-block-strip .simc-team-name, .simc-block-strip .simc-team-score {
+  display: inline-block;
+  vertical-align: middle;
+}
+.simc-block-strip .simc-team-image {
+  margin-right: 5px;
+}
+.simc-block-strip .simc-team-score {
+  border-left: 1px solid #fff;
+  margin-left: 5px;
+  padding-left: 5px;
+  font-size: 16px;
+}
+.simc-block-strip .simc-team-score em {
+  font-family: pt_sansregular, sans-serif;
+}
+.simc-block-strip .simc-match-status {
+  color: #fff;
+}
+.simc-block-strip span {
+  color: #fff;
+}
+.simc-block-strip .simc-team-name {
+  font-size: 16px;
+  font-family: pt_sansbold, sans-serif;
+}
+.simc-block-content {
+  background-color: #fff;
+  padding-top: 15px;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/*_ Player list _*/
+
+.simc-player-list .simc-list-item .simc-list-content {
+  position: relative;
+  margin: 0 2px;
+  border-bottom: 1px solid #969696;
+}
+.simc-player-list .simc-list-item {
+  position: relative;
+  margin-bottom: 25px;
+}
+.simc-player-image img {
+  height: auto;
+  max-height: 112px;
+  max-width: 112px;
+  width: auto;
+}
+.simc-player-image {
+  border: 1px solid #969696;
+  padding: 5px;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  z-index: 2;
+  background-color: #fff;
+  cursor: pointer;
+}
+.simc-player-info span {
+  background-color: #969696;
+  display: inline-block;
+  height: 24px;
+  vertical-align: middle;
+  width: 28px;
+  position: relative;
+  background-repeat: no-repeat;
+  font-size: 20px;
+  font-family: pt_sansbold, sans-serif;
+  color: #fff;
+  text-align: center;
+  line-height: 24px;
+  margin: 0 1px;
+  background-position: center;
+}
+.simc-player-info span:first-child {
+  margin-left: 0;
+}
+.simc-player-info span:last-child {
+  margin-right: 0;
+}
+.simc-player-info {
+  left: 0;
+  position: absolute;
+  top: -35px;
+  font-size: 0;
+  cursor: default;
+}
+.simc-isCaptain {
+  background-color: #e56a00;
+  bottom: 5px;
+  color: #fff;
+  display: block;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 18px;
+  height: 20px;
+  position: absolute;
+  text-align: center;
+  width: 20px;
+  display: none;
+}
+.simc-captain .simc-isCaptain {
+  display: block;
+}
+.simc-player-role {
+  background-image: url('../images/scorecard.png');
+}
+.simc-batsmen .simc-player-role, .simc-batsmen.simc-player-role {
+  background-position: -220px -20px;
+}
+.simc-bowler .simc-player-role, .simc-bowler.simc-player-role {
+  background-position: -43px -20px;
+}
+.simc-wicketkeeper .simc-player-role, .simc-wicketkeeper.simc-player-role {
+  background-position: -133px -20px;
+}
+.simc-allrounder .simc-player-role, .simc-allrounder.simc-player-role {
+  background-position: -308px -20px;
+}
+.simc-batsmen.simc-onstrike .simc-player-role, .simc-onstrike .simc-batsmen.simc-player-role {
+  background-position: -220px -80px;
+}
+.simc-bowler.simc-onstrike .simc-player-role, .simc-onstrike .simc-bowler.simc-player-role {
+  background-position: -43px -80px;
+}
+.simc-wicketkeeper.simc-onstrike .simc-player-role, .simc-onstrike .simc-wicketkeeper.simc-player-role {
+  background-position: -133px -80px;
+}
+.simc-allrounder.simc-onstrike .simc-player-role, .simc-onstrike .simc-allrounder.simc-player-role {
+  background-position: -308px -80px;
+}
+.simc-player-data {
+  padding-left: 150px;
+  position: relative;
+  min-height: 123px;
+}
+.si-datatab {
+  border-bottom: 1px solid #fc7f14;
+}
+.si-datatab li {
+  border-right: 1px solid #fc7f14;
+  border-top: 1px solid #fc7f14;
+  color: #fc7f14;
+  display: table;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 14px;
+  height: 25px;
+  text-align: center;
+  width: 70px;
+}
+.si-datatab li:first-child {
+  border-left: 1px solid #fc7f14;
+}
+.si-datatab li.active {
+  background-color: #fc7f14;
+  color: #fff;
+}
+.si-datatab li span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.simc-player-data .simc-more {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+}
+.simc-player-data .simc-datatab-container {
+  margin-top: 6px;
+  position: relative;
+}
+.simc-player-name {
+  color: #000;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  text-align: left;
+}
+.simc-player-name em {
+  font-style: normal;
+}
+.si-plyr-style {
+  font-size: 14px;
+}
+.simc-player-stats {
+  margin-bottom: 7px;
+}
+.simc-player-stats .simc-list::before, .simc-player-stats .simc-list::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.simc-player-stats .simc-list {
+  margin-bottom: 8px;
+}
+.simc-player-stats .simc-list:last-child {
+  margin-bottom: 0px;
+}
+.simc-player-stats .simc-list-item {
+  margin: 0;
+  float: left;
+}
+.simc-player-stats .simc-list-item .simc-list-content {
+  border: 1px solid #cdcdcd;
+  position: relative;
+  text-align: center;
+  color: #000;
+  border-radius: 4px;
+  overflow: hidden;
+  display: inline-block;
+  margin: 0;
+}
+.simc-player-stats .simc-list-item:first-child {
+  margin-left: 0;
+}
+.simc-player-stats .simc-list-item:last-child {
+  margin-right: 0;
+}
+.simc-player-stats .simc-list-item .simc-top {
+  height: 28px;
+  line-height: 28px;
+  padding: 0 4px;
+  background-color: #efefef;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 14px;
+}
+.simc-player-stats .simc-list-item .simc-bottom {
+  height: 33px;
+  line-height: 33px;
+  padding: 0 4px;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 18px;
+  letter-spacing: -1px;
+}
+.simc-player-status {
+  background-color: #969696;
+  color: #fff;
+  display: table;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 14px;
+  height: 37px;
+  padding-left: 150px;
+  position: relative;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.simc-player-status span {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  z-index: 2;
+}
+.simc-scorecard-section .simc-player-status .simc-content-wrap {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.simc-scorecard-section .simc-player-status .simc-content-wrap .si-wicket-status {
+  text-align: left;
+}
+.simc-scorecard-section .simc-player-status .simc-content-wrap .si-fow-status {
+  text-align: right;
+  padding-right: 10px;
+}
+.simc-batting-list .simc-player-stats .simc-list-item .simc-list-content {
+  min-width: 50px;
+}
+.simc-batting-list .simc-list-item {
+  min-width: 20%;
+}
+.simc-bowling-list .simc-player-stats .simc-list-item .simc-list-content {
+  min-width: 55px;
+}
+.simc-bowling-list .simc-list-item {
+  min-width: 25%;
+}
+
+/*_ Extra block _*/
+
+.simc-extra-block {
+  padding: 10px 20px;
+  position: relative;
+}
+.simc-extra-block .simc-list-item {
+  margin-bottom: 20px;
+  position: relative;
+}
+.simc-extra-block .simc-list-item:before, .simc-extra-block .simc-list-item:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.simc-extra-label {
+  color: #000;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 18px;
+  width: 90px;
+  float: left;
+}
+.simc-extra-progress {
+  margin-left: 100px;
+  padding-right: 20px;
+  position: relative;
+}
+.simc-progress-bar {
+  position: relative;
+  width: 100%;
+  top: 6px;
+}
+.simc-progress-bar span {
+  display: block;
+  height: 10px;
+  position: relative;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.simc-progress-bar span {
+  background: rgb(252, 127, 20);
+  /* Old browsers */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZjN2YxNCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmY2IzMTQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(left, rgba(252, 127, 20, 1) 0%, rgba(252, 179, 20, 1) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(252, 127, 20, 1) 0%, rgba(252, 179, 20, 1) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(252, 127, 20, 1) 0%, rgba(252, 179, 20, 1) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#fc7f14', endColorstr='#fcb314', GradientType=1);
+  /* IE6-8 */
+}
+.simc-progress-bar span em {
+  font-style: normal;
+  font-size: 18px;
+  font-family: pt_sansbold, sans-serif;
+  color: #000;
+  position: absolute;
+  right: -25px;
+  top: -5px;
+}
+
+/*_ Conditional style _*/
+
+
+/*_ Player Active on field _*/
+
+.simc-active .simc-player-status::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.simc-active .simc-player-image::before {
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  content: "";
+  height: 102%;
+  left: -1px;
+  position: absolute;
+  top: -1px;
+  width: 102%;
+}
+
+/*_ Bowling list _*/
+
+.simc-bowling-list .simc-player-status {
+  bottom: 0;
+  padding-left: 0;
+  position: absolute;
+  text-indent: -9999px;
+  width: 143px;
+  left: 0;
+}
+.simc-bowling-list .simc-player-image {
+  bottom: 17px;
+}
+
+/*_ Yet bowling _*/
+
+.simc-yet-bowling .simc-player-stats {
+  margin-top: 11px;
+}
+.simc-yet-bowling .simc-player-status {
+  position: relative;
+}
+.simc-yet-bowling .simc-player-image img {
+  max-height: 80px;
+  max-width: 80px;
+}
+.simc-yet-bowling .simc-player-image {
+  padding: 3px;
+}
+.simc-yet-bowling.simc-bowling-list .simc-player-status {
+  height: 30px;
+  width: 110px;
+}
+.simc-yet-bowling .simc-player-name {
+  font-size: 12px;
+  line-height: 18px;
+  height: 33px;
+}
+.simc-yet-bowling .simc-player-data {
+  padding-left: 120px;
+}
+
+/**_ Live scorecard page _**/
+
+
+/*_ Over meter _*/
+
+.simc-over-meter {
+  position: relative;
+  margin-bottom: 25px;
+}
+.simc-over-meter .simc-slider-wrap {
+  margin: 5px 31px 0;
+}
+.simc-over-meter .simc-slider-item {
+  float: left;
+  min-width: 320px;
+  position: relative;
+  text-align: center;
+  padding-top: 30px;
+}
+.simc-over-meter .simc-list-content {
+  position: relative;
+}
+.simc-over-meter .simc-over-list {
+  height: 46px;
+  position: relative;
+  text-align: center;
+  font-size: 0;
+  border-left: 1px solid #bfc0c2;
+  border-right: 1px solid #bfc0c2;
+}
+.simc-over-meter .simc-over {
+  color: #fff;
+  display: inline-block;
+  font-family: pt_sansbold, sans-serif;
+  height: 30px;
+  position: relative;
+  width: 30px;
+  font-size: 14px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #f4821f;
+  vertical-align: top;
+  margin: 0 2px;
+}
+.simc-over-data {
+  display: table;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+.simc-over-data > span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.simc-over-tooltip {
+  background-color: #fff;
+  border: 1px solid #f4821f;
+  bottom: 0;
+  left: 50%;
+  margin-left: -105px;
+  padding: 5px;
+  position: absolute;
+  width: 210px;
+  display: none;
+  line-height: 14px;
+}
+.simc-over-tooltip {
+  bottom: 40px;
+  color: #000;
+  font-size: 12px;
+  font-family: pt_sansregular, sans-serif;
+  line-height: 10px;
+}
+.simc-over-tooltip em {
+  font-style: normal;
+}
+.simc-over:hover .simc-over-tooltip {
+  display: block;
+}
+.simc-over-tooltip:before {
+  content: "";
+  display: block;
+  width: 17px;
+  height: 10px;
+  background-image: url('../images/drop-arrow.png');
+  position: absolute;
+  left: 50%;
+  margin-left: -9px;
+  bottom: -10px;
+  background-repeat: no-repeat;
+}
+.simc-over-meter {
+  border-bottom: 1px solid #000000;
+  padding-bottom: 12px;
+}
+.simc-over-line {
+  background-color: #f4821f;
+  display: block;
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  width: 100%;
+  left: 0;
+}
+.simc-over-txt {
+  color: #000;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 14px;
+  margin-top: 15px;
+}
+.simc-over-list ul {
+  position: relative;
+  top: 6px;
+}
+.simc-over.simc-six {
+  background-color: #1ac942;
+}
+.simc-over.simc-wicket-noball, .simc-over.simc-extraball {
+  background-color: #000000;
+  color: #fff;
+  font-size: 13px;
+  line-height: 13px;
+}
+.simc-over.simc-four {
+  background-color: #1f90f4
+}
+.simc-over.simc-wicket {
+  background-color: #d00013;
+  color: #fff;
+}
+.simc-over.simc-wide, .simc-over.simc-noball {
+  background-color: #000;
+  color: #fff;
+}
+.simc-over.simc-legbye, .simc-over.simc-bye, .simc-over.simc-penalty {
+  background-color: #000;
+  color: #fff;
+}
+.simc-overscored.simc-six {
+  background-color: #1ac942;
+}
+.simc-overscored.simc-wicket-noball, .simc-overscored.simc-extraball {
+  background-color: #000000;
+  color: #fff;
+  font-size: 13px;
+  line-height: 13px;
+}
+.simc-overscored.simc-four {
+  background-color: #1f90f4
+}
+.simc-overscored.simc-wicket {
+  background-color: #d00013;
+  color: #fff;
+}
+.simc-overscored.simc-wide, .simc-overscored.simc-noball {
+  background-color: #000;
+  color: #fff;
+}
+.simc-overscored.simc-legbye, .simc-overscored.simc-bye, .simc-overscored.simc-penalty {
+  background-color: #000;
+  color: #fff;
+}
+.simc-over.si-over-ball.simc-six {
+  background-color: #1ac942;
+}
+.simc-over.si-over-ball.simc-wicket-noball, .simc-over.si-over-ball.simc-extraball {
+  background-color: #000000;
+  color: #fff;
+  font-size: 13px;
+  line-height: 13px;
+}
+.simc-over.si-over-ball.simc-four {
+  background-color: #1f90f4
+}
+.simc-over.si-over-ball.simc-wicket {
+  background-color: #d00013;
+  color: #fff;
+}
+.simc-over.si-over-ball.simc-wide, .simc-over.si-over-ball.simc-noball {
+  background-color: #000;
+  color: #fff;
+}
+.simc-over.si-over-ball.simc-legbye, .simc-over.si-over-ball.simc-bye, .simc-over.si-over-ball.simc-penalty {
+  background-color: #000;
+  color: #fff;
+}
+.simc-over-meter .simc-nav-left, .simc-over-meter .simc-nav-right {
+  height: 28px;
+  margin-top: 0px;
+  top: 50%;
+  width: 28px;
+}
+.simc-over-meter .simc-nav-left {
+  background-image: url('../images/arrorw-left.png');
+}
+.simc-over-meter .simc-nav-right {
+  background-image: url('../images/arrorw-right.png');
+}
+.simc-over-meter .simc-slider-item.simc-current-over {
+  background-color: rgba(244, 131, 31, 0.2);
+}
+.simc-over-meter li.simc-reachleft .simc-over-tooltip {
+  margin-left: 0px;
+  left: 0px;
+}
+.simc-over-meter li.simc-reachleft .simc-over-tooltip::before {
+  left: 5px;
+  margin-left: 0;
+}
+.simc-over-meter li.simc-reachright .simc-over-tooltip {
+  margin-left: 0px;
+  right: 0;
+  left: auto;
+}
+.simc-over-meter li.simc-reachright .simc-over-tooltip::before {
+  left: auto;
+  margin-left: 0;
+  right: 5px;
+}
+
+/*_ Active player block _*/
+
+.simc-live-section .simc-block-content {
+  background-color: transparent;
+}
+.simc-live-section .simc-block-section {
+  background-color: transparent;
+}
+.simc-active-players {
+  margin-top: 15px;
+  position: relative;
+}
+.simc-active-player-hd {
+  border-bottom: 3px solid #e56a00;
+  position: relative;
+  text-align: center;
+}
+.simc-active-player-hd > span {
+  background-color: #e56a00;
+  color: #fff;
+  display: inline-block;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 26px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 22px;
+  text-align: center;
+}
+.simc-active-players.simc-batting-list .simc-active-player-content, .simc-active-players.simc-bowling-list .simc-active-player-content {
+  background-color: #fff;
+  padding: 25px 0 165px;
+  position: relative;
+}
+.simc-active-players.simc-bowling-list .simc-active-player-content {
+  padding-bottom: 0;
+}
+.simc-active-players .simc-list-content {
+  position: relative;
+}
+.simc-active-player-box {}
+.simc-active-player-box .simc-player-score {
+  font-family: pt_sansbold, sans-serif;
+  font-size: 35px;
+  color: #000;
+}
+.simc-active-player-box .simc-player-score .simc-score-txt {
+  line-height: 32px;
+}
+.simc-active-player-box .simc-player-score .simc-score-txt i {
+  font-family: pt_sansregular, sans-serif;
+  font-style: normal;
+}
+.simc-active-player-box .simc-player-score .simc-score-txt {
+  display: inline-block;
+  line-height: 35px;
+  padding-right: 10px;
+  vertical-align: top;
+}
+.simc-active-player-box .simc-player-score span:last-child {
+  border-right: none;
+}
+.simc-active-player-box .simc-player-role {
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 32px;
+  position: relative;
+  width: 32px;
+  border-left: 1px solid #000;
+}
+.simc-active-player-box.simc-batsmen .simc-player-role, .simc-active-player-box .simc-batsmen.simc-player-role {
+  background-position: -220px -127px;
+}
+.simc-active-player-box.simc-bowler .simc-player-role, .simc-active-player-box .simc-bowler.simc-player-role {
+  background-position: -42px -127px;
+}
+.simc-active-player-box.simc-wicketkeper .simc-player-role, .simc-active-player-box .simc-wicketkeper.simc-player-role {
+  background-position: -220px -127px;
+}
+.simc-active-player-box.simc-alrounder .simc-player-role, .simc-active-player-box .simc-alrounder.simc-player-role {
+  background-position: -220px -127px;
+}
+.simc-score-breakdown {
+  margin-top: 20px;
+  position: relative;
+}
+.simc-score-txt em {
+  background-color: #f4821f;
+  border-radius: 50%;
+  display: inline-block;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  vertical-align: middle;
+  width: 28px;
+  font-size: 20px;
+  font-style: normal;
+  color: #fff;
+  font-family: pt_sansregular, sans-serif;
+}
+.simc-score-breakdown .simc-score-txt {
+  color: #000;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 20px;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.simc-score-txt.simc-six em {
+  background-color: #1ac942;
+}
+.simc-score-txt.simc-wicket-noball em, .simc-score-txt.simc-extraball em {
+  background-color: #000000;
+  color: #fff;
+  font-size: 13px;
+  line-height: 13px;
+}
+.simc-score-txt.simc-four em {
+  background-color: #1f90f4
+}
+.simc-score-txt.simc-wicket em {
+  background-color: #d00013;
+  color: #fff;
+}
+.simc-score-txt.simc-wide em, .simc-score-txt.simc-noball em {
+  background-color: #000;
+  color: #fff;
+}
+.simc-other-data {
+  margin-top: 20px;
+}
+.simc-other-data span {
+  background-color: #000000;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 20px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 5px;
+  text-transform: uppercase;
+}
+.simc-active-player-box .simc-player-status {
+  height: 65px;
+  padding-left: 240px;
+}
+.simc-active-player-box .simc-player-status .simc-player-name {
+  color: #fff;
+  display: table;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 24px;
+  height: 100%;
+  margin-bottom: 0;
+  width: 100%;
+  text-transform: none;
+}
+.simc-active-player-box .simc-player-image {
+  padding: 10px;
+}
+.simc-active-player-box .simc-player-image img {
+  height: auto;
+  max-height: 160px;
+  max-width: 160px;
+  width: 160px;
+}
+.simc-active-player-box .simc-player-image {
+  bottom: 36px;
+  left: 30px;
+}
+.simc-active-player-box .simc-player-data {
+  min-height: 155px;
+  padding-left: 240px;
+  position: relative;
+}
+
+/*_ Partnership _*/
+
+.simc-partnership-box {
+  left: 0;
+  position: absolute;
+  top: 230px;
+  width: 100%;
+}
+.simc-partnership-box .simc-content-box {
+  display: block;
+}
+.simc-partnership-block {
+  margin: 40px auto 0;
+  max-width: 470px;
+  position: relative;
+}
+.simc-partnership-block .simc-top {
+  color: #000;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 26px;
+  position: relative;
+  padding-bottom: 8px;
+}
+.simc-partnership-block .simc-top i {
+  font-family: pt_sansregular, sans-serif;
+  font-style: normal;
+}
+.simc-partnership-block .simc-player-a {
+  float: left;
+}
+.simc-partnership-block .simc-player-b {
+  float: right;
+}
+.simc-partnership-block .simc-progress-bar {
+  background-color: #f4821f;
+  height: 12px;
+  position: relative;
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.simc-partnership-block .simc-progress-bar span {
+  background: #eb4204;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  height: 12px;
+}
+.simc-partnership-pts {
+  color: #000;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 44px;
+  line-height: 44px;
+  margin-top: 25px;
+}
+
+/*_ Bowler _*/
+
+.simc-active-player-box.simc-bowler .simc-player-data {
+  min-height: 145px;
+}
+.simc-active-player-box.simc-bowler .simc-player-score .simc-score-txt {
+  padding-left: 60px;
+  position: relative;
+}
+.simc-active-player-box .simc-score-txt span::before {
+  background-color: #666;
+  border-radius: 50%;
+  color: #fff;
+  content: "";
+  display: inline-block;
+  height: 45px;
+  left: 0;
+  line-height: 45px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: -5px;
+  vertical-align: top;
+  width: 45px;
+  font-size: 30px;
+}
+.simc-active-player-box .simc-score-txt.simc-wicket span:before {
+  background-color: #d00013;
+  content: "w";
+}
+.simc-active-player-box .simc-score-txt.simc-wicket {
+  color: #d00013;
+}
+.simc-active-player-box.simc-bowler .simc-score-breakdown {
+  margin-top: 20px;
+}
+.simc-active-player-box .simc-score-txt em {
+  margin-right: 0px;
+  vertical-align: middle;
+}
+.simc-active-player-box.simc-bowler .simc-score-txt em {
+  margin-right: 4px;
+}
+.simc-active-player-box.simc-bowler .simc-player-status {
+  padding-left: 0;
+  position: relative;
+  text-indent: 0px;
+  width: 100%;
+}
+.simc-active-player-box.simc-bowler .simc-player-name {
+  padding-left: 240px;
+}
+
+/*_ this over _*/
+
+.simc-overstats-block .simc-content-wrap {
+  text-align: left;
+}
+.simc-overstats-block {
+  display: block;
+  width: 100%;
+  font-size: 0;
+  text-align: left;
+}
+.simc-overstats-block {
+  height: 95px;
+  padding: 0 10px;
+  position: relative;
+  display: table;
+}
+.simc-overstats-block span {
+  color: #000;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.simc-overstats-block ul {
+  display: inline-block;
+  vertical-align: middle;
+}
+.simc-overstats-block .simc-over {
+  background-color: #f4821f;
+  border-radius: 50%;
+  display: inline-block;
+  height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  width: 30px;
+  font-size: 18px;
+  font-family: pt_sansbold, sans-serif;
+  margin: 0 4px;
+}
+.simc-overstats-block .simc-over span {
+  display: table-cell;
+  color: #fff;
+}
+.simc-overstats-block .simc-over:first-child {
+  margin-left: 0;
+}
+.simc-overstats-block .simc-over:last-child {
+  margin-right: 0;
+}
+.simc-over.simc-wicket-noball span, .simc-over.simc-extraball span {
+  font-size: 12px;
+  line-height: 10px;
+}
+
+/*_ Comment block _*/
+
+.simc-comment-block {
+  margin-top: 20px;
+  position: relative;
+}
+.simc-comment-hd {
+  height: 54px;
+  position: relative;
+  background-color: #494949;
+  padding: 0 30px;
+  border-bottom: 1px solid #dbdbdb;
+}
+.simc-comment-hd:before, .simc-comment-hd:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.simc-comment-hd .simc-lft, .simc-comment-hd .simc-rgt {
+  display: table;
+  height: 100%;
+}
+.simc-comment-hd h3 {
+  color: #fff;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 26px;
+}
+.simc-comment-hd span {
+  font-family: pt_sansregular, sans-serif;
+  font-size: 26px;
+  color: #fff;
+}
+.simc-comment-summary {
+  background-color: #8a8a8a;
+  padding: 20px 25px;
+  position: relative;
+}
+.simc-comment-summary .simc-content-box {
+  display: block;
+}
+.simc-summary-item {
+  color: #fff;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 20px;
+  position: relative;
+  text-align: left;
+}
+.simc-summary-item .si-table-td {
+  height: 45px;
+}
+.simc-summary-item .si-table-td span {
+  line-height: 18px;
+  padding: 0 15px;
+  border-right: 1px solid #ffffff;
+}
+.simc-summary-item .si-table-td span:first-child {
+  padding-left: 0;
+}
+.simc-summary-item .si-table-td span:last-child {
+  padding-right: 0;
+  border-right: none;
+}
+.simc-summary-item:last-child {
+  text-align: right;
+}
+.simc-comment-description {
+  background-color: #f3f3f3;
+  position: relative;
+  padding: 20px 25px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.simc-comment-item {
+  position: relative;
+  margin-bottom: 20px;
+  min-height: 50px;
+}
+.simc-comment-item:last-child {
+  margin-bottom: 0;
+}
+.simc-over-no {
+  color: #000;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 18px;
+}
+.simc-over-no {
+  left: 12px;
+  position: absolute;
+  top: 10px;
+}
+.simc-overscored {
+  background-color: #f4821f;
+  color: #fff;
+  display: table;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 18px;
+  height: 38px;
+  text-align: center;
+  width: 38px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.simc-overscored {
+  left: 60px;
+  position: absolute;
+  top: 0;
+}
+.simc-overscored span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.simc-comment-text {
+  color: #000;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  padding-left: 115px;
+  text-align: left;
+}
+.simc-overscored.simc-noball-com span {
+  text-indent: -9999px;
+  background-image: url('../images/blokqoute.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px auto;
+}
+
+/*_ Previous wicket _*/
+
+.simc-previous-wicket:before, .simc-previous-wicket:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+.simc-previous-wicket {
+  margin-top: 20px;
+  position: relative;
+  background-color: #e8f4ff;
+  border-bottom: 2px solid #4ca0ea;
+  margin-bottom: 18px;
+}
+.simc-previous-wicket .simc-player-image {
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  position: relative;
+  float: left;
+}
+.simc-previous-hd {
+  color: #024f93;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 34px;
+  line-height: 35px;
+}
+.simc-previous-hd {
+  position: absolute;
+  left: 27px;
+  top: 40px;
+}
+.simc-previous-summary {
+  margin: 20px 20px 20px 286px;
+  position: relative;
+  border-left: 1px solid #024f93;
+  padding-left: 20px;
+}
+.simc-previous-summary img {
+  max-height: 74px;
+  max-width: 74px;
+}
+.simc-previous-data {
+  margin-left: 100px;
+  position: relative;
+}
+.simc-previous-content {
+  background-color: #d4e8fb;
+  clear: both;
+  overflow: hidden;
+  width: 100%;
+}
+.simc-previous-content .simc-content-wrap {
+  padding: 15px;
+  position: relative;
+}
+.simc-previous-data {
+  display: table;
+  height: 90px;
+  position: relative;
+  /*border-bottom: 1px solid #7bbaf1;*/
+}
+.simc-previous-data p {
+  color: #024f93;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.simc-previous-data p:last-child {
+  margin: 0;
+}
+.simc-previous-data em {
+  font-size: 26px;
+  font-family: pt_sansbold, sans-serif;
+  font-style: normal;
+}
+p.simc-txt2 {
+  color: #459dea;
+  font-size: 20px;
+}
+.toggle-comment {
+  background-color: #459dea;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 12px;
+  left: 50%;
+  margin-left: -26px;
+  padding: 0 10px;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+/** Canvas Error **/
+
+.si-canvaserror {
+  display: table;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.si-canvaserror div {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 14px;
+  color: #fff;
+  font-family: pt_sansregular;
+}
+
+/** Commentary Page **/
+
+
+/*_ Sub tab - Commentary _*/
+
+.simc-commentary-section .si-subtab {
+  border-bottom: 1px solid #fbc483;
+}
+.simc-commentary-section .si-subtab li {
+  display: table;
+  height: 40px;
+  padding: 10px 0px;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 18px;
+  color: #000;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s
+}
+.simc-commentary-section .si-subtab li span {
+  border-right: 1px solid #adadad;
+  display: table-cell;
+  line-height: 20px;
+  padding: 0 20px;
+  vertical-align: middle;
+}
+.simc-commentary-section .si-subtab li.active, .simc-commentary-section .si-subtab li:hover {
+  color: #f4821f;
+}
+.simc-commentary-section .si-subtab li:last-child span {
+  border-right: none;
+}
+
+/*_ Filter - Commentary _*/
+
+.simc-filter-commentary:before, .simc-filter-commentary:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.simc-commentary-section .si-rgt {
+  margin-top: 11px;
+}
+.simc-commentary-section .simc-block-content {
+  padding-top: 0;
+}
+.simc-commentary-section .simc-comment-block {
+  margin-top: 0;
+}
+
+/** Result Page **/
+
+
+/*_ Sub tab _*/
+
+.simc-result-page .si-subtab li {
+  font-family: pt_sansregular, sans-serif;
+  font-size: 24px;
+  height: 50px;
+}
+
+/*_ Filter _*/
+
+.simc-result-page .simc-filter {
+  background-color: #000000;
+  height: 40px;
+}
+.simc-result-page .simc-filter li {
+  font-family: pt_sansregular, sans-serif;
+  font-size: 20px;
+  height: 40px;
+  padding: 14px 0;
+  color: #fff;
+}
+.simc-result-page .simc-filter li.active {
+  color: #f4821f;
+}
+
+/*_ Select filter _*/
+
+.simc-select-filter li .simc-listcontent > span:before {
+  content: "\e259";
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  margin-top: -5px;
+  position: absolute;
+  right: -21px;
+  top: 50%;
+}
+
+/*_ Result data _*/
+
+.simc-result-data {
+  margin-top: 10px;
+  position: relative;
+  margin-bottom: 20px;
+}
+.simc-result-data .simc-table-th {
+  background-color: #8ec63d;
+  height: 70px;
+  position: relative;
+  text-align: center;
+  font-family: pt_sansregular, sans-serif;
+  color: #fff;
+  font-size: 14px;
+  border-left: 1px solid #ed974d;
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+.simc-result-data .simc-table-th span::before {
+  background-position: center center;
+  background-repeat: no-repeat;
+  content: "";
+  display: block;
+  height: 34px;
+}
+.simc-result-data .simc-table-th.simc-tblDate span::before {
+  background-image: url('../images/datetime.png');
+}
+.simc-result-data .simc-table-th.simc-tblTeams span::before {
+  background-image: url('../images/teams.png');
+}
+.simc-result-data .simc-table-th.simc-tblMatch span::before {
+  background-image: url('../images/match.png');
+}
+.simc-result-data .simc-table-th.simc-tblStatus span::before {
+  background-image: url('../images/status.png');
+}
+
+/*.simc-result-data .simc-table-th:last-child{border-left: none;}*/
+
+.simc-result-data .simc-table-td, .simc-result-data .simc-table-th {
+  padding: 0 5px;
+}
+.simc-result-data .simc-table-td {
+  background-color: #fff;
+  border-bottom: 1px solid #f5f3f3;
+  border-top: 7px solid #eff3f8;
+  height: 52px;
+  font-size: 16px;
+  color: #000;
+  font-family: pt_sansregular, sans-serif;
+  text-align: center;
+  position: relative;
+}
+.simc-result-data .simc-table-td em {
+  font-style: normal;
+}
+.simc-result-data .simc-table-td:first-child {
+  border-left: 1px solid #f5f3f3;
+}
+.simc-result-data .simc-table-td:last-child {
+  border-right: 1px solid #f5f3f3;
+}
+.simc-result-data .simc-table-td.simc-tblTeams {
+  font-family: pt_sansbold, sans-serif;
+}
+.simc-result-data .simc-table-td.simc-tblMatch span.simc-txt2 {
+  color: #333333;
+  display: block;
+}
+.simc-result-data .simc-table-td::before {
+  background-color: #efeded;
+  bottom: 0px;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+/*.simc-table-th.simc-tblStatus, .simc-table-td.simc-tblStatus {
+  padding-right: 140px;
+}*/
+.simc-table-td.simc-tblStatus .simc-matchcentre-btn {
+  width: 140px;
+  position: absolute;
+  right: 10px;
+  text-align: right;
+  top: 50%;
+  margin-top: -14px;
+}
+_:-ms-fullscreen, :root .simc-table-td.simc-tblStatus .simc-matchcentre-btn {
+  margin-top: 0;
+  top: 9px;
+}
+.simc-table-td.simc-tblStatus .simc-matchcentre-btn a {
+  text-decoration: none;
+}
+.simc-table-td.simc-tblStatus .simc-matchcentre-btn span {
+  background-color: #1d1c1c;
+  color: #fff;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 14px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.simc-table-th.simc-tblMatch, .simc-table-td.simc-tblMatch {
+  width: 160px;
+}
+
+/** Team Page **/
+
+.simc-team-list {
+  margin-top: 30px;
+  position: relative;
+}
+.simc-team-item {
+  margin: 30px 0 20px;
+  cursor: pointer;
+}
+.simc-team-item .simc-content-box {
+  display: block;
+  position: relative;
+  border: 1px solid #dcdcdc;
+  background-color: #fff;
+}
+.simc-team-item .simc-top {
+  display: table;
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+.simc-team-item .simc-top .simc-content-wrap {
+  text-align: left;
+}
+.simc-team-item .simc-team-image img {
+  height: auto;
+  max-height: 60px;
+  max-width: 90px;
+  width: auto;
+}
+.simc-team-item .simc-team-image {
+  position: absolute;
+  left: 10px;
+  bottom: 15px;
+}
+.simc-team-item .simc-team-name {
+  color: #000;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 18px;
+  padding-left: 120px;
+  text-transform: uppercase;
+}
+.simc-captain-list h4 {
+  background-color: #f0f0f0;
+  color: #000;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 16px;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 10px;
+  text-align: left;
+}
+.simc-captain-list .simc-table-th, .simc-captain-list .simc-table-td {
+  font-size: 14px;
+  font-family: pt_sansregular, sans-serif;
+  color: #545454;
+  padding: 8px 10px;
+}
+.simc-captain-list .simc-table-th {
+  font-family: pt_sansbold, sans-serif;
+  color: #000;
+  width: 70px;
+  padding-left: 20px;
+}
+.simc-captain-list .simc-table-td {
+  padding-left: 20px;
+  text-align: left;
+}
+
+/** Team profile page **/
+
+
+/*_ Team Summary _*/
+
+.simc-team-summary {
+  background-image: url('../images/banner-medium.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 102px;
+  padding: 10px 30px;
+  background-position: right bottom;
+  position: relative;
+  display: table;
+  width: 100%;
+}
+.simc-team-summary:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  content: "";
+}
+.simc-team-summary .simc-content-box {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  text-align: left;
+}
+.simc-team-summary .simc-team-image {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  margin-top: -30px;
+}
+.simc-team-summary .simc-team-image img {
+  max-height: 60px;
+  max-width: 90px;
+  height: 60px;
+}
+.simc-team-summary .simc-team-detail {
+  color: #fff;
+  padding-left: 110px;
+  position: relative;
+}
+.simc-team-summary .simc-team-name {
+  font-family: pt_sansbold, sans-serif;
+  font-size: 42px;
+  text-transform: none;
+  line-height: 40px;
+}
+.simc-team-summary .simc-team-stats {
+  margin-top: 4px;
+  font-size: 18px;
+  color: #f4821f;
+  font-family: pt_sansregular, sans-serif;
+  line-height: 18px;
+}
+.simc-team-summary .simc-team-stats li span {
+  padding: 0 15px;
+  border-right: 1px solid #fff;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+.simc-team-summary .simc-team-stats li:first-child span {
+  padding-left: 0;
+}
+.simc-team-summary .simc-team-stats li:last-child span {
+  padding-right: 0;
+  border-right: none;
+}
+.simc-team-summary .simc-team-stats em {
+  color: #fff;
+  font-style: normal;
+}
+.simc-team-summary .simc-team-stats > span {
+  border-right: none;
+  display: inline-block;
+  vertical-align: middle;
+}
+.simc-team-stats ul {
+  display: inline-block;
+  vertical-align: middle;
+}
+.simc-team-stats ul li {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*_ sqaud Item _*/
+
+.simc-team-sqaud {
+  background-color: #fff;
+  border: 1px solid #edefef;
+  padding: 20px 5px 0;
+}
+.simc-team-sqaud h4 {
+  color: #000;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 24px;
+  margin-bottom: 25px;
+  padding-left: 15px;
+}
+.simc-team-sqaud .simc-list-item {
+  cursor: pointer;
+}
+.simc-team-sqaud .simc-player-image img {
+  height: auto;
+  max-height: 90px;
+  max-width: 90px;
+  width: auto;
+}
+.simc-team-sqaud .simc-player-status {
+  height: 55px;
+  padding-left: 120px;
+  margin-top: 60px;
+}
+.simc-team-sqaud .simc-player-info {
+  right: -39px;
+  top: 15px;
+  left: auto;
+}
+.simc-team-sqaud .simc-player-name {
+  font-family: pt_sansbold, sans-serif;
+  font-size: 18px;
+  line-height: 18px;
+  margin-bottom: 0;
+  text-transform: none;
+  color: #fff;
+}
+.simc-team-sqaud .simc-player-specialist {
+  color: #fff;
+  font-size: 14px;
+  font-family: pt_sansregular, sans-serif;
+}
+
+/*_ Sqaud Team stats table _*/
+
+.simc-table-block {
+  margin-top: 30px;
+  position: relative;
+}
+.simc-table-block h4 {
+  color: #000;
+  font-family: pt_sansregular, sans-serif;
+  padding-left: 20px;
+  margin-bottom: 8px;
+}
+.simc-table-block .si-subtab {
+  background-color: #000;
+  color: #fff;
+}
+.simc-table-block .si-subtab li {
+  color: #fff;
+  font-size: 20px;
+  font-family: pt_sansregular, sans-serif;
+}
+.simc-table-block .si-subtab li.active, .simc-table-block .si-subtab li:hover {
+  color: #f4821f;
+}
+.simc-table-block .simc-table-th {
+  background-color: #1d1c1c;
+  color: #f4821f;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 16px;
+  height: 40px;
+  text-align: center;
+  padding: 0 10px;
+}
+.simc-table-block .simc-table-td {
+  background-color: #fff;
+  border-bottom: 4px solid #f2f5f9;
+  color: #000;
+  font-size: 16px;
+  height: 44px;
+  text-align: center;
+  position: relative;
+  font-family: pt_sansregular, sans-serif;
+  padding: 0 10px;
+}
+.simc-table-block .simc-table-td.tblFormat {
+  font-family: pt_sansbold, sans-serif;
+}
+.simc-table-block .simc-table-td.tblFormat, .simc-table-block .simc-table-th.tblFormat {
+  text-align: left;
+  padding-left: 20px;
+}
+.simc-table-block .simc-table-td::before {
+  border-bottom: 1px solid #efeded;
+  border-top: 1px solid #efeded;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+_:-ms-fullscreen, :root .simc-table-block .simc-table-td::before {
+  border: none;
+}
+.simc-table-block .simc-table-td:first-child {
+  border-left: 1px solid #efeded;
+}
+.simc-table-block .simc-table-td:last-child {
+  border-right: 1px solid #efeded;
+}
+
+/*_ Table summary _*/
+
+.simc-table-summary {
+  margin-top: 30px;
+  position: relative;
+  border: 1px solid #efeded;
+  padding: 1px;
+  margin-bottom: 30px;
+}
+.simc-table-summary .simc-table-th, .simc-table-summary .simc-table-td {
+  background-color: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: left;
+  font-size: 16px;
+  color: #000;
+}
+.simc-table-summary .simc-table-td:before {
+  display: none;
+}
+.simc-table-summary .simc-table-th {
+  padding-left: 20px;
+  font-family: pt_sansbold, sans-serif;
+}
+.simc-table-summary .simc-table-td {
+  padding-left: 30px;
+}
+
+/** Player Profile Page **/
+
+.simc-player-profile .simc-block-content, .simc-player-profile .simc-block-section {
+  background-color: transparent;
+}
+.simc-player-profile .simc-block-section-hd h3 {
+  color: #000;
+  font-family: pt_sansregular, sans-serif;
+  padding: 0 30px;
+}
+.simc-player-profile .simc-block-section-hd {
+  padding-top: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+/*_ Switch player _*/
+
+.simc-select-box.simc-selectplayer {
+  background-color: transparent;
+  border: 1px solid #afafaf;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 170px;
+  height: 30px;
+}
+.simc-selectplayer .select-out {
+  font-size: 18px;
+  color: #000;
+  height: 28px;
+}
+.simc-select-box.simc-selectplayer:before {
+  content: "\e259";
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  margin-top: -7px;
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  color: #b6b6b6;
+}
+
+/*_ Player Summary _*/
+
+.simc-player-summary {
+  min-height: 250px;
+  padding: 10px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-image: url('../images/banner-medium.jpg');
+  background-size: cover;
+  display: table;
+  height: auto;
+  width: 100%;
+}
+.simc-player-summary::before {
+  background-color: rgba(0, 0, 0, 0.8);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.simc-player-summary .simc-content-box {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+.simc-player-summary .simc-content-box:before, .simc-player-summary .simc-content-box:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.simc-player-summary .simc-team-image img {
+  max-height: 28px;
+  max-width: 40px;
+}
+.simc-player-summary .simc-team-image {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+.simc-player-summary .simc-player-image img {
+  border: 8px solid #fff;
+  display: block;
+  height: auto;
+  max-height: 138px;
+  max-width: 138px;
+  width: 130px;
+}
+.simc-player-summary .simc-player-image {
+  background-color: transparent;
+  border: none;
+  bottom: auto;
+  height: auto;
+  left: 0;
+  padding: 0;
+  position: absolute;
+  top: 41px;
+  z-index: 2;
+  display: table;
+}
+.simc-player-summary .simc-player-detail {
+  margin-left: 175px;
+  position: relative;
+}
+.simc-player-summary .simc-player-name {
+  color: #fff;
+  font-size: 24px;
+  line-height: 24px;
+  margin-bottom: 12px;
+  text-transform: none;
+  margin-top: 0px;
+}
+.simc-player-summary .simc-player-data {
+  min-height: 100%;
+  padding-left: 0;
+  position: relative;
+}
+.simc-player-detail .simc-content-box {
+  display: block;
+}
+.simc-player-data .simc-content-wrap {
+  display: block;
+  position: relative;
+  text-align: left;
+}
+.simc-player-data .simc-table-th, .simc-player-data .simc-table-td {
+  color: #f4821f;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 18px;
+  text-align: left;
+  height: 45px;
+  padding: 0 5px;
+  vertical-align: top;
+  border-bottom: 15px solid transparent;
+}
+.simc-player-data .simc-table-td {
+  color: #fff;
+}
+.simc-player-data .simc-lft {
+  border-right: 1px solid #e77e22;
+}
+
+/** Match stats page **/
+
+.simc-active-stats {
+  position: relative;
+}
+.simc-active-stats .simc-block-section-hd {
+  margin-bottom: 0;
+}
+.simc-active-stats .simc-block-section-body {
+  padding: 20px;
+  position: relative;
+}
+.simc-graph-block {
+  position: relative;
+}
+.simc-graph-header .simc-select-box, .simc-controls-wap .simc-select-box {
+  background-color: transparent;
+  border: 1px solid #afafaf;
+  position: relative;
+  right: 0;
+  top: 0;
+  width: 170px;
+  height: 30px;
+}
+.simc-graph-header .simc-select-out, .simc-controls-wap .simc-select-out {
+  font-size: 14px;
+  color: #000;
+  height: 28px;
+  display: block;
+  padding-right: 20px;
+  padding-left: 5px;
+  line-height: 28px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.simc-graph-header .simc-select-box:before, .simc-controls-wap .simc-select-box:before {
+  content: "\e259";
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  margin-top: -7px;
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  color: #b6b6b6;
+}
+.simc-graph-header .simc-tab li.active {
+  color: #f4821f;
+}
+.simc-graph-header .simc-tab li.active em {
+  color: #f4821f;
+}
+
+/*_ Other Stats _*/
+
+.simc-other-stats .simc-block-section-hd {
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+.simc-other-stats .simc-block-content {
+  background-color: transparent;
+}
+.simc-other-stats .simc-block-section {
+  background-color: transparent;
+}
+.simc-other-stats .simc-graph-thump img {
+  height: auto;
+  width: 100%;
+}
+.simc-other-stats .simc-graph-item {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.simc-other-stats .simc-graph-item .simc-content-wrap {
+  background-color: #fff;
+  display: block;
+  position: relative;
+}
+.simc-other-stats .simc-graph-title {
+  text-align: center;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+.simc-other-stats .simc-graph-title span {
+  border: 1px solid #f6c296;
+  border-radius: 10px;
+  color: #000;
+  display: inline-block;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 18px;
+  line-height: 16px;
+  padding: 8px 20px;
+}
+
+/*_ Spider graph _*/
+
+.simc-spider-stats .simc-graph-header {
+  float: left;
+  width: 240px;
+}
+.simc-spider-stats .simc-block-section-hd {
+  margin-bottom: 0;
+}
+.simc-spider-stats .simc-graph-block {
+  min-height: 540px;
+}
+.simc-spider-stats .simc-spider-graph {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.simc-spider-legend .simc-checkbox-group span {
+  min-width: 40px;
+  text-align: center;
+}
+
+/*_ Graph control _*/
+
+.simc-spider-stats .simc-spider-legend .simc-checkbox-group {
+  display: block;
+  margin: 0 0 15px;
+}
+.simc-spider-stats .simc-spider-legend {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.simc-spider-image {
+  margin-right: 160px;
+  margin-top: 65px;
+  position: relative;
+}
+.simc-spider-plot {
+  height: 100%;
+  width: 100%;
+  padding: 18px;
+}
+.simc-spider-image {
+  background-image: url('../images/spider-bg.png');
+  height: 394px;
+  width: 393px;
+}
+.simc-spider-plot svg text {
+  display: none;
+}
+.simc-spider-data {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.simc-data-runs {
+  font-size: 36px;
+  font-family: pt_sansregular, sans-serif;
+  color: #f4821f;
+  display: block;
+  vertical-align: baseline;
+  line-height: 36px;
+}
+.simc-data-runs sub {
+  color: #000;
+  font-size: 12px;
+}
+.simc-data-runsbreakdown {
+  display: block;
+  margin-top: 6px;
+  position: relative;
+  font-size: 12px;
+  font-family: pt_sansregular, sans-serif;
+  line-height: 12px;
+}
+.simc-data-runsbreakdown span {
+  display: block;
+}
+.simc-data-runsbreakdown span.simc-six {
+  color: #1f90f4;
+}
+.simc-data-runsbreakdown span.simc-four {
+  color: #0bac4e;
+}
+.simc-graphdata-list .simc-data-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.simc-data-item.simc-data-item-01 {
+  left: 75px;
+}
+.simc-data-item.simc-data-item-02 {
+  left: 269px;
+  top: 0;
+}
+.simc-data-item.simc-data-item-03 {
+  left: 405px;
+  top: 131px;
+}
+.simc-data-item.simc-data-item-04 {
+  left: 400px;
+  top: 332px;
+}
+.simc-data-item.simc-data-item-05 {
+  left: 279px;
+  top: 457px;
+}
+.simc-data-item.simc-data-item-06 {
+  left: 68px;
+  top: 461px;
+}
+.simc-data-item.simc-data-item-07 {
+  left: -54px;
+  top: 324px;
+}
+.simc-data-item.simc-data-item-08 {
+  left: -57px;
+  top: 136px;
+}
+.simc-graph-header {
+  background-color: #f7f7f7;
+  position: relative;
+}
+.simc-graph-header .simc-tab {
+  background-color: #efefef;
+  position: relative;
+}
+.simc-graph-header .simc-tab:before, .simc-graph-header .simc-tab:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.simc-graph-header .simc-tab li {
+  display: table;
+  float: left;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 16px;
+  height: 40px;
+  line-height: 16px;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+.simc-graph-header .simc-tab li span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.simc-graph-header .simc-tab li:before {
+  content: "";
+  height: 20px;
+  width: 1px;
+  background-color: #cdcdcd;
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+}
+.simc-graph-header .simc-tab li:first-child:before {
+  display: none;
+}
+.simc-graph-header .simc-tab li em {
+  display: block;
+  font-style: normal;
+  font-size: 14px;
+  color: #444;
+}
+.simc-graph-header .simc-tab-container {
+  background-color: #f7f7f7;
+  position: relative;
+}
+.simc-graph-header .simc-player-list li {
+  display: table;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 16px;
+  height: 38px;
+  padding-left: 30px;
+  padding-right: 38px;
+  border-bottom: 1px solid #dadada;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+}
+.simc-graph-header .simc-player-list li .simc-list-content {
+  display: table-cell;
+  vertical-align: middle;
+}
+.simc-graph-header .simc-player-list li .simc-player-name {
+  color: #000;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 0;
+  text-align: left;
+  text-transform: none;
+}
+.simc-graph-header .simc-player-list li .simc-player-score {
+  font-family: pt_sansbold, sans-serif;
+  font-size: 20px;
+  position: absolute;
+  right: 10px;
+  display: none;
+  top: 0;
+  line-height: 38px;
+}
+.simc-graph-header .simc-player-list li.active .simc-player-name, .simc-graph-header .simc-player-list li.active .simc-player-score {
+  color: #f4821f;
+  display: block;
+}
+.simc-graph-header .simc-graph-innings {
+  position: absolute;
+  right: 0;
+  top: -58px;
+}
+.simc-graph-header .simc-graph-team-info .simc-team-name {
+  color: #000;
+  font-size: 14px;
+}
+.simc-graph-header .simc-graph-team-info .simc-team-color {
+  background-color: #c7c7c7;
+  display: inline-block;
+  height: 1px;
+  margin-right: 5px;
+  vertical-align: middle;
+  width: 38px;
+}
+.simc-graph-header .simc-graph-team-info span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.simc-graph-header .simc-graph-team-info > ul {
+  display: inline-block;
+}
+.simc-graph-header .simc-graph-team-info {
+  text-align: right;
+}
+.simc-graph-header .simc-graph-team-info > ul li {
+  text-align: left;
+}
+
+/*_ Run Rate graph _*/
+
+.simc-runrate-stats .simc-graph-header {
+  background-color: transparent;
+}
+.simc-runrate-graph {
+  height: 415px;
+  position: relative;
+}
+
+/*_ Axis text _*/
+
+.simc-axis-text .simc-axis span {
+  color: #000;
+  display: inline-block;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 18px;
+  padding: 0 10px;
+  background-color: #fff;
+  margin-top: -9px;
+}
+.simc-axis-text .simc-axis {
+  text-align: center;
+  height: 1px;
+  position: relative;
+  background: rgb(255, 255, 255);
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjE1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzliYTJhOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 15%, rgba(155, 162, 168, 1) 50%, rgba(255, 255, 255, 1) 85%, rgba(255, 255, 255, 1) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 15%, rgba(155, 162, 168, 1) 50%, rgba(255, 255, 255, 1) 85%, rgba(255, 255, 255, 1) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 15%, rgba(155, 162, 168, 1) 50%, rgba(255, 255, 255, 1) 85%, rgba(255, 255, 255, 1) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1);
+  /* IE6-8 */
+}
+.simc-axis-text .simc-axis.simc-axis-x {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+.simc-axis-text .simc-axis.simc-axis-x span {
+  position: relative;
+  top: -10px;
+}
+.simc-axis-text .simc-axis.simc-axis-y {
+  bottom: 0;
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+15,9ba2a8+50,ffffff+85,ffffff+100 */
+  background: rgb(255, 255, 255);
+  /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjE1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzliYTJhOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 15%, rgba(155, 162, 168, 1) 50%, rgba(255, 255, 255, 1) 85%, rgba(255, 255, 255, 1) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 15%, rgba(155, 162, 168, 1) 50%, rgba(255, 255, 255, 1) 85%, rgba(255, 255, 255, 1) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 15%, rgba(155, 162, 168, 1) 50%, rgba(255, 255, 255, 1) 85%, rgba(255, 255, 255, 1) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
+  /* IE6-8 */
+}
+.simc-axis-text .simc-axis.simc-axis-y span {
+  position: absolute;
+  top: 50%;
+  left: -43px;
+  margin-top: -30px;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  white-space: nowrap;
+}
+
+/*_ Axis line _*/
+
+.simc-axis-line span {
+  font-size: 16px;
+  font-family: pt_sansregular, sans-serif;
+  color: #000;
+}
+.simc-axis-line .simc-axis.simc-axis-x li {
+  float: left;
+  text-align: left;
+  width: 9.09%;
+  position: relative;
+}
+.simc-axis-line .simc-axis.simc-axis-y li {
+  height: 34px;
+  position: relative;
+  text-align: center;
+}
+.simc-axis-line .simc-axis.simc-axis-y {
+  bottom: 42px;
+  left: 42px;
+  position: absolute;
+  top: auto;
+}
+.simc-axis-line .simc-axis.simc-axis-x {
+  bottom: 42px;
+  left: 42px;
+  position: absolute;
+  right: 0;
+}
+
+/*_ Graph area _*/
+
+.simc-graph-area {
+  height: 100%;
+  padding-left: 20px;
+  position: absolute;
+  width: 100%;
+  padding-bottom: 20px;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.simc-graph-plot {
+  height: 100%;
+  position: relative;
+  /* background-image: url('../images/graph-area-bg.png');background-position: left bottom;background-repeat: repeat-x; */
+}
+.simc-plot-data {
+  position: absolute;
+}
+.simc-plot-thumb {
+  background-color: #666;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  display: block;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 10px;
+  height: 20px;
+  line-height: 16px;
+  text-align: center;
+  width: 20px;
+  position: relative;
+  z-index: 1;
+}
+.simc-plot-popup {
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.8);
+  bottom: 24px;
+  left: -20px;
+  padding: 10px 20px;
+  position: absolute;
+  width: 235px;
+  display: block;
+  z-index: 10;
+}
+.simc-plot-popup::before {
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid rgba(0, 0, 0, 0.8);
+  bottom: -4px;
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 15px;
+}
+.simc-plot-data.simc-reachright .simc-plot-popup {
+  left: auto;
+  right: -20px;
+}
+.simc-plot-data.simc-reachright .simc-plot-popup::before {
+  left: auto;
+  right: 15px;
+}
+.simc-plot-data:hover .simc-plot-popup {
+  display: block;
+}
+.simc-plot-popup .simc-content-wrap {
+  display: block;
+}
+.simc-plot-description span {
+  font-size: 16px;
+  font-family: pt_sansregular, sans-serif;
+  color: #fff;
+  line-height: 16px;
+  display: block;
+}
+.simc-plot-description span em {
+  font-style: normal;
+  color: #03ff34;
+}
+.simc-plot-popup .simc-player-image img {
+  height: auto;
+  max-height: 68px;
+  max-width: 68px;
+  width: auto;
+}
+.simc-plot-popup .simc-player-image {
+  top: -25px;
+  left: 10px;
+  padding: 4px;
+  bottom: auto;
+}
+.simc-plot-description {
+  margin-left: 78px;
+  text-align: left;
+}
+.simc-plot-description span.simc-player-name {
+  color: #3fd8fa;
+  font-size: 16px;
+  line-height: 15px;
+  margin-bottom: 3px;
+}
+.simc-plot-data.simc-six .simc-plot-thumb {
+  background-color: #1ac942;
+}
+.simc-plot-data.simc-wicket-noball .simc-plot-thumb, .simc-plot-data.simc-extraball .simc-plot-thumb {
+  background-color: #000000;
+  color: #fff;
+  font-size: 13px;
+  line-height: 13px;
+}
+.simc-plot-data.simc-four .simc-plot-thumb {
+  background-color: #1f90f4
+}
+.simc-plot-data.simc-wicket .simc-plot-thumb {
+  background-color: #d00013;
+  color: #fff;
+}
+.simc-plot-data.simc-wide .simc-plot-thumb, .simc-plot-data.simc-noball .simc-plot-thumb {
+  background-color: #000;
+  color: #fff;
+}
+.simc-plot-data.simc-legbye .simc-plot-thumb, .simc-plot-data.simc-bye .simc-plot-thumb, .simc-plot-data.simc-penalty .simc-plot-thumb {
+  background-color: #000;
+  color: #fff;
+}
+.si-no-image .simc-plot-description {
+  margin-left: 0;
+}
+.si-no-image .simc-plot-popup {
+  padding: 10px;
+  width: 240px;
+}
+
+/*_ Manhattan _*/
+
+.simc-manhattan-graph {
+  height: 472px;
+}
+.simc-manhattan-graph .simc-axis-line .simc-axis-x {
+  display: none;
+}
+
+/*_ Axis text _*/
+
+.simc-manhattan-graph .simc-axis-text .simc-axis.simc-axis-y span {
+  left: -61px;
+  margin-top: -8px;
+  width: 120px;
+}
+
+/*_ Graph area _*/
+
+.simc-manhattan-graph .simc-graph-area {
+  padding-top: 0px;
+  padding-left: 25px;
+  padding-bottom: 25px;
+}
+
+/* .simc-manhattan-graph .simc-graph-plot {background-image: url('../images/manhattan-bg.png');} */
+
+.simc-manhattan-stats .simc-graph-header {
+  background-color: transparent;
+}
+
+/*_ overs graph _*/
+
+.simc-overs-graph, .simc-overs-graph > ul, .simc-overs-graph li {
+  height: 100%;
+  position: relative;
+}
+.simc-overs-graph .simc-list-content {
+  position: relative;
+  height: 100%;
+  margin: 0 1px;
+}
+.simc-overs-graph li {
+  float: left;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s
+}
+.simc-overs-graph .simc-paint-graph {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #0988fa;
+}
+.simc-paint-graph .simc-plot-data {
+  left: 50%;
+  top: -12px;
+  margin-left: -4px;
+}
+.simc-overs-graph .simc-over-no {
+  bottom: -22px;
+  text-align: center;
+  top: auto;
+  width: 100%;
+  font-size: 16px;
+  display: none;
+}
+
+/*_ Plot graph _*/
+
+.simc-manhattan-graph .simc-plot-popup {
+  bottom: 15px;
+  left: -25px;
+  z-index: 9999;
+}
+.simc-manhattan-graph .simc-reachright .simc-plot-popup {
+  left: auto;
+  right: -25px;
+}
+.simc-manhattan-graph .simc-reachright .simc-plot-popup::before {
+  left: auto;
+  right: 21px;
+}
+.simc-paint-graph .simc-plot-thumb {
+  border: none;
+  font-size: 10px;
+  height: 10px;
+  line-height: 10px;
+  width: 10px;
+  text-indent: -9999px;
+}
+
+/*_ Match type style _*/
+
+.simc-overs-100 .simc-overs-graph li {
+  width: 1%;
+}
+.simc-overs-100 .simc-paint-graph .simc-plot-thumb {
+  height: 6px;
+  line-height: 6px;
+  width: 6px;
+}
+.simc-overs-100 .simc-paint-graph .simc-plot-data {
+  margin-left: -2px;
+  top: -8px;
+}
+.simc-overs-100 .simc-overs-graph .simc-over-no {
+  font-size: 12px;
+}
+.simc-overs-50 .simc-overs-graph li {
+  width: 2%;
+}
+.simc-overs-20 .simc-overs-graph li {
+  width: 5%;
+}
+
+/*_ Beehive _*/
+
+.simc-beehive-graph {
+  position: relative;
+  height: 455px;
+}
+
+/*_ Team col _*/
+
+.simc-beehive-stats .simc-teamcol {
+  width: 195px;
+  background-color: #f7f7f7;
+  position: absolute;
+  top: 0;
+}
+.simc-beehive-stats .simc-teamcol.simc-team-a {
+  left: 0;
+}
+.simc-beehive-stats .simc-teamcol.simc-team-b {
+  right: 0;
+}
+.simc-beehive-stats .simc-teamcol .simc-content-box {
+  display: block;
+  text-align: left;
+}
+.simc-beehive-stats .simc-teamcol-hd {
+  background-color: #000;
+  display: table;
+  height: 40px;
+  width: 100%;
+  font-size: 18px;
+  color: #fff;
+  font-family: pt_sansregular, sans-serif;
+  text-align: center;
+}
+.simc-beehive-stats .simc-teamcol-hd span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.simc-beehive-stats .simc-teamcol-role {
+  background-color: #f4821f;
+  display: table;
+  height: 40px;
+  text-align: center;
+  width: 100%;
+  font-size: 18px;
+  color: #000;
+  font-family: pt_sansregular, sans-serif;
+}
+.simc-beehive-stats .simc-teamcol-role span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.simc-beehive-stats .simc-player-list li {
+  border-bottom: 1px solid #dadada;
+  display: table;
+  height: 36px;
+  width: 100%;
+  padding: 0 35px 0 10px;
+  position: relative;
+}
+.simc-beehive-stats .simc-player-list li .simc-list-content {
+  display: table-cell;
+  vertical-align: middle;
+}
+.simc-beehive-stats .simc-player-list li .simc-player-name {
+  font-family: pt_sansregular, sans-serif;
+  line-height: 16px;
+  margin-bottom: 0;
+  text-transform: none;
+  font-size: 16px;
+}
+.simc-beehive-stats .simc-player-list li .simc-player-score {
+  display: none;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 18px;
+  line-height: 36px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  color: #F4821F;
+}
+.simc-beehive-stats .simc-player-list li.active .simc-player-score {
+  display: block;
+}
+.simc-beehive-stats .simc-player-list li.active .simc-player-name {
+  color: #F4821F;
+}
+.simc-beehive-stats .simc-teamcol-players .simc-player-wrap {
+  height: 295px;
+  overflow: hidden;
+  position: relative;
+}
+.simc-beehive-stats .simc-nav-top, .simc-beehive-stats .simc-nav-bottom {
+  background-color: #e5e5e5;
+  display: block;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  font-family: 'Glyphicons Halflings';
+  font-size: 28px;
+  color: #bbbbbb;
+  text-align: center;
+  line-height: 40px;
+}
+.simc-beehive-stats .simc-nav-top:before {
+  content: "\e260";
+}
+.simc-beehive-stats .simc-nav-bottom:before {
+  content: "\e259";
+}
+.simc-controls-wap {
+  display: none;
+}
+
+/*_ Beehive graph area _*/
+
+.simc-beehive-graph-plot {
+  margin: 0 200px;
+  position: relative;
+  height: 100%;
+}
+.simc-beehive-graph-plot .simc-graph-area {
+  padding-bottom: 0;
+  padding-left: 0;
+  background-image: none;
+}
+.simc-beehive-graph-plot .simc-graph-plot {
+  background-image: url("../images/beehive-bg.jpg");
+  background-position: center top
+}
+.simc-beehive-graph-plot .simc-graph-info {
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+  left: 0;
+  padding: 5px 0;
+  position: absolute;
+  width: 100%;
+}
+.simc-beehive-graph-plot .simc-graph-info li {
+  color: #fff;
+  display: inline-block;
+  margin: 0 5px;
+  position: relative;
+  vertical-align: middle;
+}
+.simc-beehive-graph-plot .simc-graph-info li:first-child {
+  margin-left: 0;
+}
+.simc-beehive-graph-plot .simc-graph-info li:last-child {
+  margin-right: 0;
+}
+.simc-beehive-graph-plot .simc-graph-info li span {
+  padding-left: 20px;
+  font-size: 18px;
+  font-family: pt_sansregular, sans-serif;
+  display: block;
+  position: relative;
+}
+.simc-beehive-graph-plot .simc-graph-info li span:before {
+  width: 18px;
+  height: 18;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  content: "";
+}
+.simc-beehive-graph-plot .simc-graph-info .simc-content-wrap {
+  display: block;
+}
+
+/** Sidebar **/
+
+.simc-sidebar-widget {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/*_ Top Stats card _*/
+
+.simc-card-head {
+  background-color: #e56a00;
+  height: 40px;
+  padding: 0 10px;
+  display: table;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.simc-card-head h3 {
+  font-size: 20px;
+  font-family: pt_sansbold, sans-serif;
+  color: #fff;
+  display: table-cell;
+  vertical-align: middle;
+}
+.simc-card-body {
+  background-color: #fff;
+  position: relative;
+}
+.simc-top-playerstats {
+  padding: 25px 25px 10px;
+  position: relative;
+}
+.simc-top-playerstats .si-table-th {
+  color: #000;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 18px;
+}
+.simc-top-playerstats .si-table-td {
+  font-size: 24px;
+  font-family: pt_sansbold, sans-serif;
+  color: #000;
+}
+.simc-top-playerstats .si-table-th, .simc-top-playerstats .si-table-td {
+  height: 35px;
+  vertical-align: middle;
+}
+.simc-top-playerstats .si-table {
+  text-align: left;
+  width: 150px;
+}
+.simc-top-playerinfo {
+  position: relative;
+}
+.simc-top-playerinfo .simc-player-name {
+  background-color: #a1a1a1;
+  display: table;
+  font-size: 18px;
+  height: 40px;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 130px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 0
+}
+.simc-top-playerinfo .simc-player-name span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.simc-top-playerinfo .simc-player-image {
+  bottom: 22px;
+  left: auto;
+  right: 10px;
+}
+.simc-allplayer-stats {
+  background-color: #f8f9fc;
+  position: relative;
+  padding-top: 10px;
+}
+.simc-allplayer-stats .si-table-th {
+  color: #232323;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 12px;
+  height: 16px;
+  border-right: 1px solid #000000;
+}
+.simc-allplayer-stats .si-table-td {
+  border-bottom: 1px solid #d3d5d7;
+  color: #232323;
+  font-size: 18px;
+  height: 50px;
+  position: relative;
+  font-family: pt_sansbold, sans-serif;
+}
+.simc-allplayer-stats .si-table-tr:last-child .si-table-td {
+  border-bottom: none;
+}
+.simc-allplayer-stats .si-table-th, .simc-allplayer-stats .si-table-td {
+  text-align: center;
+  padding: 0 5px;
+}
+.simc-allplayer-stats .si-table-td.tblName {
+  font-size: 16px;
+  font-family: pt_sansregular, sans-serif;
+}
+.simc-allplayer-stats .si-table-td.tblName, .simc-allplayer-stats .si-table-th.tblName {
+  padding-left: 10px;
+  text-align: left;
+  border-right: none;
+}
+.simc-allplayer-stats .si-table-td.tblFlag img {
+  height: auto;
+  max-height: 14px;
+  max-width: 20px;
+  width: auto;
+}
+.simc-allplayer-stats .si-table-th.tblFlag {
+  border-right: none;
+}
+.simc-allplayer-stats .si-table-th.tbl50100, .simc-allplayer-stats .si-table-th.tblER {
+  border-right: none;
+}
+
+/*_ Schedule widget _*/
+
+.simc-widget-head {
+  background-color: #e56a00;
+  color: #fff;
+  display: table;
+  height: 40px;
+  width: 100%;
+  position: relative;
+  padding: 0 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.simc-widget-head h3 {
+  font-family: pt_sansbold, sans-serif;
+  font-size: 20px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.simc-widget-head .simc-more {
+  position: absolute;
+  right: 10px;
+}
+.simc-widget-head .simc-more a {
+  color: #fff;
+  display: block;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 12px;
+  line-height: 40px;
+}
+.simc-widget-body {
+  background-color: #fff;
+  position: relative;
+}
+
+/*_ schedule widget _*/
+
+.simc-schedule-item {
+  position: relative;
+}
+.simc-schedule-item .simc-content-box {
+  display: block;
+}
+.simc-schedule-item .simc-teambox {
+  padding: 15px 10px;
+  position: relative;
+}
+.simc-schedule-item .simc-teambox:before, .simc-schedule-item .simc-teambox:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.simc-schedule-item .simc-team, .simc-schedule-item .simc-team-vs {
+  width: 33.33%;
+  float: left;
+  display: table;
+}
+.simc-schedule-item .simc-teambox .simc-content-wrap {
+  text-align: left;
+}
+.simc-schedule-item .simc-team.simc-team-b .simc-content-wrap {
+  text-align: right;
+}
+.simc-schedule-item .simc-team-image img {
+  max-height: 33px;
+  max-width: 33px;
+}
+.simc-schedule-item .simc-team-name {
+  color: #232323;
+  font-family: pt_sansbold, sans-serif;
+}
+.simc-schedule-item .simc-team-image, .simc-schedule-item .simc-team-name {
+  display: inline-block;
+  vertical-align: middle;
+}
+.simc-schedule-item .simc-match-schedule span {
+  color: #232323;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 24px;
+  display: block;
+  line-height: 30px;
+}
+.simc-schedule-item .simc-match-schedule em {
+  display: block;
+  font-family: pt_sansregular, sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 15px;
+}
+.simc-schedule-item .simc-match-venue {
+  color: #232323;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.simc-schedule-item .simc-match-title {
+  background-color: #a1a1a1;
+  height: 40px;
+  padding: 0 10px;
+  font-family: pt_sansregular, sans-serif;
+  display: table;
+  width: 100%;
+  color: #fff;
+  font-size: 12px;
+  line-height: 14px;
+}
+.simc-schedule-item .simc-match-title span {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/*_ Ranking Widget _*/
+
+.simc-ranking-widget .simc-table-th {
+  background-color: #a1a1a1;
+  font-size: 14px;
+  height: 30px;
+  color: #fff;
+  text-align: center;
+}
+.simc-ranking-widget .simc-table-th, .simc-ranking-widget .simc-table-td {
+  padding: 0 10px;
+  text-align: center;
+}
+.simc-ranking-widget .simc-table-td {
+  height: 40px;
+  border-bottom: 1px solid #dbdbdb;
+  font-size: 18px;
+  font-family: pt_sansregular, sans-serif;
+  color: #000;
+  line-height: 14px;
+}
+.simc-ranking-widget .simc-table-th.tblTeam, .simc-ranking-widget .simc-table-td.tblTeam {
+  text-align: left;
+}
+.simc-ranking-widget .simc-filter {
+  height: 38px;
+}
+.simc-ranking-widget .simc-filter li {
+  font-size: 18px;
+  padding: 10px 0;
+  border: none;
+  height: auto
+}
+.simc-ranking-widget .simc-filter li span {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 10px;
+}
+
+/*** Popup ***/
+
+.simc-popup {
+  background-color: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 500;
+}
+.simc-popup-wrap {
+  margin: 10% auto 50px;
+  max-width: 704px;
+  position: relative;
+}
+.simc-popup-content {
+  background-color: #fff;
+  position: relative;
+}
+.simc-popup-body {
+  padding: 20px 0;
+  position: relative;
+}
+.simc-popup-close {
+  background-color: #e56a00;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-family: pt_sansbold, sans-serif;
+  font-size: 18px;
+  height: 28px;
+  line-height: 26px;
+  position: absolute;
+  right: -14px;
+  text-align: center;
+  top: -14px;
+  width: 28px;
+}
+
+/*_ Player scorecard popup _*/
+
+.simc-popup .simc-player-graph {
+  margin-bottom: 20px;
+}
+.simc-popup .simc-player-block {
+  margin-bottom: 10px;
+}
+.simc-popup .simc-player-block .simc-content-box {
+  display: block;
+}
+.simc-popup .simc-player-block .simc-player-stats .simc-list-item {
+  min-width: 75px;
+}
+.simc-popup .simc-player-block .simc-list-item .simc-list-content {
+  margin: 0 5px;
+  display: block;
+  border-bottom: 1px solid;
+}
+.simc-popup .simc-player-block .simc-player-stats .simc-list-item:first-child .simc-list-content {
+  margin-left: 0;
+}
+.simc-popup .simc-player-block .simc-player-stats .simc-list-item:last-child .simc-list-content {
+  margin-right: 0;
+}
+.simc-popup .simc-player-block .simc-player-status {
+  padding-left: 0;
+  text-indent: -9999px;
+  width: 145px;
+}
+.simc-popup .simc-player-graph {
+  margin-top: 20px;
+  position: relative;
+}
+.simc-popup .simc-player-graph .simc-content-box {
+  display: block;
+  padding: 0 10px;
+}
+.simc-popup .simc-graph-hd {
+  background-color: #a1a1a1;
+  height: 35px;
+  font-size: 18px;
+  font-family: pt_sansbold, sans-serif;
+  text-align: left;
+  display: table;
+  width: 100%;
+  color: #fff;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.simc-popup .simc-graph-hd span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.simc-popup .simc-player-graph .simc-content-wrap {
+  display: block;
+  border: 1px solid #cccccc;
+}
+.simc-popup .simc-player-block .simc-player-image {
+  left: 15px;
+}
+.simc-popup.simc-scorecard-popup .si-btn {
+  background: #fc7f14 none repeat scroll 0 0;
+  font-family: pt_sansregular, sans-serif;
+  color: #fff;
+  display: inline-block;
+  padding: 4px 12px;
+  position: absolute;
+  right: 47px;
+  top: -3px;
+  width: auto;
+  cursor: pointer;
+  z-index: 9999;
+  transition: ease 0.4s;
+}
+.simc-popup.simc-scorecard-popup .si-btn:hover {
+  color: #000;
+}
+.simc-popup.simc-scorecard-popup .si-btn a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*_ Graph _*/
+
+.simc-popup .simc-graph-body {
+  padding: 10px;
+  position: relative;
+}
+.simc-popup .simc-graph-area {
+  min-height: 232px;
+  position: relative;
+}
+.simc-popup .simc-player-graph .simc-graph-body .simc-content-wrap {
+  border: none;
+}
+.simc-popup .simc-graph-info {
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+  left: 0;
+  padding: 5px 0;
+  position: absolute;
+  width: 100%;
+}
+.simc-popup .simc-graph-info li {
+  color: #fff;
+  display: inline-block;
+  margin: 0 5px;
+  position: relative;
+  vertical-align: middle;
+}
+.simc-popup .simc-graph-info li:first-child {
+  margin-left: 0;
+}
+.simc-popup .simc-graph-info li:last-child {
+  margin-right: 0;
+}
+.simc-popup .simc-graph-info li span {
+  padding-left: 20px;
+  font-size: 14px;
+  font-family: pt_sansregular, sans-serif;
+  display: block;
+  position: relative;
+}
+.simc-popup .simc-graph-info li span:before {
+  width: 18px;
+  height: 18;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  content: "";
+}
+.simc-popup .simc-graph-bg img {
+  width: 100%;
+  height: auto;
+}
+
+/*_ Beehive graph _*/
+
+.simc-beehive-graph .simc-graph-body {
+  padding: 0;
+}
+
+/*_ graph codes _*/
+
+.simc-checkbox-group.simc-1s span:before {
+  background-color: #f4821f;
+  content: "1s";
+}
+.simc-checkbox-group.simc-2s span:before {
+  background-color: #1d35c1;
+  content: "2s";
+}
+.simc-checkbox-group.simc-3s span:before {
+  background-color: #ff18e7;
+  content: "3s";
+}
+.simc-checkbox-group.simc-4s span:before {
+  background-color: #0bac4e;
+  content: "4s";
+}
+.simc-checkbox-group.simc-6s span:before {
+  background-color: #1f90f4;
+  content: "6s";
+}
+
+/*_ behive legend _*/
+
+.simc-behive-legend li span:before {
+  background-image: url('../images/behive-legends.png');
+  background-size: auto 12px;
+}
+.simc-behive-legend li.simc-wicket span:before {
+  background-position: -117px 3px;
+}
+.simc-behive-legend li.simc-dotball span:before {
+  background-position: 3px 3px;
+}
+.simc-behive-legend li.simc-runs span:before {
+  background-position: -79px 3px;
+}
+.simc-behive-legend li.simc-boundary span:before {
+  background-position: -38px 3px;
+}
+
+/*_ Player stats _*/
+
+.simc-popup .simc-player-stats .simc-block-strip {
+  font-family: pt_sansbold, sans-serif;
+  font-size: 18px;
+  height: 35px;
+  padding: 0 20px;
+}
+.simc-popup .simc-player-stats .simc-block-strip span {
+  display: table-cell;
+  vertical-align: middle;
+}
+.simc-player-stats .simc-table-th, .simc-player-stats .simc-table-td {
+  color: #000;
+  padding: 0 5px;
+  font-size: 14px;
+  font-family: pt_sansregular, sans-serif;
+  line-height: 16px;
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  height: 30px;
+}
+.simc-player-stats .simc-table-th {
+  font-family: pt_sansbold, sans-serif;
+  padding: 5px;
+}
+.simc-player-stats .simc-table-th.tblBowlers, .simc-player-stats .simc-table-td.tblBowlers {
+  padding-left: 20px;
+  text-align: left;
+}
+.simc-player-stats .simc-table-tr:last-child .simc-table-td {
+  border-bottom: none;
+}
+
+/*** Plugin **/
+
+
+/*_ Swiper slider _*/
+
+
+/*_Swiper 3.1.0_*/
+
+.swiper-container {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.swiper-container-no-flexbox .swiper-slide {
+  float: left;
+}
+.swiper-container-vertical > .swiper-wrapper {
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+.swiper-wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -ms-transition-property: -ms-transform;
+  transition-property: transform;
+}
+.swiper-container-android .swiper-slide, .swiper-wrapper {
+  -webkit-transform: translate3d(0px, 0, 0);
+  -moz-transform: translate3d(0px, 0, 0);
+  -o-transform: translate(0px, 0px);
+  -ms-transform: translate3d(0px, 0, 0);
+  transform: translate3d(0px, 0, 0);
+}
+.swiper-container-multirow > .swiper-wrapper {
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.swiper-container-free-mode > .swiper-wrapper {
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  margin: 0 auto;
+}
+.swiper-slide {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-flex-shrink: 0;
+  -ms-flex: 0 0 auto;
+  flex-shrink: 0;
+  position: relative;
+}
+.swiper-container .swiper-notification {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: -1000;
+}
+.swiper-wp8-horizontal {
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+.swiper-wp8-vertical {
+  -ms-touch-action: pan-x;
+  touch-action: pan-x;
+}
+.swiper-container-coverflow .swiper-wrapper {
+  -ms-perspective: 1200px;
+}
+
+/* Fade */
+
+.swiper-container-fade.swiper-container-free-mode .swiper-slide {
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.swiper-container-fade .swiper-slide {
+  pointer-events: none;
+}
+.swiper-container-fade .swiper-slide .swiper-slide {
+  pointer-events: none;
+}
+.swiper-container-fade .swiper-slide-active, .swiper-container-fade .swiper-slide-active .swiper-slide-active {
+  pointer-events: auto;
+}
+.swiper-container-cube.swiper-container-vertical .swiper-cube-shadow {
+  z-index: 0;
+}
+
+/** JS Pane **/
+
+.jspContainer {
+  overflow: hidden;
+  position: relative;
+}
+.jspPane {
+  position: absolute;
+  margin-right: 5px;
+}
+.jspVerticalBar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  background: transparent;
+}
+.jspHorizontalBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background: red;
+}
+.jspCap {
+  display: none;
+}
+.jspHorizontalBar .jspCap {
+  float: left;
+}
+.jspTrack {
+  background: rgba(244, 130, 31, 0.4);
+  position: relative;
+  width: 2px;
+}
+.jspDrag {
+  background: #F4821F;
+  position: relative;
+  top: 0;
+  cursor: pointer;
+  width: 4px;
+  left: -1px;
+}
+.jspHorizontalBar .jspTrack, .jspHorizontalBar .jspDrag {
+  float: left;
+  height: 100%;
+}
+.jspArrow {
+  background: #50506d;
+  text-indent: -20000px;
+  display: block;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+.jspArrow.jspDisabled {
+  cursor: default;
+  background: #80808d;
+}
+.jspVerticalBar .jspArrow {
+  height: 16px;
+}
+.jspHorizontalBar .jspArrow {
+  width: 16px;
+  float: left;
+  height: 100%;
+}
+.jspVerticalBar .jspArrow:focus {
+  outline: none;
+}
+.jspCorner {
+  background: #eeeef4;
+  float: left;
+  height: 100%;
+}
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+
+* html .jspCorner {
+  margin: 0 -3px 0 0;
+}
+
+/***ranking page***/
+
+.simc-ranking .mod-head > h2 {
+  color: #000;
+  font-size: 24px;
+  line-height: 32px;
+  padding-left: 15px;
+}
+.simc-ranking .jspPane {
+  width: 100%;
+}
+.simc-ranking .si-subtab {
+  background-color: #000;
+  text-transform: capitalize;
+}
+.simc-ranking .si-subtab li {
+  color: #fff;
+}
+.simc-ranking .si-subtab li span {
+  border-right: 1px solid #fff;
+}
+.simc-ranking .active > span {
+  color: #f4821f;
+}
+.simc-ranking .simc-table-th {
+  background-color: #1d1b1c;
+  color: #f4821f;
+  font-size: 16px;
+  line-height: 35px;
+  text-align: center;
+  text-transform: capitalize;
+  font-family: "pt_sansregular", sans-serif
+}
+.simc-ranking .si-subtab li:hover {
+  color: #f4821f;
+}
+.simc-ranking .si-subtab li:last-child span {
+  border-right: medium none;
+}
+.simc-ranking .simc-table-td {
+  color: #000;
+  font-size: 16px;
+  text-align: center;
+  text-transform: capitalize;
+}
+.ranking-data {
+  height: 45px;
+  background-color: #fff;
+}
+.simc-ranking .simc-table-td {
+  background-color: #fff;
+  border-bottom: 1px solid #f5f3f3;
+  border-top: 2px solid #eff3f8;
+  color: #000;
+  font-family: pt_sansregular, sans-serif;
+  font-size: 16px;
+  height: 50px;
+  position: relative;
+  text-align: center;
+}
+.ranking-data .simc-table-td::before {
+  background-color: #efeded;
+  bottom: 0;
+  content: "";
+  height: 1px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+.simc-ranking .simc-table-td:nth-child(2), .simc-ranking .simc-table-th:nth-child(2), .simc-ranking .simc-table-td:last-child, .simc-ranking .simc-table-th:last-child {
+  text-align: left;
+}
+.ranking-rank {
+  width: 10%;
+}
+.ranking-name {
+  width: 20%;
+}
+.ranking-rating {
+  width: 40%;
+}
+.ranking-bestrating {
+  padding-left: 40px;
+  width: 30%;
+}
+.simc-ranking .simc-table-td.ranking-rank {
+  font-family: pt_sansbold, sans-serif;
+}
+.simc-rankingwrap {
+  margin-top: 20px;
+}
+
+/*.simc-team .ranking-rank, .simc-team .ranking-name, .simc-team .ranking-rating {
+  width: 33%;
+}
+*/
+
+.simc-team .ranking-rank {
+  width: 10%;
+}
+.simc-team .ranking-name {
+  padding-left: 150px;
+  width: 60%;
+}
+.simc-team .ranking-rating {
+  width: 30%;
+}
+.simc-table-th.ranking-rating, .simc-table-td.ranking-rating {
+  text-align: center;
+}
+
+/*****************/
+
+@media screen and (max-width:767px) {
+  .simc-container .simc-site-leftcol {
+    padding-left: 10px;
+  }
+  .simc-container .simc-site-rightcol {
+    padding-right: 10px;
+  }
+  /***ranking page***/
+  .ranking-name, .ranking-rank, .ranking-rating, .ranking-bestrating {
+    width: auto;
+  }
+  .ranking-bestrating {
+    padding-left: 0px;
+  }
+  .simc-ranking .si-subtab li span {
+    padding: 0 5px;
+  }
+  .simc-ranking .simc-table-th {
+    font-size: 14px;
+    height: 45px;
+    line-height: 15px;
+    padding: 0 5px;
+    text-align: center;
+    text-transform: capitalize;
+  }
+  .simc-ranking .simc-table-td:nth-child(2), .simc-ranking .simc-table-th:nth-child(2), .simc-ranking .simc-table-td:last-child, .simc-ranking .simc-table-th:last-child {
+    text-align: center;
+  }
+  .simc-ranking .simc-table-td {
+    font-size: 14px;
+  }
+  .simc-ranking .simc-table-td:nth-child(2), .simc-ranking .simc-table-th:nth-child(2), .simc-ranking .simc-table-td:last-child, .simc-ranking .simc-table-th:last-child {
+    text-align: left;
+  }
+  .simc-ranking .mod-head > h2 {
+    font-size: 20px;
+    padding-left: 5px;
+  }
+  .simc-team .ranking-name {
+    padding-left: 0;
+    width: auto;
+  }
+  /*****************/
+}
+
+/******* changes made by js Team START ****/
+
+
+/******* changes made by js Team END ****/
+
+@media screen and (max-width: 1200px) {
+  /*_ Scorecard popup _*/
+  .simc-popup .simc-player-block .simc-player-info {
+    top: -44px;
+  }
+  .simc-popup .simc-player-block .simc-player-image {
+    bottom: 10px;
+    left: 15px;
+  }
+  .simc-popup .simc-player-block .simc-player-image img {
+    max-height: 112px;
+    max-width: 112px;
+  }
+  .simc-popup .simc-player-block .simc-player-data {
+    padding-left: 150px;
+  }
+  .simc-othermatch-content .simc-team-a .simc-content-wrap{
+    padding-left: 35px;
+  }
+  .simc-highlights-middle .simc-othermatch-content .simc-team-b .simc-content-wrap{
+    padding-right: 35px;
+  }
+  .simc-othermatch-content .simc-list-item{
+    padding: 0 30px 0 0;
+  }
+  .simc-othermatch-content .simc-match-status{
+    right:7px;
+  }
+  .simc-slider-wrap{
+    margin: 0 50px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .simc-player-data .simc-more {
+    display: none;
+  }
+  /*_ Scorecard popup _*/
+  .simc-popup-wrap {
+    margin: 10% 10px 50px;
+  }
+  .simc-popup.simc-scorecard-popup {
+    display: none;
+  }
+}
+
+/******changes by Ajit*****/
+
+.simc-top-statscard.si-topbatsmans {
+  min-height: 200px;
+}
+.simc-top-statscard.si-topbowlers {
+  min-height: 200px;
+}
+
+/*.simc-highlights-sidebar .simc-content-box{
+  height:160px !important;
+}*/
+
+.simc-highlights-sidebar .simc-slider-content {
+  height: 160px;
+}
+
+/********/
+
+.ngHide {
+  display: none!important;
+  visibility: hidden!important;
+  opacity: 0!important;
+}
+.ngShow {
+  visibility: visible!important;
+  opacity: 1!important;
+}
+.no-result {
+  display: table;
+  text-align: center;
+  width: 100%;
+}
+.no-resultwrap {
+  display: table-cell;
+  height: 55px;
+  vertical-align: middle;
+}
+.si-loader img {
+  max-width: 50px;
+  height: auto;
+}
+
+/*_ widget styling _*/
+
+.sist-widget .simc-widget-head {
+  background-color: #0D7EF4;
+}
+.sist-widget .simc-filter li.active, .sist-widget .simc-filter li:hover {
+  color: #0D7EF4;
+}
+.sist-widget .simc-widget-wrap .simc-widget-head {
+  background-color: #0D7EF4;
+}
+.container.contentContainer>.row {
+  display: none !important;
+}
+.container-main .row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.simc-table-td.tblr{
+  float:none
+}
+.simc-table-th.tblr{
+  float:none
+}
+
+.simc-result-data .simc-table-th {
+    background-color: #8ec63d !important;
+    height: 70px;
+    position: relative;
+    text-align: center;
+    font-family: pt_sansregular, sans-serif;
+    color: #fff;
+    font-size: 14px;
+    border-left: 1px solid #ed974d;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+   .simc-select-filter ul{
+    padding: 0 0px;
+   }
+  .simc-select-filter select{
+    padding: 5px 10px;
+      border-radius: 5px;
+      border: 1px solid #8ec63d;
+      width: 18.5%;
+      outline: none;
+  }
+    
+  .simc-select-filter select option{
+    padding:5px 10px;
+    outline: none;
+    border: none;
+  }
+
+  .simc-select-filter button{
+      min-width: 160px;
+      padding: 8px 10px;
+      background: rgba(142, 198, 61, 1);
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+      outline: none;
+    }
+
+    .site-header {
+      background-color: #8ec63d;
+      color: #fff;
+      position: relative;
+      padding: 10px 40px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+    .site-header h1{
+      padding: 0;
+      margin: 0;
+    }
+
+    .site-header .pull-left{
+      display: inline-block;
+    }
+
+    .site-header .pull-right{
+      display: inline-block;
+    }
+
+    .site-header span{
+      position: absolute;
+      right: 40px;
+      top: 50%;
+      width: 30px;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      font-size: 18px;
+      font-family: pt_sansbold, sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .site-header label{
+      position: absolute;
+      right: 90px;
+      top: 50%;
+      width: auto;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      font-size: 22px;
+      font-family: pt_sansbold, sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    .game-id-Wrap{
+      display: inline;
+    }
+
+    .copy-game-id{
+      cursor: pointer;
+      background: url(../images/copy.png) no-repeat center center;
+      background-size: auto 100%;
+      border: none;
+      color: rgba(0, 0, 0, 0);
+      width: 20px;
+      height: 20px;
+      outline: none;
+    }
+
+    .game-id{
+      float: left;
+    }
+
+    @media screen and (max-width: 1024px) {
+      .simc-select-filter select{
+        width: 16.5%;
+      }
+    }
+
+    @media (max-width: 768px){
+      .simc-select-filter ul{
+        padding: 0px;
+      }
+      .simc-select-filter select{
+        width: 20%;
+      }
+      .site-header{
+        padding: 10px 20px;
+      }
+      .simc-select-filter select{
+        width: 16%;
+      }
+      .simc-select-filter button{
+        min-width: 120px;
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 480px){
+      .site-header {          
+        padding: 10px 10px;
+        }
+      .simc-select-filter select{
+        width: 32%;
+        margin-bottom: 10px;
+      }
+      .simc-select-filter button {
+        min-width: 130px;
+      }
+     .site-header .pull-right{
+        padding: 15px 0 0;
+       }
+
+      .site-header span{
+        padding-right: 15px;
+      }
+     .site-logo{
+        padding: 15px 0 0 0;
+     }
+     .site-logo .logo a{
+        width: 150px;
+        background-size: auto 90%;
+      }
+      .site-header label{
+        right: 45px;
+        font-size: 14px;
+        width: 90px;
+      }
+      .copy-game-id {
+        background-size: auto 60%;
+    }
+    .site-header span{
+      right: 0;
+    }
+
+  }
+
+  @media (max-width: 380px){
+    .simc-select-filter select {
+      width: 32%;
+    }
+    .simc-select-filter button {
+        min-width: 75px;
+    }
+  }
+  /* Sample Css For Scorecard Live -  ABOVE 1200px  */
+
+.simc-block-content .simc-block-section {
+  margin-top: 6px;
+}
+.simc-highlights-top {
+  height: 45px;
+}
+.simc-highlights-top h3 {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 20px;
+}
+.simc-highlights-top h5 {
+  display: inline-block;
+}
+.simc-highlights-top h5:before {
+  content: "-";
+  display: inline-block;
+  padding: 0px 6px;
+  font-size: 12px;
+}
+.simc-highlights-middle {
+  padding: 12px 0;
+}
+.simc-highlights-middle .simc-team.active .simc-team-image img {
+  max-height: 50px;
+  max-width: 100%;
+}
+.simc-highlights-middle .simc-team.active .simc-team-name {
+  font-size: 15px;
+  line-height: 15px;
+}
+.simc-innings-detail span {
+  font-size: 15px;
+  line-height: 17px;
+}
+.simc-matchresult {
+  font-size: 14px;
+  line-height: 16px;
+}
+.simc-match-details-hd {
+  left: -64px;
+  width: 163px;
+  height: 35px;
+}
+.simc-highlights-sidebar .simc-slider-container {
+  height: auto;
+}
+.simc-highlights-sidebar .simc-slider-content {
+  height: 160px;
+}
+.simc-othermatch-content .simc-team-name {
+  font-size: 16px;
+}
+.simc-othermatch-content .simc-team-score {
+  font-size: 14px;
+}
+.simc-match-umpire, .simc-match-crew {
+  margin-top: 13px;
+}
+.simc-main-content {
+  margin-top: 5px;
+}
+.simc-over-txt {
+  margin-top: 3px;
+}
+.simc-over-meter {
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+.simc-active-players {
+  margin-top: 0;
+}
+.simc-block-strip {
+  height: 38px;
+}
+.simc-block-content {
+  margin-bottom: 20px;
+  padding-top: 0px;
+}
+.simc-active-player-hd > span {
+  font-size: 20px;
+  height: 25px;
+  line-height: 25px;
+}
+.simc-highlights-middle .simc-team.simc-team-b {
+  margin-top: 10px;
+}
+
+/*_ Active player block _*/
+
+.simc-active-player-box .simc-player-image {
+  padding: 5px;
+  bottom: 21px;
+  left: 6px;
+}
+.simc-active-player-box .simc-player-image img {
+  max-height: 90px;
+  max-width: 90px;
+}
+.simc-active-player-box .simc-player-data {
+  padding-left: 132px;
+}
+.simc-active-player-box .simc-player-status {
+  padding-left: 132px;
+}
+.simc-active-player-box .simc-player-status .simc-player-name {
+  font-size: 22px;
+  line-height: 22px;
+}
+.simc-other-data {
+  margin-top: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+.simc-other-data span {
+  font-size: 13px;
+  height: 24px;
+  line-height: 24px;
+}
+.simc-active-player-box .simc-player-score {
+  font-size: 24px;
+}
+.simc-active-player-box .simc-score-breakdown {
+  margin-top: 18px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.simc-active-player-box.simc-bowler .simc-score-breakdown {
+  margin-top: 18px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.simc-active-player-box .simc-player-status {
+  height: 43px;
+  padding-left: 132px;
+  margin-top: 5px;
+}
+.simc-active-player-box .simc-player-status .simc-player-name {
+  font-size: 16px;
+  line-height: 18px;
+}
+.simc-active-player-box .simc-player-data {
+  min-height: 70px;
+}
+.simc-active-player-box.simc-bowler .simc-player-data {
+  min-height: 70px;
+}
+.simc-active-players.simc-batting-list .simc-active-player-content {
+  padding: 25px 0 107px;
+}
+.simc-active-player-box .simc-player-score .simc-score-txt {
+  line-height: 16px;
+}
+.simc-active-player-box.simc-bowler .simc-player-score .simc-score-txt {
+  padding-left: 37px;
+}
+.simc-active-player-box.simc-bowler .simc-player-role, .simc-active-player-box .simc-bowler.simc-player-role {
+  background-position: -42px -134px;
+}
+.simc-active-player-box .simc-player-role {
+  height: 20px;
+  width: 32px;
+}
+.simc-active-player-box.simc-bowler .simc-player-name {
+  padding-left: 132px;
+}
+.simc-active-player-box.simc-batsmen .simc-player-role, .simc-active-player-box .simc-batsmen.simc-player-role {
+  background-position: -220px -132px;
+}
+.simc-score-breakdown .simc-score-txt {
+  font-size: 15px;
+  line-height: 20px;
+  margin-right: 8px;
+}
+.simc-score-txt em {
+  font-size: 14px;
+  height: 22px;
+  line-height: 22px;
+  width: 22px;
+}
+
+/*_ Partnership _*/
+
+.simc-partnership-box {
+  top: 155px;
+}
+.simc-partnership-block {
+  margin: 10px auto 0;
+}
+.simc-partnership-block .simc-top {
+  font-size: 22px;
+}
+.simc-partnership-block .simc-progress-bar {
+  height: 9px;
+}
+.simc-partnership-pts {
+  font-size: 26px;
+  line-height: 26px;
+  margin-top: 12px;
+}
+
+/*_ Bowler _*/
+
+.simc-active-player-box .simc-score-txt span::before {
+  height: 26px;
+  line-height: 26px;
+  width: 26px;
+  font-size: 18px;
+}
+
+/*_ Comment block _*/
+
+.simc-over-no {
+  left: 0;
+}
+.simc-overscored {
+  font-size: 16px;
+  height: 32px;
+  width: 32px;
+  left: 43px;
+}
+.simc-comment-text {
+  font-size: 16px;
+  line-height: 24px;
+  padding-left: 84px;
+  text-align: left;
+}
+.simc-summary-item {
+  font-size: 16px;
+}
+.simc-summary-item .si-table-td {
+  height: 35px;
+  vertical-align: top;
+}
+.simc-comment-hd {
+  height: 45px;
+  padding: 0 20px;
+}
+.simc-comment-hd span {
+  font-size: 20px;
+}
+.simc-comment-summary {
+  padding: 10px 20px;
+}
+.simc-comment-description {
+  padding: 20px 15px;
+}
+.simc-over-meter .simc-nav-left, .simc-over-meter .simc-nav-right {
+  height: 28px;
+  margin-top: -14px;
+  top: 50%;
+  width: 28px;
+}
+
+/*_ this over _*/
+
+.simc-overstats-block {
+  height: 70px;
+}
+.simc-overstats-block span {
+  margin-bottom: 3px;
+}
+
+/** Commentary Page **/
+
+
+/*_ Sub tab - Commentary _*/
+
+.simc-filter-commentary .simc-filter li {
+  font-size: 15px;
+}
+.simc-filter-commentary .simc-filter li span {
+  padding: 0 13px;
+}
+.simc-filter-commentary .simc-select-box {
+  width: 115px;
+}
+.simc-filter-commentary .simc-select-box .select-out {
+  font-size: 13px;
+}
+
+/*_ Filter - Commentary _*/
+
+.simc-commentary-section .simc-block-content {
+  padding-top: 0;
+  margin-bottom: 5px;
+}
+
+/*_ Previous wicket _*/
+
+.simc-previous-hd {
+  left: 12px;
+  top: 46px;
+  font-size: 24px;
+  line-height: 24px;
+}
+.simc-previous-summary {
+  margin: 10px 20px 10px 200px;
+}
+.simc-previous-wicket .simc-player-image img {
+  max-height: 70px;
+  max-width: 70px;
+}
+.simc-previous-data {
+  height: 80px;
+}
+.simc-previous-data p {
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 5px;
+}
+.simc-previous-data em {
+  font-size: 18px;
+  display: block;
+}
+.simc-highlights-middle .simc-team.active .simc-innings-detail {
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+.simc-previous-wicket {
+  background-color: #e8f4ff;
+  border-bottom: 2px solid #4ca0ea;
+  margin-bottom: 18px;
+  margin-top: 0;
+  position: relative;
+}
+
+/*** Responsive media queries ***/
+
+@media (max-width:1200px) {
+  /** Highlighter **/
+  .simc-highlights-top .simc-time {
+    right: 15px;
+    top: 13px;
+  }
+  /*_ Highlighter Sidebar _*/
+  .simc-highlights-sidebar .simc-content-box {
+    display: block;
+    padding: 0 10px;
+    position: relative;
+  }
+  /**_Scorecard Page _**/
+  /*_ Section container _*/
+  /*_ Player list _*/
+  .simc-player-image {
+    left: 6px;
+    bottom: 13px;
+  }
+  .simc-player-data {
+    padding-left: 108px;
+  }
+  .simc-player-image img {
+    max-height: 80px;
+    max-width: 80px;
+  }
+  .simc-top-playerinfo .simc-player-image img {
+    max-height: 105px;
+    max-width: 105px;
+  }
+  .simc-player-info {
+    top: -67px;
+  }
+  .simc-player-name {
+    font-size: 16px;
+    line-height: 16px;
+    display: table;
+    height: 40px;
+  }
+  .simc-player-name span {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .simc-player-status {
+    padding-left: 110px;
+    font-size: 13px;
+  }
+  .simc-player-stats .simc-list-item .simc-top {
+    font-size: 14px;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 2px;
+  }
+  .simc-player-stats .simc-list-item .simc-bottom {
+    font-size: 22px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 2px;
+    font-family: pt_sansRegular, sans-serif;
+  }
+  /*.simc-player-list.simc-bowling-list .simc-player-status {display:none;}*/
+  .simc-bowling-list .simc-player-image {
+    bottom: 8px;
+  }
+  .simc-bowling-list .simc-player-info {
+    top: -106px;
+  }
+  .simc-yet-bowling .simc-player-info {
+    top: -30px;
+  }
+  .simc-bowling-list .simc-player-status {
+    width: 104px;
+  }
+  .simc-yet-bowling .simc-player-image img {
+    max-height: 90px;
+    max-width: 90px;
+  }
+  /*Bowling*/
+  .simc-bowling-list .simc-player-stats .simc-list-item .simc-list-content {
+    min-width: 45px;
+  }
+  .simc-batting-list .simc-player-stats .simc-list-item .simc-list-content {
+    min-width: 35px;
+  }
+  /*_ Sub tab _*/
+  .simc-block-strip .simc-team-score {
+    font-size: 15px;
+  }
+  .simc-block-strip .simc-match-status {
+    text-align: left;
+  }
+  .simc-block-strip .simc-content-box {
+    padding: 0 15px;
+    text-align: left;
+  }
+  .simc-player-stats .simc-list-item .simc-bottom {
+    font-size: 13px;
+  }
+  .simc-scorecard-section .simc-player-status .simc-content-wrap {
+    display: table-cell;
+  }
+  .simc-scorecard-section .simc-player-status .simc-content-wrap span {
+    display: block;
+    line-height: 16px;
+    text-align: left;
+  }
+  .simc-scorecard-section .simc-player-status .simc-content-wrap .si-fow-status {
+    padding-right: 10px;
+    text-align: left;
+  }
+  /** Sidebar **/
+  .simc-container .simc-ad-placeholder img {
+    max-width: 100%;
+  }
+  /*_ Top Stats card _*/
+  .simc-top-playerstats {
+    padding: 10px 10px 10px;
+    position: relative;
+  }
+  .simc-top-playerstats .si-table {
+    text-align: left;
+    width: 150px;
+  }
+  .simc-top-playerstats .si-table-td {
+    font-size: 20px;
+  }
+  .simc-top-playerinfo .simc-player-image {
+    bottom: 22px;
+    left: auto;
+    right: 5px;
+  }
+  .simc-top-playerinfo .simc-player-name {
+    padding-right: 126px;
+    padding-left: 10px;
+    text-align: left;
+  }
+  .simc-allplayer-stats .si-table-td {
+    font-size: 15px;
+  }
+  .simc-allplayer-stats .si-table-td.tblName, .simc-allplayer-stats .si-table-th.tblName {
+    font-size: 15px;
+  }
+  .simc-card-head {
+    background-color: #e56a00;
+    height: 36px;
+  }
+  .simc-card-head h3 {
+    font-size: 17px;
+  }
+  /**_ Live scorecard page _**/
+  /*_ Over meter _*/
+  .simc-over-meter .simc-slider-item {
+    min-width: 282px;
+  }
+  /*_ Active player block _*/
+  .simc-active-player-box .simc-player-image {
+    padding: 5px;
+    bottom: 21px;
+    left: 6px;
+  }
+  .simc-active-player-box .simc-player-image img {
+    max-height: 105px;
+    max-width: 105px;
+  }
+  .simc-active-player-box .simc-player-data {
+    padding-left: 132px;
+  }
+  .simc-active-player-box .simc-player-status {
+    padding-left: 132px;
+  }
+  .simc-active-player-box .simc-player-status .simc-player-name {
+    font-size: 22px;
+    line-height: 22px;
+  }
+  .simc-other-data {
+    margin-top: 10px;
+    margin-left: 0px;
+    display: block;
+  }
+  .simc-other-data span {
+    font-size: 13px;
+    height: 24px;
+    line-height: 24px;
+  }
+  .simc-active-player-box .simc-player-score {
+    font-size: 20px;
+  }
+  .simc-active-player-box .simc-score-breakdown {
+    margin-top: 10px;
+  }
+  .simc-active-player-box.simc-bowler .simc-score-breakdown {
+    margin-top: 5px;
+  }
+  .simc-active-player-box .simc-player-status {
+    height: 43px;
+    padding-left: 132px;
+  }
+  .simc-active-player-box .simc-player-status .simc-player-name {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .simc-active-player-box .simc-player-data {
+    min-height: 93px;
+  }
+  .simc-active-player-box.simc-bowler .simc-player-data {
+    min-height: 88px;
+  }
+  .simc-active-players.simc-batting-list .simc-active-player-content {
+    padding: 25px 0 107px;
+  }
+  .simc-active-player-box .simc-player-score .simc-score-txt {
+    line-height: 16px;
+  }
+  .simc-active-player-box.simc-bowler .simc-player-score .simc-score-txt {
+    padding-left: 37px;
+  }
+  .simc-active-player-box.simc-bowler .simc-player-role, .simc-active-player-box .simc-bowler.simc-player-role {
+    background-position: -42px -134px;
+  }
+  .simc-active-player-box .simc-player-role {
+    height: 20px;
+    width: 32px;
+  }
+  .simc-active-player-box.simc-bowler .simc-player-name {
+    padding-left: 132px;
+  }
+  .simc-active-player-box.simc-batsmen .simc-player-role, .simc-active-player-box .simc-batsmen.simc-player-role {
+    background-position: -220px -132px;
+  }
+  .simc-score-breakdown .simc-score-txt {
+    font-size: 15px;
+    line-height: 20px;
+    margin-right: 4px;
+  }
+  .simc-score-txt em {
+    font-size: 14px;
+    height: 22px;
+    line-height: 22px;
+    width: 22px;
+  }
+  /*_ Partnership _*/
+  .simc-partnership-box {
+    top: 173px;
+  }
+  .simc-partnership-block {
+    margin: 10px auto 0;
+  }
+  .simc-partnership-block .simc-top {
+    font-size: 22px;
+  }
+  .simc-partnership-block .simc-progress-bar {
+    height: 9px;
+  }
+  .simc-partnership-pts {
+    font-size: 26px;
+    line-height: 26px;
+    margin-top: 12px;
+  }
+  /*_ Bowler _*/
+  .simc-active-player-box .simc-score-txt span::before {
+    height: 26px;
+    line-height: 26px;
+    width: 26px;
+    font-size: 18px;
+  }
+  /*_ Comment block _*/
+  .simc-over-no {
+    left: 0;
+  }
+  .simc-overscored {
+    font-size: 16px;
+    height: 32px;
+    width: 32px;
+    left: 43px;
+  }
+  .simc-comment-text {
+    font-size: 16px;
+    line-height: 24px;
+    padding-left: 84px;
+    text-align: left;
+  }
+  .simc-summary-item {
+    font-size: 16px;
+  }
+  .simc-summary-item .si-table-td {
+    height: 40px;
+  }
+  .simc-comment-hd {
+    height: 45px;
+    padding: 0 20px;
+  }
+  .simc-comment-hd span {
+    font-size: 20px;
+  }
+  .simc-comment-summary {
+    padding: 10px 20px;
+  }
+  .simc-comment-description {
+    padding: 20px 15px;
+  }
+  /*_ this over _*/
+  .simc-overstats-block {
+    height: 70px;
+  }
+  .simc-overstats-block span {
+    margin-bottom: 3px;
+  }
+  /** Commentary Page **/
+  /*_ Sub tab - Commentary _*/
+  .simc-filter-commentary .simc-filter li {
+    font-size: 15px;
+  }
+  .simc-filter-commentary .simc-filter li span {
+    padding: 0 13px;
+  }
+  .simc-filter-commentary .simc-select-box {
+    width: 115px;
+  }
+  .simc-filter-commentary .simc-select-box .select-out {
+    font-size: 13px;
+  }
+  /*_ Filter - Commentary _*/
+  .simc-commentary-section .simc-block-content {
+    padding-top: 0;
+    margin-bottom: 5px;
+  }
+  /*_ Previous wicket _*/
+  .simc-previous-hd {
+    left: 12px;
+    top: 46px;
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .simc-previous-summary {
+    margin: 20px 20px 20px 200px;
+  }
+  .simc-previous-wicket .simc-player-image img {
+    max-height: 70px;
+    max-width: 70px;
+  }
+  .simc-previous-data {
+    height: 80px;
+  }
+  .simc-previous-data p {
+    font-size: 16px;
+    line-height: 18px;
+    margin-bottom: 5px;
+  }
+  .simc-previous-data em {
+    font-size: 18px;
+    display: block;
+  }
+  /** Result Page **/
+  /*_ Subtab _*/
+  .simc-result-page .si-subtab li {
+    font-size: 20px;
+  }
+  .simc-result-page .simc-filter li {
+    font-size: 18px;
+  }
+  .simc-select-filter li .simc-listcontent > span {
+    font-size: 20px;
+  }
+  /*_ Result dtaa table _*/
+  .simc-result-data .simc-table-td, .simc-result-data .simc-table-th {
+    padding: 0 5px;
+  }
+  .simc-result-data .simc-table-td {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .simc-result-data .simc-tblDate em {
+    display: block;
+  }
+  .simc-table-th.simc-tblMatch, .simc-table-td.simc-tblMatch {
+    width: auto;
+  }
+  .simc-table-td.simc-tblStatus, .simc-table-th.simc-tblStatus {
+    padding-right: 70px;
+  }
+  .simc-select-filter .simc-megamenu .simc-select-drop ul li {
+    font-size: 12px;
+    line-height: 14px;
+    width: 50%;
+  }
+  .simc-table-td.simc-tblStatus .simc-matchcentre-btn {
+    width: 55px;
+    text-align: center;
+    margin-top: -18px;
+  }
+  .simc-table-td.simc-tblStatus .simc-matchcentre-btn span {
+    font-size: 12px;
+    line-height: 12px;
+    padding: 5px;
+  }
+  /** Team Sqaud Profile **/
+  .simc-team-sqaud .simc-player-name {
+    height: auto;
+  }
+  /** Player profile page **/
+  /*_ Player Summary _*/
+  .simc-player-summary .simc-player-image img {
+    border: 5px solid #fff;
+    max-height: 110px;
+    max-width: 110px;
+    width: 110px;
+  }
+  .simc-player-summary .simc-player-detail {
+    margin-left: 125px;
+  }
+  .simc-player-data .simc-table-th, .simc-player-data .simc-table-td {
+    font-size: 16px;
+  }
+  /*_ Player profile table */
+  .simc-player-profile .simc-table-block .simc-table-th, .simc-player-profile .simc-table-block .simc-table-td {
+    font-size: 14px;
+    padding: 0 5px;
+  }
+  /** Match stats **/
+  .simc-active-stats .simc-block-section-body {
+    padding: 10px;
+    position: relative;
+  }
+  .simc-spider-stats .simc-graph-header .simc-tab li {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .simc-spider-stats .simc-graph-header .simc-tab li em {
+    font-size: 12px;
+  }
+  .simc-spider-stats .simc-graph-header {
+    width: 180px;
+  }
+  .simc-spider-stats .simc-graph-header .simc-player-list li {
+    font-size: 14px;
+    height: 30px;
+    padding-left: 15px;
+  }
+  .simc-spider-stats .simc-graph-header .simc-player-list li .simc-player-name {
+    font-size: 14px;
+    line-height: 14px;
+    display: block;
+    height: auto;
+  }
+  .simc-spider-stats .simc-graph-header .simc-player-list li .simc-player-score {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .simc-data-runs {
+    font-size: 28px;
+    line-height: 26px;
+  }
+  .simc-data-runs sub {
+    font-size: 10px;
+    position: relative;
+    top: -1px;
+  }
+  .simc-data-runsbreakdown {
+    margin-top: 0;
+  }
+  /*_ Spider image _*/
+  .simc-spider-stats .simc-graph-block {
+    min-height: 450px;
+  }
+  .simc-spider-stats .simc-spider-graph {
+    right: 0;
+    top: 0;
+  }
+  .simc-spider-image {
+    margin-right: 82px;
+    margin-top: 93px;
+  }
+  .simc-spider-image img {
+    width: 300px;
+  }
+  .simc-data-item.simc-data-item-01 {
+    left: 58px;
+    top: 44px;
+  }
+  .simc-data-item.simc-data-item-02 {
+    left: 218px;
+    top: 43px;
+  }
+  .simc-data-item.simc-data-item-03 {
+    left: 297px;
+    top: 145px;
+  }
+  .simc-data-item.simc-data-item-04 {
+    left: 306px;
+    top: 284px;
+  }
+  .simc-data-item.simc-data-item-05 {
+    left: 214px;
+    top: 389px;
+  }
+  .simc-data-item.simc-data-item-06 {
+    left: 62px;
+    top: 391px;
+  }
+  .simc-data-item.simc-data-item-07 {
+    left: -36px;
+    top: 296px;
+  }
+  .simc-data-item.simc-data-item-08 {
+    left: -30px;
+    top: 151px;
+  }
+  /*_ Manhattan Graph _*/
+  .simc-overs-graph .simc-over-no {
+    font-size: 12px;
+  }
+  .simc-axis-line span {
+    font-size: 12px;
+  }
+  .simc-paint-graph .simc-plot-thumb {
+    font-size: 8px;
+    height: 8px;
+    line-height: 8px;
+    width: 8px;
+  }
+  .simc-paint-graph .simc-plot-data {
+    margin-left: -4px;
+    top: -10px;
+  }
+  .simc-overs-100 .simc-paint-graph .simc-plot-thumb {
+    height: 4px;
+    line-height: 4px;
+    width: 4px;
+  }
+  .simc-overs-100 .simc-over-no > span {
+    left: -4px;
+    position: relative;
+  }
+  /*_ Beehive graph _*/
+  .simc-beehive-stats .simc-teamcol {
+    width: 150px;
+  }
+  .simc-beehive-stats .simc-teamcol-hd {
+    font-size: 16px;
+    height: 35px;
+  }
+  .simc-beehive-stats .simc-teamcol-role {
+    font-size: 14px;
+    height: 35px;
+  }
+  .simc-beehive-stats .simc-nav-top, .simc-beehive-stats .simc-nav-bottom {
+    font-size: 22px;
+    height: 35px;
+    line-height: 35px;
+  }
+  .simc-beehive-stats .simc-player-list li .simc-player-name {
+    font-size: 14px;
+    line-height: 16px;
+    height: 35px;
+  }
+  .simc-beehive-stats .simc-player-list li .simc-player-score {
+    font-size: 16px;
+    line-height: 34px;
+    right: 5px;
+  }
+  .simc-beehive-stats .simc-player-list li .simc-player-name {
+    font-size: 14px;
+    height: auto;
+    line-height: 16px;
+    display: block;
+  }
+  .simc-beehive-graph-plot {
+    margin: 0 152px;
+  }
+  .simc-beehive-graph-plot .simc-graph-info {
+    padding: 5px 10px;
+  }
+  .simc-beehive-graph-plot .simc-graph-info ul {
+    font-size: 0;
+  }
+  .simc-beehive-graph-plot .simc-graph-info li {
+    margin: 0;
+    width: 50%;
+    text-align: left;
+    font-size: 14px;
+  }
+  .simc-beehive-graph-plot .simc-graph-info li span {
+    font-size: 14px;
+  }
+  .simc-beehive-stats .simc-teamcol-players .simc-player-wrap {
+    height: 315px;
+  }
+}
+
+/*End Media query max-width:1200px*/
+
+@media (max-width:992px) {
+  .simc-sidebar {
+    display: none;
+  }
+  /** Primary nav **/
+  .simc-nav {
+    background-color: #000;
+    height: 42px;
+    position: relative;
+  }
+  .simc-nav li {
+    height: 42px;
+    width: 172px;
+    font-size: 21px;
+  }
+  /*_ Highlighter Sidebar _*/
+  .simc-highlights-top {
+    height: 50px;
+  }
+  .simc-highlights-top h3 {
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .simc-highlights-top h5 {
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  .simc-highlights-top h5 {
+    display: block;
+    font-size: 14px;
+    margin-top: 0px;
+  }
+  .simc-highlights-top h5:before {
+    content: "";
+    display: inline-block;
+    font-size: 12px;
+    padding: 0px;
+  }
+  .simc-highlights-sidebar {
+    display: none;
+  }
+  .simc-highlights-middle .simc-matchbox {
+    border-right: none;
+    width: 100%;
+  }
+  .simc-match-details {
+    width: 100%;
+  }
+  /**_Scorecard Page _**/
+  /*_ Section container _*/
+  /*_ section nav _*/
+  .simc-section-nav .si-tab li {
+    font-size: 15px;
+    height: 50px;
+  }
+  /*_ content body _*/
+  .simc-content-body p {
+    font-size: 15px;
+    line-height: 15px;
+  }
+  /*_ Player list _*/
+  .simc-player-image img {
+    max-height: 80px;
+    max-width: 80px;
+  }
+  .simc-player-data {
+    padding-left: 110px;
+  }
+  .simc-player-status {
+    padding-left: 110px;
+  }
+  .simc-batting-list .simc-player-stats .simc-list-item .simc-list-content {
+    min-width: 42px;
+  }
+  .simc-batting-list .simc-player-info {
+    top: -64px;
+  }
+  .simc-player-stats .simc-list-item .simc-top {
+    font-size: 15px;
+  }
+  .simc-player-stats .simc-list-item .simc-bottom {
+    font-size: 15px;
+  }
+  .simc-player-name {
+    height: 25px;
+  }
+  /** Sidebar **/
+  /*_ Top Stats card _*/
+  .simc-allplayer-stats .si-table-td.tblName, .simc-allplayer-stats .si-table-th.tblName {
+    font-size: 15px;
+    padding-left: 4px;
+  }
+  .simc-allplayer-stats .si-table-td.tblFlag img {
+    max-height: 18px;
+    max-width: 18px;
+  }
+  .simc-allplayer-stats .si-table-th, .simc-allplayer-stats .si-table-td {
+    font-size: 15px;
+  }
+  .simc-allplayer-stats .si-table-th, .simc-allplayer-stats .si-table-td {
+    padding: 0px 1px;
+  }
+  .simc-card-head h3 {
+    font-size: 16px;
+    line-height: 0.95;
+  }
+  .simc-top-playerinfo .simc-player-image {
+    bottom: 15px;
+    left: auto;
+    right: 15px;
+  }
+  .simc-top-playerinfo .simc-player-image img {
+    max-height: 100px;
+    max-width: 100px;
+  }
+  .simc-top-playerinfo .simc-player-name {
+    font-size: 17px;
+    padding-right: 127px;
+    text-align: left;
+    width: 100%;
+    height: 45px;
+    padding-left: 5px;
+  }
+  .simc-bowling-list .simc-player-info {
+    top: -102px;
+  }
+  .simc-yet-bowling .simc-player-info {
+    top: -30px;
+  }
+  .simc-car-head {
+    padding: 0px 5px;
+  }
+  .simc-top-playerstats {
+    padding: 5px;
+  }
+  .simc-top-playerstats {
+    font-size: 20px;
+  }
+  .simc-ad-placeholder img {
+    display: none;
+  }
+  /**_ Live scorecard page _**/
+  /*_ Over meter _*/
+  .simc-over-meter .simc-slider-item {
+    min-width: 334px;
+  }
+  /*_ Active player block _*/
+  .simc-active-player-box .simc-player-data {
+    min-height: 72px;
+  }
+  .simc-active-player-box .simc-player-image img {
+    max-height: 83px;
+    max-width: 85px;
+  }
+  .simc-active-player-box.simc-bowler .simc-player-data {
+    min-height: 72px;
+  }
+  .simc-active-player-box .simc-player-data {
+    padding-left: 116px;
+  }
+  .simc-active-player-box .simc-player-score {
+    font-size: 22px;
+  }
+  .simc-active-player-box .simc-score-breakdown {
+    margin-top: 15px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .simc-other-data {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 8px;
+    margin-top: 15px;
+  }
+  .simc-active-player-box .simc-player-status {
+    height: 38px;
+    padding-left: 116px;
+  }
+  .simc-active-player-box.simc-bowler .simc-player-name {
+    padding-left: 118px;
+  }
+  .simc-active-player-box.simc-bowler .simc-score-breakdown {
+    margin-top: 15px;
+  }
+  .simc-active-player-box .simc-score-txt span::before {
+    height: 28px;
+    line-height: 28px;
+    width: 28px;
+    font-size: 20px;
+  }
+  .simc-active-player-box.simc-bowler .simc-player-score .simc-score-txt {
+    padding-left: 40px;
+  }
+  .simc-active-player-box .simc-player-score .simc-score-txt {
+    line-height: 17px;
+  }
+  .simc-active-player-box.simc-bowler .simc-player-role, .simc-active-player-box .simc-bowler.simc-player-role {
+    background-position: -42px -133px;
+  }
+  .simc-partnership-pts {
+    font-size: 33px;
+    line-height: 33px;
+    margin-top: 16px;
+  }
+  .simc-active-player-box.simc-batsmen .simc-player-role, .simc-active-player-box .simc-batsmen.simc-player-role {
+    background-position: -220px -134px;
+  }
+  .simc-active-players.simc-batting-list .simc-active-player-content {
+    padding: 25px 0 116px;
+  }
+  /*_ Partnership _*/
+  .simc-partnership-box {
+    top: 146px;
+  }
+  .simc-partnership-block .simc-top {
+    font-size: 20px;
+  }
+  .simc-partnership-block .simc-progress-bar {
+    height: 7px;
+  }
+  .simc-partnership-pts {
+    font-size: 24px;
+    line-height: 24px;
+    margin-top: 12px;
+  }
+  /** Team List **/
+  .simc-captain-list .simc-table-th {
+    padding-left: 10px;
+    width: 50px;
+  }
+  .simc-captain-list .simc-table-td {
+    padding-left: 10px;
+  }
+  .simc-team-item .simc-team-image img {
+    max-height: 50px;
+    max-width: 80px;
+  }
+  .simc-team-item .simc-team-name {
+    padding-left: 95px;
+  }
+  .simc-team-item .simc-top {
+    height: 45px;
+  }
+  /** Match Stats page **/
+  /*.simc-spider-image {margin-right: 140px;margin-top: 88px;}*/
+  .simc-spider-image {
+    margin-right: 78px;
+    margin-top: 33px;
+    width: 360px;
+    height: 360px;
+    background-size: 359px auto;
+  }
+  .simc-runrate-graph .simc-graph-plot {
+    width: 100%;
+    overflow-x: auto;
+  }
+  .simc-manhattan-graph .simc-graph-plot {
+    overflow-x: auto;
+    overflow-y: hidden
+  }
+  .simc-plot-popup .simc-player-image {
+    display: none !important;
+  }
+  .simc-plot-description {
+    margin-left: 0;
+  }
+  .simc-plot-description span {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .simc-plot-description span.simc-player-name {
+    color: #3fd8fa;
+    font-size: 14px;
+    line-height: 13px;
+    margin-bottom: 3px;
+    height: auto;
+  }
+  /*_ spider graphs _*/
+  .simc-spider-stats .simc-spider-graph {
+    right: 36px;
+  }
+  .simc-spider-stats .simc-spider-legend {
+    right: -40px;
+  }
+  .simc-data-item.simc-data-item-01 {
+    left: 58px;
+    top: 8px;
+  }
+  .simc-data-item.simc-data-item-02 {
+    left: 237px;
+    top: 5px;
+  }
+  .simc-data-item.simc-data-item-03 {
+    left: 355px;
+    top: 121px;
+  }
+  .simc-data-item.simc-data-item-04 {
+    left: 353px;
+    top: 277px;
+  }
+  .simc-data-item.simc-data-item-05 {
+    left: 238px;
+    top: 394px;
+  }
+  .simc-data-item.simc-data-item-08 {
+    left: -51px;
+    top: 128px;
+  }
+  .simc-spider-stats .simc-graph-header .simc-tab li em {
+    font-size: 10px;
+  }
+  .simc-data-item.simc-data-item-06 {
+    left: 70px;
+    top: 390px;
+  }
+}
+
+/*End Media query max-width:992px*/
+
+@media (max-width:767px) {
+  .simc-breadcrumb {
+    padding: 10px;
+  }
+  .simc-web, .simc-controls-web {
+    display: none;
+  }
+  .simc-mobile, .simc-controls-wap {
+    display: block;
+  }
+  .si-plyr-style {
+    font-size: 12px;
+    padding-left: 2px;
+  }
+  .simc-sidebar {
+    display: none;
+  }
+  /** Primary nav **/
+  .simc-nav {
+    height: 42px;
+  }
+  .simc-nav li {
+    width: auto;
+    font-size: 16px;
+    padding: 0 10px;
+  }
+  /** Highlighter **/
+  .simc-highlights-top {
+    height: auto;
+    padding: 10px;
+  }
+  .simc-highlights-top h5 {
+    display: none;
+  }
+  .simc-highlights-top h3 {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .simc-highlights-top .simc-time {
+    display: block;
+    font-size: 12px;
+    line-height: 12px;
+    margin-top: 5px;
+    position: relative;
+    right: 0;
+    top: 0;
+  }
+  .simc-highlights-middle .simc-matchbox {
+    border-right: none;
+    width: 100%;
+  }
+  .simc-highlights-middle .simc-team.active .simc-team-image {
+    left: 15px;
+    position: absolute;
+    top: 0;
+  }
+  .simc-highlights-middle .simc-team.active .simc-team-image img {
+    max-height: 50px;
+    max-width: 100%;
+  }
+  .simc-highlights-middle .simc-team.active .simc-team-name {
+    font-size: 15px;
+    line-height: 15px;
+  }
+  .simc-highlights-middle .simc-team.active .simc-team-score {
+    font-size: 30px;
+    line-height: 30px;
+  }
+  .simc-highlights-middle .simc-team.active .simc-innings-detail {
+    margin-top: 10px;
+  }
+  .simc-innings-detail span {
+    font-size: 15px;
+    line-height: 17px;
+  }
+  .simc-match-details {
+    width: 100%;
+  }
+  .simc-innings-players span {
+    border-right: medium none;
+    display: block;
+    padding-left: 0;
+  }
+  .simc-highlights-middle .simc-team .simc-content-wrap {
+    padding-left: 13px;
+    position: relative;
+  }
+  .simc-matchresult {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .simc-match-details-hd {
+    font-size: 16px;
+    left: -64px;
+    width: 162px;
+    height: 35px;
+  }
+  /*_ Team box _*/
+  .simc-innings-detail span {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .simc-matchbox-wrap {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .simc-team-image img {
+    max-height: 25px;
+    max-width: 25px;
+  }
+  .simc-team.simc-team-a {
+    padding-bottom: 0;
+  }
+  .simc-team-name {
+    font-size: 14px;
+  }
+  .simc-highlights-middle .simc-matchbox .simc-team-score {
+    margin: 0 0 0 5px;
+  }
+  .simc-matchbox .simc-matchbox-wrap .simc-innings-detail {
+    margin-left: 30px;
+  }
+  /*_ Team highlights active _*/
+  .simc-highlights-middle .simc-team.active .simc-content-wrap {
+    padding-left: 81px;
+  }
+  .simc-highlights-middle .simc-team.active .simc-team-image img {
+    max-height: 40px;
+    max-width: 100%;
+  }
+  .simc-highlights-middle .simc-team.active .simc-team-name {
+    font-size: 14px;
+    line-height: 14px;
+  }
+  .simc-highlights-middle .simc-team.active .simc-team-score {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .simc-highlights-middle .simc-team.active .simc-innings-detail {
+    margin-top: 5px;
+  }
+  .simc-highlights-middle .simc-team.active .simc-innings-detail {
+    font-size: 8px;
+  }
+  .simc-highlights-middle .simc-team.active .simc-team-image {
+    left: 12px;
+  }
+  .simc-highlights-middle .simc-team .simc-team-score {
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .simc-highlights-middle .simc-team.active .simc-team-score .simc-inn1 {
+    font-size: 34px;
+    line-height: 34px;
+  }
+  .simc-matchbox .simc-matchbox-wrap .simc-team.active .simc-innings-detail {
+    margin-left: 0px;
+  }
+  /** Match Detail **/
+  .simc-match-details-hd {
+    font-size: 12px;
+    height: 34px;
+    left: -42px;
+    width: 110px;
+  }
+  .simc-matchdetail-wrap {
+    padding: 0px 35px 0px;
+  }
+  .simc-content-body .simc-match-status span{
+    margin-bottom: 0px;
+  }
+  .simc-content-head {
+    min-width: 100%;
+    padding-top: 4px;
+  }
+  .simc-matchbox .simc-matchbox-wrap .simc-innings-detail {
+    display: block;
+  }
+  .simc-content-head div.simc-date {
+    font-size: 14px;
+    /*display: block;margin-top: 3px;*/
+  }
+  /*_ content body _*/
+  .simc-content-body p {
+    font-size: 10px;
+    line-height: 15px;
+    margin-bottom: 0px;
+  }
+  .simc-match-umpire, .simc-match-crew {
+    margin-top: 14px;
+  }
+  /*_ Highlighter Sidebar _*/
+  .simc-highlights-sidebar {
+    display: none;
+  }
+  .simc-matchbox .simc-team-score {
+    margin-left: 0;
+    padding-left: 0px;
+  }
+  .simc-match-umpire span {
+    display: block;
+    border: none;
+    padding: 0;
+  }
+  /*_ Countdown _*/
+  .simc-highlights-middle .simc-countdown-box {
+    border-right: none;
+    float: none;
+    padding: 0 10px;
+    width: 100%;
+  }
+  .simc-countdown-team .simc-team .simc-team-name {
+    font-size: 12px;
+    padding: 0 10px;
+  }
+  .simc-countdown-team .simc-team-vs span {
+    font-size: 12px;
+  }
+  .simc-countdown-timer .simc-content-wrap {
+    padding-top: 6px;
+  }
+  .simc-countbox {
+    padding: 0 10px;
+  }
+  .simc-countdown-timer .simc-count-num {
+    font-size: 28px;
+    line-height: 28px;
+  }
+  .simc-countdown-timer .simc-count-txt {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .simc-countdown-byline {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  /*_ Player list _*/
+  .simc-player-name {
+    font-size: 14px;
+    height: auto;
+    line-height: 16px;
+  }
+  .simc-player-stats .simc-list-item .simc-top {
+    font-size: 12px;
+    height: 23px;
+    line-height: 23px;
+  }
+  .simc-player-stats .simc-list-item .simc-bottom {
+    font-size: 12px;
+    height: 25px;
+    line-height: 25px;
+  }
+  .simc-player-image {
+    bottom: 20px;
+  }
+  .simc-player-image img {
+    max-height: 60px;
+    max-width: 60px;
+  }
+  .simc-player-data {
+    padding-left: 82px;
+    min-height: 105px;
+  }
+  .simc-batting-list .simc-player-info {
+    top: -49px;
+  }
+  .simc-player-info span {
+    font-size: 14px;
+    height: 20px;
+    line-height: 22px;
+    width: 20px;
+  }
+  .simc-player-status {
+    font-size: 13px;
+    padding-left: 84px;
+  }
+  .simc-player-role {
+    background-size: auto 177px;
+  }
+  .simc-bowler .simc-player-role, .simc-bowler.simc-player-role {
+    background-position: -41px -19px;
+  }
+  .simc-batsmen.simc-onstrike .simc-player-role, .simc-onstrike .simc-batsmen.simc-player-role {
+    background-position: -197px -72px;
+  }
+  .simc-batsmen .simc-player-role, .simc-batsmen.simc-player-role {
+    background-position: -197px -19px;
+  }
+  .simc-wicketkeeper .simc-player-role, .simc-wicketkeeper.simc-player-role {
+    background-position: -120px -19px;
+  }
+  .simc-allrounder .simc-player-role, .simc-allrounder.simc-player-role {
+    background-position: -275px -19px;
+  }
+  .simc-batting-list .simc-player-stats .simc-list-item .simc-list-content {
+    min-width: 0;
+  }
+  .simc-player-stats .simc-list-item .simc-list-content {
+    margin: 0 1px;
+    display: block;
+  }
+  .simc-bowling-list .simc-player-stats .simc-list:last-child {
+    display: none;
+  }
+  .simc-bowling-list .simc-player-info {
+    top: -26px;
+  }
+  .simc-bowling-list .simc-player-image {
+    left: 3px;
+  }
+  .simc-bowling-list .simc-player-status {
+    width: 78px;
+  }
+  /**_Scorecard Page _**/
+  /*_ Section container _*/
+  /*_ section nav _*/
+  .simc-section-nav .si-tab {
+    overflow: hidden;
+  }
+  .simc-section-nav .si-tab li {
+    display: block;
+    width: 100%;
+    line-height: 50px;
+    font-size: 20px;
+    border: none;
+  }
+  .simc-section-nav .si-tab li span {
+    display: block;
+  }
+  .simc-section-nav {
+    background-color: #1d1d1d;
+    border-bottom: none;
+    position: absolute;
+    left: 0;
+    top: -5px;
+    width: 100%;
+    z-index: 10;
+  }
+  .simc-section-container {
+    padding-top: 50px;
+  }
+  .simc-section-nav .si-tab li:hover, .simc-section-nav .si-tab li.active {
+    background-color: transparent;
+    color: #f4821f;
+  }
+  .simc-section-nav .simc-nav-left, .simc-section-nav .simc-nav-right {
+    display: block;
+    height: 50px;
+    width: 50px;
+    top: 0;
+  }
+  .simc-section-nav .simc-nav-left {
+    left: 0px;
+  }
+  .simc-section-nav .simc-nav-right {
+    right: 0px;
+  }
+  /*_ Sub tab _*/
+  .si-subtab li {
+    font-size: 16px;
+  }
+  .si-subtab li span {
+    padding: 0 15px;
+  }
+  .simc-block-strip .si-lft, .simc-lft {
+    float: none;
+    text-align: left;
+  }
+  .simc-block-strip .si-rgt, .simc-rgt {
+    float: none;
+    text-align: left;
+  }
+  .simc-block-strip .simc-team-score {
+    font-size: 15px;
+  }
+  .simc-block-strip .simc-match-status {
+    text-align: left;
+  }
+  .simc-block-strip .simc-content-box {
+    padding: 0 15px;
+    text-align: left;
+  }
+  /**_ Live scorecard page _**/
+  /*_ Over meter _*/
+  .simc-over-meter .simc-slider-wrap {
+    margin: 0 15px;
+  }
+  /*.simc-over-meter .simc-slider-item { min-width:280px; width:100%;  }*/
+  .simc-over-meter .simc-slider-item {
+    min-width: 200px;
+    width: auto;
+    padding-top: 36px;
+  }
+  .simc-over-meter .simc-over {
+    font-size: 14px;
+    height: 30px;
+    margin: 0 1px;
+    width: 30px;
+  }
+  .simc-over-meter .simc-over:first-child {
+    margin-left: 10px;
+  }
+  .simc-over-meter .simc-over:last-child {
+    margin-right: 10px;
+  }
+  .simc-over-meter {
+    margin-bottom: 12px;
+  }
+  .simc-over-meter .simc-nav-left {
+    left: -12px;
+  }
+  .simc-over-meter .simc-nav-right {
+    right: -12px;
+  }
+  .simc-over-list ul {
+    top: 8px;
+  }
+  .simc-over-tooltip {
+    width: 140px;
+  }
+  /*_ Active player block _*/
+  .simc-active-players {
+    margin-top: 5px;
+  }
+  .simc-active-player-box .simc-player-score {
+    font-size: 25px;
+  }
+  .simc-active-player-box.simc-batsmen .simc-player-role, .simc-active-player-box .simc-batsmen.simc-player-role {
+    background-size: auto auto;
+  }
+  .simc-active-player-box .simc-player-status {
+    height: 35px;
+  }
+  .simc-other-data {
+    margin-top: 15px;
+  }
+  .simc-active-players.simc-batting-list .simc-active-player-content {
+    padding: 24px 0 20px;
+  }
+  .simc-score-breakdown .simc-score-txt {
+    font-size: 12px;
+    margin-right: 5px;
+  }
+  .simc-score-txt em {
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    width: 20px;
+  }
+  .simc-active-player-box .simc-player-score {
+    font-size: 14px;
+  }
+  .simc-active-player-box .simc-player-score .simc-score-txt {
+    line-height: 12px;
+  }
+  .simc-active-player-box.simc-bowler .simc-player-score .simc-score-txt {
+    padding-left: 33px;
+    position: relative;
+  }
+  .simc-active-player-box .simc-score-txt span::before {
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    width: 20px;
+  }
+  .simc-active-player-box.simc-bowler .simc-player-role, .simc-active-player-box .simc-bowler.simc-player-role {
+    background-position: -43px -136px;
+    background-size: auto auto;
+  }
+  .simc-active-player-box .simc-player-status .simc-player-name {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .simc-active-player-box .simc-score-breakdown {
+    margin-top: 2px;
+    display: inline-block;
+  }
+  .simc-active-player-box.simc-bowler .simc-score-breakdown {
+    margin-top: 2px;
+  }
+  .simc-other-data {
+    margin-top: 2px;
+    margin-left: 6px;
+    display: inline-block;
+  }
+  .simc-active-player-box .simc-player-data {
+    min-height: 53px;
+    padding-left: 100px;
+  }
+  .simc-active-player-box.simc-bowler .simc-player-data {
+    min-height: 53px;
+    padding-left: 96px;
+  }
+  .simc-active-player-box .simc-player-image img {
+    max-height: 65px;
+    max-width: 65px;
+  }
+  .simc-active-player-box .simc-player-role {
+    height: 14px;
+  }
+  .simc-active-player-hd > span {
+    font-size: 16px;
+  }
+  /*_ Partnership _*/
+  .simc-partnership-box {
+    background: #EFEFEF;
+    margin: 15px auto 15px;
+    padding: 5px 0;
+    position: relative;
+    top: 0;
+  }
+  .simc-partnership-block {
+    margin: 10px auto 10px;
+    max-width: 262px;
+  }
+  .simc-partnership-block .simc-top {
+    font-size: 20px;
+  }
+  .simc-partnership-block .simc-progress-bar {
+    top: 3px;
+  }
+  .simc-partnership-pts {
+    font-size: 22px;
+    line-height: 22px;
+    margin-top: 10px;
+  }
+  .simc-partnership-block .simc-progress-bar {
+    height: 6px;
+  }
+  /*_ this over _*/
+  .simc-overstats-block .simc-over {
+    height: 24px;
+    width: 24px;
+  }
+  .simc-overstats-block span {
+    font-size: 16px;
+  }
+  .simc-overstats-block ul {
+    display: block;
+  }
+  .simc-overstats-block {
+    height: 50px;
+    margin-bottom: 25px;
+  }
+  /*_ Comment block _*/
+  .simc-comment-summary {
+    padding: 10px 10px;
+  }
+  .simc-summary-item:last-child {
+    text-align: left;
+    display: none;
+  }
+  .simc-comment-description {
+    padding: 20px 5px;
+  }
+  .simc-over-no {
+    left: 0;
+    top: 6px;
+    font-size: 14px;
+  }
+  .simc-overscored {
+    left: 31px;
+    font-size: 14px;
+    height: 28px;
+    width: 30px;
+  }
+  .simc-comment-text {
+    padding-left: 71px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .simc-block-strip .simc-comment-hd .si-lft, .simc-lft {
+    float: left;
+  }
+  .simc-block-strip .simc-comment-hd .si-rgt, .simc-rgt {
+    float: right;
+  }
+  .simc-comment-hd {
+    height: 50px;
+    padding: 0 15px;
+  }
+  .simc-comment-hd span {
+    font-size: 14px;
+  }
+  .simc-summary-item {
+    font-size: 14px;
+    font-family: pt_sansregular, sans-serif;
+  }
+  .simc-comment-summary .si-table-th, .simc-comment-summary .si-table-td {
+    vertical-align: top;
+  }
+  .simc-summary-item .si-table-td {
+    height: 30px;
+  }
+  .simc-summary-item .si-table-td span {
+    line-height: 16px;
+  }
+  /*_ Previous wicket _*/
+  .simc-previous-wicket {
+    margin-top: 10px;
+  }
+  .simc-previous-hd {
+    top: 0;
+    position: relative;
+    text-align: left;
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .simc-previous-summary {
+    margin: 10px 0px;
+    border-top: 1px solid #024f93;
+    border-left: none;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .simc-previous-wicket .simc-player-image img {
+    max-height: 60px;
+    max-width: 60px;
+  }
+  .simc-previous-data {
+    height: 70px;
+    margin-left: 90px;
+  }
+  .simc-previous-data p {
+    font-size: 16px;
+    line-height: 18px;
+    margin-bottom: 5px;
+  }
+  .simc-previous-data em {
+    font-size: 18px;
+    display: block;
+  }
+  /** Commentary Page **/
+  /*_ Commentary summary _*/
+  .simc-summary-item .si-table-tr .si-table-td:last-child {
+    text-align: right;
+  }
+  /*_ Sub tab - Commentary _*/
+  .simc-commentary-section .si-subtab li {
+    font-size: 14px;
+    height: 35px;
+    padding: 5px 0;
+  }
+  .simc-comment-hd h3 {
+    font-size: 14px;
+  }
+  .simc-commentary-section .simc-select-innings {
+    margin-bottom: 0;
+  }
+  /*_ Filter - Commentary _*/
+  .simc-filter-commentary .si-lft .simc-filter {
+    height: auto;
+  }
+  .simc-filter-commentary .si-lft .simc-filter li {
+    font-size: 12px;
+    height: 36px;
+    padding-left: 10px 0px;
+  }
+  .simc-filter-commentary .simc-filter li span {
+    padding: 0 11px;
+  }
+  .simc-commentary-section .si-rgt {
+    margin-bottom: 10px;
+    margin-top: 0px;
+    float: none;
+    text-align: center;
+  }
+  .simc-filter-commentary .si-lft {
+    float: none;
+    width: 100%;
+  }
+  .simc-filter-commentary .si-rgt {
+    float: none;
+    width: 100%;
+  }
+  .simc-filter-commentary .si-rgt:before, .simc-filter-commentary .si-rgt:after {
+    clear: both;
+    display: table;
+    content: "";
+  }
+  .simc-filter-commentary .si-rgt .simc-form-group.simc-element-inline:first-child {
+    padding-left: 0;
+  }
+  .simc-filter-commentary .si-rgt .simc-form-group.simc-element-inline:last-child {
+    padding-right: 0;
+  }
+  .simc-filter-commentary .si-rgt .simc-form-group {
+    display: block;
+    width: 50%;
+    padding: 0px 5px;
+    float: left;
+    margin: 0;
+  }
+  .simc-filter-commentary .si-rgt .simc-form-group .simc-select-box {
+    width: 100%;
+  }
+  /** Result page **/
+  /*_ result filter _*/
+  .simc-result-filter {
+    display: none;
+  }
+  /*_ Result data _*/
+  .simc-result-data {
+    margin-top: 0;
+  }
+  .simc-table-td.simc-tblStatus, .simc-table-th.simc-tblStatus {
+    padding-right: 5px;
+  }
+  .simc-result-data .simc-table-th {
+    font-size: 10px;
+    height: 55px;
+  }
+  .simc-result-data .simc-table-td {
+    font-size: 10px;
+    line-height: 12px;
+    height: auto;
+    padding: 5px;
+  }
+  .simc-table-td.simc-tblStatus .simc-matchcentre-btn span {
+    font-size: 10px;
+    line-height: 10px;
+    padding: 3px;
+  }
+  .simc-table-td.simc-tblStatus .simc-matchcentre-btn {
+    font-size: 10px;
+    margin: 5px auto 0;
+    position: relative;
+    width: 80px;
+    left: 0;
+  }
+  /** Team Profile Page **/
+  /*_ Team summary _*/
+  .simc-team-summary {
+    padding: 10px;
+  }
+  .simc-team-summary .simc-team-image img {
+    height: 30px;
+    max-height: 30px;
+    max-width: 50px;
+    width: auto;
+  }
+  .simc-team-summary .simc-team-image {
+    margin-top: 0;
+    top: 4px;
+  }
+  .simc-team-summary .simc-team-detail {
+    padding-left: 55px;
+  }
+  .simc-team-summary .simc-team-name {
+    font-size: 26px;
+    line-height: 24px;
+  }
+  .simc-team-summary .simc-team-stats {
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 8px;
+  }
+  .simc-team-summary .simc-team-stats span {
+    display: block;
+    padding: 0px;
+    text-align: left;
+    border: none;
+  }
+  .simc-team-summary .simc-team-stats > span {
+    display: inline-block;
+    margin-bottom: 0px;
+    vertical-align: top;
+  }
+  .simc-team-summary .simc-team-stats ul {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+  }
+  .simc-team-summary .simc-team-stats ul li {
+    display: block;
+  }
+  .simc-team-summary .simc-team-stats ul li span {
+    padding: 0;
+    border: none;
+  }
+  /*_ Sqaud list _*/
+  .simc-team-sqaud h4 {
+    margin-bottom: 10px;
+  }
+  .simc-team-sqaud .simc-player-image img {
+    max-height: 70px;
+    max-width: 70px;
+  }
+  .simc-team-sqaud .simc-player-info {
+    right: -28px;
+  }
+  .simc-team-sqaud .simc-player-status {
+    padding-left: 94px;
+  }
+  .simc-team-sqaud .simc-player-name {
+    font-size: 16px;
+    line-height: 16px;
+  }
+  /*_ Table block _*/
+  .simc-table-block {
+    margin-top: 20px;
+  }
+  .simc-table-block h4 {
+    font-family: pt_sansregular, sans-serif;
+    font-size: 16px;
+    padding-left: 0;
+  }
+  .simc-table-block .si-subtab li {
+    font-size: 14px;
+  }
+  .simc-table-block .simc-table-th, .simc-table-block .simc-table-td {
+    font-size: 14px;
+    padding: 0 5px;
+  }
+  .simc-table-block .simc-table-td.tblFormat, .simc-table-block .simc-table-th.tblFormat {
+    padding-left: 10px;
+  }
+  .simc-team-stats-table .tblTie, .simc-team-stats-table .tblLost, .simc-team-stats-table .tblNr {
+    display: none;
+  }
+  /*_Table summary _*/
+  .simc-table-summary {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+  .simc-table-summary .simc-table-th, .simc-table-summary .simc-table-td {
+    font-size: 12px;
+    line-height: 14px;
+    padding: 5px;
+  }
+  /** Player profile page **/
+  .simc-player-profile .simc-block-section-hd h3 {
+    padding: 0;
+  }
+  .simc-player-profile .simc-select-box.simc-selectplayer {
+    height: 35px;
+    margin: 15px 0 5px;
+    right: 0;
+    top: 0;
+    width: 100%;
+    position: relative;
+  }
+  .simc-player-profile .simc-selectplayer .select-out {
+    height: 34px;
+    line-height: 34px;
+  }
+  /*_ Player Summary _*/
+  .simc-player-summary {
+    height: auto;
+  }
+  .simc-player-summary .simc-player-image img {
+    border: 2px solid #fff;
+    max-height: 75px;
+    max-width: 75px;
+    width: 75px;
+  }
+  .simc-player-summary .simc-player-detail {
+    margin-left: 0px;
+  }
+  .simc-player-summary .simc-team-image, .simc-player-summary .simc-player-image {
+    display: none;
+  }
+  .simc-player-data .simc-table-th {
+    width: 70px;
+  }
+  .simc-player-summary .simc-player-name {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 10px;
+    margin-top: 0;
+  }
+  .simc-player-data .simc-lft {
+    border-right: none;
+    float: none;
+  }
+  /*_ Player table _*/
+  .simc-player-profile .simc-table-block .simc-table-th, .simc-player-profile .simc-table-block .simc-table-td {
+    font-size: 12px;
+  }
+  .tblInns, .tblTopscore, .tblStump, .tblNds, .tbl6s, .tbl4s, .tblSr, .tblMaidens, .tbl5w, .tbli, .tblno {
+    display: none;
+  }
+  .simc-bowling-table .tblAvg {
+    display: none;
+  }
+  /** Match Stats **/
+  .simc-graph-header {
+    width: 100%;
+  }
+  .simc-graph-header .simc-tabdata {
+    color: #000;
+    float: left;
+    font-family: pt_sansbold, sans-serif;
+    font-size: 14px;
+    padding: 10px;
+  }
+  .simc-graph-header .simc-player-select {
+    float: right;
+    margin-top: 4px;
+    margin-right: 5px;
+    width: 60px;
+  }
+  .simc-graph-header .simc-tab-container:before, .simc-graph-header .simc-tab-container:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  .simc-graph-header .simc-select-box {
+    background-color: transparent;
+    border: 1px solid #afafaf;
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 170px;
+    height: 30px;
+  }
+  .simc-graph-header .simc-select-out {
+    font-size: 14px;
+    color: #000;
+    height: 28px;
+    display: block;
+    padding-right: 20px;
+    padding-left: 5px;
+    line-height: 28px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .simc-graph-header .simc-select-box:before {
+    content: "\e259";
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    margin-top: -7px;
+    position: absolute;
+    right: 3px;
+    top: 50%;
+    color: #b6b6b6;
+  }
+  /*_ spider stats _*/
+  .simc-spider-stats .simc-graph-header {
+    float: none;
+    width: 100%;
+  }
+  .simc-spider-stats .simc-spider-graph {
+    right: 0;
+    top: 0;
+    position: relative;
+    margin-top: 10px;
+  }
+  .simc-spider-stats .simc-graph-header .simc-player-select {
+    width: 165px;
+    margin-right: 10px;
+  }
+  /*.simc-spider-data {display: none;}*/
+  .simc-spider-data .simc-graphdata-list {
+    height: 250px;
+    margin-right: auto;
+    width: 250px;
+    margin-left: auto;
+    text-align: center;
+    position: relative;
+  }
+  .simc-spider-data .simc-graphdata-list .simc-data-runs {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  /*_ Plot data alignments  _*/
+  .simc-data-item.simc-data-item-01 {
+    left: 80px;
+    top: 0;
+  }
+  .simc-data-item.simc-data-item-02 {
+    left: 156px;
+    top: 3px;
+  }
+  .simc-data-item.simc-data-item-03 {
+    left: 195px;
+    top: 50px;
+  }
+  .simc-data-item.simc-data-item-04 {
+    left: 199px;
+    top: 121px;
+  }
+  .simc-data-item.simc-data-item-05 {
+    left: 143px;
+    top: 174px;
+  }
+  .simc-data-item.simc-data-item-06 {
+    left: 66px;
+    top: 173px;
+  }
+  .simc-data-item.simc-data-item-07 {
+    left: 9px;
+    top: 117px;
+  }
+  .simc-data-item.simc-data-item-08 {
+    left: 10px;
+    top: 50px;
+  }
+  .simc-spider-image {
+    /* margin-right: 50px; */
+    margin-top: 0;
+    text-align: center;
+    background-size: 300px;
+    height: 300px;
+    width: 300px;
+  }
+  .simc-spider-image img {
+    width: 230px;
+  }
+  .simc-spider-stats .simc-spider-legend {
+    top: 25px;
+    position: relative;
+    left: 0;
+    text-align: center;
+  }
+  .simc-spider-stats .simc-spider-legend .simc-content-wrap {
+    display: inline-block;
+  }
+  .simc-spider-stats .simc-graph-block {
+    min-height: auto;
+    padding-bottom: 20px;
+  }
+  .simc-spider-stats .simc-spider-legend .simc-checkbox-group {
+    float: left;
+    margin: 0 1px;
+  }
+  .simc-spider-image {
+    background-size: 152px auto;
+    height: 200px;
+    margin-right: auto;
+    margin-top: 0;
+    text-align: center;
+    width: 200px;
+    margin-left: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .simc-spider-stats .simc-graph-header .simc-tab-container {
+    background-color: #fff;
+  }
+  .simc-spider-stats .simc-graph-header .simc-player-select {
+    width: 100%;
+    margin-right: 0;
+  }
+  .simc-spider-stats .simc-graph-header .simc-select-box {
+    width: 100%;
+  }
+  /*_ Run rate _*/
+  .simc-axis-line .simc-axis.simc-axis-y {
+    left: 14px;
+  }
+  .simc-axis-line .simc-axis.simc-axis-x {
+    left: 14px;
+  }
+  .simc-axis-line span {
+    font-size: 12px;
+  }
+  .simc-graph-plot .si-runrate-graph-body {
+    width: 100%;
+    height: 100%;
+  }
+  /*_ Graph Area _*/
+  .simc-runrate-graph .simc-graph-area {
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
+  .simc-runrate-graph .simc-graph-plot {
+    width: 100%;
+    overflow-x: auto;
+  }
+  /*_ Popup data _*/
+  .simc-plot-popup .simc-player-image {
+    display: none;
+  }
+  .simc-plot-description {
+    margin-left: 0;
+    text-align: left;
+  }
+  .simc-plot-popup {
+    padding: 5px;
+    width: 95px;
+  }
+  .simc-plot-description span.simc-player-name {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .simc-plot-description span {
+    font-size: 12px;
+    line-height: 13px;
+  }
+  .simc-graph-header {
+    margin-bottom: 10px;
+  }
+  .simc-graph-header .simc-graph-innings {
+    position: relative;
+    right: -1px;
+    top: 0;
+  }
+  .simc-runrate-stats .simc-graph-header .simc-select-box, .simc-manhattan-stats .simc-graph-header .simc-select-box {
+    width: 100%;
+  }
+  /*_ Manhattan graph _*/
+  .simc-manhattan-graph {
+    height: 300px;
+  }
+  .simc-manhattan-graph .simc-graph-plot {
+    background-image: none;
+    /*background-color: #ECECEC;*/
+  }
+  .simc-axis-text .simc-axis span {
+    font-size: 12px;
+  }
+  .simc-axis-text .simc-axis.simc-axis-y span {
+    left: -44px;
+    width: 87px;
+  }
+  .simc-manhattan-graph .simc-axis-line span {
+    font-size: 10px;
+  }
+  .simc-manhattan-graph .simc-axis-line .simc-axis.simc-axis-y li {
+    height: 20px;
+  }
+  .simc-manhattan-graph .simc-graph-area {
+    padding-left: 12px;
+    padding-bottom: 12px;
+  }
+  .simc-manhattan-graph .simc-overs-graph .simc-over-no {
+    font-size: 10px;
+  }
+  .simc-manhattan-graph .simc-over-no > span {
+    left: -5px;
+    position: relative;
+  }
+  .simc-paint-graph .simc-plot-thumb {
+    height: 4px;
+    line-height: 4px;
+    width: 4px;
+  }
+  .simc-paint-graph .simc-plot-data {
+    margin-left: -2px;
+    top: -5px;
+  }
+  .simc-overs-100 .simc-overs-graph li {
+    width: 13px;
+  }
+  .simc-manhattan-graph .simc-graph-plot {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .simc-manhattan-stats .simc-graph-header {
+    background-color: transparent;
+  }
+  /*_ Beehive graph _*/
+  .simc-beehive-graph {
+    height: 360px;
+  }
+  .simc-beehive-graph-plot .simc-graph-plot {
+    background-size: auto 360px;
+  }
+  .simc-beehive-stats .simc-graph-header .simc-select-box {
+    width: 100%;
+  }
+  .simc-beehive-graph .simc-controls-wap:before, .simc-beehive-graph .simc-controls-wap:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  .simc-beehive-graph .simc-controls-wap {
+    margin-bottom: 20px;
+  }
+  .simc-beehive-graph .simc-controls-wap .simc-select-players {
+    width: 50%;
+    float: left;
+    padding: 0 2px;
+  }
+  .simc-beehive-graph .simc-controls-wap .simc-select-players:first-child {
+    padding-left: 0;
+  }
+  .simc-beehive-graph .simc-controls-wap .simc-select-players:last-child {
+    padding-right: 0;
+  }
+  .simc-beehive-graph .simc-controls-wap .simc-select-players .simc-select-box {
+    width: 100%;
+  }
+  .simc-beehive-graph-plot {
+    margin: 0;
+  }
+  .simc-beehive-graph-plot .simc-graph-info {
+    bottom: 20px;
+  }
+  .si-no-image .simc-plot-popup {
+    padding: 5px;
+    width: 140px;
+  }
+  .simc-plot-data.simc-reachtop .simc-plot-popup {
+    top: 16px;
+    bottom: auto;
+  }
+  .simc-plot-data.simc-reachtop .simc-plot-popup:before {
+    bottom: auto;
+    top: -4px;
+    border-top: none;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.8);
+  }
+}
+
+/*End Media query max-width:767px*/

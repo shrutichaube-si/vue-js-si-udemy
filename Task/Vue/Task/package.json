@@ -1,0 +1,28 @@
+{
+  "name": "task",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "nodemon index.js",
+    "start:Task": "npm run dev",
+    "start:Server": "cd Server && npm start",
+    "start:All": "concurrently \"npm run start:Task\" \"npm run start:Server\""
+  },
+  "dependencies": {
+    "axios": "^1.6.1",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "nodemon": "^3.0.1",
+    "vite": "^4.4.5"
+  }
+}
