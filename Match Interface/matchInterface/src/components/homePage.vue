@@ -14,233 +14,156 @@
             </div>
         </div>
     </header>
-
-    <!-- <div class="match-schedule-container">
-        <div id="fixturesDiv" class="col-sm-12 col-md-8 col-lg-9 simc-site-leftcol">
-            <div class="si-subtab-content simc-international-content">
-                <div class="simc-select-filter tab-col-5">
-                    <ul>
-                        <li class="simc-filterDropDown Sport">
-                            <div class="simc-listcontent">
-                                <span>Sport</span>
-                                <div class="simc-select-drop">
-                                    <div class="simc-content-wrap">
-                                        <ul id="Sport"></ul>
-                                    </div>
-                                    </div>
-                            </div>
-                        </li>
-                        <select class="filter-by-Sport" id="Sport">
-                            <option class="filter-by-sport" data-value="2" data-type="sport" value="2">
-                                Football
-                            </option>
-                            <option class="filter-by-sport" data-value="1" data-type="sport" value="2">
-                                Cricket
-                            </option>
-                        </select>
-
-                        <li class="simc-filterDropDown  Year">
-					<div class="simc-listcontent "><span>Year</span>
-					<div class="simc-select-drop">
-					<div class="simc-content-wrap"> 
-						<ul id="Year">
-							
-								<li class='filter-by2017' data-value="2017" data-type="year">
-									<div class="simc-list-content"><span>2017</span></div>
-								</li>
-							
-								<li class='filter-by2018' data-value="2017" data-type="year">
-									<div class="simc-list-content"><span>2018</span></div>
-								</li>
-							
-								<li class='filter-by2020' data-value="2017" data-type="year">
-									<div class="simc-list-content"><span>2020</span></div>
-								</li>
-							
-								<li class='filter-by2021' data-value="2017" data-type="year">
-									<div class="simc-list-content"><span>2021</span></div>
-								</li>
-							
-								<li class='filter-by2022' data-value="2017" data-type="year">
-									<div class="simc-list-content"><span>2022</span></div>
-								</li>
-							
-								<li class='filter-by2023' data-value="2017" data-type="year">
-									<div class="simc-list-content"><span>2023</span></div>
-								</li>
-							
-								<li class='filter-by2024' data-value="2017" data-type="year">
-									<div class="simc-list-content"><span>2024</span></div>
-								</li>
-							
-						</ul> 
-					</div> 
-					</div> 
-					</div>
-					</li>
-                        <select class="filter-by-Year" id="Year">
-                            <option class="filter-by-year" data-value="2017" data-type="year" value="2017">
-                                2017
-                            </option>
-                            <option class="filter-by-year" data-value="2018" data-type="year" value="2018">
-                                2018
-                            </option>
-                            <option class="filter-by-year" data-value="2020" data-type="year" value="2020">
-                                2020
-                            </option>
-                            <option class="filter-by-year" data-value="2021" data-type="year" value="2021">
-                                2021
-                            </option>
-                            <option class="filter-by-year" data-value="2022" data-type="year" value="2022">
-                                2022
-                            </option>
-                            <option class="filter-by-year" data-value="2023" data-type="year" value="2023">
-                                2023
-                            </option>
-                            <option class="filter-by-year" data-value="2024" data-type="year" value="2024">
-                                2024
-                            </option>
-                        </select>
-
-                         <li class="simc-filterDropDown  Month">
-					<div class="simc-listcontent "><span>Month</span>
-					<div class="simc-select-drop">
-					<div class="simc-content-wrap"> 
-						<ul id="Month">
-							
-								<li class='filter-byJanuary' data-value="2017" data-type="year">
-									<div class="simc-list-content"><span>January</span></div>
-								</li>
-							
-								<li class='filter-byFebruary' data-value="2017" data-type="year">
-									<div class="simc-list-content"><span>February</span></div>
-								</li>
-							
-								<li class='filter-byMarch' data-value="2017" data-type="year">
-									<div class="simc-list-content"><span>March</span></div>
-								</li>
-							
-								<li class='filter-byApril' data-value="2017" data-type="year">
-									<div class="simc-list-content"><span>April</span></div>
-								</li>
-							
-								<li class='filter-byMay' data-value="2017" data-type="year">
-									<div class="simc-list-content"><span>May</span></div>
-								</li>
-							
-								<li class='filter-byJune' data-value="2017" data-type="year">
-									<div class="simc-list-content"><span>June</span></div>
-								</li>
-							
-								<li class='filter-byJuly' data-value="2017" data-type="year">
-									<div class="simc-list-content"><span>July</span></div>
-								</li>
-							
-								<li class='filter-byAugust' data-value="2017" data-type="year">
-									<div class="simc-list-content"><span>August</span></div>
-								</li>
-							
-								<li class='filter-bySeptember' data-value="2017" data-type="year">
-									<div class="simc-list-content"><span>September</span></div>
-								</li>
-							
-								<li class='filter-byOctober' data-value="2017" data-type="year">
-									<div class="simc-list-content"><span>October</span></div>
-								</li>
-							
-								<li class='filter-byNovember' data-value="2017" data-type="year">
-									<div class="simc-list-content"><span>November</span></div>
-								</li>
-							
-								<li class='filter-byDecember' data-value="2017" data-type="year">
-									<div class="simc-list-content"><span>December</span></div>
-								</li>
-					<li class="simc-filterDropDown  Series">
-					<div class="simc-listcontent "><span>Series</span>
-					<div class="simc-select-drop">
-					<div class="simc-content-wrap"> 
-						<ul id="Series">
-							
-						</ul> 
-					</div> 
-					</div> 
-					</div>
-					</li> 
-					</li> 
-					<select class="filter-by-Month" id="Month"><option class="filter-by-month" data-value="01" data-type="month" value="01">January</option><option class="filter-by-month" data-value="02" data-type="month" value="02">February</option><option class="filter-by-month" data-value="03" data-type="month" value="03">March</option><option class="filter-by-month" data-value="04" data-type="month" value="04">April</option><option class="filter-by-month" data-value="05" data-type="month" value="05">May</option><option class="filter-by-month" data-value="06" data-type="month" value="06">June</option><option class="filter-by-month" data-value="07" data-type="month" value="07">July</option><option class="filter-by-month" data-value="08" data-type="month" value="08">August</option><option class="filter-by-month" data-value="09" data-type="month" value="09">September</option><option class="filter-by-month" data-value="10" data-type="month" value="10">October</option><option class="filter-by-month" data-value="11" data-type="month" value="11">November</option><option class="filter-by-month" data-value="12" data-type="month" value="12">December</option></select>
-				
-					<li class="simc-filterDropDown  Series">
-					<div class="simc-listcontent "><span>Series</span>
-					<div class="simc-select-drop">
-					<div class="simc-content-wrap"> 
-						<ul id="Series">
-							
-						</ul> 
-					</div> 
-					</div> 
-					</div>
-					</li>
-                        <select class="filter-by-Series" id="Series">
-                            <option value="">Series</option>
-                            <option class="filter-by-series" data-value="494" data-type="series" value="494"
-                                data-sport="football">
-                                DFB-Pokal, 2023/24
-                            </option>
-                            <option class="filter-by-series" data-value="496" data-type="series" value="496"
-                                data-sport="football">
-                                Saudi King's Cup, 2023/24
-                            </option>
-                            <option class="filter-by-series" data-value="454" data-type="series" value="454"
-                                data-sport="football">
-                                Saudi Professional League, 2023/24
-                            </option>
-                            <option class="filter-by-series" data-value="439" data-type="series" value="439"
-                                data-sport="football">
-                                German Bundesliga, 2023/24
-                            </option>
-                            <option class="filter-by-series" data-value="476" data-type="series" value="476"
-                                data-sport="football">
-                                UEFA Champions League, 2023-24
-                            </option> loginnn :sessionStorage.getItem("login")==='true'?true:false
-                            <option class="filter-by-series" data-value="478" data-type="series" value="478"
-                                data-sport="football">
-                                UEFA Europa Conference League, 2023/24
-                            </option>
-                            <option class="filter-by-series" data-value="477" data-type="series" value="477"
-                                data-sport="football">
-                                UEFA Europa League, 2023/24
-                            </option>
-                            <option class="filter-by-series" data-value="409" data-type="series" value="409"
-                                data-sport="football">
-                                UEFA European Championship Qualification, 2023/24
-                            </option>
-                        </select>
-
-                        <button type="button" class="export-as-csv" style="cursor: pointer">
-                            Download CSV
-                        </button>
-                        <button type="button" class="reset-to-default" style="cursor: pointer">
-                            Reset
-                        </button>
-                    </ul>
+    <div class="simc-select-filter tab-col-5">
+        <ul>
+            <select v-model="selectedYear" @change="changeYear()" placeholder="select year" class="filter-by-Year"
+                id="Year">
+                <option class="filter-by-year">2022</option>
+                <option class="filter-by-year">2023</option>
+            </select>
+            <select v-model="selectedSeries" class="filter-by-Series" id="Series">
+                <option value="series">All series</option>
+                <option v-for="series in seriesnameArray" :key="series" class="filter-by-series">{{ series }} </option>
+            </select>
+            <button @click="downloadCSV" type="button" class="export-as-csv" style="cursor:pointer;">Download CSV</button>
+        </ul>
+    </div>
+    <div class="simc-result-data">
+        <div class="simc-table simc-fixture-table">
+            <div class="simc-table-tr">
+                <div class="simc-table-th simc-tblDate"> <span>Date &amp; Time</span> </div>
+                <div class="simc-table-th simc-tblTeams"> <span>Teams</span> </div>
+                <div class="simc-table-th simc-tblMatch"> <span>Match</span> </div>
+                <div class="simc-table-th simc-tblStatus"> <span>Game Id</span> </div>
+            </div>
+            <div v-for="match in getDataBySeries" :key="match" class="simc-table-tr manipulate matches-list">
+                <div class="simc-table-td simc-tblDate"> <span>{{ new Date(match.match_schedule_date).toDateString() }} {{
+                    match.matchtime_gmt }} </span></div>
+                <div class="simc-table-td simc-tblTeams"> <span>{{ match.teama_info[0].country_name }} vs {{
+                    match.teamb_info[0].country_name }}</span> </div>
+                <div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">{{ match.comp_type }}</span> </div>
+                <div class="simc-table-td simc-tblStatus match-with-mc">
+                    <div class="game-id-Wrap">
+                        <span class="game-id"> {{ match.tour_id }}:7:{{ match.series_id }} </span>
+                        <button @click="copyDataById(match)" type="button" class="copy-game-id" style="cursor:pointer;"
+                            title="Copy to Clipboard"></button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>-->
-    
-
-
+    </div>
 </template>
 
 <script>
 import "../style/homepage.css";
-
+import axios from 'axios'
+import config from '../../config/config';
 export default {
-    data: () => ({}),
+    data: () => ({
+        selectedYear: null,
+        selectedSeries: 'series',
+        matchInfo: [],
+        seriesInfo: [],
+        seriesnameArray: [],
+        selectedYearData: [],
+        selectedSeriesData: [],
+    }),
     methods: {
-        logout() { 
-            sessionStorage.setItem("login",false)
+        logout() {
+            //this.$emit("emitStatus",'logout');
+            sessionStorage.setItem("status", "logout");
+            window.location.reload();
+        },
+        copyDataById(match) {
+            const dataToCopy = `${match.tour_id}:${match.series_id}:${match.match_id}`;
+            try {
+                navigator.clipboard.writeText(dataToCopy);
+            } catch (error) {
+                console.error("Error copying data", error);
+            }
+        },
+        async changeYear() {
+            try {
+                let tourIds = this.getSelectedYearTourIds();
+                let res = {
+                    matches: []
+                }
+                const tourDataPromises = tourIds.map(async (tourId) => {
+                    const tourData = await axios.get(config.feedPath.replace("{{TOUR_ID}}", tourId));
+                    res.matches = res.matches.concat(tourData.data.calendar.matches);
+                });
+                const matchesArray = await Promise.all(tourDataPromises);
+                this.matchInfo = res.matches;
+                this.seriesInfo = res.matches;
+                this.seriesnameArray = this.seriesInfo.map(element => element.match.seriesname)
+                this.seriesnameArray = [...new Set(this.seriesnameArray)];
+            } catch (e) {
+                console.log(e)
+            }
+        },
+        getSelectedYearTourIds() {
+            return config.years.find(yearInfo => this.selectedYear == yearInfo.year).tourIds
+        },
+        convertToCSV(jsonData) {
+            try {
+                const csvArray = [];
+                const header = Object.keys(jsonData[0]);
+                csvArray.push(header.join(','));
+                jsonData.forEach(item => {
+                    const values = header.map(key => item[key]);
+                    csvArray.push(values.join(','));
+                });
+                return csvArray.join('\n')
+            } catch (error) {
+                console.error("Error Occured", error)
+            }
+        },
+        async downloadCSV() {
+            try {
+                const jsonData = this.getDataBySeries.map((data) => { return { Date: data.matchdate_gmt, Time: data.matchtime_gmt, Match: data.teama_info[0].name + " vs " + data.teamb_info[0].name, Match: data.comp_type, Tourid: data.tour_id + ":" + "7" + ":" + data.series_id } });
+                console.log(jsonData);
+                const csvData = this.convertToCSV(jsonData);
+                const blob = new Blob([csvData], { type: 'text/csv' });
+                const link = document.createElement('a');
+                link.href = window.URL.createObjectURL(blob);
+                link.download = 'data.csv';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } catch (error) {
+                console.error("Error occured", error)
+            }
         },
     },
+    computed: {
+        getDataBySeries() {
+            try {
+                this.selectedSeriesData = this.seriesInfo.filter(element => this.selectedSeries == 'series' || element.seriesname == this.selectedSeries)
+                return this.selectedSeriesData;
+            } catch (error) {
+                console.log('Error occured', error)
+            }
+        },
+    },
+    mounted: async function () {
+        try {
+            this.selectedYear = config.years.find(yearInfo => yearInfo.isDefault).year
+            let tourIds = this.getSelectedYearTourIds();
+            let res = {
+                matches: []
+            }
+            const tourDataPromises = tourIds.map(async (tourId) => {
+                const tourData = await axios.get(config.feedPath.replace("{{TOUR_ID}}", tourId));
+                res.matches = res.matches.concat(tourData.data.calendar.matches);
+            });
+            const matchesArray = await Promise.all(tourDataPromises);
+            this.matchInfo = res.matches;
+            this.seriesInfo = res.matches;
+            this.seriesnameArray = this.seriesInfo.map(element => element.seriesname)
+            this.seriesnameArray = [...new Set(this.seriesnameArray)];
+        } catch (error) {
+            console.error("Error occured", error)
+        }
+    }
 };
-</script>12:22:33 AM [vite] hmr update /src/components/loginPage.vue (x6)
+</script>
