@@ -1,0 +1,36 @@
+<template>
+  <div class="row" @click="clearSelected">
+    <FileItem
+      v-for="file in files"
+      :file="file"
+      :key="`file-${file.id}`"
+      @click.exact.stop="selectOne(file)"
+      @click.meta.exact.stop="selectMultiple(file)"
+      :class="{ 'selected-file': isSelected(file) }"
+    />
+    {{ console.log(files) }}
+  </div>
+</template>
+
+<script>
+import FileItem from "./FileItem.vue";
+import useItemsSelection from "../../composable/items-selection";
+
+export default {
+  components: { FileItem },
+  props: {
+    files: {
+      type: Array,
+      required: true,
+    },
+    selected: {
+      type: Array,
+      default: () => [],
+    }, 
+  },
+  setup(props, { emit }) {
+    return useItemsSelection(props.selected,emit)
+  },
+  emits: ["select-change"],
+};
+</script>

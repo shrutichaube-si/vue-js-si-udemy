@@ -1,0 +1,232 @@
+{
+  "continents": [
+    {
+      "name": "North America",
+      "countries": [
+        {
+          "id": 1,
+          "name": "United States",
+          "image": "us_flag.png",
+          "rank": 1
+        },
+        {
+          "id": 2,
+          "name": "Canada",
+          "image": "canadian_flag.png",
+          "rank": 2
+        },
+        {
+          "id": 3,
+          "name": "Mexico",
+          "image": "mexican_flag.png",
+          "rank": 3
+        },
+        {
+          "id": 4,
+          "name": "Guatemala",
+          "image": "guatemalan_flag.png",
+          "rank": 4
+        },
+        {
+          "id": 5,
+          "name": "Jamaica",
+          "image": "jamaican_flag.png",
+          "rank": 5
+        },
+        {},
+        {
+          "name": "Australia",
+          "id": 121,
+          "rank": "11",
+          "image": "path to your image"
+        }
+      ]
+    },
+    {
+      "name": "Europe",
+      "countries": [
+        {
+          "id": 6,
+          "name": "France",
+          "image": "french_flag.png",
+          "rank": 1
+        },
+        {
+          "id": 7,
+          "name": "Germany",
+          "image": "german_flag.png",
+          "rank": 2
+        },
+        {
+          "id": 8,
+          "name": "United Kingdom",
+          "image": "uk_flag.png",
+          "rank": 3
+        },
+        {
+          "id": 9,
+          "name": "Italy",
+          "image": "italian_flag.png",
+          "rank": 4
+        },
+        {
+          "id": 10,
+          "name": "Spain",
+          "image": "spanish_flag.png",
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "name": "Asia",
+      "countries": [
+        {
+          "id": 11,
+          "name": "China",
+          "image": "chinese_flag.png",
+          "rank": 1
+        },
+        {
+          "id": 12,
+          "name": "India",
+          "image": "indian_flag.png",
+          "rank": 2
+        },
+        {
+          "id": 13,
+          "name": "Japan",
+          "image": "japanese_flag.png",
+          "rank": 3
+        },
+        {
+          "id": 14,
+          "name": "South Korea",
+          "image": "south_korean_flag.png",
+          "rank": 4
+        },
+        {
+          "id": 15,
+          "name": "Vietnam",
+          "image": "vietnamese_flag.png",
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "name": "Africa",
+      "countries": [
+        {
+          "id": 16,
+          "name": "Nigeria",
+          "image": "nigerian_flag.png",
+          "rank": 1
+        },
+        {
+          "id": 17,
+          "name": "South Africa",
+          "image": "south_african_flag.png",
+          "rank": 2
+        },
+        {
+          "id": 18,
+          "name": "Kenya",
+          "image": "kenyan_flag.png",
+          "rank": 3
+        },
+        {
+          "id": 19,
+          "name": "Egypt",
+          "image": "egyptian_flag.png",
+          "rank": 4
+        },
+        {
+          "id": 20,
+          "name": "Morocco",
+          "image": "moroccan_flag.png",
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "name": "South America",
+      "countries": [
+        {
+          "id": 21,
+          "name": "Brazil",
+          "image": "brazilian_flag.png",
+          "rank": 1
+        },
+        {
+          "id": 22,
+          "name": "Argentina",
+          "image": "argentinian_flag.png",
+          "rank": 2
+        },
+        {
+          "id": 23,
+          "name": "Chile",
+          "image": "chilean_flag.png",
+          "rank": 3
+        },
+        {
+          "id": 24,
+          "name": "Peru",
+          "image": "peruvian_flag.png",
+          "rank": 4
+        },
+        {
+          "id": 25,
+          "name": "Colombia",
+          "image": "colombian_flag.png",
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "name": "Oceania",
+      "countries": [
+        {
+          "id": 26,
+          "name": "Australia",
+          "image": "australian_flag.png",
+          "rank": 1
+        },
+        {
+          "id": 27,
+          "name": "New Zealand",
+          "image": "new_zealand_flag.png",
+          "rank": 2
+        },
+        {
+          "id": 28,
+          "name": "Fiji",
+          "image": "fijian_flag.png",
+          "rank": 3
+        },
+        {
+          "id": 29,
+          "name": "Papua New Guinea",
+          "image": "papua_new_guinean_flag.png",
+          "rank": 4
+        },
+        {
+          "id": 30,
+          "name": "Samoa",
+          "image": "samoan_flag.png",
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "name": "Antarctica",
+      "countries": [
+        {
+          "id": 31,
+          "name": "Research Stations",
+          "image": "antarctica_flag.png",
+          "rank": 1
+        }
+      ]
+    }
+  ]
+}
