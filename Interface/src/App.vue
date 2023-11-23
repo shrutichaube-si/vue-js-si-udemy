@@ -1,16 +1,18 @@
 <template>
 <div v-if="showLoginPage" >
-  <HomePage/>
+  <!-- <HomePage/> -->
+  <MatchInterface/>
 </div>
 <div v-else>
-  <LoginPage  />
+  <LoginPage />
 </div> 
 </template>
 <script>
 import LoginPage from './components/LoginPage.vue';
 import HomePage from './components/HomePage.vue';
+import MatchInterface from './components/MatchInterface.vue';
 export default {
-  components:{LoginPage,HomePage},
+  components:{LoginPage,HomePage,MatchInterface},
   data(){
     return{
       showLoginPage : sessionStorage.getItem("login") ==='true' ? true:false

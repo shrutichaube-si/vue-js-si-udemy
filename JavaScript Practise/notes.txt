@@ -146,3 +146,6 @@ else{
 
 4.WAJP to find whether a number is divisible by either 2 and 3
 5.
+
+//JS Map method:
+the array map method executes a given function on every element from an array and returns a new array

@@ -120,3 +120,65 @@ else{
     console.log("Your number is not divisible")
 }
 */
+
+//Array Functionss
+//For Each
+/*
+const numbers = [1,2,3,4,5,6,7,8,9]
+let sum = 0;
+
+numbers.forEach(item => {
+    //   console.log('a[' +index+ ']= ' +item);
+    //   console.log(arr);
+    sum += item;
+    console.log(sum);
+})
+
+const letters = ['a','b','c','a','c','d','e','b','c','a','d','e','f']
+const count = {};
+
+letters.forEach(item => {
+    if(count[item]){
+        count[item] ++;
+    }else{
+        count[item] = 1;
+    }
+})
+console.log(count);
+*/
+const numbers = [10,20,30,40,50]
+const doubled = numbers.map(double)
+const multiplied = numbers.map(multiply)
+function double(value,index,arr){
+    return value * 2
+}
+function multiply(value,index,arr){
+    return value * index
+}
+
+const products = [
+    {
+    name : 'laptop',
+    price : 1000,
+    count : 3
+},
+{
+    name : 'Desktop',
+    price : 10000,
+    count : 1
+},
+{
+    name : 'Phone',
+    price : 100,
+    count : 5 
+}]
+
+const totalProductValue = products.map(item => ({
+    name:item.name,
+    totalValue : item.price * item.count
+}))
+console.log(totalProductValue)
+
+
+// console.log(doubled)
+// console.log(multiplied)

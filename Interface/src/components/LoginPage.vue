@@ -13,7 +13,7 @@
                     <div class="pull-right right-wrap"><label>Match File Dashboard</label><span><button type="button" class="logout-btn"></button></span></div>
                 </div>
         </header>
-    <link rel="stylesheet" href="/src/styles/Login.css"/>
+    <link rel="stylesheet" type="text/css" href="/src/styles/Login.css"/>
     <div class="match-schedule-container">
 <div class="login-wrap">
 <div class="site-logo"></div>	
@@ -43,15 +43,6 @@ export default {
     },
     methods:{
         login(){
-            // const {username,password} = config.admin;
-            // console.log(username)
-            // if(this.username === username && this.password === password){
-            //     console.log("Login Suucessfull")
-            // }
-            // else{
-            //     this.errorMssg = "Invalid UserName or Password"
-            // } 
-
             let credentialsFound = config.admin.find(credentials=>{
                 if(this.username === credentials.username && this.password === credentials.password){
                     return true
