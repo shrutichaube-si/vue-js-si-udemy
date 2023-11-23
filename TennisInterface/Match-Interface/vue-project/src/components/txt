@@ -1,0 +1,4420 @@
+
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<link rel="stylesheet" type="text/css" href="css/mainpage.css">
+<link rel="stylesheet" type="text/css" href="css/font.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <header class="site-header">
+            <div class="container-fluid clearfix">
+                <div class="pull-left">
+                    <div class="site-logo">
+                        <h1 class="logo">
+                            <a href="#"><span>Sportz Interactive</span></a>
+                        </h1>
+
+                    </div>
+                </div>
+                <div class="pull-right right-wrap"><label>Match File Dashboard</label><span>
+                    <button type="button" class="logout-btn" @click="logout()"></button></span></div>
+            </div>
+    </header>
+    <div class="si-match-schedule-container"></div>
+    <div class="match-schedule-container"><div id="fixturesDiv" class="col-sm-12 col-md-8 col-lg-9 simc-site-leftcol">
+<div class="si-subtab-content simc-international-content">
+    <div class="simc-select-filter tab-col-5">
+        <ul>
+            
+                <!-- <li class="simc-filterDropDown  Sport">
+                <div class="simc-listcontent "><span>Sport</span>
+                <div class="simc-select-drop">
+                <div class="simc-content-wrap"> 
+                    <ul id="Sport">
+                        
+                    </ul> 
+                </div> 
+                </div> 
+                </div>
+                </li> -->
+                <select class="filter-by-Sport" id="Sport"><option class="filter-by-sport" data-value="2" data-type="sport" value="2">Football</option><option class="filter-by-sport" data-value="1" data-type="sport" value="2">Cricket</option></select>
+            
+                <!-- <li class="simc-filterDropDown  Year">
+                <div class="simc-listcontent "><span>Year</span>
+                <div class="simc-select-drop">
+                <div class="simc-content-wrap"> 
+                    <ul id="Year">
+                        
+                            <li class='filter-by2017' data-value="2017" data-type="year">
+                                <div class="simc-list-content"><span>2017</span></div>
+                            </li>
+                        
+                            <li class='filter-by2018' data-value="2017" data-type="year">
+                                <div class="simc-list-content"><span>2018</span></div>
+                            </li>
+                        
+                            <li class='filter-by2020' data-value="2017" data-type="year">
+                                <div class="simc-list-content"><span>2020</span></div>
+                            </li>
+                        
+                            <li class='filter-by2021' data-value="2017" data-type="year">
+                                <div class="simc-list-content"><span>2021</span></div>
+                            </li>
+                        
+                            <li class='filter-by2022' data-value="2017" data-type="year">
+                                <div class="simc-list-content"><span>2022</span></div>
+                            </li>
+                        
+                            <li class='filter-by2023' data-value="2017" data-type="year">
+                                <div class="simc-list-content"><span>2023</span></div>
+                            </li>
+                        
+                            <li class='filter-by2024' data-value="2017" data-type="year">
+                                <div class="simc-list-content"><span>2024</span></div>
+                            </li>
+                        
+                    </ul> 
+                </div> 
+                </div> 
+                </div>
+                </li> -->
+                <select class="filter-by-Year" id="Year"><option class="filter-by-year" data-value="2017" data-type="year" value="2017">2017</option><option class="filter-by-year" data-value="2018" data-type="year" value="2018">2018</option><option class="filter-by-year" data-value="2020" data-type="year" value="2020">2020</option><option class="filter-by-year" data-value="2021" data-type="year" value="2021">2021</option><option class="filter-by-year" data-value="2022" data-type="year" value="2022">2022</option><option class="filter-by-year" data-value="2023" data-type="year" value="2023">2023</option><option class="filter-by-year" data-value="2024" data-type="year" value="2024">2024</option></select>
+            
+                <!-- <li class="simc-filterDropDown  Month">
+                <div class="simc-listcontent "><span>Month</span>
+                <div class="simc-select-drop">
+                <div class="simc-content-wrap"> 
+                    <ul id="Month">
+                        
+                            <li class='filter-byJanuary' data-value="2017" data-type="year">
+                                <div class="simc-list-content"><span>January</span></div>
+                            </li>
+                        
+                            <li class='filter-byFebruary' data-value="2017" data-type="year">
+                                <div class="simc-list-content"><span>February</span></div>
+                            </li>
+                        
+                            <li class='filter-byMarch' data-value="2017" data-type="year">
+                                <div class="simc-list-content"><span>March</span></div>
+                            </li>
+                        
+                            <li class='filter-byApril' data-value="2017" data-type="year">
+                                <div class="simc-list-content"><span>April</span></div>
+                            </li>
+                        
+                            <li class='filter-byMay' data-value="2017" data-type="year">
+                                <div class="simc-list-content"><span>May</span></div>
+                            </li>
+                        
+                            <li class='filter-byJune' data-value="2017" data-type="year">
+                                <div class="simc-list-content"><span>June</span></div>
+                            </li>
+                        
+                            <li class='filter-byJuly' data-value="2017" data-type="year">
+                                <div class="simc-list-content"><span>July</span></div>
+                            </li>
+                        
+                            <li class='filter-byAugust' data-value="2017" data-type="year">
+                                <div class="simc-list-content"><span>August</span></div>
+                            </li>
+                        
+                            <li class='filter-bySeptember' data-value="2017" data-type="year">
+                                <div class="simc-list-content"><span>September</span></div>
+                            </li>
+                        
+                            <li class='filter-byOctober' data-value="2017" data-type="year">
+                                <div class="simc-list-content"><span>October</span></div>
+                            </li>
+                        
+                            <li class='filter-byNovember' data-value="2017" data-type="year">
+                                <div class="simc-list-content"><span>November</span></div>
+                            </li>
+                        
+                            <li class='filter-byDecember' data-value="2017" data-type="year">
+                                <div class="simc-list-content"><span>December</span></div>
+                            </li>
+                        
+                    </ul> 
+                </div> 
+                </div> 
+                </div>
+                </li> -->
+                <select class="filter-by-Month" id="Month"><option class="filter-by-month" data-value="01" data-type="month" value="01">January</option><option class="filter-by-month" data-value="02" data-type="month" value="02">February</option><option class="filter-by-month" data-value="03" data-type="month" value="03">March</option><option class="filter-by-month" data-value="04" data-type="month" value="04">April</option><option class="filter-by-month" data-value="05" data-type="month" value="05">May</option><option class="filter-by-month" data-value="06" data-type="month" value="06">June</option><option class="filter-by-month" data-value="07" data-type="month" value="07">July</option><option class="filter-by-month" data-value="08" data-type="month" value="08">August</option><option class="filter-by-month" data-value="09" data-type="month" value="09">September</option><option class="filter-by-month" data-value="10" data-type="month" value="10">October</option><option class="filter-by-month" data-value="11" data-type="month" value="11">November</option><option class="filter-by-month" data-value="12" data-type="month" value="12">December</option></select>
+            
+                <!-- <li class="simc-filterDropDown  Series">
+                <div class="simc-listcontent "><span>Series</span>
+                <div class="simc-select-drop">
+                <div class="simc-content-wrap"> 
+                    <ul id="Series">
+                        
+                    </ul> 
+                </div> 
+                </div> 
+                </div>
+                </li> -->
+                <select class="filter-by-Series" id="Series"><option value="">Series</option><option class="filter-by-series" data-value="494" data-type="series" value="494" data-sport="football">DFB-Pokal, 2023/24</option><option class="filter-by-series" data-value="496" data-type="series" value="496" data-sport="football">Saudi King's Cup, 2023/24</option><option class="filter-by-series" data-value="454" data-type="series" value="454" data-sport="football">Saudi Professional League, 2023/24</option><option class="filter-by-series" data-value="439" data-type="series" value="439" data-sport="football">German Bundesliga, 2023/24</option><option class="filter-by-series" data-value="476" data-type="series" value="476" data-sport="football">UEFA Champions League, 2023-24</option><option class="filter-by-series" data-value="478" data-type="series" value="478" data-sport="football">UEFA Europa Conference League, 2023/24</option><option class="filter-by-series" data-value="477" data-type="series" value="477" data-sport="football">UEFA Europa League, 2023/24</option><option class="filter-by-series" data-value="409" data-type="series" value="409" data-sport="football">UEFA European Championship Qualification, 2023/24</option></select>
+            
+            <button type="button" class="export-as-csv" style="cursor:pointer;">Download CSV</button>
+            <button type="button" class="reset-to-default" style="cursor:pointer;">Reset</button>
+        </ul>
+    </div>
+
+    <div class="simc-result-data">
+        <div class="simc-table simc-fixture-table"><div class="simc-table-tr"> 
+<div class="simc-table-th simc-tblDate"> <span>Date &amp; Time</span> </div> 
+<div class="simc-table-th simc-tblTeams"> <span>Teams</span> </div> 
+<div class="simc-table-th simc-tblMatch"> <span>Match</span> </div> 
+<div class="simc-table-th simc-tblStatus"> <span>Game Id</span> </div>
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="494" data-teama="64" data-teamb="967" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Oct 31, 2023 <em>22:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>VfL Wolfsburg vs RB Leipzig</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1"></span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">60777:2:dfb_pokal</span>
+<button type="button" data-copy="60777" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">60777 : 2 : dfb_pokal</span> -->
+    <input type="text" id="60777" value="60777:2:dfb_pokal" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="494" data-teama="1321" data-teamb="62" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Oct 31, 2023 <em>22:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>FC St. Pauli vs FC Schalke 04</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1"></span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">60778:2:dfb_pokal</span>
+<button type="button" data-copy="60778" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">60778 : 2 : dfb_pokal</span> -->
+    <input type="text" id="60778" value="60778:2:dfb_pokal" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="494" data-teama="63" data-teamb="1329" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Oct 31, 2023 <em>22:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>VfB Stuttgart vs FC Union Berlin</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1"></span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">60779:2:dfb_pokal</span>
+<button type="button" data-copy="60779" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">60779 : 2 : dfb_pokal</span> -->
+    <input type="text" id="60779" value="60779:2:dfb_pokal" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="494" data-teama="2351" data-teamb="1330" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Oct 31, 2023 <em>22:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>FC 08 Homburg vs Greuther Furth</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1"></span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">60780:2:dfb_pokal</span>
+<button type="button" data-copy="60780" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">60780 : 2 : dfb_pokal</span> -->
+    <input type="text" id="60780" value="60780:2:dfb_pokal" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="496" data-teama="653" data-teamb="1902" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Oct 31, 2023 <em>23:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Ahli Saudi FC vs Abha Club</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Round of 16</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">60843:2:ksa_king</span>
+<button type="button" data-copy="60843" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">60843 : 2 : ksa_king</span> -->
+    <input type="text" id="60843" value="60843:2:ksa_king" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="494" data-teama="1325" data-teamb="58" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 01, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>DSC Arminia Bielefeld vs Hamburger SV</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1"></span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">60781:2:dfb_pokal</span>
+<button type="button" data-copy="60781" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">60781 : 2 : dfb_pokal</span> -->
+    <input type="text" id="60781" value="60781:2:dfb_pokal" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="494" data-teama="65" data-teamb="1348" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 01, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Borussia Monchengladbach vs 1. FC Heidenheim 1846</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1"></span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">60782:2:dfb_pokal</span>
+<button type="button" data-copy="60782" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">60782 : 2 : dfb_pokal</span> -->
+    <input type="text" id="60782" value="60782:2:dfb_pokal" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="494" data-teama="1344" data-teamb="59" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 01, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>1 FC Kaiserslautern vs 1. FC Koln</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1"></span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">60783:2:dfb_pokal</span>
+<button type="button" data-copy="60783" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">60783 : 2 : dfb_pokal</span> -->
+    <input type="text" id="60783" value="60783:2:dfb_pokal" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="494" data-teama="2352" data-teamb="1318" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 01, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>SpVgg Unterhaching vs Fortuna Dusseldorf</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1"></span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">60784:2:dfb_pokal</span>
+<button type="button" data-copy="60784" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">60784 : 2 : dfb_pokal</span> -->
+    <input type="text" id="60784" value="60784:2:dfb_pokal" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="494" data-teama="55" data-teamb="69" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 01, 2023 <em>22:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Borussia Dortmund vs 1899 Hoffenheim</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1"></span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">60785:2:dfb_pokal</span>
+<button type="button" data-copy="60785" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">60785 : 2 : dfb_pokal</span> -->
+    <input type="text" id="60785" value="60785:2:dfb_pokal" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="494" data-teama="1364" data-teamb="60" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 01, 2023 <em>22:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>SV Sandhausen vs Bayer Leverkusen</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1"></span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">60786:2:dfb_pokal</span>
+<button type="button" data-copy="60786" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">60786 : 2 : dfb_pokal</span> -->
+    <input type="text" id="60786" value="60786:2:dfb_pokal" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="494" data-teama="57" data-teamb="1333" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 01, 2023 <em>22:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>SC Freiburg vs SC Paderborn 07</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1"></span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">60787:2:dfb_pokal</span>
+<button type="button" data-copy="60787" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">60787 : 2 : dfb_pokal</span> -->
+    <input type="text" id="60787" value="60787:2:dfb_pokal" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="494" data-teama="1312" data-teamb="1339" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 01, 2023 <em>22:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Holstein Kiel vs 1. FC Magdeburg</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1"></span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">60788:2:dfb_pokal</span>
+<button type="button" data-copy="60788" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">60788 : 2 : dfb_pokal</span> -->
+    <input type="text" id="60788" value="60788:2:dfb_pokal" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="494" data-teama="1688" data-teamb="61" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 02, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>1. FC Saarbrucken vs Bayern Munich</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1"></span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">60789:2:dfb_pokal</span>
+<button type="button" data-copy="60789" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">60789 : 2 : dfb_pokal</span> -->
+    <input type="text" id="60789" value="60789:2:dfb_pokal" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="494" data-teama="2353" data-teamb="56" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 02, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Viktoria Koln vs Eintracht Frankfurt</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1"></span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">60790:2:dfb_pokal</span>
+<button type="button" data-copy="60790" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">60790 : 2 : dfb_pokal</span> -->
+    <input type="text" id="60790" value="60790:2:dfb_pokal" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="494" data-teama="53" data-teamb="67" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 02, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Hertha BSC Berlin vs FSV Mainz 05</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1"></span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">60791:2:dfb_pokal</span>
+<button type="button" data-copy="60791" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">60791 : 2 : dfb_pokal</span> -->
+    <input type="text" id="60791" value="60791:2:dfb_pokal" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="494" data-teama="1317" data-teamb="1323" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 02, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>FC Nurnberg vs FC Hansa Rostock</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1"></span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">60792:2:dfb_pokal</span>
+<button type="button" data-copy="60792" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">60792 : 2 : dfb_pokal</span> -->
+    <input type="text" id="60792" value="60792:2:dfb_pokal" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="115" data-teamb="120" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 03, 2023 <em>20:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Fateh SC vs Al Hilal SFC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 100</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57136:2:ksa_league</span>
+<button type="button" data-copy="57136" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57136 : 2 : ksa_league</span> -->
+    <input type="text" id="57136" value="57136:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="2165" data-teamb="1434" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 03, 2023 <em>20:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Tai FC vs Al-Fayha FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 101</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57142:2:ksa_league</span>
+<button type="button" data-copy="57142" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57142 : 2 : ksa_league</span> -->
+    <input type="text" id="57142" value="57142:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="110" data-teamb="117" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 03, 2023 <em>23:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Shabab FC vs Al-Ittihad</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 102</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57140:2:ksa_league</span>
+<button type="button" data-copy="57140" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57140 : 2 : ksa_league</span> -->
+    <input type="text" id="57140" value="57140:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="1337" data-teamb="1326" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 04, 2023 <em>01:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>SV Darmstadt 1898 vs VfL Bochum</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 82</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55747:2:bund</span>
+<button type="button" data-copy="55747" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55747 : 2 : bund</span> -->
+    <input type="text" id="55747" value="55747:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="1329" data-teamb="56" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 04, 2023 <em>20:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>FC Union Berlin vs Eintracht Frankfurt</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 83</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55740:2:bund</span>
+<button type="button" data-copy="55740" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55740 : 2 : bund</span> -->
+    <input type="text" id="55740" value="55740:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="57" data-teamb="65" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 04, 2023 <em>20:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>SC Freiburg vs Borussia Monchengladbach</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 84</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55741:2:bund</span>
+<button type="button" data-copy="55741" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55741 : 2 : bund</span> -->
+    <input type="text" id="55741" value="55741:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="67" data-teamb="967" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 04, 2023 <em>20:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>FSV Mainz 05 vs RB Leipzig</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 85</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55743:2:bund</span>
+<button type="button" data-copy="55743" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55743 : 2 : bund</span> -->
+    <input type="text" id="55743" value="55743:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="59" data-teamb="68" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 04, 2023 <em>20:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>1. FC Koln vs FC Augsburg</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 86</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55744:2:bund</span>
+<button type="button" data-copy="55744" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55744 : 2 : bund</span> -->
+    <input type="text" id="55744" value="55744:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="69" data-teamb="60" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 04, 2023 <em>20:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>1899 Hoffenheim vs Bayer Leverkusen</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 87</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55745:2:bund</span>
+<button type="button" data-copy="55745" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55745 : 2 : bund</span> -->
+    <input type="text" id="55745" value="55745:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="1902" data-teamb="2307" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 04, 2023 <em>20:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Abha Club vs Al-Okhdood Club</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 103</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57133:2:ksa_league</span>
+<button type="button" data-copy="57133" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57133 : 2 : ksa_league</span> -->
+    <input type="text" id="57133" value="57133:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="55" data-teamb="61" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 04, 2023 <em>23:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Borussia Dortmund vs Bayern Munich</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 88</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55739:2:bund</span>
+<button type="button" data-copy="55739" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55739 : 2 : bund</span> -->
+    <input type="text" id="55739" value="55739:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="1436" data-teamb="1438" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 04, 2023 <em>23:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Ettifaq vs Al-Raed FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 104</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57135:2:ksa_league</span>
+<button type="button" data-copy="57135" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57135 : 2 : ksa_league</span> -->
+    <input type="text" id="57135" value="57135:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="77" data-teamb="2166" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 04, 2023 <em>23:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Nassr FC vs Al Khaleej FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 105</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57139:2:ksa_league</span>
+<button type="button" data-copy="57139" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57139 : 2 : ksa_league</span> -->
+    <input type="text" id="57139" value="57139:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="64" data-teamb="54" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 05, 2023 <em>20:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>VfL Wolfsburg vs Werder Bremen</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 89</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55742:2:bund</span>
+<button type="button" data-copy="55742" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55742 : 2 : bund</span> -->
+    <input type="text" id="55742" value="55742:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="1432" data-teamb="1433" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 05, 2023 <em>20:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Hazem FC vs Al-Wehda FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 106</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57138:2:ksa_league</span>
+<button type="button" data-copy="57138" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57138 : 2 : ksa_league</span> -->
+    <input type="text" id="57138" value="57138:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="1085" data-teamb="1901" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 05, 2023 <em>20:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Taawoun FC vs Damac FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 107</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57141:2:ksa_league</span>
+<button type="button" data-copy="57141" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57141 : 2 : ksa_league</span> -->
+    <input type="text" id="57141" value="57141:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="1348" data-teamb="63" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 05, 2023 <em>22:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>1. FC Heidenheim 1846 vs VfB Stuttgart</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 90</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55746:2:bund</span>
+<button type="button" data-copy="55746" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55746 : 2 : bund</span> -->
+    <input type="text" id="55746" value="55746:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="653" data-teamb="2308" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 05, 2023 <em>23:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Ahli Saudi FC vs Al-Riyadh SC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 108</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57134:2:ksa_league</span>
+<button type="button" data-copy="57134" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57134 : 2 : ksa_league</span> -->
+    <input type="text" id="57134" value="57134:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="55" data-teamb="8" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 07, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Borussia Dortmund vs Newcastle United</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 49</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59145:2:chlg</span>
+<button type="button" data-copy="59145" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59145 : 2 : chlg</span> -->
+    <input type="text" id="59145" value="59145:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="526" data-teamb="91" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 07, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Shakhtar Donetsk vs Barcelona</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 50</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59149:2:chlg</span>
+<button type="button" data-copy="59149" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59149 : 2 : chlg</span> -->
+    <input type="text" id="59149" value="59149:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="102" data-teamb="226" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 08, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Atletico Madrid vs Celtic</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 51</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59153:2:chlg</span>
+<button type="button" data-copy="59153" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59153 : 2 : chlg</span> -->
+    <input type="text" id="59153" value="59153:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="689" data-teamb="212" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 08, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Lazio vs Feyenoord</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 52</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59156:2:chlg</span>
+<button type="button" data-copy="59156" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59156 : 2 : chlg</span> -->
+    <input type="text" id="59156" value="59156:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="810" data-teamb="523" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 08, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>AC Milan vs Paris Saint-Germain</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 53</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59158:2:chlg</span>
+<button type="button" data-copy="59158" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59158 : 2 : chlg</span> -->
+    <input type="text" id="59158" value="59158:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="6" data-teamb="286" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 08, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Manchester City vs Young Boys</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 54</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59161:2:chlg</span>
+<button type="button" data-copy="59161" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59161 : 2 : chlg</span> -->
+    <input type="text" id="59161" value="59161:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="704" data-teamb="967" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 08, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Red Star Belgrade vs RB Leipzig</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 55</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59165:2:chlg</span>
+<button type="button" data-copy="59165" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59165 : 2 : chlg</span> -->
+    <input type="text" id="59165" value="59165:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="227" data-teamb="1513" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 08, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>FC Porto vs Royal Antwerp FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 56</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59169:2:chlg</span>
+<button type="button" data-copy="59169" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59169 : 2 : chlg</span> -->
+    <input type="text" id="59169" value="59169:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="211" data-teamb="1329" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 08, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Napoli vs FC Union Berlin</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 57</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59172:2:chlg</span>
+<button type="button" data-copy="59172" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59172 : 2 : chlg</span> -->
+    <input type="text" id="59172" value="59172:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="98" data-teamb="518" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 08, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Real Sociedad vs Benfica</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 58</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59175:2:chlg</span>
+<button type="button" data-copy="59175" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59175 : 2 : chlg</span> -->
+    <input type="text" id="59175" value="59175:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="61" data-teamb="520" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Bayern Munich vs Galatasaray</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 59</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59180:2:chlg</span>
+<button type="button" data-copy="59180" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59180 : 2 : chlg</span> -->
+    <input type="text" id="59180" value="59180:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="214" data-teamb="7" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>FC Copenhagen vs Manchester United</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 60</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59183:2:chlg</span>
+<button type="button" data-copy="59183" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59183 : 2 : chlg</span> -->
+    <input type="text" id="59183" value="59183:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="1" data-teamb="101" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Arsenal vs Sevilla</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 61</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59186:2:chlg</span>
+<button type="button" data-copy="59186" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59186 : 2 : chlg</span> -->
+    <input type="text" id="59186" value="59186:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="292" data-teamb="1794" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>PSV Eindhoven vs RC Lens</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 62</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59189:2:chlg</span>
+<button type="button" data-copy="59189" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59189 : 2 : chlg</span> -->
+    <input type="text" id="59189" value="59189:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="97" data-teamb="710" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Real Madrid vs Braga</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 63</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59192:2:chlg</span>
+<button type="button" data-copy="59192" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59192 : 2 : chlg</span> -->
+    <input type="text" id="59192" value="59192:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="222" data-teamb="291" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Red Bull Salzburg vs Inter Milan</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 64</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59195:2:chlg</span>
+<button type="button" data-copy="59195" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59195 : 2 : chlg</span> -->
+    <input type="text" id="59195" value="59195:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="2166" data-teamb="2165" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>20:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al Khaleej FC vs Al-Tai FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 110</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57149:2:ksa_league</span>
+<button type="button" data-copy="57149" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57149 : 2 : ksa_league</span> -->
+    <input type="text" id="57149" value="57149:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="1438" data-teamb="110" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>20:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Raed FC vs Al-Shabab FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 109</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57150:2:ksa_league</span>
+<button type="button" data-copy="57150" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57150 : 2 : ksa_league</span> -->
+    <input type="text" id="57150" value="57150:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="388" data-teamb="2136" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>21:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Astana vs FC Ballkani</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 49</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59128:2:europa_con</span>
+<button type="button" data-copy="59128" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59128 : 2 : europa_con</span> -->
+    <input type="text" id="59128" value="59128:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="524" data-teamb="860" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Ajax vs Brighton &amp; Hove Albion</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 49</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59188:2:europa</span>
+<button type="button" data-copy="59188" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59188 : 2 : europa</span> -->
+    <input type="text" id="59188" value="59188:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="1406" data-teamb="2134" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>LASK vs Saint-Gilloise</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 50</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59191:2:europa</span>
+<button type="button" data-copy="59191" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59191 : 2 : europa</span> -->
+    <input type="text" id="59191" value="59191:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="802" data-teamb="5" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Toulouse vs Liverpool</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 51</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59193:2:europa</span>
+<button type="button" data-copy="59193" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59193 : 2 : europa</span> -->
+    <input type="text" id="59193" value="59193:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="799" data-teamb="230" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Rennes vs Panathinaikos</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 52</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59197:2:europa</span>
+<button type="button" data-copy="59197" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59197 : 2 : europa</span> -->
+    <input type="text" id="59197" value="59197:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="979" data-teamb="100" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Maccabi Haifa F.C. vs Villarreal</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 53</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59200:2:europa</span>
+<button type="button" data-copy="59200" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59200 : 2 : europa</span> -->
+    <input type="text" id="59200" value="59200:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="2297" data-teamb="241" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Servette FC vs Sheriff</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 54</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59202:2:europa</span>
+<button type="button" data-copy="59202" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59202 : 2 : europa</span> -->
+    <input type="text" id="59202" value="59202:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="978" data-teamb="521" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Slavia Prague vs Roma</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 55</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59205:2:europa</span>
+<button type="button" data-copy="59205" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59205 : 2 : europa</span> -->
+    <input type="text" id="59205" value="59205:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="254" data-teamb="60" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>FK Qarabag vs Bayer Leverkusen</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 56</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59208:2:europa</span>
+<button type="button" data-copy="59208" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59208 : 2 : europa</span> -->
+    <input type="text" id="59208" value="59208:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="303" data-teamb="218" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Viktoria Plzen vs Dinamo Zagreb</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 50</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59132:2:europa_con</span>
+<button type="button" data-copy="59132" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59132 : 2 : europa_con</span> -->
+    <input type="text" id="59132" value="59132:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="232" data-teamb="1927" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Besiktas vs FK Bodo/Glimt</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 51</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59135:2:europa_con</span>
+<button type="button" data-copy="59135" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59135 : 2 : europa_con</span> -->
+    <input type="text" id="59135" value="59135:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="216" data-teamb="251" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Legia Warsaw vs HSK Zrinjski Mostar</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 52</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59137:2:europa_con</span>
+<button type="button" data-copy="59137" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59137 : 2 : europa_con</span> -->
+    <input type="text" id="59137" value="59137:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="362" data-teamb="977" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Ferencvarosi TC vs KRC Genk</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 53</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59140:2:europa_con</span>
+<button type="button" data-copy="59140" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59140 : 2 : europa_con</span> -->
+    <input type="text" id="59140" value="59140:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="1519" data-teamb="529" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>FK Cukaricki vs Fiorentina</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 54</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59143:2:europa_con</span>
+<button type="button" data-copy="59143" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59143 : 2 : europa_con</span> -->
+    <input type="text" id="59143" value="59143:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="265" data-teamb="268" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>PAOK vs Aberdeen</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 55</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59146:2:europa_con</span>
+<button type="button" data-copy="59146" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59146 : 2 : europa_con</span> -->
+    <input type="text" id="59146" value="59146:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="234" data-teamb="56" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>HJK Helsinki vs Eintracht Frankfurt</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 56</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59148:2:europa_con</span>
+<button type="button" data-copy="59148" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59148 : 2 : europa_con</span> -->
+    <input type="text" id="59148" value="59148:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="1392" data-teamb="367" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>FC Nordsjaelland vs Spartak Trnava</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 57</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59151:2:europa_con</span>
+<button type="button" data-copy="59151" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59151 : 2 : europa_con</span> -->
+    <input type="text" id="59151" value="59151:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="2308" data-teamb="115" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>23:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Riyadh SC vs Al-Fateh SC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 112</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57151:2:ksa_league</span>
+<button type="button" data-copy="57151" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57151 : 2 : ksa_league</span> -->
+    <input type="text" id="57151" value="57151:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="1901" data-teamb="653" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 09, 2023 <em>23:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Damac FC vs Al-Ahli Saudi FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 111</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57153:2:ksa_league</span>
+<button type="button" data-copy="57153" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57153 : 2 : ksa_league</span> -->
+    <input type="text" id="57153" value="57153:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="57" data-teamb="2346" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 10, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>SC Freiburg vs TSC Backa Topola</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 57</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59213:2:europa</span>
+<button type="button" data-copy="59213" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59213 : 2 : europa</span> -->
+    <input type="text" id="59213" value="59213:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="12" data-teamb="515" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 10, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>West Ham United vs Olympiacos</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 58</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59215:2:europa</span>
+<button type="button" data-copy="59215" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59215 : 2 : europa</span> -->
+    <input type="text" id="59215" value="59215:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="986" data-teamb="699" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 10, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>AEK Athens vs Marseille</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 59</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59217:2:europa</span>
+<button type="button" data-copy="59217" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59217 : 2 : europa</span> -->
+    <input type="text" id="59217" value="59217:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="160" data-teamb="2309" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 10, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Betis vs Aris Limassol FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 60</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59220:2:europa</span>
+<button type="button" data-copy="59220" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59220 : 2 : europa</span> -->
+    <input type="text" id="59220" value="59220:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="1144" data-teamb="221" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 10, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Rangers vs Sparta Prague</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 61</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59223:2:europa</span>
+<button type="button" data-copy="59223" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59223 : 2 : europa</span> -->
+    <input type="text" id="59223" value="59223:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="808" data-teamb="712" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 10, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Atalanta vs SK Sturm Graz</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 62</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59226:2:europa</span>
+<button type="button" data-copy="59226" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59226 : 2 : europa</span> -->
+    <input type="text" id="59226" value="59226:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="525" data-teamb="2290" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 10, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Sporting CP vs Rakow Czestochowa</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 63</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59227:2:europa</span>
+<button type="button" data-copy="59227" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59227 : 2 : europa</span> -->
+    <input type="text" id="59227" value="59227:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="983" data-teamb="323" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 10, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>BK Hacken vs Molde FK</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 64</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59229:2:europa</span>
+<button type="button" data-copy="59229" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59229 : 2 : europa</span> -->
+    <input type="text" id="59229" value="59229:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="242" data-teamb="225" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 10, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>SK Slovan Bratislava vs Lille</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 58</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59155:2:europa_con</span>
+<button type="button" data-copy="59155" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59155 : 2 : europa_con</span> -->
+    <input type="text" id="59155" value="59155:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="968" data-teamb="1153" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 10, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Olimpija Ljubljana vs KI Klaksvik</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 59</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59157:2:europa_con</span>
+<button type="button" data-copy="59157" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59157 : 2 : europa_con</span> -->
+    <input type="text" id="59157" value="59157:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="998" data-teamb="690" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 10, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Breidablik vs Gent</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 60</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59160:2:europa_con</span>
+<button type="button" data-copy="59160" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59160 : 2 : europa_con</span> -->
+    <input type="text" id="59160" value="59160:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="396" data-teamb="235" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 10, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Zorya Luhansk vs Maccabi Tel-Aviv</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 61</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59162:2:europa_con</span>
+<button type="button" data-copy="59162" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59162 : 2 : europa_con</span> -->
+    <input type="text" id="59162" value="59162:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="271" data-teamb="1134" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 10, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Club Brugge vs FC Lugano</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 62</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59164:2:europa_con</span>
+<button type="button" data-copy="59164" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59164 : 2 : europa_con</span> -->
+    <input type="text" id="59164" value="59164:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="2" data-teamb="701" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 10, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Aston Villa vs AZ Alkmaar</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 63</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59167:2:europa_con</span>
+<button type="button" data-copy="59167" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59167 : 2 : europa_con</span> -->
+    <input type="text" id="59167" value="59167:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="256" data-teamb="691" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 10, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Ludogorets vs Fenerbahce</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 64</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59170:2:europa_con</span>
+<button type="button" data-copy="59170" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59170 : 2 : europa_con</span> -->
+    <input type="text" id="59170" value="59170:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="120" data-teamb="1085" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 10, 2023 <em>20:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al Hilal SFC vs Al-Taawoun FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 113</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57147:2:ksa_league</span>
+<button type="button" data-copy="57147" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57147 : 2 : ksa_league</span> -->
+    <input type="text" id="57147" value="57147:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="117" data-teamb="1902" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 10, 2023 <em>23:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Ittihad vs Abha Club</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 114</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57148:2:ksa_league</span>
+<button type="button" data-copy="57148" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57148 : 2 : ksa_league</span> -->
+    <input type="text" id="57148" value="57148:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="65" data-teamb="64" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 11, 2023 <em>01:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Borussia Monchengladbach vs VfL Wolfsburg</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 91</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55751:2:bund</span>
+<button type="button" data-copy="55751" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55751 : 2 : bund</span> -->
+    <input type="text" id="55751" value="55751:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="61" data-teamb="1348" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 11, 2023 <em>20:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Bayern Munich vs 1. FC Heidenheim 1846</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 92</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55748:2:bund</span>
+<button type="button" data-copy="55748" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55748 : 2 : bund</span> -->
+    <input type="text" id="55748" value="55748:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="68" data-teamb="69" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 11, 2023 <em>20:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>FC Augsburg vs 1899 Hoffenheim</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 93</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55754:2:bund</span>
+<button type="button" data-copy="55754" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55754 : 2 : bund</span> -->
+    <input type="text" id="55754" value="55754:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="63" data-teamb="55" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 11, 2023 <em>20:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>VfB Stuttgart vs Borussia Dortmund</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 94</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55755:2:bund</span>
+<button type="button" data-copy="55755" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55755 : 2 : bund</span> -->
+    <input type="text" id="55755" value="55755:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="1337" data-teamb="67" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 11, 2023 <em>20:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>SV Darmstadt 1898 vs FSV Mainz 05</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 95</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55756:2:bund</span>
+<button type="button" data-copy="55756" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55756 : 2 : bund</span> -->
+    <input type="text" id="55756" value="55756:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="2307" data-teamb="1432" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 11, 2023 <em>20:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Okhdood Club vs Al-Hazem FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 115</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57144:2:ksa_league</span>
+<button type="button" data-copy="57144" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57144 : 2 : ksa_league</span> -->
+    <input type="text" id="57144" value="57144:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="1434" data-teamb="1436" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 11, 2023 <em>20:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Fayha FC vs Al-Ettifaq</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 116</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57145:2:ksa_league</span>
+<button type="button" data-copy="57145" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57145 : 2 : ksa_league</span> -->
+    <input type="text" id="57145" value="57145:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="1326" data-teamb="59" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 11, 2023 <em>23:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>VfL Bochum vs 1. FC Koln</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 96</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55753:2:bund</span>
+<button type="button" data-copy="55753" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55753 : 2 : bund</span> -->
+    <input type="text" id="55753" value="55753:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="1433" data-teamb="77" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 11, 2023 <em>23:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Wehda FC vs Al-Nassr FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 117</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57152:2:ksa_league</span>
+<button type="button" data-copy="57152" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57152 : 2 : ksa_league</span> -->
+    <input type="text" id="57152" value="57152:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="60" data-teamb="1329" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 12, 2023 <em>20:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Bayer Leverkusen vs FC Union Berlin</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 97</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55750:2:bund</span>
+<button type="button" data-copy="55750" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55750 : 2 : bund</span> -->
+    <input type="text" id="55750" value="55750:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="54" data-teamb="56" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 12, 2023 <em>22:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Werder Bremen vs Eintracht Frankfurt</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 98</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55752:2:bund</span>
+<button type="button" data-copy="55752" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55752 : 2 : bund</span> -->
+    <input type="text" id="55752" value="55752:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="967" data-teamb="57" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 13, 2023 <em>00:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>RB Leipzig vs SC Freiburg</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 99</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55749:2:bund</span>
+<button type="button" data-copy="55749" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55749 : 2 : bund</span> -->
+    <input type="text" id="55749" value="55749:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="1259" data-teamb="450" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 13, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Kosovo vs Israel</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 170</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">60917:2:euro_qual</span>
+<button type="button" data-copy="60917" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">60917 : 2 : euro_qual</span> -->
+    <input type="text" id="60917" value="60917:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="450" data-teamb="40" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 16, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Israel vs Switzerland</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 145</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">60940:2:euro_qual</span>
+<button type="button" data-copy="60940" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">60940 : 2 : euro_qual</span> -->
+    <input type="text" id="60940" value="60940:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="468" data-teamb="454" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 16, 2023 <em>22:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Georgia vs Scotland</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 185</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53700:2:euro_qual</span>
+<button type="button" data-copy="53700" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53700 : 2 : euro_qual</span> -->
+    <input type="text" id="53700" value="53700:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="466" data-teamb="445" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 16, 2023 <em>22:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Estonia vs Austria</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 186</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53701:2:euro_qual</span>
+<button type="button" data-copy="53701" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53701 : 2 : euro_qual</span> -->
+    <input type="text" id="53701" value="53701:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="473" data-teamb="455" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 16, 2023 <em>22:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Azerbaijan vs Sweden</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 187</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53702:2:euro_qual</span>
+<button type="button" data-copy="53702" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53702 : 2 : euro_qual</span> -->
+    <input type="text" id="53702" value="53702:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="469" data-teamb="28" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 16, 2023 <em>22:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Cyprus vs Spain</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 188</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53703:2:euro_qual</span>
+<button type="button" data-copy="53703" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53703 : 2 : euro_qual</span> -->
+    <input type="text" id="53703" value="53703:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="446" data-teamb="448" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 16, 2023 <em>22:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Bulgaria vs Hungary</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 189</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53704:2:euro_qual</span>
+<button type="button" data-copy="53704" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53704 : 2 : euro_qual</span> -->
+    <input type="text" id="53704" value="53704:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="478" data-teamb="483" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 17, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Montenegro vs Lithuania</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 190</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53705:2:euro_qual</span>
+<button type="button" data-copy="53705" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53705 : 2 : euro_qual</span> -->
+    <input type="text" id="53705" value="53705:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="462" data-teamb="464" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 17, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Slovakia vs Iceland</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 191</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53706:2:euro_qual</span>
+<button type="button" data-copy="53706" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53706 : 2 : euro_qual</span> -->
+    <input type="text" id="53706" value="53706:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="475" data-teamb="44" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 17, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Luxembourg vs Bosnia-Herzegovina</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 192</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53707:2:euro_qual</span>
+<button type="button" data-copy="53707" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53707 : 2 : euro_qual</span> -->
+    <input type="text" id="53707" value="53707:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="484" data-teamb="47" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 17, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Liechtenstein vs Portugal</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 193</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53708:2:euro_qual</span>
+<button type="button" data-copy="53708" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53708 : 2 : euro_qual</span> -->
+    <input type="text" id="53708" value="53708:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="480" data-teamb="476" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 17, 2023 <em>20:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Kazakhstan vs San Marino</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 194</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53709:2:euro_qual</span>
+<button type="button" data-copy="53709" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53709 : 2 : euro_qual</span> -->
+    <input type="text" id="53709" value="53709:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="461" data-teamb="451" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 17, 2023 <em>22:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Finland vs Northern Ireland</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 195</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53710:2:euro_qual</span>
+<button type="button" data-copy="53710" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53710 : 2 : euro_qual</span> -->
+    <input type="text" id="53710" value="53710:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="471" data-teamb="482" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 17, 2023 <em>22:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Moldova vs Albania</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 199</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53714:2:euro_qual</span>
+<button type="button" data-copy="53714" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53714 : 2 : euro_qual</span> -->
+    <input type="text" id="53714" value="53714:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="36" data-teamb="1839" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 18, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Italy vs North Macedonia</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 196</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53711:2:euro_qual</span>
+<button type="button" data-copy="53711" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53711 : 2 : euro_qual</span> -->
+    <input type="text" id="53711" value="53711:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="35" data-teamb="474" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 18, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>England vs Malta</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 197</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53712:2:euro_qual</span>
+<button type="button" data-copy="53712" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53712 : 2 : euro_qual</span> -->
+    <input type="text" id="53712" value="53712:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="452" data-teamb="460" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 18, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Poland vs Czech Republic</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 198</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53713:2:euro_qual</span>
+<button type="button" data-copy="53713" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53713 : 2 : euro_qual</span> -->
+    <input type="text" id="53713" value="53713:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="447" data-teamb="459" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 18, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Denmark vs Slovenia</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 200</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53715:2:euro_qual</span>
+<button type="button" data-copy="53715" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53715 : 2 : euro_qual</span> -->
+    <input type="text" id="53715" value="53715:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="472" data-teamb="457" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 18, 2023 <em>19:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Armenia vs Wales</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 201</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53716:2:euro_qual</span>
+<button type="button" data-copy="53716" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53716 : 2 : euro_qual</span> -->
+    <input type="text" id="53716" value="53716:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="465" data-teamb="24" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 18, 2023 <em>22:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Latvia vs Croatia</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 202</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53717:2:euro_qual</span>
+<button type="button" data-copy="53717" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53717 : 2 : euro_qual</span> -->
+    <input type="text" id="53717" value="53717:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="467" data-teamb="481" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 18, 2023 <em>22:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Belarus vs Andorra</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 203</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53718:2:euro_qual</span>
+<button type="button" data-copy="53718" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53718 : 2 : euro_qual</span> -->
+    <input type="text" id="53718" value="53718:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="39" data-teamb="497" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 19, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>France vs Gibraltar</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 204</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53719:2:euro_qual</span>
+<button type="button" data-copy="53719" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53719 : 2 : euro_qual</span> -->
+    <input type="text" id="53719" value="53719:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="27" data-teamb="449" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 19, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Netherlands vs Republic of Ireland</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 205</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53720:2:euro_qual</span>
+<button type="button" data-copy="53720" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53720 : 2 : euro_qual</span> -->
+    <input type="text" id="53720" value="53720:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="40" data-teamb="1259" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 19, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Switzerland vs Kosovo</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 206</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53721:2:euro_qual</span>
+<button type="button" data-copy="53721" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53721 : 2 : euro_qual</span> -->
+    <input type="text" id="53721" value="53721:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="450" data-teamb="453" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 19, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Israel vs Romania</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 207</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53722:2:euro_qual</span>
+<button type="button" data-copy="53722" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53722 : 2 : euro_qual</span> -->
+    <input type="text" id="53722" value="53722:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="448" data-teamb="478" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 19, 2023 <em>19:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Hungary vs Montenegro</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 208</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53723:2:euro_qual</span>
+<button type="button" data-copy="53723" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53723 : 2 : euro_qual</span> -->
+    <input type="text" id="53723" value="53723:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="477" data-teamb="446" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 19, 2023 <em>19:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Serbia vs Bulgaria</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 209</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53724:2:euro_qual</span>
+<button type="button" data-copy="53724" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53724 : 2 : euro_qual</span> -->
+    <input type="text" id="53724" value="53724:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="51" data-teamb="473" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 19, 2023 <em>22:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Belgium vs Azerbaijan</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 210</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53725:2:euro_qual</span>
+<button type="button" data-copy="53725" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53725 : 2 : euro_qual</span> -->
+    <input type="text" id="53725" value="53725:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="455" data-teamb="466" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 19, 2023 <em>22:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Sweden vs Estonia</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 211</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53726:2:euro_qual</span>
+<button type="button" data-copy="53726" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53726 : 2 : euro_qual</span> -->
+    <input type="text" id="53726" value="53726:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="28" data-teamb="468" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 20, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Spain vs Georgia</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 212</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53727:2:euro_qual</span>
+<button type="button" data-copy="53727" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53727 : 2 : euro_qual</span> -->
+    <input type="text" id="53727" value="53727:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="454" data-teamb="458" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 20, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Scotland vs Norway</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 213</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53728:2:euro_qual</span>
+<button type="button" data-copy="53728" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53728 : 2 : euro_qual</span> -->
+    <input type="text" id="53728" value="53728:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="47" data-teamb="464" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 20, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Portugal vs Iceland</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 214</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53729:2:euro_qual</span>
+<button type="button" data-copy="53729" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53729 : 2 : euro_qual</span> -->
+    <input type="text" id="53729" value="53729:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="44" data-teamb="462" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 20, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Bosnia-Herzegovina vs Slovakia</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 215</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53730:2:euro_qual</span>
+<button type="button" data-copy="53730" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53730 : 2 : euro_qual</span> -->
+    <input type="text" id="53730" value="53730:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="484" data-teamb="475" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 20, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Liechtenstein vs Luxembourg</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 216</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53731:2:euro_qual</span>
+<button type="button" data-copy="53731" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53731 : 2 : euro_qual</span> -->
+    <input type="text" id="53731" value="53731:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="463" data-teamb="36" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 21, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Ukraine vs Italy</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 217</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53732:2:euro_qual</span>
+<button type="button" data-copy="53732" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53732 : 2 : euro_qual</span> -->
+    <input type="text" id="53732" value="53732:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="1839" data-teamb="35" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 21, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>North Macedonia vs England</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 218</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53733:2:euro_qual</span>
+<button type="button" data-copy="53733" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53733 : 2 : euro_qual</span> -->
+    <input type="text" id="53733" value="53733:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="460" data-teamb="471" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 21, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Czech Republic vs Moldova</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 219</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53734:2:euro_qual</span>
+<button type="button" data-copy="53734" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53734 : 2 : euro_qual</span> -->
+    <input type="text" id="53734" value="53734:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="482" data-teamb="479" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 21, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Albania vs Faroe Islands</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 220</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53735:2:euro_qual</span>
+<button type="button" data-copy="53735" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53735 : 2 : euro_qual</span> -->
+    <input type="text" id="53735" value="53735:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="451" data-teamb="447" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 21, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Northern Ireland vs Denmark</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 221</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53736:2:euro_qual</span>
+<button type="button" data-copy="53736" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53736 : 2 : euro_qual</span> -->
+    <input type="text" id="53736" value="53736:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="459" data-teamb="480" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 21, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Slovenia vs Kazakhstan</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 222</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53737:2:euro_qual</span>
+<button type="button" data-copy="53737" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53737 : 2 : euro_qual</span> -->
+    <input type="text" id="53737" value="53737:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="476" data-teamb="461" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 21, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>San Marino vs Finland</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 223</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53738:2:euro_qual</span>
+<button type="button" data-copy="53738" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53738 : 2 : euro_qual</span> -->
+    <input type="text" id="53738" value="53738:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="1259" data-teamb="467" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 22, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Kosovo vs Belarus</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 230</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53739:2:euro_qual</span>
+<button type="button" data-copy="53739" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53739 : 2 : euro_qual</span> -->
+    <input type="text" id="53739" value="53739:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="31" data-teamb="39" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 22, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Greece vs France</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 224</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53740:2:euro_qual</span>
+<button type="button" data-copy="53740" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53740 : 2 : euro_qual</span> -->
+    <input type="text" id="53740" value="53740:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="497" data-teamb="27" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 22, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Gibraltar vs Netherlands</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 225</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53741:2:euro_qual</span>
+<button type="button" data-copy="53741" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53741 : 2 : euro_qual</span> -->
+    <input type="text" id="53741" value="53741:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="24" data-teamb="472" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 22, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Croatia vs Armenia</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 226</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53742:2:euro_qual</span>
+<button type="button" data-copy="53742" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53742 : 2 : euro_qual</span> -->
+    <input type="text" id="53742" value="53742:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="457" data-teamb="456" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 22, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Wales vs Turkey</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 227</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53743:2:euro_qual</span>
+<button type="button" data-copy="53743" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53743 : 2 : euro_qual</span> -->
+    <input type="text" id="53743" value="53743:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="453" data-teamb="40" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 22, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Romania vs Switzerland</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 228</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53744:2:euro_qual</span>
+<button type="button" data-copy="53744" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53744 : 2 : euro_qual</span> -->
+    <input type="text" id="53744" value="53744:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="409" data-teama="481" data-teamb="450" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 22, 2023 <em>01:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Andorra vs Israel</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 229</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">53745:2:euro_qual</span>
+<button type="button" data-copy="53745" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">53745 : 2 : euro_qual</span> -->
+    <input type="text" id="53745" value="53745:2:euro_qual" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="1436" data-teamb="117" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 24, 2023 <em>20:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Ettifaq vs Al-Ittihad</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 119</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57156:2:ksa_league</span>
+<button type="button" data-copy="57156" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57156 : 2 : ksa_league</span> -->
+    <input type="text" id="57156" value="57156:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="653" data-teamb="110" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 24, 2023 <em>23:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Ahli Saudi FC vs Al-Shabab FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 118</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57154:2:ksa_league</span>
+<button type="button" data-copy="57154" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57154 : 2 : ksa_league</span> -->
+    <input type="text" id="57154" value="57154:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="77" data-teamb="2307" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 24, 2023 <em>23:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Nassr FC vs Al-Okhdood Club</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 120</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57159:2:ksa_league</span>
+<button type="button" data-copy="57159" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57159 : 2 : ksa_league</span> -->
+    <input type="text" id="57159" value="57159:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="1085" data-teamb="2308" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 24, 2023 <em>23:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Taawoun FC vs Al-Riyadh SC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 123</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57160:2:ksa_league</span>
+<button type="button" data-copy="57160" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57160 : 2 : ksa_league</span> -->
+    <input type="text" id="57160" value="57160:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="2165" data-teamb="1438" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 24, 2023 <em>23:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Tai FC vs Al-Raed FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 121</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57161:2:ksa_league</span>
+<button type="button" data-copy="57161" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57161 : 2 : ksa_league</span> -->
+    <input type="text" id="57161" value="57161:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="59" data-teamb="61" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 25, 2023 <em>01:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>1. FC Koln vs Bayern Munich</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 100</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55762:2:bund</span>
+<button type="button" data-copy="55762" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55762 : 2 : bund</span> -->
+    <input type="text" id="55762" value="55762:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="55" data-teamb="65" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 25, 2023 <em>20:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Borussia Dortmund vs Borussia Monchengladbach</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 101</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55757:2:bund</span>
+<button type="button" data-copy="55757" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55757 : 2 : bund</span> -->
+    <input type="text" id="55757" value="55757:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="1329" data-teamb="68" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 25, 2023 <em>20:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>FC Union Berlin vs FC Augsburg</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 102</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55758:2:bund</span>
+<button type="button" data-copy="55758" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55758 : 2 : bund</span> -->
+    <input type="text" id="55758" value="55758:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="57" data-teamb="1337" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 25, 2023 <em>20:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>SC Freiburg vs SV Darmstadt 1898</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 103</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55759:2:bund</span>
+<button type="button" data-copy="55759" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55759 : 2 : bund</span> -->
+    <input type="text" id="55759" value="55759:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="64" data-teamb="967" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 25, 2023 <em>20:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>VfL Wolfsburg vs RB Leipzig</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 104</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55761:2:bund</span>
+<button type="button" data-copy="55761" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55761 : 2 : bund</span> -->
+    <input type="text" id="55761" value="55761:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="54" data-teamb="60" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 25, 2023 <em>20:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Werder Bremen vs Bayer Leverkusen</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 105</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55764:2:bund</span>
+<button type="button" data-copy="55764" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55764 : 2 : bund</span> -->
+    <input type="text" id="55764" value="55764:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="1432" data-teamb="120" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 25, 2023 <em>20:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Hazem FC vs Al Hilal SFC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 122</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57158:2:ksa_league</span>
+<button type="button" data-copy="57158" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57158 : 2 : ksa_league</span> -->
+    <input type="text" id="57158" value="57158:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="235" data-teamb="396" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 25, 2023 <em>22:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Maccabi Tel-Aviv vs Zorya Luhansk</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 36</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59101:2:europa_con</span>
+<button type="button" data-copy="59101" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59101 : 2 : europa_con</span> -->
+    <input type="text" id="59101" value="59101:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="56" data-teamb="63" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 25, 2023 <em>23:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Eintracht Frankfurt vs VfB Stuttgart</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 106</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55760:2:bund</span>
+<button type="button" data-copy="55760" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55760 : 2 : bund</span> -->
+    <input type="text" id="55760" value="55760:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="115" data-teamb="1434" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 25, 2023 <em>23:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Fateh SC vs Al-Fayha FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 123</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57157:2:ksa_league</span>
+<button type="button" data-copy="57157" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57157 : 2 : ksa_league</span> -->
+    <input type="text" id="57157" value="57157:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="1433" data-teamb="2166" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 25, 2023 <em>23:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Wehda FC vs Al Khaleej FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 125</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57162:2:ksa_league</span>
+<button type="button" data-copy="57162" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57162 : 2 : ksa_league</span> -->
+    <input type="text" id="57162" value="57162:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="1901" data-teamb="1902" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 25, 2023 <em>23:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Damac FC vs Abha Club</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 124</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57163:2:ksa_league</span>
+<button type="button" data-copy="57163" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57163 : 2 : ksa_league</span> -->
+    <input type="text" id="57163" value="57163:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="1348" data-teamb="1326" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 26, 2023 <em>20:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>1. FC Heidenheim 1846 vs VfL Bochum</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 107</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55765:2:bund</span>
+<button type="button" data-copy="55765" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55765 : 2 : bund</span> -->
+    <input type="text" id="55765" value="55765:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="439" data-teama="69" data-teamb="67" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 26, 2023 <em>22:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>1899 Hoffenheim vs FSV Mainz 05</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 108</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">55763:2:bund</span>
+<button type="button" data-copy="55763" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">55763 : 2 : bund</span> -->
+    <input type="text" id="55763" value="55763:2:bund" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="689" data-teamb="226" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 28, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Lazio vs Celtic</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 65</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59198:2:chlg</span>
+<button type="button" data-copy="59198" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59198 : 2 : chlg</span> -->
+    <input type="text" id="59198" value="59198:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="526" data-teamb="1513" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 28, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Shakhtar Donetsk vs Royal Antwerp FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 66</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59201:2:chlg</span>
+<button type="button" data-copy="59201" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59201 : 2 : chlg</span> -->
+    <input type="text" id="59201" value="59201:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="212" data-teamb="102" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 29, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Feyenoord vs Atletico Madrid</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 67</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59204:2:chlg</span>
+<button type="button" data-copy="59204" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59204 : 2 : chlg</span> -->
+    <input type="text" id="59204" value="59204:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="523" data-teamb="8" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 29, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Paris Saint-Germain vs Newcastle United</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 68</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59206:2:chlg</span>
+<button type="button" data-copy="59206" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59206 : 2 : chlg</span> -->
+    <input type="text" id="59206" value="59206:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="810" data-teamb="55" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 29, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>AC Milan vs Borussia Dortmund</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 69</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59210:2:chlg</span>
+<button type="button" data-copy="59210" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59210 : 2 : chlg</span> -->
+    <input type="text" id="59210" value="59210:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="6" data-teamb="967" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 29, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Manchester City vs RB Leipzig</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 70</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59212:2:chlg</span>
+<button type="button" data-copy="59212" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59212 : 2 : chlg</span> -->
+    <input type="text" id="59212" value="59212:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="286" data-teamb="704" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 29, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Young Boys vs Red Star Belgrade</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 71</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59216:2:chlg</span>
+<button type="button" data-copy="59216" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59216 : 2 : chlg</span> -->
+    <input type="text" id="59216" value="59216:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="91" data-teamb="227" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 29, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Barcelona vs FC Porto</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 72</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59219:2:chlg</span>
+<button type="button" data-copy="59219" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59219 : 2 : chlg</span> -->
+    <input type="text" id="59219" value="59219:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="520" data-teamb="7" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 29, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Galatasaray vs Manchester United</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 73</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59222:2:chlg</span>
+<button type="button" data-copy="59222" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59222 : 2 : chlg</span> -->
+    <input type="text" id="59222" value="59222:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="101" data-teamb="292" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 29, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Sevilla vs PSV Eindhoven</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 74</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59225:2:chlg</span>
+<button type="button" data-copy="59225" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59225 : 2 : chlg</span> -->
+    <input type="text" id="59225" value="59225:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="61" data-teamb="214" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Bayern Munich vs FC Copenhagen</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 75</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59228:2:chlg</span>
+<button type="button" data-copy="59228" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59228 : 2 : chlg</span> -->
+    <input type="text" id="59228" value="59228:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="1" data-teamb="1794" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Arsenal vs RC Lens</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 76</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59230:2:chlg</span>
+<button type="button" data-copy="59230" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59230 : 2 : chlg</span> -->
+    <input type="text" id="59230" value="59230:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="97" data-teamb="211" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Real Madrid vs Napoli</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 77</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59231:2:chlg</span>
+<button type="button" data-copy="59231" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59231 : 2 : chlg</span> -->
+    <input type="text" id="59231" value="59231:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="710" data-teamb="1329" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Braga vs FC Union Berlin</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 78</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59233:2:chlg</span>
+<button type="button" data-copy="59233" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59233 : 2 : chlg</span> -->
+    <input type="text" id="59233" value="59233:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="518" data-teamb="291" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Benfica vs Inter Milan</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 79</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59237:2:chlg</span>
+<button type="button" data-copy="59237" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59237 : 2 : chlg</span> -->
+    <input type="text" id="59237" value="59237:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="476" data-teama="98" data-teamb="222" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>01:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Real Sociedad vs Red Bull Salzburg</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 80</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59240:2:chlg</span>
+<button type="button" data-copy="59240" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59240 : 2 : chlg</span> -->
+    <input type="text" id="59240" value="59240:2:chlg" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="1902" data-teamb="653" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>20:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Abha Club vs Al-Ahli Saudi FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 128</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57164:2:ksa_league</span>
+<button type="button" data-copy="57164" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57164 : 2 : ksa_league</span> -->
+    <input type="text" id="57164" value="57164:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="388" data-teamb="218" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>21:00</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Astana vs Dinamo Zagreb</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 65</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59176:2:europa_con</span>
+<button type="button" data-copy="59176" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59176 : 2 : europa_con</span> -->
+    <input type="text" id="59176" value="59176:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="57" data-teamb="515" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>SC Freiburg vs Olympiacos</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 65</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59232:2:europa</span>
+<button type="button" data-copy="59232" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59232 : 2 : europa</span> -->
+    <input type="text" id="59232" value="59232:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="2346" data-teamb="12" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>TSC Backa Topola vs West Ham United</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 66</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59234:2:europa</span>
+<button type="button" data-copy="59234" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59234 : 2 : europa</span> -->
+    <input type="text" id="59234" value="59234:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="986" data-teamb="860" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>AEK Athens vs Brighton &amp; Hove Albion</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 67</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59235:2:europa</span>
+<button type="button" data-copy="59235" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59235 : 2 : europa</span> -->
+    <input type="text" id="59235" value="59235:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="221" data-teamb="160" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Sparta Prague vs Betis</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 68</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59236:2:europa</span>
+<button type="button" data-copy="59236" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59236 : 2 : europa</span> -->
+    <input type="text" id="59236" value="59236:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="808" data-teamb="525" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Atalanta vs Sporting CP</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 69</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59238:2:europa</span>
+<button type="button" data-copy="59238" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59238 : 2 : europa</span> -->
+    <input type="text" id="59238" value="59238:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="712" data-teamb="2290" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>SK Sturm Graz vs Rakow Czestochowa</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 70</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59239:2:europa</span>
+<button type="button" data-copy="59239" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59239 : 2 : europa</span> -->
+    <input type="text" id="59239" value="59239:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="477" data-teama="979" data-teamb="799" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Maccabi Haifa F.C. vs Rennes</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 71</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59241:2:europa</span>
+<button type="button" data-copy="59241" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59241 : 2 : europa</span> -->
+    <input type="text" id="59241" value="59241:2:europa" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="968" data-teamb="225" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Olimpija Ljubljana vs Lille</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 66</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59178:2:europa_con</span>
+<button type="button" data-copy="59178" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59178 : 2 : europa_con</span> -->
+    <input type="text" id="59178" value="59178:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="1153" data-teamb="242" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>KI Klaksvik vs SK Slovan Bratislava</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 67</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59182:2:europa_con</span>
+<button type="button" data-copy="59182" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59182 : 2 : europa_con</span> -->
+    <input type="text" id="59182" value="59182:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="690" data-teamb="396" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Gent vs Zorya Luhansk</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 68</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59187:2:europa_con</span>
+<button type="button" data-copy="59187" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59187 : 2 : europa_con</span> -->
+    <input type="text" id="59187" value="59187:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="2136" data-teamb="303" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>FC Ballkani vs Viktoria Plzen</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 69</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59190:2:europa_con</span>
+<button type="button" data-copy="59190" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59190 : 2 : europa_con</span> -->
+    <input type="text" id="59190" value="59190:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="1927" data-teamb="1134" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>FK Bodo/Glimt vs FC Lugano</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 70</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59194:2:europa_con</span>
+<button type="button" data-copy="59194" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59194 : 2 : europa_con</span> -->
+    <input type="text" id="59194" value="59194:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="232" data-teamb="271" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Besiktas vs Club Brugge</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 71</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59196:2:europa_con</span>
+<button type="button" data-copy="59196" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59196 : 2 : europa_con</span> -->
+    <input type="text" id="59196" value="59196:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="701" data-teamb="251" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>AZ Alkmaar vs HSK Zrinjski Mostar</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 72</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59199:2:europa_con</span>
+<button type="button" data-copy="59199" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59199 : 2 : europa_con</span> -->
+    <input type="text" id="59199" value="59199:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="478" data-teama="234" data-teamb="268" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>23:15</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>HJK Helsinki vs Aberdeen</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 73</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">59203:2:europa_con</span>
+<button type="button" data-copy="59203" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">59203 : 2 : europa_con</span> -->
+    <input type="text" id="59203" value="59203:2:europa_con" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+<div class="simc-table-tr manipulate matches-list" data-match_type="" data-year="2017" data-month="12" data-series="454" data-teama="117" data-teamb="2166" data-venues="1" data-sport="football">
+<div class="simc-table-td simc-tblDate"> <span>Nov 30, 2023 <em>23:30</em> (IST)</span> </div>
+<div class="simc-table-td simc-tblTeams"> <span>Al-Ittihad vs Al Khaleej FC</span> </div>
+<div class="simc-table-td simc-tblMatch"> <span class="simc-txt1">Match 129</span>  </div>
+<div class="simc-table-td simc-tblStatus match-with-mc">
+<div class="game-id-Wrap">
+
+<span class="game-id">57169:2:ksa_league</span>
+<button type="button" data-copy="57169" class="copy-game-id" style="cursor:pointer;" title="Copy to Clipboard"></button>
+
+
+
+    <!-- <span class="game-id">57169 : 2 : ksa_league</span> -->
+    <input type="text" id="57169" value="57169:2:ksa_league" style="opacity:0;width:1px">
+</div> 
+
+</div>
+
+
+</div>
+
+</div>
+
+    </div>
+    <div class="no-data-avail" style="text-align:center;display:none;">No Data Available</div>
+    <div>
+</div>
+</div>
+</div></div>
+    <script type="text/javascript" src="js/match-schedule-init.js"></script>
+    <div class="pull-right right-wrap"><label>Match File Dashboard</label><span>
+        <button type="button" class="logout-btn" @click="logout()"></button></span></div>
+</div>
