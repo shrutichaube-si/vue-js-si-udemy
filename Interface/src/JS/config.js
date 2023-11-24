@@ -10,7 +10,7 @@ export default{
       {
          year:2023,
          isDefault:true,
-         tourIds:[2746]
+         tourIds:[2746,2746]
       },
       {
         year:2022,

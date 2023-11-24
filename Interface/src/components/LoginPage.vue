@@ -43,7 +43,8 @@ export default {
     },
     methods:{
         login(){
-            let credentialsFound = config.admin.find(credentials=>{
+            try {
+                let credentialsFound = config.admin.find(credentials=>{
                 if(this.username === credentials.username && this.password === credentials.password){
                     return true
                 }
@@ -53,6 +54,9 @@ export default {
                 window.location.reload();
             }else{
                 this.errorMssg = "Invalid UserName and Password!"
+            } 
+            } catch (error) {
+                console.error("Login Not Working",error)
             }
         }
     },   
