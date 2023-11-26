@@ -1,0 +1,151 @@
+//var,let and const:
+1. var is globally scoped while let and const are block scoped.
+2. var can be updated and re-declared within its scope.
+3. let can be updated but not redeclared.
+4. const can neither be updated nor redeclared.
+5. const must be initialised during declaration unlike var and let.
+Use of const must be more and use of let must be at places where we cannot use anything else..and 
+var should nover be used.
+
+//DataTypes in Javascript - Primitive
+N ull : let a = null;
+N umber : let b = 345;
+S ymbol : let f = Symbol("Hi this is a symbol");
+S tring : let c = "Dhruv";
+B oolean : let e = true;
+B igint : let d = BigInt("430") + BigInt("3");
+U ndefined : let g;
+
+//Objects - Non-primitive
+objects are key-value pairs and are non-primitive datatypes.
+const item = {
+    "Harry": true,
+    "Lovish": false,
+    "Shubh": 67,
+    "Rohan": undefined
+}
+console.log(item["Harry"]);
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Practise Set - 1
+1.Create a variable of type string & try to add a number to it!
+2.find the typeof the above question.
+3.Create a const object in js.can you change it to hold a number later?
+4.Try to add a new key to the const object in problem 3?
+5.WAJP to create a word-meaning dictionary of 5 words!
+
+answers: 
+let a = "Dhruv";
+let b = 69;
+console.log(typeof (a + b));
+
+const c = {
+    Dhruv: true,
+    fake: 69
+}
+console.log(c)
+//c = 45
+c['friend'] = "Sush"
+c['name'] = "Jaanvi"
+
+const dict = {
+    Abrogate: "To revoke",
+    Byzantine: "Convoluted and complicated",
+    Cajole : "Persuade through flattery or coaxing"
+}
+console.log(dict);
+console.log(dict.Cajole);
+console.log(dict['Byzantine']);
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//expressions and operators:
+console.log("Operators in JS")
+let a = 10;
+let b = 20;
+console.log("a + b = ",a+b);
+console.log("a - b = ",a-b);
+console.log("a * b = ",a*b);
+console.log("a / b = ",a/b);
+console.log("a ** b = ",a**b);
+console.log("a % b = ",a%b);
+
+console.log("++a = ",++a);
+console.log("a++ = ",a++);
+console.log("--a = ",--a);
+console.log("a-- = ",a--);
+console.log("a = ",a);
+console.log("a-- = ",a--);
+
+//Conditionals Expressions & Switch Case:
+let a = prompt("Whats your age:");
+a = Number.parseInt(a);
+if(a<0){
+    alert("This is an Invalid Age")
+}
+else if(a<9){
+    alert("You are a fuckin kid..study plz!!")
+}
+else if (a<18 && a>=9){
+    alert("Yes you will drive the car once you reach 18 yrs of age")
+}
+else if (a<80 && a>=18){
+    alert("Yes you can drive the car")
+}
+else{
+    alert("No Timepass plz")
+}
+
+let a = prompt("What's your age:");
+a = Number.parseInt(a);
+
+switch (true) {
+  case a < 0:
+    alert("This is an Invalid Age");
+    break;
+  case a < 9:
+    alert("You are a fuckin kid..study plz!!");
+    break;
+  case a < 18 && a >= 9:
+    alert("Yes you will drive the car once you reach 18 yrs of age");
+    break;
+  case a < 80 && a >= 18:
+    alert("Yes you can drive the car");
+    break;
+  default:
+    alert("No Timepass plz");
+    break;
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Practise Set - 2
+1.Use logical operator to find whether the age of a person lies between 10 & 20?
+let age = prompt("enter your age:")
+if(age>10 && age<20){
+    console.log("Your age lies between 10 and 20")
+}
+else{
+    console.log("Your age does not lie between 10 and 20")
+}
+2.Demonstrate the use of switch case statements in JS
+let age = prompt("Enter your age:")
+switch(age){
+    case age<10 && age>20:
+        console.log("Your age lies between 10 and 20");
+        break;
+    default:
+        console.log("Your age does not lie between 10 and 20");
+        break;    
+}
+3.WAJP to find whether a number is divisible by 2 and 3
+let num = prompt("Enter the number to check if its divisible by 2 and 3");
+num = Number.parseInt(num);
+if(num%2 == 0 && num%3 == 0){
+    console.log("Your number is divible by 2 and 3")
+}
+else{
+    console.log("Your number is not divisible")
+}
+
+4.WAJP to find whether a number is divisible by either 2 and 3
+5.
+
+//JS Map method:
+the array map method executes a given function on every element from an array and returns a new array
